@@ -10,15 +10,35 @@ public class MenuManager : MonoBehaviour
     [SerializeField]
     CanvasGroup[] subMenus;
 
+    bool isMenu = false;
+    static MenuManager menuManager;
+
+    public static MenuManager MenuInstance { get { return menuManager; } }
+    public bool IsMenu { get { return isMenu; } }
+
+    void Awake()
+    {
+        //Singleton
+        if (menuManager == null)
+        {
+            menuManager = this;
+        }
+        else
+        {
+            Destroy(menuManager.gameObject);
+            menuManager = this;
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            toggleMenu();
-            toggleSubMenu(subMenus[0]);
-            ControlsManager.controlManager.ResetSelectedKey();
-            ControlsManager.controlManager.ResetSelectedPad();
+            ToggleMenu();
+            ToggleSubMenu(subMenus[0]);
+            ControlsManager.ControlInstance.ResetSelectedKey();
+            ControlsManager.ControlInstance.ResetSelectedPad();
         }
 
         // Prevent other coroutines from unpausing while in menu
@@ -29,15 +49,16 @@ public class MenuManager : MonoBehaviour
     }
 
     //Toggle menu, pausing game
-    public void toggleMenu()
+    public void ToggleMenu()
     {
         menu.alpha = menu.alpha > 0 ? 0 : .7f;
         menu.blocksRaycasts = menu.blocksRaycasts ? false : true;
         Time.timeScale = menu.alpha > 0 ? 0 : 1;
+        isMenu = menu.alpha > 0 ? true : false;
     }
 
     //For submenu nav, toggle corresponding submenu's CanvasGroup with button
-    public void toggleSubMenu(CanvasGroup sub)
+    public void ToggleSubMenu(CanvasGroup sub)
     {
         foreach (CanvasGroup sb in subMenus)
         {

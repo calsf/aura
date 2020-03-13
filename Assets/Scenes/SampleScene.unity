@@ -9253,7 +9253,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 653258239}
-        m_MethodName: toggleSubMenu
+        m_MethodName: ToggleSubMenu
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 668122897}
@@ -10886,7 +10886,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 653258239}
-        m_MethodName: toggleSubMenu
+        m_MethodName: ToggleSubMenu
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1795911790}
@@ -19042,7 +19042,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 653258239}
-        m_MethodName: toggleSubMenu
+        m_MethodName: ToggleSubMenu
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 8356025360162014797}

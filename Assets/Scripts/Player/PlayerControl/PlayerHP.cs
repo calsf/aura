@@ -17,9 +17,10 @@ public class PlayerHP : MonoBehaviour
     [SerializeField]
     Material defaultMat;
     [SerializeField]
-    PlayerMove move;
-    [SerializeField]
     Rigidbody2D rb;
+
+    PlayerAuraControl auraControl;
+    PlayerMove move;
 
     float damageRate;
     SpriteRenderer spriteRender;
@@ -38,6 +39,12 @@ public class PlayerHP : MonoBehaviour
     public int CurrentHP { get { return currentHP; } }
     public int MaxHP { get { return maxHP; } }
     public float RespawnDelay { get { return respawnDelay; } }
+
+    void Awake()
+    {
+        move = GetComponent<PlayerMove>();
+        auraControl = GetComponent<PlayerAuraControl>();
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -135,11 +142,14 @@ public class PlayerHP : MonoBehaviour
     //Respawn player after a delay
     IEnumerator Respawn()
     {
+        auraControl.CanAura = false; //Disable aura use
+
         yield return new WaitForSeconds(respawnDelay);
 
         //Reset player values and control
         move.Velocity(0, 0);
-        move.enabled = true;
+        move.enabled = true;    //Move should be disabled upon knockback and is not restored if HP drops to 0, so restore it here
+        auraControl.CanAura = true;
         currentHP = maxHP;
         dead = false;
         OnHealthChange.Invoke(); // OnHealthChanged event

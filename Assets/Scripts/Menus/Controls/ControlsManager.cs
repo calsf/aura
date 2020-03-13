@@ -25,10 +25,11 @@ public class ControlsManager : MonoBehaviour
     Color selectedColor = Color.green; //Selected color
 
     public UnityEvent OnControlChange;
-    public static ControlsManager controlManager;
+    static ControlsManager controlManager;
     Dictionary<string, KeyCode> keybinds;
     Dictionary<string, KeyCode> padbinds;
 
+    public static ControlsManager ControlInstance { get { return controlManager; } }
     public Dictionary<string, KeyCode> Keybinds { get { return keybinds; } }
     public Dictionary<string, KeyCode> Padbinds { get { return padbinds; } }
 
