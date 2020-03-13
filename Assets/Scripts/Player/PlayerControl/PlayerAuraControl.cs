@@ -16,6 +16,7 @@ public class PlayerAuraControl : MonoBehaviour
     GameObject[] auras;
     AuraDefaults[] auraDefaults;
     GameObject currAura;
+    bool toggleAura;
 
     int lastSelected = -1; // Last slot used
     int[] selectedAuras = { 0, 1, 2, 3 }; // The numbers indicate index of auras array
@@ -53,23 +54,43 @@ public class PlayerAuraControl : MonoBehaviour
         // Do not allow control when paused
         if (menu.alpha == 0)
         {
-            if (Input.GetKeyDown(KeybindManager.keyManager.Keybinds["Aura1Button"]) || Input.GetKeyDown(KeybindManager.keyManager.Padbinds["Aura1Pad"]))
+
+            if (Input.GetKeyDown(ControlsManager.controlManager.Keybinds["Aura1Button"]) || Input.GetKeyDown(ControlsManager.controlManager.Padbinds["Aura1Pad"]))
             {
                 ToggleAura(0);
             }
-            else if (Input.GetKeyDown(KeybindManager.keyManager.Keybinds["Aura2Button"]) || Input.GetKeyDown(KeybindManager.keyManager.Padbinds["Aura2Pad"]))
+            else if (Input.GetKeyDown(ControlsManager.controlManager.Keybinds["Aura2Button"]) || Input.GetKeyDown(ControlsManager.controlManager.Padbinds["Aura2Pad"]))
             {
                 ToggleAura(1);
             }
-            else if (Input.GetKeyDown(KeybindManager.keyManager.Keybinds["Aura3Button"]) || Input.GetKeyDown(KeybindManager.keyManager.Padbinds["Aura3Pad"]))
+            else if (Input.GetKeyDown(ControlsManager.controlManager.Keybinds["Aura3Button"]) || Input.GetKeyDown(ControlsManager.controlManager.Padbinds["Aura3Pad"]))
             {
                 ToggleAura(2);
             }
-            else if (Input.GetKeyDown(KeybindManager.keyManager.Keybinds["Aura4Button"]) || Input.GetKeyDown(KeybindManager.keyManager.Padbinds["Aura4Pad"]))
+            else if (Input.GetKeyDown(ControlsManager.controlManager.Keybinds["Aura4Button"]) || Input.GetKeyDown(ControlsManager.controlManager.Padbinds["Aura4Pad"]))
             {
                 ToggleAura(3);
             }
+
+            // If toggle is not on, turn off aura on button release
+            if (!toggleAura)
+            {
+                if ((lastSelected == 0 && (Input.GetKeyUp(ControlsManager.controlManager.Keybinds["Aura1Button"]) || Input.GetKeyUp(ControlsManager.controlManager.Padbinds["Aura1Pad"])))
+                    || (lastSelected == 1 && (Input.GetKeyUp(ControlsManager.controlManager.Keybinds["Aura2Button"]) || Input.GetKeyUp(ControlsManager.controlManager.Padbinds["Aura2Pad"])))
+                    || (lastSelected == 2 && (Input.GetKeyUp(ControlsManager.controlManager.Keybinds["Aura3Button"]) || Input.GetKeyUp(ControlsManager.controlManager.Padbinds["Aura3Pad"])))
+                    || (lastSelected == 3 && (Input.GetKeyUp(ControlsManager.controlManager.Keybinds["Aura4Button"]) || Input.GetKeyUp(ControlsManager.controlManager.Padbinds["Aura4Pad"]))))
+                {
+                    currAura.SetActive(false);
+                    lastSelected = -1;
+                }
+            }
         }
+    }
+
+    //For OnControlChange
+    public void UpdateControls()
+    {
+        toggleAura = PlayerPrefs.GetString("ToggleAura") == "On" ? true : false;
     }
 
     void ToggleAura(int selected)

@@ -34,7 +34,10 @@ public class PlayerMove : MonoBehaviour {
     bool canDoubleJump;
     bool isFastFall;
     bool isJumping;
-    
+
+    bool upJump;    // Check if Jump with Up setting is on, if so, jump when up is pressed
+    bool axisDown;  // Treat axis input as a key down
+
     LayerMask groundLayer;
     Rigidbody2D rb;
 
@@ -55,27 +58,45 @@ public class PlayerMove : MonoBehaviour {
 
     // Use this for initialization
     void Awake () {
+        UpdateControls();
         speed = baseSpeed;
         airSpeed = baseAirSpeed;
         fallSpeed = baseFallSpeed;
         rb = GetComponent<Rigidbody2D>();
         groundLayer = LayerMask.GetMask("Ground");
 	}
-	
-	// Update is called once per frame
-	void Update () {
+
+    //For OnControlChange
+    public void UpdateControls()
+    {
+        upJump = PlayerPrefs.GetString("UpJump") == "On" ? true : false;
+    }
+
+    // Update is called once per frame
+    void Update () {
         //Jump input
-        if(!dashing && (canJump || canDoubleJump) && (Input.GetKeyDown(KeybindManager.keyManager.Keybinds["JumpButton"]) || Input.GetKeyDown(KeybindManager.keyManager.Padbinds["JumpPad"])))
+        if (!dashing && (canJump || canDoubleJump) &&
+            (Input.GetKeyDown(ControlsManager.controlManager.Keybinds["JumpButton"]) || Input.GetKeyDown(ControlsManager.controlManager.Padbinds["JumpPad"])
+            || (upJump && (Input.GetKeyDown(ControlsManager.controlManager.Keybinds["UpButton"]) || Input.GetAxisRaw("Vertical") == 1))))
         {
-            isJumping = true;
+            // Treat axis input up as a KeyDown event
+            if (!axisDown)
+            {
+                isJumping = true;
+                axisDown = true;
+            }
+        }
+        else
+        {
+            axisDown = false; // Reset axisDown
         }
 
         //Horizontal movement input
-        if (Input.GetKey(KeybindManager.keyManager.Keybinds["LeftButton"]) || Input.GetAxisRaw("Horizontal") == -1)
+        if (Input.GetKey(ControlsManager.controlManager.Keybinds["LeftButton"]) || Input.GetAxisRaw("Horizontal") == -1)
         {
             move = -1;   
         }
-        else if (Input.GetKey(KeybindManager.keyManager.Keybinds["RightButton"]) || Input.GetAxisRaw("Horizontal") == 1)
+        else if (Input.GetKey(ControlsManager.controlManager.Keybinds["RightButton"]) || Input.GetAxisRaw("Horizontal") == 1)
         {
             move = 1;
         }
@@ -86,11 +107,11 @@ public class PlayerMove : MonoBehaviour {
 
         //Dash command, if in air only one dash until grounded again
         bool[] inputs = {
-            Input.GetKey(KeybindManager.keyManager.Keybinds["UpButton"]) || Input.GetAxisRaw("Vertical") == 1,
-            Input.GetKey(KeybindManager.keyManager.Keybinds["LeftButton"]) || Input.GetAxisRaw("Horizontal") == -1,
-            Input.GetKey(KeybindManager.keyManager.Keybinds["DownButton"]) || Input.GetAxisRaw("Vertical") == -1,
-            Input.GetKey(KeybindManager.keyManager.Keybinds["RightButton"]) || Input.GetAxisRaw("Horizontal") == 1,
-            Input.GetKey(KeybindManager.keyManager.Keybinds["DashButton"]) || Input.GetKey(KeybindManager.keyManager.Padbinds["DashPad"]) };
+            Input.GetKey(ControlsManager.controlManager.Keybinds["UpButton"]) || Input.GetAxisRaw("Vertical") == 1,
+            Input.GetKey(ControlsManager.controlManager.Keybinds["LeftButton"]) || Input.GetAxisRaw("Horizontal") == -1,
+            Input.GetKey(ControlsManager.controlManager.Keybinds["DownButton"]) || Input.GetAxisRaw("Vertical") == -1,
+            Input.GetKey(ControlsManager.controlManager.Keybinds["RightButton"]) || Input.GetAxisRaw("Horizontal") == 1,
+            Input.GetKey(ControlsManager.controlManager.Keybinds["DashButton"]) || Input.GetKey(ControlsManager.controlManager.Padbinds["DashPad"]) };
         if (inputs[4] && !dashing && !hasAirDashed && Time.time > lastDash)
         {
             lastDash = Time.time + dashDelay;
@@ -132,7 +153,8 @@ public class PlayerMove : MonoBehaviour {
         }
 
         // Gravity
-        if (!dashing && Input.GetKey(KeybindManager.keyManager.Keybinds["JumpButton"]) || Input.GetKey(KeybindManager.keyManager.Padbinds["JumpPad"])) // Hold space/jump to increase jump height
+        if (!dashing && Input.GetKey(ControlsManager.controlManager.Keybinds["JumpButton"]) || Input.GetKey(ControlsManager.controlManager.Padbinds["JumpPad"])
+            || (upJump && ((Input.GetKey(ControlsManager.controlManager.Keybinds["UpButton"])) || Input.GetAxisRaw("Vertical") == 1))) // Hold space/jump to increase jump height
         {
             if (rb.velocity.y < 0)
             {
@@ -144,7 +166,7 @@ public class PlayerMove : MonoBehaviour {
             }
             isFastFall = false;
         }
-        else if (!dashing && !isGrounded && (Input.GetKeyDown(KeybindManager.keyManager.Keybinds["DownButton"]) || Input.GetAxisRaw("Vertical") == -1))  // Tap down to fast fall
+        else if (!dashing && !isGrounded && (Input.GetKeyDown(ControlsManager.controlManager.Keybinds["DownButton"]) || Input.GetAxisRaw("Vertical") == -1))  // Tap down to fast fall
         {
             rb.gravityScale = defaultGrav;
             isFastFall = true;

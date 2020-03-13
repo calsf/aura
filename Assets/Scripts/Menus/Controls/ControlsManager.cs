@@ -5,8 +5,11 @@ using System.Linq;
 using System.Text;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
-public class KeybindManager : MonoBehaviour
+// Manages controls, including keyboard and gamepad bindings and other control related settings
+
+public class ControlsManager : MonoBehaviour
 {
     GameObject selectedPad; // Selected gamepad keybinding
     GameObject selectedKey; // Selected keyboard keybinding
@@ -16,10 +19,13 @@ public class KeybindManager : MonoBehaviour
     [SerializeField]
     GameObject[] padButtons;
     [SerializeField]
+    GameObject[] otherButtons;
+    [SerializeField]
     Color unselectedColor; //Unselected button color
     Color selectedColor = Color.green; //Selected color
 
-    public static KeybindManager keyManager;
+    public UnityEvent OnControlChange;
+    public static ControlsManager controlManager;
     Dictionary<string, KeyCode> keybinds;
     Dictionary<string, KeyCode> padbinds;
 
@@ -29,20 +35,20 @@ public class KeybindManager : MonoBehaviour
     void Awake()
     {
         //Singleton
-        if (keyManager == null)
+        if (controlManager == null)
         {
-            keyManager = this;
+            controlManager = this;
         }
         else
         {
-            Destroy(keyManager.gameObject);
-            keyManager = this;
+            Destroy(controlManager.gameObject);
+            controlManager = this;
         }
 
         //Load keybinds, set to default if no player pref
         keybinds = new Dictionary<string, KeyCode>();
         padbinds = new Dictionary<string, KeyCode>();
-        SetKeys();
+        SetControls();
     }
 
     // Update is called once per frame
@@ -154,12 +160,12 @@ public class KeybindManager : MonoBehaviour
     {
         Text temp = Array.Find(buttons, x => x.name == keyName).GetComponentInChildren<Text>();
         
-        //Split camel case strings into spaced strings, clean up alpha and joystick keycode names
+        //Add space before uppercase letters and before a number, clean up alpha and joystick keycode names
         string str = CleanString(keycode.ToString());
         StringBuilder sb = new StringBuilder();
         foreach (char c in str)
         {
-            if (char.IsUpper(c))
+            if (char.IsUpper(c) || char.IsDigit(c))
             {
                 sb.Append(' ');
             }
@@ -255,22 +261,28 @@ public class KeybindManager : MonoBehaviour
     }
 
     //Reset the selected key
-    void ResetSelectedKey()
+    public void ResetSelectedKey()
     {
-        selectedKey.GetComponent<Image>().color = unselectedColor;
-        selectedKey = null;
+        if (selectedKey != null)
+        {
+            selectedKey.GetComponent<Image>().color = unselectedColor;
+            selectedKey = null;
+        }
     }
 
     //Reset the selected gamepad
-    void ResetSelectedPad()
+    public void ResetSelectedPad()
     {
-        selectedPad.GetComponent<Image>().color = unselectedColor;
-        selectedPad = null;
+        if (selectedPad != null)
+        {
+            selectedPad.GetComponent<Image>().color = unselectedColor;
+            selectedPad = null;
+        }
     }
 
 
-    //Reset key display
-    public void SetKeys()
+    //Reset controls display
+    public void SetControls()
     {
         // Button objects in editor must match names here (ButtonName, KeyCode)
         BindKey("UpButton", (KeyCode)(Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("UpButton", "W"))), keybinds);
@@ -291,13 +303,33 @@ public class KeybindManager : MonoBehaviour
         BindKey("Aura2Pad", (KeyCode)(Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("Aura2Pad", "Joystick1Button0"))), padbinds);
         BindKey("Aura3Pad", (KeyCode)(Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("Aura3Pad", "Joystick1Button3"))), padbinds);
         BindKey("Aura4Pad", (KeyCode)(Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("Aura4Pad", "Joystick1Button2"))), padbinds);
+
+        //Other options
+        UpdateToggle("ToggleAura");
+        UpdateToggle("UpJump");
+    }
+
+    // Toggle control option on and off
+    public void ToggleControl(string option)
+    {
+        string currSetting = PlayerPrefs.GetString(option);
+        PlayerPrefs.SetString(option, currSetting == "On" ? "Off" : "On");
+        UpdateToggle(option);
+    }
+
+    //Update toggled display - button name must match PlayerPref string/option
+    void UpdateToggle(string option)
+    {
+        Text temp = Array.Find(otherButtons, x => x.name == option).GetComponentInChildren<Text>();
+        temp.text = PlayerPrefs.GetString(option) == "On" ? "On" : "Off";
+        OnControlChange.Invoke();
     }
 
     //Reset player pref, updates the displayed settings to default after
     public void ResetPref()
     {
         PlayerPrefs.DeleteAll();
-        SetKeys();
+        SetControls();
     }
 
     // Clean up KeyCode string
