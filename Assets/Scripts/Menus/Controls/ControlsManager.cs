@@ -23,6 +23,8 @@ public class ControlsManager : MonoBehaviour
     [SerializeField]
     Color unselectedColor; //Unselected button color
     Color selectedColor = Color.green; //Selected color
+    bool isListen = false;  // Listening for a button input to rebind, if this is true, menu scripts won't listen for inputs until false
+    KeyCode newKey;     //The key that was rebinded and will reset isListen on release
 
     public UnityEvent OnControlChange;
     static ControlsManager controlManager;
@@ -32,6 +34,7 @@ public class ControlsManager : MonoBehaviour
     public static ControlsManager ControlInstance { get { return controlManager; } }
     public Dictionary<string, KeyCode> Keybinds { get { return keybinds; } }
     public Dictionary<string, KeyCode> Padbinds { get { return padbinds; } }
+    public bool IsListen { get { return isListen; } set { isListen = value; } }
 
     void Awake()
     {
@@ -55,76 +58,93 @@ public class ControlsManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Press menu to cancel listening to a new binding
+        if (isListen && (Input.GetKeyDown(keybinds["MenuButton"]) || Input.GetKeyDown(padbinds["MenuPad"])))
+        {
+            ResetSelectedKey();
+            ResetSelectedPad();
+            isListen = false;
+        }
+
         // Gamepad binding
-        if (selectedPad != null)
+        if (selectedPad != null && isListen)
         {
             if (Input.GetKeyDown(KeyCode.Joystick1Button0))
             {
                 BindKey(selectedPad.name, KeyCode.Joystick1Button0, padbinds);
                 ResetSelectedPad();
-                SaveKeys();
+                SaveBinds();
             }
             else if (Input.GetKeyDown(KeyCode.Joystick1Button1))
             {
                 BindKey(selectedPad.name, KeyCode.Joystick1Button1, padbinds);
                 ResetSelectedPad();
-                SaveKeys();
+                SaveBinds();
             }
             else if (Input.GetKeyDown(KeyCode.Joystick1Button2))
             {
                 BindKey(selectedPad.name, KeyCode.Joystick1Button2, padbinds);
                 ResetSelectedPad();
-                SaveKeys();
+                SaveBinds();
             }
             else if (Input.GetKeyDown(KeyCode.Joystick1Button3))
             {
                 BindKey(selectedPad.name, KeyCode.Joystick1Button3, padbinds);
                 ResetSelectedPad();
-                SaveKeys();
+                SaveBinds();
             }
             else if (Input.GetKeyDown(KeyCode.Joystick1Button4))
             {
                 BindKey(selectedPad.name, KeyCode.Joystick1Button4, padbinds);
                 ResetSelectedPad();
-                SaveKeys();
+                SaveBinds();
             }
             else if (Input.GetKeyDown(KeyCode.Joystick1Button5))
             {
                 BindKey(selectedPad.name, KeyCode.Joystick1Button5, padbinds);
                 ResetSelectedPad();
-                SaveKeys();
+                SaveBinds();
             }
             else if (Input.GetKeyDown(KeyCode.Joystick1Button6))
             {
                 BindKey(selectedPad.name, KeyCode.Joystick1Button6, padbinds);
                 ResetSelectedPad();
-                SaveKeys();
+                SaveBinds();
             }
             else if (Input.GetKeyDown(KeyCode.Joystick1Button7))
             {
                 BindKey(selectedPad.name, KeyCode.Joystick1Button7, padbinds);
                 ResetSelectedPad();
-                SaveKeys();
+                SaveBinds();
             }
             else if (Input.GetKeyDown(KeyCode.Joystick1Button8))
             {
                 BindKey(selectedPad.name, KeyCode.Joystick1Button8, padbinds);
                 ResetSelectedPad();
-                SaveKeys();
+                SaveBinds();
             }
             else if (Input.GetKeyDown(KeyCode.Joystick1Button9))
             {
                 BindKey(selectedPad.name, KeyCode.Joystick1Button9, padbinds);
                 ResetSelectedPad();
-                SaveKeys();
+                SaveBinds();
             }
             else if (Input.GetKeyDown(KeyCode.Joystick1Button10))
             {
                 BindKey(selectedPad.name, KeyCode.Joystick1Button10, padbinds);
                 ResetSelectedPad();
-                SaveKeys();
+                SaveBinds();
             }
         }
+
+        // Set listening to false after a new button has been pressed and assigned to a control so can resume inputs in MenuManager/MenuNav
+        // Otherwise, setting new keybind will also activate the action
+        if (isListen && Input.GetKeyUp(newKey))
+        {
+            newKey = KeyCode.None;
+            isListen = false;
+        }
+        
     }
 
     //Bind key name with selected keycode
@@ -145,12 +165,14 @@ public class ControlsManager : MonoBehaviour
             return;
         }
 
-        //If key is already bound, remove old key
+        newKey = keycode; // Set newKey so we can reset isListen after key is released
+
+        //If key is already bound, swap keys
         if (binds.ContainsValue(keycode))
         {
             string old = binds.FirstOrDefault(x => x.Value == keycode).Key;
-            binds[old] = KeyCode.None;
-            UpdateDisplay(old, KeyCode.None, btns);
+            binds[old] = binds[name];
+            UpdateDisplay(old, binds[name], btns);
         }
         binds[name] = keycode;
         UpdateDisplay(name, keycode, btns);
@@ -180,14 +202,14 @@ public class ControlsManager : MonoBehaviour
     void OnGUI()
     {
         // Keyboard keybinding
-        if (selectedKey != null)
+        if (selectedKey != null && isListen)
         {
             Event e = Event.current;
-            if ((e.isKey && e.keyCode != KeyCode.Escape))
+            if ((e.isKey && e.keyCode != (KeyCode)(Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("MenuButton", "Escape")))))
             {
                 BindKey(selectedKey.name, e.keyCode, keybinds);
                 ResetSelectedKey();
-                SaveKeys();
+                SaveBinds();
             }
             else
             {
@@ -195,13 +217,13 @@ public class ControlsManager : MonoBehaviour
                 {
                     BindKey(selectedKey.name, KeyCode.LeftShift, keybinds);
                     ResetSelectedKey();
-                    SaveKeys();
+                    SaveBinds();
                 }
                 else if (Input.GetKey(KeyCode.RightShift))
                 {
                     BindKey(selectedKey.name, KeyCode.RightShift, keybinds);
                     ResetSelectedKey();
-                    SaveKeys();
+                    SaveBinds();
                 }
             }
         }
@@ -252,9 +274,13 @@ public class ControlsManager : MonoBehaviour
     }
 
     //Save keybind settings
-    public void SaveKeys()
+    public void SaveBinds()
     {
         foreach (var key in keybinds)
+        {
+            PlayerPrefs.SetString(key.Key, key.Value.ToString());
+        }
+        foreach (var key in padbinds)
         {
             PlayerPrefs.SetString(key.Key, key.Value.ToString());
         }
@@ -296,6 +322,7 @@ public class ControlsManager : MonoBehaviour
         BindKey("Aura2Button", (KeyCode)(Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("Aura2Button", "I"))), keybinds);
         BindKey("Aura3Button", (KeyCode)(Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("Aura3Button", "O"))), keybinds);
         BindKey("Aura4Button", (KeyCode)(Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("Aura4Button", "P"))), keybinds);
+        BindKey("MenuButton", (KeyCode)(Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("MenuButton", "Escape"))), keybinds);
 
         //Gamepad
         BindKey("DashPad", (KeyCode)(Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("DashPad", "Joystick1Button7"))), padbinds);
@@ -304,6 +331,7 @@ public class ControlsManager : MonoBehaviour
         BindKey("Aura2Pad", (KeyCode)(Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("Aura2Pad", "Joystick1Button0"))), padbinds);
         BindKey("Aura3Pad", (KeyCode)(Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("Aura3Pad", "Joystick1Button3"))), padbinds);
         BindKey("Aura4Pad", (KeyCode)(Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("Aura4Pad", "Joystick1Button2"))), padbinds);
+        BindKey("MenuPad", (KeyCode)(Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("MenuPad", "Joystick1Button9"))), padbinds);
 
         //Other options
         UpdateToggle("ToggleAura");
@@ -362,6 +390,8 @@ public class ControlsManager : MonoBehaviour
                         return "L2";
                     case 7:
                         return "R2";
+                    case 9:
+                        return "Options";
                     default:
                         return $"Gamepad {i}";
                 }

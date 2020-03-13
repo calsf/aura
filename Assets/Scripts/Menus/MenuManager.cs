@@ -6,9 +6,10 @@ public class MenuManager : MonoBehaviour
 {
     [SerializeField]
     CanvasGroup menu;   //Parent menu
-
     [SerializeField]
     CanvasGroup[] subMenus;
+
+    MenuNav menuNav;
 
     bool isMenu = false;
     static MenuManager menuManager;
@@ -28,12 +29,14 @@ public class MenuManager : MonoBehaviour
             Destroy(menuManager.gameObject);
             menuManager = this;
         }
+
+        menuNav = GetComponent<MenuNav>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (!ControlsManager.ControlInstance.IsListen && (Input.GetKeyDown(ControlsManager.ControlInstance.Keybinds["MenuButton"]) || Input.GetKeyDown(ControlsManager.ControlInstance.Padbinds["MenuPad"])))
         {
             ToggleMenu();
             ToggleSubMenu(subMenus[0]);
@@ -55,16 +58,25 @@ public class MenuManager : MonoBehaviour
         menu.blocksRaycasts = menu.blocksRaycasts ? false : true;
         Time.timeScale = menu.alpha > 0 ? 0 : 1;
         isMenu = menu.alpha > 0 ? true : false;
+        
+        //Set menu defaults on menu open
+        if (isMenu)
+        {
+            menuNav.NavMenu(0);
+        }
     }
 
     //For submenu nav, toggle corresponding submenu's CanvasGroup with button
     public void ToggleSubMenu(CanvasGroup sub)
     {
+        // Turn off all submenus
         foreach (CanvasGroup sb in subMenus)
         {
             sb.alpha = 0;
             sb.blocksRaycasts = false;
         }
+
+        // Turn on selected submenu
         sub.alpha = 1;
         sub.blocksRaycasts = true;
     }
