@@ -12,11 +12,14 @@ public class AuraSlots : MonoBehaviour
     [SerializeField]
     AuraSelect auraSelect;
 
+    SaveData saveData;  // Used to save equipped auras when equipped auras are updated
+
     [SerializeField]
     Image[] slots;
 
     void Start()
     {
+        saveData = GameObject.FindGameObjectWithTag("SaveData").GetComponent<SaveData>();
         UpdateSlots();
     }
 
@@ -40,5 +43,8 @@ public class AuraSlots : MonoBehaviour
         {
             slots[i].sprite = auras[selected[i]].Aura.icon;
         }
+
+        // Save equipped
+        saveData.UpdateEquipped(selected);
     }
 }

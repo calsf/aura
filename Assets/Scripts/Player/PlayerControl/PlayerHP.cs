@@ -8,7 +8,6 @@ public class PlayerHP : MonoBehaviour
 {
     [SerializeField]
     int capHP;  // Max HP obtainable, maxHP may be lower but will never exceed cap
-    [SerializeField]
     int maxHP;  // Current max HP
     [SerializeField]
     int currentHP;
@@ -57,6 +56,7 @@ public class PlayerHP : MonoBehaviour
             numPool[i].SetActive(false);
         }
 
+        maxHP = SaveLoadManager.LoadHealth();    // Get saved max hp value
         dead = false;
         currentHP = maxHP;
         damageRate = 0;

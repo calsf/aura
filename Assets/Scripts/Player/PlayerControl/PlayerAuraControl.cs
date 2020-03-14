@@ -19,7 +19,7 @@ public class PlayerAuraControl : MonoBehaviour
     bool toggleAura;
 
     int lastSelected = -1; // Last slot used
-    int[] selectedAuras = { 0, 1, 2, 3 }; // The numbers indicate index of auras array
+    int[] selectedAuras; // The numbers indicate index of auras array
     bool canAura = true;
 
     public int[] SelectedAuras { get { return selectedAuras; } }
@@ -39,6 +39,10 @@ public class PlayerAuraControl : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        // Load equipped auras from save
+        selectedAuras = new int[4];
+        selectedAuras = SaveLoadManager.LoadEquipped();
+
         auras = auraSelect.Auras;
         currAura = auras[0];
         
@@ -49,6 +53,7 @@ public class PlayerAuraControl : MonoBehaviour
             auraDefaults[i] = auras[i].GetComponent<AuraDefaults>();
         }
     }
+
 
     // Update is called once per frame
     void Update()

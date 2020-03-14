@@ -4961,6 +4961,77 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 502736512}
   m_CullTransparentMesh: 0
+--- !u!1 &513970373
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 513970375}
+  - component: {fileID: 513970374}
+  - component: {fileID: 513970376}
+  - component: {fileID: 513970377}
+  m_Layer: 0
+  m_Name: SaveData
+  m_TagString: SaveData
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &513970374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 513970373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed8780b8913cd124a9ab7d69628bb1a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &513970375
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 513970373}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 189.76001, y: 225.59029, z: -49.436207}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &513970376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 513970373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 537c5407a87f7034aa999be178b63133, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aurasParent: {fileID: 1898023054}
+--- !u!114 &513970377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 513970373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d5210d318940c643af003f4a5f90b44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gold: {fileID: 838489523}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -10073,7 +10144,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   capHP: 0
-  maxHP: 10
   currentHP: 0
   redMat: {fileID: 2100000, guid: 4abe87e9bec9e8343851b4d11ff2f00e, type: 2}
   defaultMat: {fileID: 2100000, guid: 20f3bb0283b9edb469f503ff559a9af9, type: 2}
@@ -12585,7 +12655,7 @@ GameObject:
   - component: {fileID: 1180685994}
   - component: {fileID: 1180685996}
   m_Layer: 5
-  m_Name: OwnedGoldCount
+  m_Name: SavedGoldCount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
