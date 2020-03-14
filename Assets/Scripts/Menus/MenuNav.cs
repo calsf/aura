@@ -212,7 +212,9 @@ public class MenuNav : MonoBehaviour
     // Navigate the submenus
     public void NavMenu(int sub)
     {
-        foreach(Image i in navImg)
+        NavSub(selectedSubBtn, 0);   // Sets submenu button to first button
+
+        foreach (Image i in navImg)
         {
             i.color = unselectedColor;
         }
@@ -229,6 +231,5 @@ public class MenuNav : MonoBehaviour
         navImg[sub].color = selectedColor;
         nav[sub].onClick.Invoke();
         selectedSub = sub;
-        NavSub(0, 0);   // Sets submenu button to first button
     }
 }
