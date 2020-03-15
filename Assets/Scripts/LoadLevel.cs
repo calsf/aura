@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class LoadZone : MonoBehaviour
+public class LoadLevel : MonoBehaviour
 {
     [SerializeField]
     GameObject loadBar;

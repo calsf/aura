@@ -11,9 +11,9 @@ using System.IO;
 public class Save
 {
     bool[] auraUnlocked;    // Loaded by UnlockedAuras to get unlocked auras - disables and enables buttons for selecting auras based on unlock/lock
-    bool[] lvlUnlocked;     //
-    int[] equippedAuras;    // Loaded by PlayerAuraControl to get equipped auras - Saved in AuraSelect when equipped auras are updated
-    int gold;               // Loaded by SaveGold to get saved gold
+    bool[] lvlUnlocked;     // Loaded by LevelSelectManager to get unlocked levels - disables and enables buttons for selecting levels // Saved in CompleteLevel
+    int[] equippedAuras;    // Loaded by PlayerAuraControl to get equipped auras // Saved in AuraSelect when equipped auras are updated
+    int gold;               // Loaded by SaveGold to get saved gold // Saved in CompleteLevel
     int health;             // Loaded by PlayerHP to set player's max hp
 
     public bool[] AuraUnlocked { get { return auraUnlocked; } }
@@ -106,7 +106,7 @@ public static class SaveLoadManager
         }
         else
         {
-            // If no save file exists, start fresh
+            // If no save file exists, start fresh (levels do not include level select)
             bool[] defaultLvls = new bool[]
             {
                 true, false
