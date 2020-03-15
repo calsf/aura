@@ -13,7 +13,12 @@ public class SavedGold : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // Set text display to show gold from saved data
+        UpdateGold();
+    }
+
+    // Set text display to show gold from saved data
+    public void UpdateGold()
+    {
         gold.text = SaveLoadManager.LoadGold().ToString();
     }
 }

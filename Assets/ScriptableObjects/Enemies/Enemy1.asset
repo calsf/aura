@@ -15,4 +15,4 @@ MonoBehaviour:
   enemyName: '[PH1]'
   maxHP: 100
   dmg: 2
-  gold: 5
+  gold: 100

@@ -23,33 +23,27 @@ public class PlayerHearts : MonoBehaviour
         heartsBack = backParent.GetComponentsInChildren<Transform>();
 
         // Initialize hearts based on player's max health
-        for (int i = 0; i < heartsFill.Length; i++)
-        {
-            if (i <= player.MaxHP)
-            {
-                heartsBack[i].gameObject.SetActive(true);
-                heartsFill[i].gameObject.SetActive(true);
-            }
-            else
-            {
-                heartsBack[i].gameObject.SetActive(false);
-                heartsFill[i].gameObject.SetActive(false);
-            }
-        }
+        UpdateMaxHearts();
     }
 
     void OnEnable()
     {
-        player.OnHealthChange.AddListener(UpdateHearts);
+        if (player != null)
+        {
+            player.OnHealthChange.AddListener(UpdateHearts);
+        }
     }
 
     void Disable()
     {
-        player.OnHealthChange.RemoveListener(UpdateHearts);
+        if (player != null)
+        {
+            player.OnHealthChange.RemoveListener(UpdateHearts);
+        }
     }
 
     // Update hearts filled based on player's current health
-    void UpdateHearts()
+    public void UpdateHearts()
     {
         int health = player.CurrentHP;
 
@@ -61,6 +55,25 @@ public class PlayerHearts : MonoBehaviour
             }
             else
             {
+                heartsFill[i].gameObject.SetActive(false);
+            }
+        }
+    }
+
+    // Update max hearts (used for shop display, not during gameplay)
+    public void UpdateMaxHearts()
+    {
+        int playerMaxHP = SaveLoadManager.LoadHealth();
+        for (int i = 0; i < heartsFill.Length; i++)
+        {
+            if (i <= playerMaxHP)
+            {
+                heartsBack[i].gameObject.SetActive(true);
+                heartsFill[i].gameObject.SetActive(true);
+            }
+            else
+            {
+                heartsBack[i].gameObject.SetActive(false);
                 heartsFill[i].gameObject.SetActive(false);
             }
         }

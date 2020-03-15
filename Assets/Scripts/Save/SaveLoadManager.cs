@@ -50,6 +50,9 @@ public class Save
 
 public static class SaveLoadManager
 {
+    static int capHP = 10; // Max HP obtainable, maxHP may be lower but will never exceed cap ** Only set, will not be saved **
+    public static int CapHP { get { return capHP; } }
+
     // Manually save/overwrite data
     public static void SaveGame(SaveData data)
     {

@@ -10,6 +10,7 @@ public class MenuManager : MonoBehaviour
     CanvasGroup[] subMenus;
 
     MenuNav menuNav;
+    GameObject player;
 
     bool isMenu = false;
     static MenuManager menuManager;
@@ -30,13 +31,16 @@ public class MenuManager : MonoBehaviour
             menuManager = this;
         }
 
+        player = GameObject.FindGameObjectWithTag("Player");
         menuNav = GetComponent<MenuNav>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!ControlsManager.ControlInstance.IsListen && (Input.GetKeyDown(ControlsManager.ControlInstance.Keybinds["MenuButton"]) || Input.GetKeyDown(ControlsManager.ControlInstance.Padbinds["MenuPad"])))
+        // Do not toggle menu if player is not active or if trying to rebind a key
+        if (player.activeInHierarchy && !ControlsManager.ControlInstance.IsListen 
+            && (Input.GetKeyDown(ControlsManager.ControlInstance.Keybinds["MenuButton"]) || Input.GetKeyDown(ControlsManager.ControlInstance.Padbinds["MenuPad"])))
         {
             ToggleMenu();
             ToggleSubMenu(subMenus[0]);

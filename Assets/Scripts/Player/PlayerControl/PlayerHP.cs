@@ -6,8 +6,6 @@ using UnityEngine.Events;
 
 public class PlayerHP : MonoBehaviour
 {
-    [SerializeField]
-    int capHP;  // Max HP obtainable, maxHP may be lower but will never exceed cap
     int maxHP;  // Current max HP
     [SerializeField]
     int currentHP;
