@@ -9,4 +9,5 @@ public class Enemy : ScriptableObject
     public int maxHP;
     public int dmg;
     public int gold;
+    public int baseMoveSpeed;
 }

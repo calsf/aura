@@ -5,15 +5,29 @@ using UnityEngine;
 //Move back and forth between two points
 
 public class MoveLeftRight : MonoBehaviour {
-    [SerializeField] Transform point1;
-    [SerializeField] Transform point2;
-    [SerializeField] Rigidbody2D rb;
-    [SerializeField] bool moveLeft;
-    [SerializeField] float xSpeed;
-    [SerializeField] bool noFlip; //If false, can flip, if true, do not flip
+    EnemyDefaults enemyDefaults;
+    [SerializeField]
+    Transform point1;
+    [SerializeField]
+    Transform point2;
+    [SerializeField]
+    Rigidbody2D rb;
+    [SerializeField]
+    bool moveLeft;
+    [SerializeField]
+    bool noFlip; //If false, can flip, if true, do not flip
+
+    float xSpeed;
+
+    void Start()
+    {
+        enemyDefaults = GetComponent<EnemyDefaults>();
+    }
 
     // Update is called once per frame
-    void Update () {
+    void FixedUpdate () {
+        xSpeed = enemyDefaults.MoveSpeed;   // Set movement based on moveSpeed in enemyDefaults
+
         if (moveLeft)
         {
             //Once reaching or past point 2, no longer move left
@@ -46,7 +60,6 @@ public class MoveLeftRight : MonoBehaviour {
                 }
                 rb.velocity = new Vector2(xSpeed, rb.velocity.y);
             }
-
         }
 	}
 

@@ -38,14 +38,17 @@ public class ShopManager : MonoBehaviour
     SavedGold savedGold;
     ShopChat shopChat;
 
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         healthMaxed = "Here you go, another boost to your health! Although you should probably stop taking these...Too much of anything can be bad.";
         healthBought = "Health boost coming right up! You'll need something a little stronger to further boost your health from here on out. Luckily I have just the thing - for a price of course.";
         healthFail = "Sorry but you're going to need some more gold if you want a health boost.";
         auraFail = "Auras don't come cheap, and for good reason! Come back when you have more gold.";
+    }
 
+    // Start is called before the first frame update
+    void Start()
+    {
         int currMaxHP = SaveLoadManager.LoadHealth();
         healthPrice = baseHealthPrice * currMaxHP;     // Increase price of max health increase with the current max HP
 

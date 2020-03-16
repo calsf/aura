@@ -22,7 +22,8 @@ public class PlayerMove : MonoBehaviour {
     float baseFallSpeed = -20f;
     float fallSpeed;
     float defaultGrav = 3f;
-    float jump = 15f;
+    float baseJump = 15f;
+    float jump;
     
     float dashDelay = .4f;
     float lastDash = 0f;
@@ -55,10 +56,13 @@ public class PlayerMove : MonoBehaviour {
     public float AirSpeed { get { return airSpeed; } set { airSpeed = value; } }
     public float FallSpeed { get { return fallSpeed; } set { fallSpeed = value; } }
     public float BaseFallSpeed { get { return baseFallSpeed; } set { baseFallSpeed = value; } }
+    public float Jump { get { return jump; } set { jump = value; } }
+    public float BaseJump { get { return baseJump; } }
 
     // Use this for initialization
     void Awake () {
         UpdateControls();
+        jump = baseJump;
         speed = baseSpeed;
         airSpeed = baseAirSpeed;
         fallSpeed = baseFallSpeed;

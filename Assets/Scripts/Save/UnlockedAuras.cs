@@ -17,7 +17,7 @@ public class UnlockedAuras : MonoBehaviour
         auras = aurasParent.GetComponentsInChildren<Button>();
         bool[] auraUnlocked = SaveLoadManager.LoadAuras();
 
-        for (int i = 0; i < auras.Length; i++)
+        for (int i = 0; i < auraUnlocked.Length; i++)
         {
             if (auraUnlocked[i])
             {

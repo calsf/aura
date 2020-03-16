@@ -13,6 +13,7 @@ public class LevelSelectManager : MonoBehaviour
 
     void Awake()
     {
+        Time.timeScale = 1; // Set timescale back to 1 in the case player leaves a level
         lvlButtons = buttonParent.GetComponentsInChildren<Button>();
 
         // Get levels unlocked from save and disable and enable level buttons accordingly

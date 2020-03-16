@@ -2,9 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Decrease move speed of player
-
-public class SlowAura : MonoBehaviour
+public class JumpAura : MonoBehaviour
 {
     PlayerMove playerMove;
 
@@ -15,7 +13,7 @@ public class SlowAura : MonoBehaviour
             playerMove = GetComponent<AuraDefaults>().Player.GetComponent<PlayerMove>();
         }
 
-        playerMove.Speed = playerMove.BaseSpeed;
+        playerMove.Jump = playerMove.BaseJump;
         playerMove.AirSpeed = playerMove.BaseAirSpeed;
     }
 
@@ -26,7 +24,7 @@ public class SlowAura : MonoBehaviour
             return;
         }
 
-        playerMove.Speed = playerMove.BaseSpeed / 1.5f;
-        playerMove.AirSpeed = playerMove.BaseAirSpeed / 1.5f;
+        playerMove.Jump = playerMove.Jump * 1.3f;
+        playerMove.AirSpeed = playerMove.BaseAirSpeed * 1.3f;
     }
 }

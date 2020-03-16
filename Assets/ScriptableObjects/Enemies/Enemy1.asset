@@ -16,3 +16,4 @@ MonoBehaviour:
   maxHP: 100
   dmg: 2
   gold: 100
+  baseMoveSpeed: 5

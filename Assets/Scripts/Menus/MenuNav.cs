@@ -154,7 +154,7 @@ public class MenuNav : MonoBehaviour
                 case 2:     // Settings submenu
                     subButtons[selectedSub][selectedSubBtn].onClick.Invoke();
                     break;
-                case 3:     // Leave submenu set isLeaving true to avoid more actions while loading back
+                case 3:     // Leave submenu set isLeaving true to avoid more actions while loading back IMPORTANT: LOADING INTO A NEW SCENE WHILE IN MENUS WILL STILL HAVE TIMESCALE = 0 SO NEED TO RESET IN NEW SCENE
                     isLeaving = true;
                     subButtons[selectedSub][selectedSubBtn].onClick.Invoke();
                     break;

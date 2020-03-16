@@ -16,7 +16,7 @@ public class FloatAura : MonoBehaviour
             playerMove = GetComponent<AuraDefaults>().Player.GetComponent<PlayerMove>();
         }
 
-        playerMove.FallSpeed = (playerMove.BaseFallSpeed);
+        playerMove.FallSpeed = playerMove.BaseFallSpeed;
     }
 
     void OnEnable()

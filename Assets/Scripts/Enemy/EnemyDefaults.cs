@@ -31,15 +31,20 @@ public class EnemyDefaults : MonoBehaviour {
     float onStayTime; //Delay for OnStay trigger
     float onEnterTime; //Delay for OnEnter trigger
 
+    float moveSpeed;
+
     public UnityEvent OnDamaged; //OnDamaged event occurs after enemy HP is adjusted
 
     public Enemy Enemy { get { return enemy; } }
     public int HP { get { return hp; } set { hp = value; } }
     public int Dmg { get { return enemy.dmg; } }
+    public float MoveSpeed { get { return moveSpeed; } set { moveSpeed = value; } }
 
     // Use this for initialization
     void Awake () {
         hp = enemy.maxHP;
+        moveSpeed = enemy.baseMoveSpeed;
+
         collided = false;
         spriteRender = GetComponent<SpriteRenderer>();
         levelManager = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>();

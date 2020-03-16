@@ -15,8 +15,8 @@ public class SpeedAura : MonoBehaviour
             playerMove = GetComponent<AuraDefaults>().Player.GetComponent<PlayerMove>();
         }
 
-        playerMove.Speed = (playerMove.BaseSpeed);
-        playerMove.AirSpeed = (playerMove.BaseAirSpeed);
+        playerMove.Speed = playerMove.BaseSpeed;
+        playerMove.AirSpeed = playerMove.BaseAirSpeed;
     }
 
     void OnEnable()
@@ -26,8 +26,8 @@ public class SpeedAura : MonoBehaviour
             return;
         }
 
-        playerMove.Speed = (playerMove.BaseSpeed * 2f);
-        playerMove.AirSpeed = (playerMove.BaseAirSpeed * 2f);
+        playerMove.Speed = playerMove.BaseSpeed * 2f;
+        playerMove.AirSpeed = playerMove.BaseAirSpeed * 2f;
     }
 
 }
