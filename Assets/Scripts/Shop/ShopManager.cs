@@ -94,6 +94,7 @@ public class ShopManager : MonoBehaviour
         {
             // Set button interactable false, change alpha on price display's image
             health.interactable = false;
+            healthPriceDisplay.GetComponentInChildren<Text>().text = "Maxed";
             Color color = healthPriceDisplay.GetComponentInChildren<Image>().color;
             healthPriceDisplay.GetComponentInChildren<Image>().color = new Color(color.r, color.g, color.b, .5f);
         }
@@ -113,6 +114,7 @@ public class ShopManager : MonoBehaviour
             {
                 // Set button interactable false, change alpha on price display's image
                 auraSelection[i].interactable = false;
+                auraPriceDisplay[i].GetComponentInChildren<Text>().text = "Owned";
                 Color color = auraPriceDisplay[i].GetComponentInChildren<Image>().color;
                 auraPriceDisplay[i].GetComponentInChildren<Image>().color = new Color(color.r, color.g, color.b, .5f);
             }

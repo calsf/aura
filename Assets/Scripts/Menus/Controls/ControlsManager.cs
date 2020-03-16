@@ -362,7 +362,7 @@ public class ControlsManager : MonoBehaviour
     }
 
     // Clean up KeyCode string
-    string CleanString(string str)
+    public string CleanString(string str)
     {
         // Remove "Alpha" from keycodes
         string cleanStr = str.Replace("Alpha", "");
