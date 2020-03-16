@@ -18,6 +18,8 @@ public class MenuNav : MonoBehaviour
     Button[] controls;      // Second submenu buttons
     [SerializeField]
     Button[] settings;      // Third submenu buttons
+    [SerializeField]
+    Button[] leave;         // Fourth submenu buttons
     Button[][] subButtons;  // Store each submenu of buttons into an array
 
     [SerializeField]
@@ -35,14 +37,16 @@ public class MenuNav : MonoBehaviour
     int selectedSubBtn;     // Index of selected submenu's button
 
     bool axisDown;  // To treat axis input as key down
+    bool isLeaving; // Disable actions if trying to leave and loading to return back
 
     // Start is called before the first frame update
     void Start()
     {
-        subButtons = new Button[3][];
+        subButtons = new Button[4][];
         subButtons[0] = auraInvent;
         subButtons[1] = controls;
         subButtons[2] = settings;
+        subButtons[3] = leave;
 
         navImg = new Image[nav.Length];
         for (int i = 0; i < nav.Length; i++)
@@ -54,8 +58,8 @@ public class MenuNav : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Do not check for menu input unless menu open
-        if (!MenuManager.MenuInstance.IsMenu || ControlsManager.ControlInstance.IsListen)
+        // Do not check for menu input if listening for new keybind, if menu is not open, or if player is leaving
+        if (isLeaving || !MenuManager.MenuInstance.IsMenu || ControlsManager.ControlInstance.IsListen)
         {
             return;
         }
@@ -147,6 +151,13 @@ public class MenuNav : MonoBehaviour
                     subButtons[selectedSub][selectedSubBtn].onClick.Invoke();
                     ControlsManager.ControlInstance.IsListen = false; // Wait for next input if trying to rebind key
                     break;
+                case 2:     // Settings submenu
+                    subButtons[selectedSub][selectedSubBtn].onClick.Invoke();
+                    break;
+                case 3:     // Leave submenu set isLeaving true to avoid more actions while loading back
+                    isLeaving = true;
+                    subButtons[selectedSub][selectedSubBtn].onClick.Invoke();
+                    break;
             }
             
         }
@@ -191,13 +202,12 @@ public class MenuNav : MonoBehaviour
             button = subButtons[selectedSub].Length - 1;
         }
         selectedSubBtn = button;
-
         // If submenu has a scrollbar, move scrollbar while navigating buttons
         if (scroll.Length - 1 >= selectedSub)
         {
             scroll[selectedSub].value = (1f - ((float)button / (subButtons[selectedSub].Length)));
         }
-        
+
         // Highlight new current button, reset last one
         subButtons[selectedSub][lastButton].GetComponent<Image>().color = unselectedColor;
         subButtons[selectedSub][button].GetComponent<Image>().color = selectedColor;
@@ -212,7 +222,7 @@ public class MenuNav : MonoBehaviour
     // Navigate the submenus
     public void NavMenu(int sub)
     {
-        NavSub(selectedSubBtn, 0);   // Sets submenu button to first button
+        NavSub(selectedSubBtn, 0);   // Reset current submenu button to first button
 
         foreach (Image i in navImg)
         {
@@ -230,6 +240,7 @@ public class MenuNav : MonoBehaviour
 
         navImg[sub].color = selectedColor;
         nav[sub].onClick.Invoke();
-        selectedSub = sub;
+        selectedSub = sub;           // Set new submenu index
+        NavSub(selectedSubBtn, 0);   // Sets new submenu button to first button
     }
 }
