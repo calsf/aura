@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 /* Movement:
  * Move side to side, air speed is slightly slower than ground speed 
@@ -58,6 +59,11 @@ public class PlayerMove : MonoBehaviour {
     public float BaseFallSpeed { get { return baseFallSpeed; } set { baseFallSpeed = value; } }
     public float Jump { get { return jump; } set { jump = value; } }
     public float BaseJump { get { return baseJump; } }
+    public float Move { get { return move; } }
+
+    // UnityEvents for player actions
+    public UnityEvent OnJump;
+    public UnityEvent OnFall;
 
     // Use this for initialization
     void Awake () {
@@ -92,6 +98,7 @@ public class PlayerMove : MonoBehaviour {
             // Treat axis input up as a KeyDown event
             if (!axisDown)
             {
+                OnJump.Invoke();    // OnJump event
                 isJumping = true;
                 axisDown = true;
             }
@@ -173,6 +180,7 @@ public class PlayerMove : MonoBehaviour {
         }
         else if (!dashing && !isGrounded && (Input.GetKeyDown(ControlsManager.ControlInstance.Keybinds["DownButton"]) || Input.GetAxisRaw("Vertical") == -1))  // Tap down to fast fall
         {
+            OnFall.Invoke();    // OnFall event
             rb.gravityScale = defaultGrav;
             isFastFall = true;
         }
