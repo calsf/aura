@@ -31,16 +31,4 @@ public class PlayerAnim : MonoBehaviour
         anim.SetFloat("yVelocity", rb.velocity.y);
         anim.SetBool("Grounded", move.Grounded);
     }
-
-    // OnJump event in PlayerMove, call this method to play the JumpStart anim
-    public void PlayJumpAnim()
-    {
-        anim.Play("JumpStart");
-    }
-
-    // OnFall event in PlayerMove, call this to play Fall anim
-    public void PlayFallAnim()
-    {
-        anim.Play("Fall");
-    }
 }

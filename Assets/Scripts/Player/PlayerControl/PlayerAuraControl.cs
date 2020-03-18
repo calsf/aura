@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 // Handles activation and use of auras
 
@@ -25,6 +26,8 @@ public class PlayerAuraControl : MonoBehaviour
     public int[] SelectedAuras { get { return selectedAuras; } }
     public AuraDefaults[] AuraDefaults { get { return auraDefaults; } }
     public bool CanAura { get { return canAura; } set { canAura = value; } }
+
+    public UnityEvent OnActivateAura;
 
     void OnEnable()
     {
@@ -123,6 +126,7 @@ public class PlayerAuraControl : MonoBehaviour
         {
             currAura.SetActive(true);
             lastSelected = selected;
+            OnActivateAura.Invoke();    // OnActivateAura event
         }
         else
         {
