@@ -22,7 +22,7 @@ public class PlayerHP : MonoBehaviour
     float damageRate;
     SpriteRenderer spriteRender;
     bool dead;
-    float respawnDelay = 2f;
+    float respawnDelay = 4f;
 
     // Object pool of damage numbers
     List<GameObject> numPool;
@@ -33,6 +33,8 @@ public class PlayerHP : MonoBehaviour
 
     public UnityEvent OnHealthChange;
     public UnityEvent OnDeath;
+    public UnityEvent OnRespawning;
+    public UnityEvent OnSpawn;
     public int CurrentHP { get { return currentHP; } }
     public int MaxHP { get { return maxHP; } }
     public float RespawnDelay { get { return respawnDelay; } }
@@ -142,14 +144,18 @@ public class PlayerHP : MonoBehaviour
     {
         auraControl.CanAura = false; //Disable aura use
 
-        yield return new WaitForSeconds(respawnDelay);
+        // Total wait time must still be equal to respawnDelay, LevelManager waits same amount of time OnDeath
+        yield return new WaitForSeconds(respawnDelay - 2f);
+        OnRespawning.Invoke();  // Right before respawning ( activate animation )
+        yield return new WaitForSeconds(2f);    // Time of animations before respawning
 
         //Reset player values and control
+        OnSpawn.Invoke();   // After respawned
         move.Velocity(0, 0);
         move.enabled = true;    //Move should be disabled upon knockback and is not restored if HP drops to 0, so restore it here
         auraControl.CanAura = true;
         currentHP = maxHP;
-        dead = false;
+        dead = false; 
         OnHealthChange.Invoke(); // OnHealthChanged event
     }
 

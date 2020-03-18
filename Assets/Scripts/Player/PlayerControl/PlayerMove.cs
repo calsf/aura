@@ -64,6 +64,9 @@ public class PlayerMove : MonoBehaviour {
     // UnityEvents for player actions
     public UnityEvent OnJump;
     public UnityEvent OnFall;
+    public UnityEvent OnAirJump;
+    public UnityEvent OnDash;
+    public UnityEvent OnDashUp;
 
     // Use this for initialization
     void Awake () {
@@ -99,6 +102,10 @@ public class PlayerMove : MonoBehaviour {
             if (!axisDown)
             {
                 OnJump.Invoke();    // OnJump event
+                if (!isGrounded)    // Check if jumped in air
+                {
+                    OnAirJump.Invoke();
+                }
                 isJumping = true;
                 axisDown = true;
             }
@@ -132,34 +139,42 @@ public class PlayerMove : MonoBehaviour {
         if (inputs[4] && !dashing && !hasDashed && Time.time > lastDash)
         {
             lastDash = Time.time + dashDelay;
+            
 
             // 0 = up, 1 = left, 2 = down, 3 = right * No dashing straight down, already fast falls
             if (inputs[0] && inputs[1])         // up left
             {
+                OnDash.Invoke();
                 StartCoroutine(Dash(-30, 20));
             }
             else if (inputs[0] && inputs[3])    // up right
             {
+                OnDash.Invoke();
                 StartCoroutine(Dash(30, 20));
             }
             else if (inputs[2] && inputs[1])    // down left
             {
+                OnDash.Invoke();
                 StartCoroutine(Dash(-30, -20));
             }
             else if (inputs[2] && inputs[3])    //down right
             {
+                OnDash.Invoke();
                 StartCoroutine(Dash(30, -20)); ;
             }
             else if (inputs[0])                 // up
             {
+                OnDashUp.Invoke();
                 StartCoroutine(Dash(0, 30));
             }
             else if (inputs[1])                 // left
             {
+                OnDash.Invoke();
                 StartCoroutine(Dash(-30, 0)); ;
             }
             else if (inputs[3])                 // right
             {
+                OnDash.Invoke();
                 StartCoroutine(Dash(30, 0));
             }
         }
@@ -242,11 +257,6 @@ public class PlayerMove : MonoBehaviour {
                 Velocity((move * airSpeed), rb.velocity.y);
             }
         }
-        else
-        {
-            //Not moving
-            //anim.SetFloat("move", -1);
-        }
 
         // If dashing downwards and hit ground, reset y velocity
         if (dashing && rb.velocity.y < 0 && isGrounded)
@@ -285,7 +295,15 @@ public class PlayerMove : MonoBehaviour {
     // Dash movement,temporarily disable normal movement to prevent overriding dash velocity, also disable gravity
     IEnumerator Dash(float x, float y)
     {
-        //anim.SetBool("dashing", true);
+        // Flip character if necessary
+        if (x > 0 && transform.localScale.x < 0) //If moving right and facing left, flip
+        {
+            transform.localScale = (new Vector2(-transform.localScale.x, transform.localScale.y));
+        }
+        else if (x < 0 && transform.localScale.x > 0) //If moving left and facing right, flip
+        {
+            transform.localScale = (new Vector2(-transform.localScale.x, transform.localScale.y));
+        }
 
         dashing = true;
         Velocity(x, y);
@@ -295,7 +313,6 @@ public class PlayerMove : MonoBehaviour {
         Velocity(rb.velocity.x, 0);
         rb.gravityScale = defaultGrav;
         dashing = false;
-        //anim.SetBool("dashing", false);
     }
 
     void OnDrawGizmos()
