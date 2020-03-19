@@ -3038,6 +3038,7 @@ GameObject:
   - component: {fileID: 270154634}
   - component: {fileID: 270154633}
   - component: {fileID: 270154636}
+  - component: {fileID: 270154637}
   m_Layer: 0
   m_Name: JumpAura
   m_TagString: DamageEnemy
@@ -3126,9 +3127,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 101
   m_Sprite: {fileID: 21300000, guid: 9a3e7ef3c5a13ea47b7b2e6a0a53b976, type: 3}
-  m_Color: {r: 0.023587823, g: 1, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -3150,6 +3151,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e5b2ec9858cf4b4cb4ca154ad95df30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &270154637
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 270154631}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8b0f0b3b37574284abc95d1f6bf136ff, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &282812177
 GameObject:
   m_ObjectHideFlags: 0
@@ -8175,6 +8195,7 @@ GameObject:
   - component: {fileID: 699204116}
   - component: {fileID: 699204114}
   - component: {fileID: 699204119}
+  - component: {fileID: 699204115}
   m_Layer: 0
   m_Name: SpeedAura
   m_TagString: DamageEnemy
@@ -8195,6 +8216,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aura: {fileID: 11400000, guid: f28fbe2db155f724b844713d5397914e, type: 2}
+--- !u!95 &699204115
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 699204113}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5a1eef29ebce9a54dbf838677bd858af, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!58 &699204116
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -8249,9 +8289,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 101
   m_Sprite: {fileID: 21300000, guid: 9a3e7ef3c5a13ea47b7b2e6a0a53b976, type: 3}
-  m_Color: {r: 1, g: 0.8812718, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -13069,6 +13109,8 @@ GameObject:
   - component: {fileID: 1060509392}
   - component: {fileID: 1060509395}
   - component: {fileID: 1060509396}
+  - component: {fileID: 1060509391}
+  - component: {fileID: 1060509397}
   m_Layer: 0
   m_Name: SlowAura
   m_TagString: DamageEnemy
@@ -13076,6 +13118,25 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!95 &1060509391
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1060509390}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 713cec248540b6146b6fc4cb62a26399, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!58 &1060509392
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -13130,9 +13191,10 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9a3e7ef3c5a13ea47b7b2e6a0a53b976, type: 3}
-  m_Color: {r: 0.29434872, g: 0, b: 1, a: 1}
+  m_SortingOrder: 101
+  m_Sprite: {fileID: -6483662399362346463, guid: 07797feaa31e419479cf2c278e395174,
+    type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -13181,6 +13243,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0185262daa9a44642adc2151103d82ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1060509397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1060509390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b953154f0a3263e4594810df025de83a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotation: 2
 --- !u!1 &1070681388
 GameObject:
   m_ObjectHideFlags: 0
@@ -14470,6 +14545,7 @@ GameObject:
   - component: {fileID: 1173759016}
   - component: {fileID: 1173759014}
   - component: {fileID: 1173759019}
+  - component: {fileID: 1173759015}
   m_Layer: 0
   m_Name: FloatAura
   m_TagString: DamageEnemy
@@ -14490,6 +14566,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aura: {fileID: 11400000, guid: 43d49bb57b32f894681ac50e81b4ef30, type: 2}
+--- !u!95 &1173759015
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1173759013}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3ea58c06e513dd64c83991f065d1db1f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!58 &1173759016
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -14544,9 +14639,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 101
   m_Sprite: {fileID: 21300000, guid: 9a3e7ef3c5a13ea47b7b2e6a0a53b976, type: 3}
-  m_Color: {r: 0, g: 0.79999685, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -23940,7 +24035,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 101
   m_Sprite: {fileID: 21300000, guid: 9a3e7ef3c5a13ea47b7b2e6a0a53b976, type: 3}
   m_Color: {r: 0.8000001, g: 0.8000001, b: 0.8000001, a: 1}
   m_FlipX: 0
@@ -24614,7 +24709,7 @@ PrefabInstance:
     - target: {fileID: 3749282762444137044, guid: 19321cae6997c88488fed61364ed64ff,
         type: 3}
       propertyPath: m_SortingOrder
-      value: 0
+      value: 101
       objectReference: {fileID: 0}
     - target: {fileID: 3749282762444137046, guid: 19321cae6997c88488fed61364ed64ff,
         type: 3}
