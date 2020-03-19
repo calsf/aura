@@ -13,7 +13,8 @@ public class MenuNav : MonoBehaviour
     [SerializeField]
     Scrollbar[] scroll;     // Each submenu's scrollbar
     [SerializeField]
-    Button[] auraInvent;    // First submenu buttons
+    Button[] auraInvent;            // First submenu buttons as set by editor, includes all auras
+    Button[] unlockedAuraInvent;    // Filtered aura select buttons so only can navigate through unlocked auras
     [SerializeField]
     Button[] controls;      // Second submenu buttons
     [SerializeField]
@@ -42,8 +43,30 @@ public class MenuNav : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // Get size of unlocked
+        int count = 0;
+        foreach (Button b in auraInvent)
+        {
+            if (b.gameObject.activeInHierarchy)
+            {
+                count++;
+            }
+        }
+
+        // Add unlocked auras to unlockedAuraInvent
+        unlockedAuraInvent = new Button[count];
+        int index = 0;
+        foreach (Button b in auraInvent)
+        {
+            if (b.gameObject.activeInHierarchy)
+            {
+                unlockedAuraInvent[index] = b;
+                index++;
+            }
+        }
+
         subButtons = new Button[4][];
-        subButtons[0] = auraInvent;
+        subButtons[0] = unlockedAuraInvent;
         subButtons[1] = controls;
         subButtons[2] = settings;
         subButtons[3] = leave;
