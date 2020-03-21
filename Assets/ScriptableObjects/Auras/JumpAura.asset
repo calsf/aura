@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   auraName: Jump Aura
   baseDmg: 15
-  icon: {fileID: 5599197208141258191, guid: 7d817f97cf76e9d46905f0e10542afa8, type: 3}
+  icon: {fileID: -7969536085175153008, guid: a3b3461cc0552ae4692315a7c51cb682, type: 3}

@@ -58,7 +58,7 @@ public class MenuManager : MonoBehaviour
     //Toggle menu, pausing game
     public void ToggleMenu()
     {
-        menu.alpha = menu.alpha > 0 ? 0 : .7f;
+        menu.alpha = menu.alpha > 0 ? 0 : 1;
         menu.blocksRaycasts = menu.blocksRaycasts ? false : true;
         Time.timeScale = menu.alpha > 0 ? 0 : 1;
         isMenu = menu.alpha > 0 ? true : false;
