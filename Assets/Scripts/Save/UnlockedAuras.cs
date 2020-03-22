@@ -12,7 +12,7 @@ public class UnlockedAuras : MonoBehaviour
     Button[] auras;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         auras = aurasParent.GetComponentsInChildren<Button>();
         bool[] auraUnlocked = SaveLoadManager.LoadAuras();

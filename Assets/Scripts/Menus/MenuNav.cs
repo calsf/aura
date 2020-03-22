@@ -31,6 +31,16 @@ public class MenuNav : MonoBehaviour
     bool isEquipping;
 
     [SerializeField]
+    Color selectedSubColor;
+    [SerializeField]
+    Color unselectedSubColor;
+
+    [SerializeField]
+    Color selectedSlotColor;
+    [SerializeField]
+    Color unselectedSlotColor;
+
+    [SerializeField]
     Color selectedColor;
     [SerializeField]
     Color unselectedColor;
@@ -84,6 +94,7 @@ public class MenuNav : MonoBehaviour
         // Do not check for menu input if listening for new keybind, if menu is not open, or if player is leaving
         if (isLeaving || !MenuManager.MenuInstance.IsMenu || ControlsManager.ControlInstance.IsListen)
         {
+            isEquipping = false;    // Reset isEquipping if player exits from menu during equip
             return;
         }
 
@@ -208,8 +219,8 @@ public class MenuNav : MonoBehaviour
             slot = slotButtons.Length - 1;
         }
         selectedSlot = slot;
-        slotButtons[lastSlot].GetComponent<Image>().color = unselectedColor;
-        slotButtons[slot].GetComponent<Image>().color = selectedColor;
+        slotButtons[lastSlot].GetComponent<Image>().color = unselectedSlotColor;
+        slotButtons[slot].GetComponent<Image>().color = selectedSlotColor;
     }
 
     // Navigate submenu buttons
@@ -249,7 +260,7 @@ public class MenuNav : MonoBehaviour
 
         foreach (Image i in navImg)
         {
-            i.color = unselectedColor;
+            i.color = unselectedSubColor;
         }
 
         if (sub > nav.Length - 1)
@@ -261,7 +272,7 @@ public class MenuNav : MonoBehaviour
             sub = nav.Length - 1;
         }
 
-        navImg[sub].color = selectedColor;
+        navImg[sub].color = selectedSubColor;
         nav[sub].onClick.Invoke();
         selectedSub = sub;           // Set new submenu index
         NavSub(selectedSubBtn, 0);   // Sets new submenu button to first button
