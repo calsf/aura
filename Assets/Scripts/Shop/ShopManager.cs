@@ -23,7 +23,7 @@ public class ShopManager : MonoBehaviour
     Button health;              // Button to increase max health
     [SerializeField]
     GameObject healthPriceDisplay; // Container for price display for health price, includes an image and text component in children
-    int baseHealthPrice = 100;
+    int baseHealthPrice = 10;
     int healthPrice;
     [SerializeField]
     PlayerHearts playerHearts;
@@ -131,9 +131,20 @@ public class ShopManager : MonoBehaviour
             health.interactable = false;
             healthPriceDisplay.GetComponentInChildren<Text>().text = "Maxed";
             Color color = healthPriceDisplay.GetComponentInChildren<Image>().color;
-            healthPriceDisplay.GetComponentInChildren<Image>().color = new Color(color.r, color.g, color.b, .5f);
+            healthPriceDisplay.GetComponentInChildren<Image>().color = new Color(.5f, .5f, .5f, 1f);
 
-            
+            // Change colors of all images and texts belonging to the item to be disabled
+            Image[] auraImgs = health.GetComponentsInChildren<Image>();
+            Text[] texts = health.GetComponentsInChildren<Text>();
+            foreach (Image a in auraImgs)
+            {
+                a.color = new Color(.5f, .5f, .5f, 1);
+            }
+
+            foreach (Text t in texts)
+            {
+                t.color = new Color(.5f, .5f, .5f, 1);
+            }
         }
     }
 
@@ -149,11 +160,24 @@ public class ShopManager : MonoBehaviour
             int indexOfSelection = auraIndex[i];    // Index from total auras to match auraUnlocked
             if (auraUnlocked[indexOfSelection])
             {
-                // Set button interactable false, change alpha on price display's image
+                // Set button interactable false, change color on price display's image
                 auraSelection[i].interactable = false;
                 auraPriceDisplay[i].GetComponentInChildren<Text>().text = "Owned";
                 Color color = auraPriceDisplay[i].GetComponentInChildren<Image>().color;
-                auraPriceDisplay[i].GetComponentInChildren<Image>().color = new Color(color.r, color.g, color.b, .5f);
+                auraPriceDisplay[i].GetComponentInChildren<Image>().color = new Color(.5f, .5f, .5f, 1f);
+
+                // Change colors of all images and texts belonging to the item to be disabled
+                Image[] auraImgs = auraSelection[i].GetComponentsInChildren<Image>();
+                Text[] texts = auraSelection[i].GetComponentsInChildren<Text>();
+                foreach (Image a in auraImgs)
+                {
+                    a.color = new Color(.5f, .5f, .5f, 1);
+                }
+
+                foreach (Text t in texts)
+                {
+                    t.color = new Color(.5f, .5f, .5f, 1);
+                }
             }
         }
     }

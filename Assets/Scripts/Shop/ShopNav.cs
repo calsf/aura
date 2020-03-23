@@ -57,7 +57,7 @@ public class ShopNav : MonoBehaviour
         // To click button, press jump
         if (Input.GetKeyDown(ControlsManager.ControlInstance.Keybinds["JumpButton"]) || Input.GetKeyDown(ControlsManager.ControlInstance.Padbinds["JumpPad"]))
         {
-            // Only invoke onClick if the button is interactable
+            // Only invoke onClick if the button of selected index is interactable
             if (itemBtn[selected].interactable)
             {
                 itemBtn[selected].onClick.Invoke();
@@ -73,6 +73,24 @@ public class ShopNav : MonoBehaviour
             i.color = unselectedColor;
         }
 
+        // If selected is greater than index, means we wanted to move to the left to the prev item
+        bool isLeft = selected > index;
+
+        // Check if everything has been disabled, if so, do not select anything and return
+        bool allDisabled = true;
+        foreach (Button b in itemBtn)
+        {
+            if (b.interactable)
+            {
+                allDisabled = false;
+            }
+        }
+        if (allDisabled)
+        {
+            return;
+        }
+
+        // Wrap navigation around if at end/beginning
         if (index > itemBtn.Length - 1)
         {
             index = 0;
@@ -82,7 +100,37 @@ public class ShopNav : MonoBehaviour
             index = itemBtn.Length - 1;
         }
 
+        // Skip navigation to enabled items only
+        while (!itemBtn[index].interactable)
+        {
+            if (isLeft)
+            {
+                index--;
+                if (index > itemBtn.Length - 1)
+                {
+                    index = 0;
+                }
+                else if (index < 0)
+                {
+                    index = itemBtn.Length - 1;
+                }
+            }
+            else
+            {
+                index++;
+                if (index > itemBtn.Length - 1)
+                {
+                    index = 0;
+                }
+                else if (index < 0)
+                {
+                    index = itemBtn.Length - 1;
+                }
+            }
+        }
+
         itemImg[index].color = selectedColor;
         selected = index;
     }
+
 }

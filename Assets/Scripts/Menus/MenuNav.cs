@@ -95,6 +95,7 @@ public class MenuNav : MonoBehaviour
         if (isLeaving || !MenuManager.MenuInstance.IsMenu || ControlsManager.ControlInstance.IsListen)
         {
             isEquipping = false;    // Reset isEquipping if player exits from menu during equip
+            SelectSlot(selectedSlot, 0);
             return;
         }
 
@@ -178,7 +179,7 @@ public class MenuNav : MonoBehaviour
                     {
                         equipBtn.onClick.Invoke();  // Give control over to slotButtons
                         isEquipping = true;
-                        SelectSlot(0, 0);
+                        SelectSlot(selectedSlot, 0);
                     }
                     break;
                 case 1:     // Controls submenu will change controls
