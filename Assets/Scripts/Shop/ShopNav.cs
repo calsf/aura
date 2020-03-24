@@ -7,7 +7,9 @@ public class ShopNav : MonoBehaviour
 {
     [SerializeField]
     Button[] itemBtn;
-    Image[] itemImg;
+    [SerializeField]
+    Image[] infoImg;    // Item info image
+    Image[] itemImg;    // Button image
     int selected;
 
     bool axisDown;  // To treat axis input as key down
@@ -68,9 +70,15 @@ public class ShopNav : MonoBehaviour
     // Navigate the shop items
     public void NavShop(int index)
     {
-        foreach (Image i in itemImg)
+        // Reset image colors
+        for (int i = 0; i < itemImg.Length; i++)
         {
-            i.color = unselectedColor;
+            // Only reset colors of enabled items in shop
+            if (itemBtn[i].interactable)
+            {
+                itemImg[i].color = unselectedColor;
+                infoImg[i].color = unselectedColor;
+            }
         }
 
         // If selected is greater than index, means we wanted to move to the left to the prev item
@@ -130,6 +138,7 @@ public class ShopNav : MonoBehaviour
         }
 
         itemImg[index].color = selectedColor;
+        infoImg[index].color = selectedColor;
         selected = index;
     }
 

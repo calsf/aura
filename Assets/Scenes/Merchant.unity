@@ -1774,7 +1774,7 @@ GameObject:
   - component: {fileID: 301030188}
   - component: {fileID: 301030187}
   m_Layer: 5
-  m_Name: Speed
+  m_Name: SpeedInfo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7738,7 +7738,7 @@ GameObject:
   - component: {fileID: 1024500426}
   - component: {fileID: 1024500425}
   m_Layer: 5
-  m_Name: Jump
+  m_Name: JumpInfo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8596,7 +8596,7 @@ GameObject:
   - component: {fileID: 1105894606}
   - component: {fileID: 1105894605}
   m_Layer: 5
-  m_Name: Slow
+  m_Name: SlowInfo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12403,7 +12403,7 @@ GameObject:
   - component: {fileID: 1647593171}
   - component: {fileID: 1647593170}
   m_Layer: 5
-  m_Name: Health Boost
+  m_Name: HealthBoostInfo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13412,7 +13412,13 @@ MonoBehaviour:
   - {fileID: 522096300}
   - {fileID: 1871711716}
   - {fileID: 2102097327}
-  selectedColor: {r: 0.8469535, g: 1, b: 0, a: 1}
+  infoImg:
+  - {fileID: 1105894605}
+  - {fileID: 301030187}
+  - {fileID: 1890059798}
+  - {fileID: 1024500425}
+  - {fileID: 1647593170}
+  selectedColor: {r: 1, g: 0.7607843, b: 0, a: 1}
   unselectedColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1836561424
 Transform:
@@ -13737,7 +13743,7 @@ GameObject:
   - component: {fileID: 1890059799}
   - component: {fileID: 1890059798}
   m_Layer: 5
-  m_Name: Float
+  m_Name: FloatInfo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
