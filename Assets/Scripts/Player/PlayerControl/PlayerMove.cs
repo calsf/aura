@@ -9,6 +9,8 @@ using UnityEngine.Events;
  * Fast fall at any time while in air, fall speed is capped at the fast fall speed
  * 7-way directional dash, once in air, unlimited on ground, has delay between uses - dashing diagonally downwards and hitting the ground mid dash will cause player to slide
  * Dashing straight down is redundant with fast fall and is not included
+ * 
+ * Slope movement is handled with horizontal raycasts
  */
 
 public class PlayerMove : MonoBehaviour {
@@ -68,6 +70,135 @@ public class PlayerMove : MonoBehaviour {
     public UnityEvent OnDash;
     public UnityEvent OnDashUp;
 
+    // Raycast collision detection
+    [SerializeField]
+    LayerMask collisionMask;
+    RaycastOrigins raycastOrigins;
+    BoxCollider2D coll;
+    const float width = .015f;
+    int xRaycount = 3;
+    float xSpacing;
+
+    float maxSlopeClimbAngle = 45;
+    float maxSlopeDownAngle = 45;
+
+    struct RaycastOrigins
+    {
+        public Vector2 botLeft, botRight;
+    }
+
+    void UpdateRaycastOrigins()
+    {
+        // Set raycast origins at bounds of the box collider
+        Bounds bounds = coll.bounds;
+        bounds.Expand(width * -2);
+
+        raycastOrigins.botLeft = new Vector2(bounds.min.x, bounds.min.y);
+        raycastOrigins.botRight = new Vector2(bounds.max.x, bounds.min.y);
+    }
+
+    // Calculate spacing between raycasts at Start()
+    void CalcSpacing()
+    {
+        Bounds bounds = coll.bounds;
+        bounds.Expand(width * -2);
+
+        xRaycount = Mathf.Clamp(xRaycount, 2, int.MaxValue);
+
+        xSpacing = bounds.size.y / (xRaycount - 1);
+    }
+
+    // Update raycast origins then check for x collisions hit by raycasts and handle the collisions
+    void CheckXCollisions(Vector3 velocity)
+    {
+        UpdateRaycastOrigins();
+
+        CheckDownSlope(rb.velocity);
+        CheckUpSlope(rb.velocity);
+    }
+
+    // Check if going up a slope and handle movement
+    void CheckUpSlope (Vector3 velocity)
+    {
+        float dirX = Mathf.Sign(transform.localScale.x);    // Face raycast in direction player is facing
+        float rayLength = Mathf.Abs(transform.localScale.x / transform.localScale.x) + width;
+
+        for (int i = 0; i < xRaycount; i++)
+        {
+            Vector2 rayOrigin = dirX == -1 ? raycastOrigins.botLeft : raycastOrigins.botRight;
+            rayOrigin += Vector2.up * (xSpacing * i);
+            RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.right * dirX, rayLength, collisionMask);
+
+            Debug.DrawRay(rayOrigin, Vector3.right * dirX * rayLength, Color.red);
+
+            if (hit)
+            {
+                // Check if hit is a slope based on angle of hit
+                float slopeAngle = Vector2.Angle(hit.normal, Vector2.up);
+
+                // If hit is a slope, check if within range and climb
+                if (i == 0 && slopeAngle <= maxSlopeClimbAngle)
+                {
+                    // Climb slope once within a certain range
+                    if (hit.distance - width <= .1f)
+                    {
+                        isGrounded = true;
+                        // Get x and y velocity based on the slope
+                        float moveSpeed = dashing ? Mathf.Abs(rb.velocity.x) : Mathf.Abs(move * speed);
+                        float x = Mathf.Cos(slopeAngle * Mathf.Deg2Rad) * moveSpeed * Mathf.Sign(velocity.x);
+                        float y = Mathf.Sin(slopeAngle * Mathf.Deg2Rad) * moveSpeed;
+                        Vector2 climbVelocity = new Vector2(x, y);
+
+                        // If not jumping, is climbing and should apply the climb velocity
+                        if (velocity.y < climbVelocity.y)
+                        {
+                            // Treat being on slopes same as being grounded, isGrounded may reset to false when checking if the physics shape overlap touches ground so need to reset properties here
+                            isGrounded = true;
+                            ResetJump();
+                            hasDashed = false;
+                            Velocity(climbVelocity.x, climbVelocity.y);
+                        }
+                    }
+                }
+            }
+        }
+    }
+   
+    // Check if going down a slope and handle movement
+    void CheckDownSlope (Vector3 velocity)
+    {
+        float dirX = Mathf.Sign(transform.localScale.x);
+        Vector2 rayOrigin = dirX == -1 ? raycastOrigins.botRight : raycastOrigins.botLeft;
+        RaycastHit2D hit = Physics2D.Raycast(rayOrigin, -Vector2.up, Mathf.Infinity, collisionMask);
+
+        if (hit)
+        {
+            float slopeAngle = Vector2.Angle(hit.normal, Vector2.up);
+            if (slopeAngle != 0 && slopeAngle <= maxSlopeDownAngle)
+            {
+                if (Mathf.Sign(hit.normal.x) == dirX)
+                {
+                    if (hit.distance - width <= .1f)
+                    {
+                        isGrounded = true;
+
+                        float moveSpeed = dashing ? Mathf.Abs(rb.velocity.x) : Mathf.Abs(move * speed);
+                        float y = Mathf.Sin(slopeAngle * Mathf.Deg2Rad) * -moveSpeed;
+                        float x = Mathf.Cos(slopeAngle * Mathf.Deg2Rad) * moveSpeed * Mathf.Sign(velocity.x);
+
+                        if (rb.velocity.y < jump)
+                        {
+                            isGrounded = true;
+                            ResetJump();
+                            hasDashed = false;
+                            Velocity(x, y);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
     // Use this for initialization
     void Awake () {
         UpdateControls();
@@ -76,8 +207,14 @@ public class PlayerMove : MonoBehaviour {
         airSpeed = baseAirSpeed;
         fallSpeed = baseFallSpeed;
         rb = GetComponent<Rigidbody2D>();
+        coll = GetComponent<BoxCollider2D>();
         groundLayer = LayerMask.GetMask("Ground");
 	}
+
+    void Start ()
+    {
+        CalcSpacing();
+    }
 
     //For OnControlChange
     public void UpdateControls()
@@ -252,7 +389,7 @@ public class PlayerMove : MonoBehaviour {
             {
                 Velocity(move * speed, rb.velocity.y);
             }
-            else  // Air movement
+            else // Air movement
             {
                 Velocity((move * airSpeed), rb.velocity.y);
             }
@@ -275,6 +412,12 @@ public class PlayerMove : MonoBehaviour {
         {
             Velocity(rb.velocity.x, fallSpeed);
             isFastFall = false;
+        }
+
+        // Check for collisions by horizontal raycasts unless player is dashing, Dash coroutine will call the check so it can keep dash speed on slope the same
+        if (!dashing)
+        {
+            CheckXCollisions(rb.velocity);
         }
     }
 
@@ -307,6 +450,7 @@ public class PlayerMove : MonoBehaviour {
 
         dashing = true;
         Velocity(x, y);
+        CheckXCollisions(rb.velocity);  // Check if dashing on slopes
         rb.gravityScale = 0;
         yield return new WaitForSeconds(.2f);
         hasDashed = true;    //Limit one dash in air, set after dash in case player dashed up from ground, if was grounded, dash will just reset
