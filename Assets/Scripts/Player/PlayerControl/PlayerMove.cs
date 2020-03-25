@@ -47,10 +47,6 @@ public class PlayerMove : MonoBehaviour {
 
     [SerializeField]
     Transform groundChecker;
-    [SerializeField]
-    Transform leftWallChecker;
-    [SerializeField]
-    Transform rightWallChecker;
 
     public bool Grounded { get { return isGrounded; } }
     public float BaseSpeed { get { return baseSpeed; } }
@@ -62,6 +58,7 @@ public class PlayerMove : MonoBehaviour {
     public float Jump { get { return jump; } set { jump = value; } }
     public float BaseJump { get { return baseJump; } }
     public float Move { get { return move; } }
+    public bool Dashing { get { return dashing; } }
 
     // UnityEvents for player actions
     public UnityEvent OnJump;
@@ -70,7 +67,7 @@ public class PlayerMove : MonoBehaviour {
     public UnityEvent OnDash;
     public UnityEvent OnDashUp;
 
-    // Raycast collision detection
+    /********* Raycast Collision Detection ********/
     [SerializeField]
     LayerMask collisionMask;
     RaycastOrigins raycastOrigins;
@@ -150,12 +147,15 @@ public class PlayerMove : MonoBehaviour {
                         Vector2 climbVelocity = new Vector2(x, y);
 
                         // If not jumping, is climbing and should apply the climb velocity
-                        if (velocity.y < climbVelocity.y)
+                        if (rb.velocity.y < jump)
                         {
                             // Treat being on slopes same as being grounded, isGrounded may reset to false when checking if the physics shape overlap touches ground so need to reset properties here
                             isGrounded = true;
                             ResetJump();
-                            hasDashed = false;
+                            if (!dashing)
+                            {
+                                hasDashed = false;
+                            }
                             Velocity(climbVelocity.x, climbVelocity.y);
                         }
                     }
@@ -190,7 +190,10 @@ public class PlayerMove : MonoBehaviour {
                         {
                             isGrounded = true;
                             ResetJump();
-                            hasDashed = false;
+                            if (!dashing)
+                            {
+                                hasDashed = false;
+                            }
                             Velocity(x, y);
                         }
                     }
@@ -198,6 +201,10 @@ public class PlayerMove : MonoBehaviour {
             }
         }
     }
+
+    /********* End Raycast Collision Detection ********/
+
+
 
     // Use this for initialization
     void Awake () {

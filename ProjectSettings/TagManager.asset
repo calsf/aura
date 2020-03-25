@@ -9,6 +9,7 @@ TagManager:
   - DamageEnemy
   - LevelManager
   - SaveData
+  - MovingPlatform
   layers:
   - Default
   - TransparentFX
