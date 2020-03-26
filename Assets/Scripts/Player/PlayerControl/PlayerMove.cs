@@ -66,6 +66,8 @@ public class PlayerMove : MonoBehaviour {
     public UnityEvent OnAirJump;
     public UnityEvent OnDash;
     public UnityEvent OnDashUp;
+    public UnityEvent OnDashDiagUp;
+    public UnityEvent OnDashDiagDown;
 
     /********* Raycast Collision Detection ********/
     [SerializeField]
@@ -288,38 +290,31 @@ public class PlayerMove : MonoBehaviour {
             // 0 = up, 1 = left, 2 = down, 3 = right * No dashing straight down, already fast falls
             if (inputs[0] && inputs[1])         // up left
             {
-                OnDash.Invoke();
                 StartCoroutine(Dash(-30, 20));
             }
             else if (inputs[0] && inputs[3])    // up right
             {
-                OnDash.Invoke();
                 StartCoroutine(Dash(30, 20));
             }
             else if (inputs[2] && inputs[1])    // down left
             {
-                OnDash.Invoke();
                 StartCoroutine(Dash(-30, -20));
             }
             else if (inputs[2] && inputs[3])    //down right
             {
-                OnDash.Invoke();
                 StartCoroutine(Dash(30, -20)); ;
             }
             else if (inputs[0])                 // up
             {
-                OnDashUp.Invoke();
                 StartCoroutine(Dash(0, 30));
             }
             else if (inputs[1])                 // left
             {
-                OnDash.Invoke();
-                StartCoroutine(Dash(-30, 0)); ;
+                StartCoroutine(Dash(-35, 0)); ;
             }
             else if (inputs[3])                 // right
             {
-                OnDash.Invoke();
-                StartCoroutine(Dash(30, 0));
+                StartCoroutine(Dash(35, 0));
             }
         }
 
@@ -458,10 +453,31 @@ public class PlayerMove : MonoBehaviour {
         dashing = true;
         Velocity(x, y);
         CheckXCollisions(rb.velocity);  // Check if dashing on slopes
+        x = rb.velocity.x;
+        y = rb.velocity.y;
+
+        // Invoke proper dash event based on x and y velocity
+        if ((x > 0 && y > 0) || (x < 0 && y > 0))
+        {
+            OnDashDiagUp.Invoke();
+        }
+        else if ((x > 0 && y < 0) || (x < 0 && y < 0))
+        {
+            OnDashDiagDown.Invoke();
+        }
+        else if (x == 0 && y > 0)
+        {
+            OnDashUp.Invoke();
+        }
+        else
+        {
+            OnDash.Invoke();
+        }
+
         rb.gravityScale = 0;
-        yield return new WaitForSeconds(.2f);
+        yield return new WaitForSeconds(.25f);
         hasDashed = true;    //Limit one dash in air, set after dash in case player dashed up from ground, if was grounded, dash will just reset
-        Velocity(rb.velocity.x, 0);
+        Velocity(0, 0);
         rb.gravityScale = defaultGrav;
         dashing = false;
     }
