@@ -4,17 +4,16 @@ using UnityEngine;
 
 public class JumpAura : MonoBehaviour
 {
-    PlayerMove playerMove;
+    PlayerMoveInput playerMove;
 
     void OnDisable()
     {
         if (playerMove == null)
         {
-            playerMove = GetComponent<AuraDefaults>().Player.GetComponent<PlayerMove>();
+            playerMove = GetComponent<AuraDefaults>().Player.GetComponent<PlayerMoveInput>();
         }
 
-        playerMove.Jump = playerMove.BaseJump;
-        playerMove.AirSpeed = playerMove.BaseAirSpeed;
+        playerMove.JumpVelocity = playerMove.BaseJump;
     }
 
     void OnEnable()
@@ -24,7 +23,6 @@ public class JumpAura : MonoBehaviour
             return;
         }
 
-        playerMove.Jump = playerMove.Jump * 1.3f;
-        playerMove.AirSpeed = playerMove.BaseAirSpeed * 1.3f;
+        playerMove.JumpVelocity = playerMove.JumpVelocity * 1.3f;
     }
 }

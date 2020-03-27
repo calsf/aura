@@ -6,17 +6,17 @@ using UnityEngine;
 
 public class FloatAura : MonoBehaviour
 {
-    PlayerMove playerMove;
+    PlayerMoveInput playerMove;
     float fallSpeed = -3f;
 
     void OnDisable()
     {
         if (playerMove == null)
         {
-            playerMove = GetComponent<AuraDefaults>().Player.GetComponent<PlayerMove>();
+            playerMove = GetComponent<AuraDefaults>().Player.GetComponent<PlayerMoveInput>();
         }
 
-        playerMove.FallSpeed = playerMove.BaseFallSpeed;
+        playerMove.MaxFallSpeed = playerMove.BaseMaxFallSpeed;
     }
 
     void OnEnable()
@@ -26,6 +26,6 @@ public class FloatAura : MonoBehaviour
             return;
         }
 
-        playerMove.FallSpeed = fallSpeed;
+        playerMove.MaxFallSpeed = fallSpeed;
     }
 }

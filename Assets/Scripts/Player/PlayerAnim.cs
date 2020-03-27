@@ -4,16 +4,17 @@ using UnityEngine;
 
 public class PlayerAnim : MonoBehaviour
 {
-    PlayerMove move;
+    PlayerMoveInput move;
+    PlayerController controller;
+
     Animator anim;
-    Rigidbody2D rb;
 
     // Start is called before the first frame update
     void Start()
     {
-        move = GetComponent<PlayerMove>();
+        move = GetComponent<PlayerMoveInput>();
+        controller = GetComponent<PlayerController>();
         anim = GetComponent<Animator>();
-        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -28,7 +29,7 @@ public class PlayerAnim : MonoBehaviour
             anim.SetFloat("Move", Mathf.Abs(move.Move));    // Get absolute value of move to see if moving or not
         }
 
-        anim.SetFloat("yVelocity", rb.velocity.y);
-        anim.SetBool("Grounded", move.Grounded);
+        anim.SetFloat("yVelocity", move.Velocity.y);
+        anim.SetBool("Grounded", controller.Collisions.below);
     }
 }

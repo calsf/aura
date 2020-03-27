@@ -17,7 +17,8 @@ public class PlayerHP : MonoBehaviour
     Rigidbody2D rb;
 
     PlayerAuraControl auraControl;
-    PlayerMove move;
+    PlayerMoveInput move;
+    PlayerController controller;
 
     float damageRate;
     SpriteRenderer spriteRender;
@@ -41,7 +42,8 @@ public class PlayerHP : MonoBehaviour
 
     void Awake()
     {
-        move = GetComponent<PlayerMove>();
+        move = GetComponent<PlayerMoveInput>();
+        controller = GetComponent<PlayerController>();
         auraControl = GetComponent<PlayerAuraControl>();
     }
 
@@ -94,7 +96,6 @@ public class PlayerHP : MonoBehaviour
             }
 
             OnHealthChange.Invoke(); // OnHealthChanged event
-            move.ResetJump(); //Reset jump on damaged
             damageRate = Time.time + 1f; //Take damage rate
             //Damaged response
             StartCoroutine(Knockback(other.gameObject));
@@ -151,8 +152,8 @@ public class PlayerHP : MonoBehaviour
 
         //Reset player values and control
         OnSpawn.Invoke();   // After respawned
-        move.Velocity(0, 0);
-        move.enabled = true;    //Move should be disabled upon knockback and is not restored if HP drops to 0, so restore it here
+        move.Velocity = Vector2.zero;
+        move.CanInput = true;    //Move canInput should be disabled upon knockback and is not restored if HP drops to 0, so restore it here
         auraControl.CanAura = true;
         currentHP = maxHP;
         dead = false; 
@@ -162,7 +163,7 @@ public class PlayerHP : MonoBehaviour
     //Disable movement, apply knockback, re-enable player movement
     IEnumerator Knockback(GameObject other)
     {
-        move.enabled = false;
+        move.CanInput = false;
 
         // Knockback applied based on player position relative to enemy hit
         float moveX = 10f;
@@ -171,20 +172,14 @@ public class PlayerHP : MonoBehaviour
         {
             moveX = -10f;
         }
-        if (other.transform.position.y > transform.position.y && !move.Grounded) // Only knock downwards if in air and below enemy
+        if (other.transform.position.y > transform.position.y && !controller.Collisions.below) // Only knock downwards if in air and below enemy
         {
             moveY = -5f;
         }
 
-        move.Velocity(moveX, moveY);
+        move.Velocity = new Vector2(moveX, moveY);
         yield return new WaitForSeconds(.1f);
-        StartCoroutine(Stop(.1f));
-
-        // If player alive, re-enable movement, else keep disabled until respawn
-        if (currentHP > 0)
-        {
-            move.enabled = true;
-        }
+        StartCoroutine(Stop(.1f)); // Player movement should be re-enabled after hit stop
     }
 
     //Flash red
@@ -223,6 +218,17 @@ public class PlayerHP : MonoBehaviour
         Time.timeScale = 0;
         yield return new WaitForSecondsRealtime(dur);
         Time.timeScale = 1.0f;
+
+        // If player alive, re-enable movement, else keep disabled until respawn
+        if (currentHP > 0)
+        {
+            move.Velocity = new Vector2(0, 0);
+            move.CanInput = true;
+        }
+        else
+        {
+            move.Velocity = new Vector2(0, move.Velocity.y);
+        }
     }
 
     //Reset damage rate

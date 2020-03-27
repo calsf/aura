@@ -6,17 +6,16 @@ using UnityEngine;
 
 public class SpeedAura : MonoBehaviour
 {
-    PlayerMove playerMove;
+    PlayerMoveInput playerMove;
 
     void OnDisable()
     {
         if (playerMove == null)
         {
-            playerMove = GetComponent<AuraDefaults>().Player.GetComponent<PlayerMove>();
+            playerMove = GetComponent<AuraDefaults>().Player.GetComponent<PlayerMoveInput>();
         }
 
         playerMove.Speed = playerMove.BaseSpeed;
-        playerMove.AirSpeed = playerMove.BaseAirSpeed;
     }
 
     void OnEnable()
@@ -26,8 +25,7 @@ public class SpeedAura : MonoBehaviour
             return;
         }
 
-        playerMove.Speed = playerMove.BaseSpeed * 2f;
-        playerMove.AirSpeed = playerMove.BaseAirSpeed * 2f;
+        playerMove.Speed = playerMove.BaseSpeed * 1.8f;
     }
 
 }

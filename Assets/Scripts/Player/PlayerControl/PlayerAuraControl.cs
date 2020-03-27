@@ -8,7 +8,7 @@ using UnityEngine.Events;
 public class PlayerAuraControl : MonoBehaviour
 {
     [SerializeField]
-    PlayerMove move;
+    PlayerMoveInput move;
     [SerializeField]
     AuraSelect auraSelect;
     [SerializeField]

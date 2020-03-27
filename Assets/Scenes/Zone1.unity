@@ -6820,7 +6820,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 571173957}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 39.61, y: 18.4, z: 0}
+  m_LocalPosition: {x: 30.71, y: 6.47, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1238840920}
@@ -14319,12 +14319,13 @@ GameObject:
   - component: {fileID: 945910562}
   - component: {fileID: 945910561}
   - component: {fileID: 945910560}
-  - component: {fileID: 945910563}
-  - component: {fileID: 945910564}
   - component: {fileID: 945910565}
   - component: {fileID: 945910566}
   - component: {fileID: 945910567}
+  - component: {fileID: 945910569}
+  - component: {fileID: 945910568}
   - component: {fileID: 945910559}
+  - component: {fileID: 945910563}
   m_Layer: 10
   m_Name: Player
   m_TagString: Player
@@ -14454,133 +14455,19 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 945910558}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 3
-  m_Material: {fileID: 6200000, guid: 84008f3678d569646aeee1cfceb0d07b, type: 2}
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
   m_Interpolate: 0
-  m_SleepingMode: 0
+  m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &945910564
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 945910558}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 208eb3f968970704eb94572ea75be736, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  groundChecker: {fileID: 1242616735}
-  OnJump:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 945910559}
-        m_MethodName: Play
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: JumpStart
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnFall:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 945910559}
-        m_MethodName: Play
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Fall
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnAirJump:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1359377573}
-        m_MethodName: ActivateEffect
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: AirJumpEffect
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnDash:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 945910559}
-        m_MethodName: Play
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Dash
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnDashUp:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 945910559}
-        m_MethodName: Play
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: DashUp
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnDashDiagUp:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 945910559}
-        m_MethodName: Play
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: DashDiagUp
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnDashDiagDown:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 945910559}
-        m_MethodName: Play
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: DashDiagDown
-          m_BoolArgument: 0
-        m_CallState: 2
-  collisionMask:
-    serializedVersion: 2
-    m_Bits: 256
 --- !u!114 &945910565
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14593,7 +14480,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3132fb04ee21054e9dd9f0f5fcbcae5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  move: {fileID: 945910564}
+  move: {fileID: 0}
   auraSelect: {fileID: 1227498381}
   menu: {fileID: 2074463051}
   OnActivateAura:
@@ -14636,7 +14523,7 @@ MonoBehaviour:
   currentHP: 0
   redMat: {fileID: 2100000, guid: 4abe87e9bec9e8343851b4d11ff2f00e, type: 2}
   defaultMat: {fileID: 2100000, guid: 20f3bb0283b9edb469f503ff559a9af9, type: 2}
-  rb: {fileID: 945910563}
+  rb: {fileID: 0}
   numPrefab: {fileID: 1085668549026750019, guid: 939b40207f59ede4e9b42813f2b83b45,
     type: 3}
   poolNum: 10
@@ -14708,6 +14595,131 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53f5328c58ebfb140969df2665830609, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &945910568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 945910558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9347014e3720ce4aa26a501a7171067, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collisionMask:
+    serializedVersion: 2
+    m_Bits: 256
+--- !u!114 &945910569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 945910558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3be347478944c04ab0226769b8f5145, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnJump:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 945910559}
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: JumpStart
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnFall:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 945910559}
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Fall
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnAirJump:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1359377573}
+        m_MethodName: ActivateEffect
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnDash:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 945910559}
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Dash
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnDashUp:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 945910559}
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: DashUp
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnDashDiagUp:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 945910559}
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: DashDiagUp
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnDashDiagDown:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 945910559}
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: DashDiagDown
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &952337458
 GameObject:
   m_ObjectHideFlags: 0
@@ -15259,7 +15271,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 976411129}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 11.68, y: 5.41, z: 0}
+  m_LocalPosition: {x: 11.68, y: 2.44, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children:
   - {fileID: 1214562916}
@@ -18547,7 +18559,7 @@ Transform:
   m_GameObject: {fileID: 1238840919}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 1}
+  m_LocalScale: {x: 1, y: 3, z: 1}
   m_Children: []
   m_Father: {fileID: 571173958}
   m_RootOrder: 0
@@ -18564,12 +18576,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bb73f762b8587549890e78fcf847181, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerMask:
+    serializedVersion: 2
+    m_Bits: 1024
   pos:
   - {fileID: 1997414482}
   - {fileID: 1795766899}
   - {fileID: 1950808283}
   - {fileID: 1743930978}
   speed: 5
+  ease: 1.41
+  moveDelay: 0.5
 --- !u!212 &1238840922
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -23687,7 +23704,7 @@ GameObject:
   m_Layer: 9
   m_Name: Pos (3)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -23699,7 +23716,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1743930977}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -5.79, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 571173958}
@@ -23942,7 +23959,7 @@ GameObject:
   m_Layer: 9
   m_Name: Pos (1)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -23954,7 +23971,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1795766898}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -18.72, y: -7.37, z: 0}
+  m_LocalPosition: {x: -7.16, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 571173958}
@@ -25569,7 +25586,7 @@ GameObject:
   m_Layer: 9
   m_Name: Pos (2)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -25581,7 +25598,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1950808282}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -7.37, z: 0}
+  m_LocalPosition: {x: -7.16, y: -5.79, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 571173958}
@@ -25878,7 +25895,7 @@ GameObject:
   m_Layer: 9
   m_Name: Pos(0)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -25890,7 +25907,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1997414481}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -18.72, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 571173958}
@@ -28835,7 +28852,7 @@ MonoBehaviour:
   OnControlChange:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 945910564}
+      - m_Target: {fileID: 945910569}
         m_MethodName: UpdateControls
         m_Mode: 1
         m_Arguments:
