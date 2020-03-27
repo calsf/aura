@@ -78,12 +78,12 @@ public class PlayerMove : MonoBehaviour {
     int xRaycount = 3;
     float xSpacing;
 
-    float maxSlopeClimbAngle = 45;
-    float maxSlopeDownAngle = 45;
+    float maxSlopeClimbAngle = 40;
+    float maxSlopeDownAngle = 40;
 
     struct RaycastOrigins
     {
-        public Vector2 botLeft, botRight;
+        public Vector2 botLeft, botRight, topLeft, topRight;
     }
 
     void UpdateRaycastOrigins()
@@ -141,7 +141,6 @@ public class PlayerMove : MonoBehaviour {
                     // Climb slope once within a certain range
                     if (hit.distance - width <= .1f)
                     {
-                        isGrounded = true;
                         // Get x and y velocity based on the slope
                         float moveSpeed = dashing ? Mathf.Abs(rb.velocity.x) : Mathf.Abs(move * speed);
                         float x = Mathf.Cos(slopeAngle * Mathf.Deg2Rad) * moveSpeed * Mathf.Sign(velocity.x);
@@ -171,7 +170,9 @@ public class PlayerMove : MonoBehaviour {
     {
         float dirX = Mathf.Sign(transform.localScale.x);
         Vector2 rayOrigin = dirX == -1 ? raycastOrigins.botRight : raycastOrigins.botLeft;
-        RaycastHit2D hit = Physics2D.Raycast(rayOrigin, -Vector2.up, Mathf.Infinity, collisionMask);
+        RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.down, Mathf.Infinity, collisionMask);
+
+        Debug.DrawRay(rayOrigin, -Vector2.up * .5f, Color.red);
 
         if (hit)
         {
@@ -182,8 +183,6 @@ public class PlayerMove : MonoBehaviour {
                 {
                     if (hit.distance - width <= .1f)
                     {
-                        isGrounded = true;
-
                         float moveSpeed = dashing ? Mathf.Abs(rb.velocity.x) : Mathf.Abs(move * speed);
                         float y = Mathf.Sin(slopeAngle * Mathf.Deg2Rad) * -moveSpeed;
                         float x = Mathf.Cos(slopeAngle * Mathf.Deg2Rad) * moveSpeed * Mathf.Sign(velocity.x);
@@ -347,10 +346,9 @@ public class PlayerMove : MonoBehaviour {
     //Fixed Update
     void FixedUpdate()
     {
-        // Check if player is grounded
-        isGrounded = Physics2D.OverlapCircle(groundChecker.position, groundCheckRadius, groundLayer);
+        // Check if isGrounded
+        isGrounded = Physics2D.OverlapCircle(groundChecker.position, groundCheckRadius, collisionMask);
 
-        // Reset properties on grounded
         if (isGrounded)
         {
             ResetJump();
@@ -361,7 +359,6 @@ public class PlayerMove : MonoBehaviour {
         if (isJumping)
         {
             Velocity(0, jump);
-            isGrounded = false;
             if (canJump)
             {
                 canJump = false;
@@ -393,7 +390,7 @@ public class PlayerMove : MonoBehaviour {
             }
             else // Air movement
             {
-                Velocity((move * airSpeed), rb.velocity.y);
+                Velocity(move * airSpeed, rb.velocity.y);
             }
         }
 
