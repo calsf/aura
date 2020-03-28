@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: SlowAura
   m_EditorClassIdentifier: 
   auraName: Slow Aura
-  baseDmg: 20
+  baseDmg: 1
   icon: {fileID: -6483662399362346463, guid: 07797feaa31e419479cf2c278e395174, type: 3}

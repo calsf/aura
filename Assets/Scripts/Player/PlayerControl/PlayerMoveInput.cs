@@ -299,7 +299,14 @@ public class PlayerMoveInput : MonoBehaviour
 
         // Set horizontal velocity based on input, smooth the velocity depending on if on ground or if in air
         float targetVelocityX = move * speed;
-        velocity.x = Mathf.SmoothDamp(velocity.x, targetVelocityX, ref xSmoothing, (controller.Collisions.below ? accelGrounded : accelAir));
+        if (Time.deltaTime != 0) // Avoid dividing by deltaTime 0
+        {
+            velocity.x = Mathf.SmoothDamp(velocity.x, targetVelocityX, ref xSmoothing, (controller.Collisions.below ? accelGrounded : accelAir));
+        }
+        else
+        {
+            velocity.x = Mathf.SmoothDamp(velocity.x, targetVelocityX, ref xSmoothing, (controller.Collisions.below ? accelGrounded : accelAir), Mathf.Infinity, .001f);
+        }
         FlipX();
     }
 

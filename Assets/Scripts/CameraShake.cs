@@ -8,12 +8,13 @@ using UnityEngine;
 public class CameraShake : MonoBehaviour
 {
     bool shaking;
+    float shakeIntensity = .03f;
 
     public void Shake()
     {
         if (!shaking)
         {
-            StartCoroutine(Shake(.5f, .01f));
+            StartCoroutine(Shake(.3f, shakeIntensity));
         }
     }
 
@@ -32,7 +33,7 @@ public class CameraShake : MonoBehaviour
             y = -y;
             z = -z;
 
-            Vector3 camPos = transform.localPosition;
+            Vector3 camPos = transform.position;
             transform.localPosition = new Vector3(camPos.x + x, camPos.y + y, camPos.z - z);
 
             shakeTime += Time.deltaTime;
