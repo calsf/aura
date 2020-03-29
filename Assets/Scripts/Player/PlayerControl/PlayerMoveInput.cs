@@ -43,7 +43,8 @@ public class PlayerMoveInput : MonoBehaviour
 
     bool canInput = true;  // Used to disable movement inputs, keeps calling ApplyMovement - used for when player gets hit
     bool upJump;    // Check if Jump with Up setting is on, if so, jump when up is pressed
-    bool axisDown;  // Treat axis input as a key down
+    bool axisUpDown;  // Treat axis input as a key down (for positive y axis)
+    bool axisDownDown; // Treat axis input as a key down (for negative y axis)
 
 
     // UnityEvents for player actions
@@ -161,7 +162,7 @@ public class PlayerMoveInput : MonoBehaviour
             }
             else if (inputs[0])                 // up
             {
-                StartCoroutine(Dash(0, dashSpeed));
+                StartCoroutine(Dash(0, dashSpeed - 5f));
             }
             else if (inputs[1])                 // left
             {
@@ -229,9 +230,9 @@ public class PlayerMoveInput : MonoBehaviour
             || (upJump && Input.GetKeyDown(ControlsManager.ControlInstance.Keybinds["UpButton"]) || (upJump && Input.GetAxisRaw("Vertical") == 1))))
         {
             // Treat axis input up as a KeyDown event
-            if (!axisDown)
+            if (!axisUpDown)
             {
-                axisDown = true;
+                axisUpDown = true;
                 OnJump.Invoke();    // OnJump event
                 if (!controller.Collisions.below)    // Check if jumped in air
                 {
@@ -254,7 +255,7 @@ public class PlayerMoveInput : MonoBehaviour
         }
         else
         {
-            axisDown = false;   // Reset axisDown
+            axisUpDown = false;   // Reset axisDown
         }
 
         // Hold for more jump height by lowering gravity, can only hold until player velocity starts descending
@@ -269,14 +270,23 @@ public class PlayerMoveInput : MonoBehaviour
         }
 
         // Fast fall instantly sets y velocity to max
-        if (!controller.Collisions.below && (Input.GetKeyDown(ControlsManager.ControlInstance.Keybinds["DownButton"]) || (!axisDown && Input.GetAxisRaw("Vertical") == -1)))  // Tap down to fast fall
+        if ((!controller.Collisions.below && Input.GetKeyDown(ControlsManager.ControlInstance.Keybinds["DownButton"]) || Input.GetAxisRaw("Vertical") == -1) )  // Tap down to fast fall
         {
-            currGravity = defaultGrav;
-            velocity.y = maxFallSpeed;
+            if (!axisDownDown)
+            {
+                axisDownDown = true;
+                currGravity = defaultGrav;
+                velocity.y = maxFallSpeed;
+            }
+            else
+            {
+                ApplyGravity();
+            }
         }
         else
         {
             ApplyGravity();
+            axisDownDown = false;
         }
     }
 

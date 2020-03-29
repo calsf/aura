@@ -85,9 +85,13 @@ public class PlayerHP : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         EnemyDefaults enemyDmg = other.GetComponent<EnemyDefaults>();
-        if (enemyDmg != null && Time.time > damageRate && !dead)
+        DamagePlayerDefaults dmgPlayer = other.GetComponent<DamagePlayerDefaults>();
+
+        bool isEnemy = enemyDmg != null ? true : false;
+
+        if ((enemyDmg != null || dmgPlayer != null) && Time.time > damageRate && !dead)
         {
-            int dmg = enemyDmg.Dmg;
+            int dmg = isEnemy ? enemyDmg.Dmg : dmgPlayer.Dmg;
             DisplayDmgNum(dmg); //Show damage number
             currentHP -= dmg; //Calculate HP
             if (currentHP < 0) //Do not go below 0 hp
