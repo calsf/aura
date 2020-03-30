@@ -9,7 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1936b36b0ef42a548ab32726ea276c1e, type: 3}
-  m_Name: Spikes (L1)
+  m_Script: {fileID: 11500000, guid: bc601cbb1895ddb488039e78f84aea70, type: 3}
+  m_Name: Bird
   m_EditorClassIdentifier: 
+  enemyName: Bird
+  maxHP: 20
   dmg: 1
+  gold: 200
+  baseMoveSpeed: 5

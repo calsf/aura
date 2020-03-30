@@ -1,31 +1,22 @@
 fileFormatVersion: 2
-guid: cb82b840502813f40bba85a7e3a6f4d9
+guid: 847fe95e0cff85a49a13e098c76c3105
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 9136788546249243148
-    second: DashUp_0
+      213: -767842634614617014
+    second: Ant_0
   - first:
-      213: -1003061441986017753
-    second: DashUp_1
+      213: -5720907883160835152
+    second: Ant_1
   - first:
-      213: 2146677910823553235
-    second: DashUp_2
+      213: 8088607974869636516
+    second: Ant_2
   - first:
-      213: -5229327720540960645
-    second: DashUp_3
+      213: 6536075636304528495
+    second: Ant_3
   - first:
-      213: -6170122837875216584
-    second: DashUp_4
-  - first:
-      213: 3526839750617650409
-    second: DashUp_5
-  - first:
-      213: 4168114013003408579
-    second: DashUp_6
-  - first:
-      213: 5366778543706012231
-    second: DashUp_7
+      213: -8331379284657119059
+    second: Ant_4
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -122,97 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: DashUp_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 1000
-        width: 300
-        height: 1000
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c0a3b0726c46cce70800000000000000
-      internalID: 9136788546249243148
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DashUp_1
-      rect:
-        serializedVersion: 2
-        x: 300
-        y: 1000
-        width: 300
-        height: 1000
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7264886dee86412f0800000000000000
-      internalID: -1003061441986017753
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DashUp_2
-      rect:
-        serializedVersion: 2
-        x: 600
-        y: 1000
-        width: 300
-        height: 1000
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3d8c0d1bf288acd10800000000000000
-      internalID: 2146677910823553235
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DashUp_3
-      rect:
-        serializedVersion: 2
-        x: 900
-        y: 1000
-        width: 300
-        height: 1000
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b788d03f422bd67b0800000000000000
-      internalID: -5229327720540960645
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DashUp_4
+      name: Ant_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 300
-        height: 1000
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -220,20 +127,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 83f2ceb38f15f5aa0800000000000000
-      internalID: -6170122837875216584
+      spriteID: a4c456821331855f0800000000000000
+      internalID: -767842634614617014
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DashUp_5
+      name: Ant_1
       rect:
         serializedVersion: 2
         x: 300
         y: 0
         width: 300
-        height: 1000
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -241,20 +148,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9e4da43311ad1f030800000000000000
-      internalID: 3526839750617650409
+      spriteID: 0bb677747904b90b0800000000000000
+      internalID: -5720907883160835152
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DashUp_6
+      name: Ant_2
       rect:
         serializedVersion: 2
         x: 600
         y: 0
         width: 300
-        height: 1000
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -262,20 +169,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3c465687c9d18d930800000000000000
-      internalID: 4168114013003408579
+      spriteID: 4a51f7d0912804070800000000000000
+      internalID: 8088607974869636516
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DashUp_7
+      name: Ant_3
       rect:
         serializedVersion: 2
         x: 900
         y: 0
         width: 300
-        height: 1000
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -283,8 +190,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 74af8cda6a0aa7a40800000000000000
-      internalID: 5366778543706012231
+      spriteID: f64440f592ec4ba50800000000000000
+      internalID: 6536075636304528495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ant_4
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 0
+        width: 300
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da0e6f0aeaef06c80800000000000000
+      internalID: -8331379284657119059
       vertices: []
       indices: 
       edges: []

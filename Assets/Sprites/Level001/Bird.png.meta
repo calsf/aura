@@ -1,31 +1,16 @@
 fileFormatVersion: 2
-guid: cb82b840502813f40bba85a7e3a6f4d9
+guid: 38e4b7b33f0e2ad4b9b3729e7bf48a83
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 9136788546249243148
-    second: DashUp_0
+      213: -3551287784963028691
+    second: Bird_0
   - first:
-      213: -1003061441986017753
-    second: DashUp_1
+      213: -2298939645060189070
+    second: Bird_1
   - first:
-      213: 2146677910823553235
-    second: DashUp_2
-  - first:
-      213: -5229327720540960645
-    second: DashUp_3
-  - first:
-      213: -6170122837875216584
-    second: DashUp_4
-  - first:
-      213: 3526839750617650409
-    second: DashUp_5
-  - first:
-      213: 4168114013003408579
-    second: DashUp_6
-  - first:
-      213: 5366778543706012231
-    second: DashUp_7
+      213: 1895172606582820919
+    second: Bird_2
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -55,7 +40,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: -1
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -122,97 +107,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: DashUp_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 1000
-        width: 300
-        height: 1000
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c0a3b0726c46cce70800000000000000
-      internalID: 9136788546249243148
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DashUp_1
-      rect:
-        serializedVersion: 2
-        x: 300
-        y: 1000
-        width: 300
-        height: 1000
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7264886dee86412f0800000000000000
-      internalID: -1003061441986017753
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DashUp_2
-      rect:
-        serializedVersion: 2
-        x: 600
-        y: 1000
-        width: 300
-        height: 1000
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3d8c0d1bf288acd10800000000000000
-      internalID: 2146677910823553235
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DashUp_3
-      rect:
-        serializedVersion: 2
-        x: 900
-        y: 1000
-        width: 300
-        height: 1000
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b788d03f422bd67b0800000000000000
-      internalID: -5229327720540960645
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DashUp_4
+      name: Bird_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 300
-        height: 1000
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -220,20 +121,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 83f2ceb38f15f5aa0800000000000000
-      internalID: -6170122837875216584
+      spriteID: d29481a339a47bec0800000000000000
+      internalID: -3551287784963028691
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DashUp_5
+      name: Bird_1
       rect:
         serializedVersion: 2
         x: 300
         y: 0
         width: 300
-        height: 1000
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -241,20 +142,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9e4da43311ad1f030800000000000000
-      internalID: 3526839750617650409
+      spriteID: 274ff18b2968810e0800000000000000
+      internalID: -2298939645060189070
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DashUp_6
+      name: Bird_2
       rect:
         serializedVersion: 2
         x: 600
         y: 0
         width: 300
-        height: 1000
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -262,29 +163,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3c465687c9d18d930800000000000000
-      internalID: 4168114013003408579
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DashUp_7
-      rect:
-        serializedVersion: 2
-        x: 900
-        y: 0
-        width: 300
-        height: 1000
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 74af8cda6a0aa7a40800000000000000
-      internalID: 5366778543706012231
+      spriteID: 7309b63d1710d4a10800000000000000
+      internalID: 1895172606582820919
       vertices: []
       indices: 
       edges: []
