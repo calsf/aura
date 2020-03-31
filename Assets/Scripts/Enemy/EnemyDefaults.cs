@@ -22,6 +22,10 @@ public class EnemyDefaults : MonoBehaviour {
     [SerializeField]
     int poolNum;
 
+    [SerializeField]
+    GameObject goldPopupPrefab;
+    GameObject goldPopup;
+    TextMeshPro goldPopupText;
     LevelManager levelManager;
 
     int hp;
@@ -49,6 +53,10 @@ public class EnemyDefaults : MonoBehaviour {
         spriteRender = GetComponent<SpriteRenderer>();
         levelManager = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>();
 
+        // Each enemy has a gold popup for when killed and gold is given to player
+        goldPopup = Instantiate(goldPopupPrefab, Vector3.zero, Quaternion.identity);
+        goldPopupText = goldPopup.GetComponent<TextMeshPro>();
+
         // Initialize damage numbers pool
         numPool = new List<GameObject>();
         for (int i = 0; i < poolNum; i++)
@@ -56,6 +64,12 @@ public class EnemyDefaults : MonoBehaviour {
             numPool.Add(Instantiate(numPrefab, Vector3.zero, Quaternion.identity));
             numPool[i].SetActive(false);
         }
+    }
+
+    void Start()
+    {
+        // Deactive gold popup after
+        goldPopup.SetActive(false);
     }
 
     // Update is called once per frame
@@ -112,6 +126,12 @@ public class EnemyDefaults : MonoBehaviour {
             //{
             //    Instantiate(deathFX, transform.position, Quaternion.identity);
             //}
+
+            // Spawn gold pop up on death with a y offset above enemy
+            goldPopupText.text = "+" + enemy.gold + " Gold";
+            goldPopup.transform.position = transform.position + (Vector3.up * .1f);
+            goldPopup.SetActive(true);
+
             levelManager.Gold += enemy.gold;
             gameObject.SetActive(false);
         }
@@ -126,7 +146,7 @@ public class EnemyDefaults : MonoBehaviour {
             {
                 if (!numPool[i].activeInHierarchy)
                 {
-                    numPool[i].GetComponent<TextMeshPro>().text = dmg.ToString();
+                    numPool[i].GetComponent<TextMeshPro>().text = "-" + dmg.ToString();
                     numPool[i].transform.position = transform.position;
                     numPool[i].SetActive(true);
                     return;

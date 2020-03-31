@@ -123,7 +123,7 @@ public class PlayerHP : MonoBehaviour
             {
                 if (!numPool[i].activeInHierarchy)
                 {
-                    numPool[i].GetComponent<TextMeshPro>().text = dmg.ToString();
+                    numPool[i].GetComponent<TextMeshPro>().text = "-" + dmg.ToString();
                     numPool[i].transform.position = transform.position;
                     numPool[i].SetActive(true);
                     return;

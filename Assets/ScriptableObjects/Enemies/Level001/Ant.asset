@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Ant
   m_EditorClassIdentifier: 
   enemyName: Giant Ant
-  maxHP: 20
+  maxHP: 50
   dmg: 1
   gold: 100
   baseMoveSpeed: 3

@@ -15,7 +15,7 @@ public class EnemyHPManager : MonoBehaviour
 
     void Awake()
     {
-        barObject = transform.GetChild(0).gameObject;
+        barObject = transform.GetChild(0).gameObject;   // barObject MUST BE FIRST CHILD OF OBJECT THIS SCRIPT IS ATTACHED TO
         enemy = GetComponent<EnemyDefaults>();
     }
 
@@ -33,9 +33,13 @@ public class EnemyHPManager : MonoBehaviour
     void Update()
     {
         // Flip health bar along with enemy flip (this has opposite effect, will actually prevent health bar from flipping)
-        if (enemy.gameObject.transform.localScale.x < 0 && transform.localScale.x > 0 || enemy.gameObject.transform.localScale.x > 0 && transform.localScale.x < 0)
+        if (enemy.gameObject.transform.localScale.x < 0 && barObject.transform.localScale.x > 0 || enemy.gameObject.transform.localScale.x > 0 && barObject.transform.localScale.x < 0)
         {
-            transform.localScale = new Vector2(-transform.localScale.x, transform.localScale.y);
+            // Due to pivot being center left, flip sign of local x position
+            barObject.transform.localPosition = new Vector2(-(barObject.transform.localPosition.x), barObject.transform.localPosition.y);
+
+            // Flip localScale
+            barObject.transform.localScale = new Vector2(-barObject.transform.localScale.x, barObject.transform.localScale.y);
         }
 
         // After some time from not being hit, hide enemy health bar

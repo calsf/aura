@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 // Handles current level information
@@ -7,6 +8,12 @@ using UnityEngine;
 
 public class LevelManager : MonoBehaviour
 {
+    [SerializeField]
+    GameObject goldPopupPrefab;
+    GameObject goldPopup;
+    TextMeshPro goldPopupText;
+    
+
     [SerializeField]
     GameObject player;
     [SerializeField]
@@ -22,6 +29,16 @@ public class LevelManager : MonoBehaviour
     {
         playerHP = player.GetComponent<PlayerHP>();
         player.transform.position = spawnPoint.position;
+
+        // Player has a gold pop up for when they die and lose half gold
+        goldPopup = Instantiate(goldPopupPrefab, Vector3.zero, Quaternion.identity);
+        goldPopupText = goldPopup.GetComponent<TextMeshPro>();
+        goldPopupText.color = new Color(1, 0, 0, 1);    // Change gold popup text color to red since will only pop up for losing gold
+    }
+
+    void Start()
+    {
+        goldPopup.SetActive(false);
     }
 
     void OnEnable()
@@ -39,6 +56,11 @@ public class LevelManager : MonoBehaviour
     // Lose half gold OnDeath
     void GoldCut()
     {
+        // Show gold popup for gold lost with y offset above player
+        goldPopup.transform.position = player.transform.position + (Vector3.up * .1f);
+        goldPopupText.text = "-" + gold/2 + " Gold";
+        goldPopup.SetActive(true);
+
         gold /= 2;
     }
 
