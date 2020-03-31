@@ -1,31 +1,22 @@
 fileFormatVersion: 2
-guid: 4d626f5a5ecd07f429c8e777e2fcf4a8
+guid: 03ddcc8e93d76b6409c7c2a4942e4398
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 309932051931931028
-    second: SpeedAura_0
+      213: -1174884963667485802
+    second: Zzz_0
   - first:
-      213: 9048077056670893334
-    second: SpeedAura_1
+      213: 6056522900024174492
+    second: Zzz_1
   - first:
-      213: -1951063157159051253
-    second: SpeedAura_2
+      213: 4909667498644681962
+    second: Zzz_2
   - first:
-      213: -266129375629501843
-    second: SpeedAura_3
+      213: 1629553686734165069
+    second: Zzz_3
   - first:
-      213: 288839261345600790
-    second: SpeedAura_4
-  - first:
-      213: -3990354882975229078
-    second: SpeedAura_5
-  - first:
-      213: -9210054766565999424
-    second: SpeedAura_6
-  - first:
-      213: 6256961280241971061
-    second: SpeedAura_7
+      213: -2899574748246853689
+    second: Zzz_4
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -69,7 +60,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -122,97 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SpeedAura_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 500
-        width: 500
-        height: 500
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 49129e32f891d4400800000000000000
-      internalID: 309932051931931028
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SpeedAura_1
-      rect:
-        serializedVersion: 2
-        x: 500
-        y: 500
-        width: 500
-        height: 500
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6150b3fe42a319d70800000000000000
-      internalID: 9048077056670893334
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SpeedAura_2
-      rect:
-        serializedVersion: 2
-        x: 1000
-        y: 500
-        width: 500
-        height: 500
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b00ce2f456e6ce4e0800000000000000
-      internalID: -1951063157159051253
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SpeedAura_3
-      rect:
-        serializedVersion: 2
-        x: 1500
-        y: 500
-        width: 500
-        height: 500
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d6a9e4d2eb48e4cf0800000000000000
-      internalID: -266129375629501843
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SpeedAura_4
+      name: Zzz_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 500
-        height: 500
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -220,20 +127,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 615d0b127c9220400800000000000000
-      internalID: 288839261345600790
+      spriteID: 69bd6a0b958f1bfe0800000000000000
+      internalID: -1174884963667485802
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpeedAura_5
+      name: Zzz_1
       rect:
         serializedVersion: 2
-        x: 500
+        x: 128
         y: 0
-        width: 500
-        height: 500
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -241,20 +148,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a6b148030696f98c0800000000000000
-      internalID: -3990354882975229078
+      spriteID: c97a5fd1d771d0450800000000000000
+      internalID: 6056522900024174492
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpeedAura_6
+      name: Zzz_2
       rect:
         serializedVersion: 2
-        x: 1000
+        x: 256
         y: 0
-        width: 500
-        height: 500
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -262,20 +169,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0ccb0fc9cff4f2080800000000000000
-      internalID: -9210054766565999424
+      spriteID: ae43ff5d394a22440800000000000000
+      internalID: 4909667498644681962
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpeedAura_7
+      name: Zzz_3
       rect:
         serializedVersion: 2
-        x: 1500
+        x: 384
         y: 0
-        width: 500
-        height: 500
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -283,8 +190,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 57f2232322135d650800000000000000
-      internalID: 6256961280241971061
+      spriteID: d44d730c1765d9610800000000000000
+      internalID: 1629553686734165069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zzz_4
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c7bd0b0124a2c7d0800000000000000
+      internalID: -2899574748246853689
       vertices: []
       indices: 
       edges: []
