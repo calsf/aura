@@ -79,8 +79,12 @@ public class CompleteLevel : MonoBehaviour
         // Decrease gold earned and add to total gold, updating text display each time
         while (goldEarned > 0)
         {
-            goldEarned -= 1;
-            totalGold += 1;
+            // Decrease rate
+            int multiplier = goldEarned.ToString().Length - 1;
+            multiplier = multiplier <= 2 ? 1 : multiplier;
+
+            goldEarned -= ((int)Mathf.Pow(10, multiplier));
+            totalGold += ((int) Mathf.Pow(10, multiplier));
 
             // Do not exceed max total gold cap
             if (totalGold > maxGold)

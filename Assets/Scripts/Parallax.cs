@@ -25,8 +25,10 @@ public class Parallax : MonoBehaviour
         float traveled = cam.transform.position.x * (1 - moveValue);
         float dist = cam.transform.position.x * moveValue;
 
+        // Move background
         transform.position = new Vector3(startPos + dist, transform.position.y, transform.position.z);
 
+        // Move backgrounds after a certain distance moved so backgrounds repeat
         if (traveled > startPos + length)
         {
             startPos += length;

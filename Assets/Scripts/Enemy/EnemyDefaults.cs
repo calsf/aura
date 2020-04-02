@@ -13,6 +13,7 @@ public class EnemyDefaults : MonoBehaviour {
     Enemy enemy;
 
     [SerializeField]
+    GameObject deathFXPrefab;
     GameObject deathFX;
 
     // Object pool of damage numbers
@@ -56,6 +57,10 @@ public class EnemyDefaults : MonoBehaviour {
         // Each enemy has a gold popup for when killed and gold is given to player
         goldPopup = Instantiate(goldPopupPrefab, Vector3.zero, Quaternion.identity);
         goldPopupText = goldPopup.GetComponent<TextMeshPro>();
+
+        // Each enemy has a death fx
+        deathFX = Instantiate(deathFXPrefab, Vector3.zero, Quaternion.identity);
+        deathFX.SetActive(false);
 
         // Initialize damage numbers pool
         numPool = new List<GameObject>();
@@ -122,10 +127,8 @@ public class EnemyDefaults : MonoBehaviour {
     {
         if(hp <= 0)
         {
-            //if(deathFX != null)
-            //{
-            //    Instantiate(deathFX, transform.position, Quaternion.identity);
-            //}
+            deathFX.transform.position = transform.position;
+            deathFX.SetActive(true);
 
             // Spawn gold pop up on death with a y offset above enemy
             goldPopupText.text = "+" + enemy.gold + " Gold";

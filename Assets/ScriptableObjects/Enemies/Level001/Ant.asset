@@ -15,5 +15,5 @@ MonoBehaviour:
   enemyName: Giant Ant
   maxHP: 50
   dmg: 1
-  gold: 100
+  gold: 1000
   baseMoveSpeed: 3

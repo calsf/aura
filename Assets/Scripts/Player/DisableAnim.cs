@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AirJumpAnim : MonoBehaviour
+public class DisableAnim : MonoBehaviour
 {
     public void Disable()
     {
