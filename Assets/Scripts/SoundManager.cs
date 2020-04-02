@@ -1,25 +1,48 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
-    public static Dictionary<string, AudioClip> sounds;
-    static AudioSource audioSrc;
+    [SerializeField]
+    Sound[] sounds;
+    static SoundManager soundInstance;
 
-    public void Start()
+    public static SoundManager SoundInstance { get { return soundInstance; } }
+
+    void Awake()
     {
-        sounds = new Dictionary<string, AudioClip>();
-        sounds["dash"] = Resources.Load<AudioClip>("dash");
-        sounds["explo1"] = Resources.Load<AudioClip>("explo1");
-        sounds["explo2"] = Resources.Load<AudioClip>("explo2");
-        sounds["hit"] = Resources.Load<AudioClip>("hit");
-        audioSrc = GetComponent<AudioSource>();
-        
+        //Singleton
+        if (soundInstance == null)
+        {
+            soundInstance = this;
+        }
+        else
+        {
+            Destroy(soundInstance.gameObject);
+            soundInstance = this;
+        }
+
+        // Add an audio source for every sound object and initialize the audio source values accordingly
+        foreach (Sound s in sounds)
+        {
+            s.AudioSrc = gameObject.AddComponent<AudioSource>();
+            s.AudioSrc.clip = s.Clip;
+            s.AudioSrc.loop = s.Loop;
+            s.AudioSrc.spatialBlend = s.SpatialBlend;
+        }
     }
 
-    public static void PlaySound (string str)
+    // Play sound
+    public void PlaySound (string name)
     {
-        audioSrc.PlayOneShot(sounds[str]);
+        Sound s = Array.Find(sounds, Sound => Sound.ClipName == name);
+        if (s != null)
+        {
+            s.AudioSrc.volume = s.Volume;
+            s.AudioSrc.pitch = s.Pitch;
+            s.AudioSrc.Play();
+        }
     }
 }

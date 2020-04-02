@@ -340,7 +340,7 @@ public class PlayerMoveInput : MonoBehaviour
     // Dash movement, set dashing to true to temporarily disable normal movement to prevent overwriting dash velocity, also disable gravity
     IEnumerator Dash(float x, float y)
     {
-        SoundManager.PlaySound("dash");
+        SoundManager.SoundInstance.PlaySound("Dash");
 
         dashing = true;
         velocity.x = x;

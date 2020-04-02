@@ -127,10 +127,11 @@ public class EnemyDefaults : MonoBehaviour {
     {
         if(hp <= 0)
         {
+            // Activate deathFX object
             deathFX.transform.position = transform.position;
             deathFX.SetActive(true);
 
-            SoundManager.PlaySound($"explo2");
+            SoundManager.SoundInstance.PlaySound($"Explo{Random.Range(1, 3)}");
 
             // Spawn gold pop up on death with a y offset above enemy
             goldPopupText.text = "+" + enemy.gold + " Gold";
@@ -163,7 +164,7 @@ public class EnemyDefaults : MonoBehaviour {
     //Flash on damaged
     IEnumerator ColorChange()
     {
-        SoundManager.PlaySound("hit");
+        SoundManager.SoundInstance.PlaySound("Hit");
 
         spriteRender.color = new Color(spriteRender.color.r, spriteRender.color.g, spriteRender.color.b, .4f);
         yield return new WaitForSeconds(.02f);
