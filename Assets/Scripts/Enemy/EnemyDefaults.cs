@@ -163,6 +163,8 @@ public class EnemyDefaults : MonoBehaviour {
     //Flash on damaged
     IEnumerator ColorChange()
     {
+        SoundManager.PlaySound("hit");
+
         spriteRender.color = new Color(spriteRender.color.r, spriteRender.color.g, spriteRender.color.b, .4f);
         yield return new WaitForSeconds(.02f);
         spriteRender.color = new Color(spriteRender.color.r, spriteRender.color.g, spriteRender.color.b, 1f);

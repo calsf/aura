@@ -133,7 +133,6 @@ public class PlayerMoveInput : MonoBehaviour
         if (inputs[4] && !dashing && !hasDashed && Time.time > lastDash)
         {
             lastDash = Time.time + dashDelay;
-            SoundManager.PlaySound("dash");
 
             // 0 = up, 1 = left, 2 = down, 3 = right * No dashing straight down, already fast falls
             if (inputs[0] && inputs[1])         // up left
@@ -341,6 +340,8 @@ public class PlayerMoveInput : MonoBehaviour
     // Dash movement, set dashing to true to temporarily disable normal movement to prevent overwriting dash velocity, also disable gravity
     IEnumerator Dash(float x, float y)
     {
+        SoundManager.PlaySound("dash");
+
         dashing = true;
         velocity.x = x;
         velocity.y = y;

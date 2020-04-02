@@ -14695,7 +14695,6 @@ GameObject:
   - component: {fileID: 699204119}
   - component: {fileID: 699204115}
   - component: {fileID: 699204120}
-  - component: {fileID: 699204121}
   m_Layer: 0
   m_Name: SpeedAura
   m_TagString: DamageEnemy
@@ -14923,15 +14922,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!170 &699204121
-AudioDistortionFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 699204113}
-  m_Enabled: 1
-  m_DistortionLevel: 1
 --- !u!1 &703755905
 GameObject:
   m_ObjectHideFlags: 0
