@@ -130,6 +130,8 @@ public class EnemyDefaults : MonoBehaviour {
             deathFX.transform.position = transform.position;
             deathFX.SetActive(true);
 
+            SoundManager.PlaySound($"explo2");
+
             // Spawn gold pop up on death with a y offset above enemy
             goldPopupText.text = "+" + enemy.gold + " Gold";
             goldPopup.transform.position = transform.position + (Vector3.up * .1f);
