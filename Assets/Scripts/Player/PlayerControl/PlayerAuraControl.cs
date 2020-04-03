@@ -124,7 +124,12 @@ public class PlayerAuraControl : MonoBehaviour
         // If same aura is selected, turn it off, else turn the selected aura on
         if (lastSelected != selected)
         {
+            //Turn aura on
             currAura.SetActive(true);
+
+            // Play AuraOn sound for the selected aura to activate
+           SoundManager.SoundInstance.PlaySound($"{auras[selectedAuras[selected]].name}On");
+
             lastSelected = selected;
             OnActivateAura.Invoke();    // OnActivateAura event
         }
@@ -144,8 +149,18 @@ public class PlayerAuraControl : MonoBehaviour
     // Updates aura without toggling it off when an aura is changed
     void UpdateAura()
     {
+        StopCoroutine("WaitForResume");
         int temp = lastSelected;
+        
+        // Toggle the aura after player resumes/closes menu
+        StartCoroutine(WaitForResume(temp));
+    }
+
+    // Toggle current aura after it has been updated and after player has resumed
+    IEnumerator WaitForResume(int i)
+    {
+        yield return new WaitForSeconds(0.1f);
         lastSelected = -1;
-        ToggleAura(temp);
+        ToggleAura(i);
     }
 }
