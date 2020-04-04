@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: SleepingRabbit
   m_EditorClassIdentifier: 
   enemyName: Sleeping Rabbit
-  maxHP: 20
+  maxHP: 15
   dmg: 1
   gold: 100
   baseMoveSpeed: 0
+  deathSound: SmallExplo1
+  deathFX: {fileID: 4598560185897053914, guid: c5212d2f01e1fdc4b841f9c9f2628e72, type: 3}

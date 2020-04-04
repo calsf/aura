@@ -113,6 +113,9 @@ public class PlayerAuraControl : MonoBehaviour
     //Toggle aura on and off
     void ToggleAura(int selected)
     {
+        // Stop sound of current aura
+        SoundManager.SoundInstance.StopSound($"{currAura.name}On");
+
         currAura.SetActive(false);
 
         // If aura is updated before an aura is activated

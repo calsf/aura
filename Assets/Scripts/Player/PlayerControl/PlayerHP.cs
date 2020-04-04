@@ -102,6 +102,7 @@ public class PlayerHP : MonoBehaviour
             OnHealthChange.Invoke(); // OnHealthChanged event
             damageRate = Time.time + 1f; //Take damage rate
             //Damaged response
+            PlaySound();
             StartCoroutine(Knockback(other.gameObject));
             StartCoroutine(ColorChange());
             StartCoroutine(Invuln());
@@ -144,6 +145,19 @@ public class PlayerHP : MonoBehaviour
         }
     }
 
+    // Play hit sound when player is hit, if player dies, play death sound instead
+    void PlaySound()
+    {
+        if (currentHP > 0)
+        {
+            SoundManager.SoundInstance.PlaySound("PlayerHit");
+        }
+        else
+        {
+            SoundManager.SoundInstance.PlaySound("PlayerDeath");
+        }
+    }
+
     //Respawn player after a delay
     IEnumerator Respawn()
     {
@@ -152,6 +166,7 @@ public class PlayerHP : MonoBehaviour
         // Total wait time must still be equal to respawnDelay, LevelManager waits same amount of time OnDeath
         yield return new WaitForSeconds(respawnDelay - 2f);
         OnRespawning.Invoke();  // Right before respawning ( activate animation )
+        SoundManager.SoundInstance.PlaySound("Respawn");
         yield return new WaitForSeconds(2f);    // Time of animations before respawning
 
         //Reset player values and control

@@ -17,3 +17,5 @@ MonoBehaviour:
   dmg: 1
   gold: 1000
   baseMoveSpeed: 3
+  deathSound: Explo1
+  deathFX: {fileID: 4598560185897053914, guid: c5212d2f01e1fdc4b841f9c9f2628e72, type: 3}

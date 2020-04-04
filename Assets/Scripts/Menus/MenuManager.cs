@@ -58,7 +58,17 @@ public class MenuManager : MonoBehaviour
     //Toggle menu, pausing game
     public void ToggleMenu()
     {
-        menu.alpha = menu.alpha > 0 ? 0 : 1;
+        if (menu.alpha > 0)
+        {
+            menu.alpha = 0;
+        }
+        else
+        {
+            menu.alpha = 1;
+
+            SoundManager.SoundInstance.PlaySound("MenuPopUp");
+        }
+        
         menu.blocksRaycasts = menu.blocksRaycasts ? false : true;
         Time.timeScale = menu.alpha > 0 ? 0 : 1;
         isMenu = menu.alpha > 0 ? true : false;

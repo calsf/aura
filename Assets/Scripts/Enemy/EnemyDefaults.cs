@@ -12,8 +12,6 @@ public class EnemyDefaults : MonoBehaviour {
     [SerializeField]
     Enemy enemy;
 
-    [SerializeField]
-    GameObject deathFXPrefab;
     GameObject deathFX;
 
     // Object pool of damage numbers
@@ -32,7 +30,7 @@ public class EnemyDefaults : MonoBehaviour {
     int hp;
     SpriteRenderer spriteRender;
     bool collided;
-    float damageRate = .2f; // Delay before taking damage again
+    float damageRate = .1f; // Delay before taking damage again
     float onStayTime; //Delay for OnStay trigger
     float onEnterTime; //Delay for OnEnter trigger
 
@@ -59,7 +57,7 @@ public class EnemyDefaults : MonoBehaviour {
         goldPopupText = goldPopup.GetComponent<TextMeshPro>();
 
         // Each enemy has a death fx
-        deathFX = Instantiate(deathFXPrefab, Vector3.zero, Quaternion.identity);
+        deathFX = Instantiate(enemy.deathFX, Vector3.zero, Quaternion.identity);
         deathFX.SetActive(false);
 
         // Initialize damage numbers pool
@@ -116,7 +114,7 @@ public class EnemyDefaults : MonoBehaviour {
                 hp -= dmg;
                 OnDamaged.Invoke(); //OnDamaged event occurs after enemy HP has been adjusted
                 StartCoroutine(ColorChange());
-                other.GetComponentInParent<AuraDefaults>().ActivateStop(.03f); // Hitstop
+                other.GetComponentInParent<AuraDefaults>().ActivateStop(.01f); // Hitstop
                 collided = true;
             }
         }
@@ -131,7 +129,8 @@ public class EnemyDefaults : MonoBehaviour {
             deathFX.transform.position = transform.position;
             deathFX.SetActive(true);
 
-            SoundManager.SoundInstance.PlaySound($"Explo{Random.Range(1, 3)}");
+            // Play enemy's death sound clip
+            SoundManager.SoundInstance.PlaySound(enemy.deathSound);
 
             // Spawn gold pop up on death with a y offset above enemy
             goldPopupText.text = "+" + enemy.gold + " Gold";
@@ -164,10 +163,11 @@ public class EnemyDefaults : MonoBehaviour {
     //Flash on damaged
     IEnumerator ColorChange()
     {
-        SoundManager.SoundInstance.PlaySound("Hit");
+        // Play a random enemy hit sound
+        SoundManager.SoundInstance.PlaySound($"EnemyHit{Random.Range(1, 4)}");
 
         spriteRender.color = new Color(spriteRender.color.r, spriteRender.color.g, spriteRender.color.b, .4f);
-        yield return new WaitForSeconds(.02f);
+        yield return new WaitForSeconds(.08f);
         spriteRender.color = new Color(spriteRender.color.r, spriteRender.color.g, spriteRender.color.b, 1f);
     }
 }

@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: SpeedAura
   m_EditorClassIdentifier: 
   auraName: Speed Aura
-  baseDmg: 30
+  baseDmg: 10
   icon: {fileID: 309932051931931028, guid: 4d626f5a5ecd07f429c8e777e2fcf4a8, type: 3}

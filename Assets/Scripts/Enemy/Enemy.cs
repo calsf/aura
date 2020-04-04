@@ -10,4 +10,6 @@ public class Enemy : ScriptableObject
     public int dmg;
     public int gold;
     public int baseMoveSpeed;
+    public string deathSound;
+    public GameObject deathFX;
 }

@@ -45,4 +45,13 @@ public class SoundManager : MonoBehaviour
             s.AudioSrc.Play();
         }
     }
+
+    public void StopSound (string name)
+    {
+        Sound s = Array.Find(sounds, Sound => Sound.ClipName == name);
+        if (s != null)
+        {
+            s.AudioSrc.Stop();
+        }
+    }
 }

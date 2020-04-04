@@ -94,8 +94,11 @@ public class MenuNav : MonoBehaviour
         // Do not check for menu input if listening for new keybind, if menu is not open, or if player is leaving
         if (isLeaving || !MenuManager.MenuInstance.IsMenu || ControlsManager.ControlInstance.IsListen)
         {
-            isEquipping = false;    // Reset isEquipping if player exits from menu during equip
-            SelectSlot(selectedSlot, 0);
+            if (isEquipping)
+            {
+                isEquipping = false;    // Reset isEquipping if player exits from menu during equip
+                SelectSlot(selectedSlot, 0);
+            }
             return;
         }
 
@@ -108,6 +111,8 @@ public class MenuNav : MonoBehaviour
                 {
                     axisDown = true;
                     NavSub(selectedSubBtn, selectedSubBtn + 1);
+
+                    SoundManager.SoundInstance.PlaySound("ButtonNav");
                 }
             }
             else if (Input.GetKeyDown(ControlsManager.ControlInstance.Keybinds["UpButton"]) || Input.GetAxisRaw("Vertical") == 1)
@@ -116,6 +121,8 @@ public class MenuNav : MonoBehaviour
                 {
                     axisDown = true;
                     NavSub(selectedSubBtn, selectedSubBtn - 1);
+
+                    SoundManager.SoundInstance.PlaySound("ButtonNav");
                 }
             }
             else if (Input.GetKeyDown(ControlsManager.ControlInstance.Keybinds["LeftButton"]) || Input.GetAxisRaw("Horizontal") == -1)
@@ -124,6 +131,8 @@ public class MenuNav : MonoBehaviour
                 {
                     axisDown = true;
                     NavMenu(selectedSub - 1);
+
+                    SoundManager.SoundInstance.PlaySound("ButtonNav");
                 }
             }
             else if (Input.GetKeyDown(ControlsManager.ControlInstance.Keybinds["RightButton"]) || Input.GetAxisRaw("Horizontal") == 1)
@@ -132,6 +141,8 @@ public class MenuNav : MonoBehaviour
                 {
                     axisDown = true;
                     NavMenu(selectedSub + 1);
+
+                    SoundManager.SoundInstance.PlaySound("ButtonNav");
                 }
             }
             else
@@ -147,6 +158,8 @@ public class MenuNav : MonoBehaviour
                 {
                     axisDown = true;
                     SelectSlot(selectedSlot, selectedSlot - 1);
+
+                    SoundManager.SoundInstance.PlaySound("ButtonNav");
                 }
             }
             else if (Input.GetKeyDown(ControlsManager.ControlInstance.Keybinds["RightButton"]) || Input.GetAxisRaw("Horizontal") == 1)
@@ -155,6 +168,8 @@ public class MenuNav : MonoBehaviour
                 {
                     axisDown = true;
                     SelectSlot(selectedSlot, selectedSlot + 1);
+
+                    SoundManager.SoundInstance.PlaySound("ButtonNav");
                 }
             }
             else
@@ -166,8 +181,10 @@ public class MenuNav : MonoBehaviour
         // To click button, press jump
         if (Input.GetKeyDown(ControlsManager.ControlInstance.Keybinds["JumpButton"]) || Input.GetKeyDown(ControlsManager.ControlInstance.Padbinds["JumpPad"]))
         {
+            SoundManager.SoundInstance.PlaySound("ButtonEnter");
+
             // Act based on current submenu
-            switch(selectedSub)
+            switch (selectedSub)
             {
                 case 0:     // Aura inventory submenu will equip selected aura
                     if (isEquipping)

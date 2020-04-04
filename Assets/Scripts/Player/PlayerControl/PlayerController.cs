@@ -38,7 +38,8 @@ public class PlayerController : Raycasts
             slopeAngle = 0;
         }
     }
-    
+
+    bool inAir;
 
     // Start
     public override void Start()
@@ -180,6 +181,11 @@ public class PlayerController : Raycasts
     // Move player after checking for collisions from raycasts and adjusting velocity as needed
     public void Move(Vector2 velocity, bool onPlatform = false)
     {
+        if (!collisions.below)
+        {
+            inAir = true;
+        }
+
         // Update raycast origins and reset collisions
         UpdateRaycastOrigins();
         collisions.Reset();
