@@ -248,6 +248,8 @@ public class PlayerMoveInput : MonoBehaviour
                     canDoubleJump = false;
                 }
 
+                SoundManager.SoundInstance.PlaySound("Jump");
+
                 // Apply jump velocity
                 velocity.y = jumpVelocity;
             }

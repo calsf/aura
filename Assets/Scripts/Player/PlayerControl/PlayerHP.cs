@@ -166,7 +166,7 @@ public class PlayerHP : MonoBehaviour
         // Total wait time must still be equal to respawnDelay, LevelManager waits same amount of time OnDeath
         yield return new WaitForSeconds(respawnDelay - 2f);
         OnRespawning.Invoke();  // Right before respawning ( activate animation )
-        SoundManager.SoundInstance.PlaySound("Respawn");
+        SoundManager.SoundInstance.PlaySound("BaseAuraOn");
         yield return new WaitForSeconds(2f);    // Time of animations before respawning
 
         //Reset player values and control

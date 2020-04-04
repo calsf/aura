@@ -39,7 +39,7 @@ public class PlayerController : Raycasts
         }
     }
 
-    bool inAir;
+    bool inAir; // Determine if player was in air when landing to play sound
 
     // Start
     public override void Start()
@@ -85,6 +85,8 @@ public class PlayerController : Raycasts
                         float y = Mathf.Sin(slopeAngle * Mathf.Deg2Rad) * dist;
                         velocity.x = Mathf.Cos(slopeAngle * Mathf.Deg2Rad) * dist * Mathf.Sign(velocity.x);
                         velocity.y -= y;
+
+                        inAir = false;  // Prevent playing landing sound when transition to slope
 
                         collisions.slopeAngle = slopeAngle;
                         collisions.descendingSlope = true;
@@ -211,6 +213,17 @@ public class PlayerController : Raycasts
         if (onPlatform)
         {
             collisions.below = true;
+        }
+
+        // Play landing sound
+        if (collisions.below && inAir)
+        {
+            inAir = false;
+            SoundManager.SoundInstance.PlaySound("Landing");
+        }
+        else if (!collisions.below)
+        {
+            inAir = true;
         }
     }
 }
