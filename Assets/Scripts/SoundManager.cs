@@ -31,6 +31,8 @@ public class SoundManager : MonoBehaviour
             s.AudioSrc.clip = s.Clip;
             s.AudioSrc.loop = s.Loop;
             s.AudioSrc.spatialBlend = s.SpatialBlend;
+            s.AudioSrc.volume = s.Volume;
+            s.AudioSrc.pitch = s.Pitch;
         }
     }
 
@@ -40,12 +42,11 @@ public class SoundManager : MonoBehaviour
         Sound s = Array.Find(sounds, Sound => Sound.ClipName == name);
         if (s != null)
         {
-            s.AudioSrc.volume = s.Volume;
-            s.AudioSrc.pitch = s.Pitch;
             s.AudioSrc.Play();
         }
     }
 
+    // Stop playing sound
     public void StopSound (string name)
     {
         Sound s = Array.Find(sounds, Sound => Sound.ClipName == name);

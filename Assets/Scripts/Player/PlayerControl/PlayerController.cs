@@ -39,7 +39,7 @@ public class PlayerController : Raycasts
         }
     }
 
-    bool inAir; // Determine if player was in air when landing to play sound
+    bool hasLanded; // Determine if player hasLanded from being in the air
 
     // Start
     public override void Start()
@@ -86,7 +86,7 @@ public class PlayerController : Raycasts
                         velocity.x = Mathf.Cos(slopeAngle * Mathf.Deg2Rad) * dist * Mathf.Sign(velocity.x);
                         velocity.y -= y;
 
-                        inAir = false;  // Prevent playing landing sound when transition to slope
+                        hasLanded = true;  // Prevent playing landing sound when transition to slope
 
                         collisions.slopeAngle = slopeAngle;
                         collisions.descendingSlope = true;
@@ -183,15 +183,20 @@ public class PlayerController : Raycasts
     // Move player after checking for collisions from raycasts and adjusting velocity as needed
     public void Move(Vector2 velocity, bool onPlatform = false)
     {
+        // If in air, player has not landed
         if (!collisions.below)
         {
-            inAir = true;
+            hasLanded = false;
         }
 
         // Update raycast origins and reset collisions
         UpdateRaycastOrigins();
-        collisions.Reset();
+        if (velocity.y != 0 || velocity.x != 0 || velocity.y < 0)   // Reset collisions only if needed, otherwise keep collisions info the same
+        {
+            collisions.Reset();
+        }
 
+        // Check raycast collisions
         if (velocity.y < 0)
         {
             DescendSlope(ref velocity);
@@ -214,16 +219,12 @@ public class PlayerController : Raycasts
         {
             collisions.below = true;
         }
-
-        // Play landing sound
-        if (collisions.below && inAir)
+        
+        // Play landing sound and toggle hasLanded to true until next time player goes into air
+        if (collisions.below && !hasLanded)
         {
-            inAir = false;
+            hasLanded = true;
             SoundManager.SoundInstance.PlaySound("Landing");
-        }
-        else if (!collisions.below)
-        {
-            inAir = true;
         }
     }
 }

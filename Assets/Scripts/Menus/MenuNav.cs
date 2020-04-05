@@ -183,6 +183,12 @@ public class MenuNav : MonoBehaviour
         {
             SoundManager.SoundInstance.PlaySound("ButtonEnter");
 
+            // Play button animation when button is entered, do not play anim if selected equip slot
+            if (!isEquipping)
+            {
+                subButtons[selectedSub][selectedSubBtn].GetComponent<Animator>().Play("Button");
+            }
+
             // Act based on current submenu
             switch (selectedSub)
             {
