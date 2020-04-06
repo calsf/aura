@@ -31,15 +31,35 @@ public class NavTextDisplay : MonoBehaviour
     public void UpdateNavText()
     {
         // Find the binded button to the key for keyboard and for gamepad
-        string keybindName = ControlsManager.ControlInstance.Keybinds[navText.keyName].ToString();
-        string padbindName = ControlsManager.ControlInstance.Padbinds[navText.padName].ToString();
+        string keybindName = "";
+        string padbindName = "";
+        string newString = navText.text;
 
-        // Clean up the keybind/padbind string
-        keybindName = ControlsManager.ControlInstance.CleanString(keybindName);
-        padbindName = ControlsManager.ControlInstance.CleanString(padbindName);
+        // Only replace if there is a keyName/padName
+        if (navText.keyName != "")
+        {
+            keybindName = ControlsManager.ControlInstance.Keybinds[navText.keyName].ToString();
+            
+            // Clean up the keybind string
+            keybindName = ControlsManager.ControlInstance.CleanString(keybindName);
 
-        // Replace keybind and padbind in the navText's text with the binded keybind button and the binded padbind button
+            // Replace keybind string in the navText's text with the binded keybind button
+            newString = newString.Replace(navText.keyName, keybindName);
+        }
+
+        if (navText.padName != "")
+        {
+            padbindName = ControlsManager.ControlInstance.Padbinds[navText.padName].ToString();
+            
+            // Clean up the padbind string
+            padbindName = ControlsManager.ControlInstance.CleanString(padbindName);
+
+            // Replace padbind string in the navText's text with the binded padbind button
+            newString = newString.Replace(navText.padName, padbindName);
+        }
+
+        // Update the text display with modified string
         text = GetComponent<Text>();
-        text.text = navText.text.Replace(navText.keyName, keybindName).Replace(navText.padName, padbindName);
+        text.text = newString;
     }
 }

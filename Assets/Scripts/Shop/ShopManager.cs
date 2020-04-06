@@ -38,6 +38,9 @@ public class ShopManager : MonoBehaviour
     SavedGold savedGold;
     ShopChat shopChat;
 
+    [SerializeField]
+    ShopNav shopNav;
+
     void Awake()
     {
         healthMaxed = "Here you go, another boost to your health! Although you should probably stop taking these...Too much of anything can be bad.";
@@ -57,6 +60,8 @@ public class ShopManager : MonoBehaviour
         savedGold = saveData.GetComponent<SavedGold>();
         UpdateShop();       // Set shop aura's on or off based on saved aura unlocks
         UpdateShopHealth(currMaxHP);     // Set max health increase off or no based on saved max health
+
+        shopNav.NavShop(0); // Set starting nav on item after updated for disabled items
     }
 
     void Update()
@@ -82,6 +87,9 @@ public class ShopManager : MonoBehaviour
             saveData.UnlockAura(indexOfSelection);      // Unlock the aura index from overall auras list, not from this shop's aura list
             UpdateShop();
             shopChat.SetChat(auraBought[index]);        // Show chat response to the aura bought
+
+            // Move to next item
+            shopNav.NavShop(shopNav.Selected + 1);
         }
         else
         {
@@ -108,6 +116,9 @@ public class ShopManager : MonoBehaviour
             if (newHealth >= SaveLoadManager.CapHP)
             {
                 shopChat.SetChat(healthMaxed);
+
+                // Move to next item
+                shopNav.NavShop(shopNav.Selected + 1);
             }
             else
             {

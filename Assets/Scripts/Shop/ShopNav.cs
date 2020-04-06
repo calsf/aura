@@ -14,21 +14,30 @@ public class ShopNav : MonoBehaviour
 
     bool axisDown;  // To treat axis input as key down
 
+    // Sprites for the item name/cost button
     [SerializeField]
-    Color selectedColor;
+    Sprite selectedSprite;
     [SerializeField]
-    Color unselectedColor;
+    Sprite unselectedSprite;
 
-    // Start is called before the first frame update
-    void Start()
+    // Sprites for the item info
+    [SerializeField]
+    Sprite selectedSpriteInfo;
+    [SerializeField]
+    Sprite unselectedSpriteInfo;
+
+    public Sprite UnselectedSprite { get { return unselectedSprite; } }
+    public Sprite UnselectedSpriteInfo { get { return unselectedSpriteInfo; } }
+    public int Selected { get { return selected; } }
+
+    // Initialize item buttons, initialize nav with NavShop(0) call in ShopManager after it has checked for disabled items
+    void Awake()
     {
         itemImg = new Image[itemBtn.Length];
         for (int i = 0; i < itemBtn.Length; i++)
         {
             itemImg[i] = itemBtn[i].GetComponent<Image>();
         }
-
-        NavShop(0);
     }
 
     // Update is called once per frame
@@ -73,12 +82,8 @@ public class ShopNav : MonoBehaviour
         // Reset image colors
         for (int i = 0; i < itemImg.Length; i++)
         {
-            // Only reset colors of enabled items in shop
-            if (itemBtn[i].interactable)
-            {
-                itemImg[i].color = unselectedColor;
-                infoImg[i].color = unselectedColor;
-            }
+           itemImg[i].sprite = unselectedSprite;
+           infoImg[i].sprite = unselectedSpriteInfo;
         }
 
         // If selected is greater than index, means we wanted to move to the left to the prev item
@@ -137,8 +142,8 @@ public class ShopNav : MonoBehaviour
             }
         }
 
-        itemImg[index].color = selectedColor;
-        infoImg[index].color = selectedColor;
+        itemImg[index].sprite = selectedSprite;
+        infoImg[index].sprite = selectedSpriteInfo;
         selected = index;
     }
 

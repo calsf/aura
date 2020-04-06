@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7fbb584a18ccc7447bf77ea1d7e34047, type: 3}
-  m_Name: LeaveShop
+  m_Name: Aura1Gamepad
   m_EditorClassIdentifier: 
-  text: MenuButton / MenuPad to Leave
-  keyName: MenuButton
-  padName: MenuPad
+  text: Aura1Pad
+  keyName: 
+  padName: Aura1Pad
