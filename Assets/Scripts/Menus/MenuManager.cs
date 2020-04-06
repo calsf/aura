@@ -11,6 +11,8 @@ public class MenuManager : MonoBehaviour
 
     MenuNav menuNav;
     GameObject player;
+    [SerializeField]
+    Animator menuAnim;
 
     bool isMenu = false;
     static MenuManager menuManager;
@@ -49,7 +51,7 @@ public class MenuManager : MonoBehaviour
         }
 
         // Prevent other coroutines from unpausing while in menu
-        if (menu.alpha > 0 && Time.timeScale > 0)
+        if (isMenu)
         {
             Time.timeScale = 0;
         }
@@ -58,20 +60,24 @@ public class MenuManager : MonoBehaviour
     //Toggle menu, pausing game
     public void ToggleMenu()
     {
+        // Play animation for closing/opening menu and set properties - menu.alpha is set via animator
         if (menu.alpha > 0)
         {
-            menu.alpha = 0;
-        }
-        else
-        {
-            menu.alpha = 1;
+            menuAnim.Play("MenuClose");
 
-            SoundManager.SoundInstance.PlaySound("MenuPopUp");
+            //menu.alpha = 0;
+            menu.blocksRaycasts = false;
+            isMenu = false;
+            Time.timeScale = 1;
         }
-        
-        menu.blocksRaycasts = menu.blocksRaycasts ? false : true;
-        Time.timeScale = menu.alpha > 0 ? 0 : 1;
-        isMenu = menu.alpha > 0 ? true : false;
+        else if (menu.alpha == 0)
+        {
+            menuAnim.Play("MenuOpen");
+            SoundManager.SoundInstance.PlaySound("MenuPopUp");
+            menu.blocksRaycasts = true;
+            isMenu = true;
+            Time.timeScale = 0;
+        }
         
         //Set menu defaults on menu open
         if (isMenu)

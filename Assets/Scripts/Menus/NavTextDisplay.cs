@@ -18,6 +18,18 @@ public class NavTextDisplay : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        UpdateNavText();
+        ControlsManager.ControlInstance.OnBindChange.AddListener(UpdateNavText);
+    }
+
+    void OnDisable()
+    {
+        ControlsManager.ControlInstance.OnBindChange.RemoveListener(UpdateNavText);
+    }
+
+    // Update the nav text at start and also update when OnControlChange event in ControlsManager occurs
+    public void UpdateNavText()
+    {
         // Find the binded button to the key for keyboard and for gamepad
         string keybindName = ControlsManager.ControlInstance.Keybinds[navText.keyName].ToString();
         string padbindName = ControlsManager.ControlInstance.Padbinds[navText.padName].ToString();

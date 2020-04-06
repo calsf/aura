@@ -15,18 +15,22 @@ public class ControlsManager : MonoBehaviour
     GameObject selectedKey; // Selected keyboard keybinding
 
     [SerializeField]
+    CanvasGroup listeningScreen;
+    [SerializeField]
     GameObject[] keyButtons;
     [SerializeField]
     GameObject[] padButtons;
     [SerializeField]
     GameObject[] otherButtons;
     [SerializeField]
-    Color unselectedColor; //Unselected button color
-    Color selectedColor = Color.green; //Selected color
+    Sprite unselectedSprite; //Unselected button sprite when not listening for keybind
+    [SerializeField]
+    Sprite selectedSprite; //Selected button sprite when listening for keybind
     bool isListen = false;  // Listening for a button input to rebind, if this is true, menu scripts won't listen for inputs until false
     KeyCode newKey;     //The key that was rebinded and will reset isListen on release
 
     public UnityEvent OnControlChange;
+    public UnityEvent OnBindChange;
     static ControlsManager controlManager;
     Dictionary<string, KeyCode> keybinds;
     Dictionary<string, KeyCode> padbinds;
@@ -144,7 +148,9 @@ public class ControlsManager : MonoBehaviour
             newKey = KeyCode.None;
             isListen = false;
         }
-        
+
+        // Show if is listening to binding
+        listeningScreen.alpha = isListen ? 1 : 0;
     }
 
     //Bind key name with selected keycode
@@ -205,25 +211,35 @@ public class ControlsManager : MonoBehaviour
         if (selectedKey != null && isListen)
         {
             Event e = Event.current;
-            if ((e.isKey && e.keyCode != (KeyCode)(Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("MenuButton", "Escape")))))
+
+            // Cancel listening with menu button
+            if (e.keyCode == (KeyCode)(Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("MenuButton", "Escape"))))
             {
-                BindKey(selectedKey.name, e.keyCode, keybinds);
                 ResetSelectedKey();
-                SaveBinds();
+                ResetSelectedPad();
             }
-            else
+            else // Bind a key
             {
-                if (Input.GetKey(KeyCode.LeftShift))
+                if (e.isKey)
                 {
-                    BindKey(selectedKey.name, KeyCode.LeftShift, keybinds);
+                    BindKey(selectedKey.name, e.keyCode, keybinds);
                     ResetSelectedKey();
                     SaveBinds();
                 }
-                else if (Input.GetKey(KeyCode.RightShift))
+                else
                 {
-                    BindKey(selectedKey.name, KeyCode.RightShift, keybinds);
-                    ResetSelectedKey();
-                    SaveBinds();
+                    if (Input.GetKey(KeyCode.LeftShift))
+                    {
+                        BindKey(selectedKey.name, KeyCode.LeftShift, keybinds);
+                        ResetSelectedKey();
+                        SaveBinds();
+                    }
+                    else if (Input.GetKey(KeyCode.RightShift))
+                    {
+                        BindKey(selectedKey.name, KeyCode.RightShift, keybinds);
+                        ResetSelectedKey();
+                        SaveBinds();
+                    }
                 }
             }
         }
@@ -241,14 +257,14 @@ public class ControlsManager : MonoBehaviour
             }
             else
             {
-                selectedKey.GetComponent<Image>().color = unselectedColor;
+                selectedKey.GetComponent<Image>().sprite = unselectedSprite;
                 selectedKey = clicked;
-                clicked.GetComponent<Image>().color = selectedColor;
+                clicked.GetComponent<Image>().sprite = selectedSprite;
             }
             return;
         }
         selectedKey = clicked;
-        clicked.GetComponent<Image>().color = Color.green;
+        clicked.GetComponent<Image>().sprite = selectedSprite;
     }
 
     //OnClick function for each button that selects and highlights the button (For gamepad)
@@ -263,14 +279,14 @@ public class ControlsManager : MonoBehaviour
             }
             else
             {
-                selectedPad.GetComponent<Image>().color = unselectedColor;
+                selectedPad.GetComponent<Image>().sprite = unselectedSprite;
                 selectedPad = clicked;
-                clicked.GetComponent<Image>().color = selectedColor;
+                clicked.GetComponent<Image>().sprite = selectedSprite;
             }
             return;
         }
         selectedPad = clicked;
-        clicked.GetComponent<Image>().color = Color.green;
+        clicked.GetComponent<Image>().sprite = selectedSprite;
     }
 
     //Save keybind settings
@@ -285,6 +301,8 @@ public class ControlsManager : MonoBehaviour
             PlayerPrefs.SetString(key.Key, key.Value.ToString());
         }
         PlayerPrefs.Save();
+
+        OnBindChange.Invoke();
     }
 
     //Reset the selected key
@@ -292,7 +310,7 @@ public class ControlsManager : MonoBehaviour
     {
         if (selectedKey != null)
         {
-            selectedKey.GetComponent<Image>().color = unselectedColor;
+            selectedKey.GetComponent<Image>().sprite = unselectedSprite;
             selectedKey = null;
         }
     }
@@ -302,7 +320,7 @@ public class ControlsManager : MonoBehaviour
     {
         if (selectedPad != null)
         {
-            selectedPad.GetComponent<Image>().color = unselectedColor;
+            selectedPad.GetComponent<Image>().sprite = unselectedSprite;
             selectedPad = null;
         }
     }
@@ -359,6 +377,8 @@ public class ControlsManager : MonoBehaviour
     {
         PlayerPrefs.DeleteAll();
         SetControls();
+
+        OnBindChange.Invoke();  // OnBindChange event since all keybinds are reset
     }
 
     // Clean up KeyCode string

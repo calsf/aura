@@ -35,15 +35,28 @@ public class MenuNav : MonoBehaviour
     [SerializeField]
     Color unselectedSubColor;
 
+    // Sprites for slots and cancel slot button
     [SerializeField]
-    Color selectedSlotColor;
+    Sprite selectedSlotSprite;
     [SerializeField]
-    Color unselectedSlotColor;
+    Sprite unselectedSlotSprite;
+    [SerializeField]
+    Sprite unselectedCancelSprite;
+    [SerializeField]
+    Sprite selectedCancelSprite;
 
+    // Sprite for reset settings
     [SerializeField]
-    Color selectedColor;
+    Sprite unselectedResetSprite;
     [SerializeField]
-    Color unselectedColor;
+    Sprite selectedResetSprite;
+
+    // Parallel arrays of sprites for buttons in each submenu
+    [SerializeField]
+    Sprite[] selectedSprite;
+    [SerializeField]
+    Sprite[] unselectedSprite;
+
     int selectedSub;        // Index of selected submenu
     int selectedSubBtn;     // Index of selected submenu's button
 
@@ -243,8 +256,26 @@ public class MenuNav : MonoBehaviour
             slot = slotButtons.Length - 1;
         }
         selectedSlot = slot;
-        slotButtons[lastSlot].GetComponent<Image>().color = unselectedSlotColor;
-        slotButtons[slot].GetComponent<Image>().color = selectedSlotColor;
+
+        // Last element in slotButtons array is the cancel button, all others are slots
+        if (lastSlot == slotButtons.Length - 1)
+        {
+            slotButtons[lastSlot].GetComponent<Image>().sprite = unselectedCancelSprite;
+        }
+        else
+        {
+            slotButtons[lastSlot].GetComponent<Image>().sprite = unselectedSlotSprite;
+        }
+
+        if (slot == slotButtons.Length - 1)
+        {
+            slotButtons[slot].GetComponent<Image>().sprite = selectedCancelSprite;
+        }
+        else
+        {
+            slotButtons[slot].GetComponent<Image>().sprite = selectedSlotSprite;
+        }
+        
     }
 
     // Navigate submenu buttons
@@ -266,9 +297,31 @@ public class MenuNav : MonoBehaviour
             scroll[selectedSub].value = (1f - ((float)button / (subButtons[selectedSub].Length)));
         }
 
-        // Highlight new current button, reset last one
-        subButtons[selectedSub][lastButton].GetComponent<Image>().color = unselectedColor;
-        subButtons[selectedSub][button].GetComponent<Image>().color = selectedColor;
+        // Change sprite of button, reset last one
+        if (selectedSub == 1) // If currently in controls submenu, need to check if button is reset settings
+        {
+            if (lastButton == subButtons[selectedSub].Length - 1)
+            {
+                subButtons[selectedSub][lastButton].GetComponent<Image>().sprite = unselectedResetSprite;
+            }
+            else
+            {
+                subButtons[selectedSub][lastButton].GetComponent<Image>().sprite = unselectedSprite[selectedSub];
+            }
+            if (button == subButtons[selectedSub].Length - 1)
+            {
+                subButtons[selectedSub][button].GetComponent<Image>().sprite = selectedResetSprite;
+            }
+            else
+            {
+                subButtons[selectedSub][button].GetComponent<Image>().sprite = selectedSprite[selectedSub];
+            }   
+        }
+        else
+        {
+            subButtons[selectedSub][lastButton].GetComponent<Image>().sprite = unselectedSprite[selectedSub];
+            subButtons[selectedSub][button].GetComponent<Image>().sprite = selectedSprite[selectedSub];
+        }
 
         // If in aura invent, invoke onClick to display aura info (Pressing jump will activate EquipButton's onClick)
         if (selectedSub == 0)
