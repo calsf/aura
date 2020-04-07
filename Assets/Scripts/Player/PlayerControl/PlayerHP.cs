@@ -14,16 +14,18 @@ public class PlayerHP : MonoBehaviour
     [SerializeField]
     Material defaultMat;
     [SerializeField]
-    Rigidbody2D rb;
+    Material invulnMat;
 
     PlayerAuraControl auraControl;
     PlayerMoveInput move;
     PlayerController controller;
 
-    float damageRate;
+    float damagedTime;
+    float damagedDelay = 1.5f;
     SpriteRenderer spriteRender;
     bool dead;
     float respawnDelay = 4f;
+    bool hasFlashed;    // Has finished flashing red
 
     // Object pool of damage numbers
     List<GameObject> numPool;
@@ -61,7 +63,7 @@ public class PlayerHP : MonoBehaviour
         maxHP = SaveLoadManager.LoadHealth();    // Get saved max hp value
         dead = false;
         currentHP = maxHP;
-        damageRate = 0;
+        damagedTime = 0;
         spriteRender = GetComponent<SpriteRenderer>();
     }
 
@@ -70,14 +72,16 @@ public class PlayerHP : MonoBehaviour
     {
         IsDead();
 
-        //While invulnerable, make transparent
-        if (damageRate > Time.time)
+        //While invulnerable, change shader material to show player is invulnerable
+        if (currentHP > 0 && hasFlashed && damagedTime > Time.time)
         {
-            spriteRender.color = new Color(1, 1, 1, .4f);
+            spriteRender.material = invulnMat;
         }
-        else
+        else if (Time.time > damagedTime)
         {
-            spriteRender.color = new Color(1, 1, 1, 1f);
+            // Return to default material after invulnerability runs out
+            hasFlashed = false;
+            spriteRender.material = defaultMat;
         }
     }
 
@@ -89,7 +93,7 @@ public class PlayerHP : MonoBehaviour
 
         bool isEnemy = enemyDmg != null ? true : false;
 
-        if ((enemyDmg != null || dmgPlayer != null) && Time.time > damageRate && !dead)
+        if ((enemyDmg != null || dmgPlayer != null) && Time.time > damagedTime && !dead)
         {
             int dmg = isEnemy ? enemyDmg.Dmg : dmgPlayer.Dmg;
             DisplayDmgNum(dmg); //Show damage number
@@ -100,12 +104,11 @@ public class PlayerHP : MonoBehaviour
             }
 
             OnHealthChange.Invoke(); // OnHealthChanged event
-            damageRate = Time.time + 1f; //Take damage rate
+            damagedTime = Time.time + damagedDelay; //Take damage rate
             //Damaged response
             PlaySound();
             StartCoroutine(Knockback(other.gameObject));
-            StartCoroutine(ColorChange());
-            StartCoroutine(Invuln());
+            StartCoroutine(FlashRed());
         }
     }
 
@@ -179,7 +182,7 @@ public class PlayerHP : MonoBehaviour
         OnHealthChange.Invoke(); // OnHealthChanged event
     }
 
-    //Disable movement, apply knockback, re-enable player movement
+    // Knockback on damaged - disable movement, apply knockback, re-enable player movement
     IEnumerator Knockback(GameObject other)
     {
         move.CanInput = false;
@@ -201,34 +204,21 @@ public class PlayerHP : MonoBehaviour
         StartCoroutine(Stop(.1f)); // Player movement should be re-enabled after hit stop
     }
 
-    //Flash red
-    IEnumerator ColorChange()
+    //Flash red on damaged
+    IEnumerator FlashRed()
     {
-        for (int i = 0; i < 3; i++)
+        int times = 3;
+        for (int i = 0; i < times; i++)
         {
             spriteRender.material = redMat;
             yield return new WaitForSeconds(.05f);
             spriteRender.material = defaultMat;
-            if (i < 2)
+            if (i < times - 1)
             {
                 yield return new WaitForSeconds(.05f);
             }
         }
-    }
-
-    //Change transparency to indicate invulnerability
-    IEnumerator Invuln()
-    {
-        yield return new WaitForSeconds(.15f);
-        spriteRender.color = new Color(1, 1, 1, .5f);
-        yield return new WaitForSeconds(.1f);
-        spriteRender.color = new Color(1, 1, 1, .8f);
-        yield return new WaitForSeconds(.1f);
-        spriteRender.color = new Color(1, 1, 1, .5f);
-        yield return new WaitForSeconds(.1f);
-        spriteRender.color = new Color(1, 1, 1, .8f);
-        yield return new WaitForSeconds(.1f);
-        spriteRender.color = new Color(1, 1, 1, 1f);
+        hasFlashed = true;
     }
 
     //Hit stop when player is damaged
@@ -253,6 +243,6 @@ public class PlayerHP : MonoBehaviour
     //Reset damage rate
     public void ResetDamageRate()
     {
-        damageRate = Time.time + .7f;
+        damagedTime = Time.time + .7f;
     }
 }

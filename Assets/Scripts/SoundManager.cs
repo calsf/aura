@@ -3,11 +3,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Sound manager for non spatial/global audio sources
+
 public class SoundManager : MonoBehaviour
 {
     [SerializeField]
     Sound[] sounds;
     static SoundManager soundInstance;
+    float soundVolume;
+
+    AudioSource[] audioSources;
 
     public static SoundManager SoundInstance { get { return soundInstance; } }
 
@@ -24,15 +29,20 @@ public class SoundManager : MonoBehaviour
             soundInstance = this;
         }
 
+        audioSources = new AudioSource[sounds.Length];
+        soundVolume = PlayerPrefs.GetInt("SoundVolume", 10) / 10f;
+
         // Add an audio source for every sound object and initialize the audio source values accordingly
-        foreach (Sound s in sounds)
+        for (int i = 0; i < sounds.Length; i++)
         {
-            s.AudioSrc = gameObject.AddComponent<AudioSource>();
-            s.AudioSrc.clip = s.Clip;
-            s.AudioSrc.loop = s.Loop;
-            s.AudioSrc.spatialBlend = s.SpatialBlend;
-            s.AudioSrc.volume = s.Volume;
-            s.AudioSrc.pitch = s.Pitch;
+            sounds[i].AudioSrc = gameObject.AddComponent<AudioSource>();
+            sounds[i].AudioSrc.clip = sounds[i].Clip;
+            sounds[i].AudioSrc.loop = sounds[i].Loop;
+            sounds[i].AudioSrc.spatialBlend = sounds[i].SpatialBlend;
+            sounds[i].AudioSrc.volume = sounds[i].Volume * soundVolume;
+            sounds[i].AudioSrc.pitch = sounds[i].Pitch;
+
+            audioSources[i] = sounds[i].AudioSrc;
         }
     }
 
@@ -54,5 +64,15 @@ public class SoundManager : MonoBehaviour
         {
             s.AudioSrc.Stop();
         }
+    }
+
+    // Update sound volume when OnVolumeChange occurs from sound settings
+    public void UpdateVolume()
+    {
+        soundVolume = PlayerPrefs.GetInt("SoundVolume", 10) / 10f;
+        for (int i = 0; i < sounds.Length; i++)
+        {
+            audioSources[i].volume = sounds[i].Volume * soundVolume;
+        } 
     }
 }

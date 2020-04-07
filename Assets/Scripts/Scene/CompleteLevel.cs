@@ -76,6 +76,7 @@ public class CompleteLevel : MonoBehaviour
         goldEarnedTxt.text = goldEarned.ToString();
         yield return new WaitForSeconds(1f);
 
+        int targetTotal = totalGold + goldEarned;   // New total gold
         // Start coin counting sound effect
         SoundManager.SoundInstance.PlaySound("CoinCount");
         // Decrease gold earned and add to total gold, updating text display each time
@@ -94,11 +95,14 @@ public class CompleteLevel : MonoBehaviour
                 totalGold = maxGold;
             }
 
-            totalGoldTxt.text = totalGold.ToString();
-            goldEarnedTxt.text = goldEarned.ToString();
+            // Make sure to not go over target total or go below 0 gold earned
+            totalGoldTxt.text = totalGold > targetTotal ? targetTotal.ToString() : totalGold.ToString();
+            goldEarnedTxt.text = goldEarned < 0 ? "0" : goldEarned.ToString();
 
             yield return null;
         }
+
+        totalGoldTxt.text = targetTotal.ToString();
 
         // Stop coin counting sound effect and play end sound
         SoundManager.SoundInstance.StopSound("CoinCount");
