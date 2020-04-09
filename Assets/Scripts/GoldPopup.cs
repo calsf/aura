@@ -38,7 +38,7 @@ public class GoldPopup : MonoBehaviour
     //Fade out
     IEnumerator Fade()
     {
-        yield return new WaitForSeconds(.4f);
+        yield return new WaitForSeconds(.5f);
         text.color = new Color(text.color.r, text.color.g, text.color.b, .8f);
         yield return new WaitForSeconds(.05f);
         text.color = new Color(text.color.r, text.color.g, text.color.b, .6f);

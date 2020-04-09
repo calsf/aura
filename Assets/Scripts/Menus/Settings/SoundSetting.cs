@@ -33,7 +33,7 @@ public class SoundSetting : MonoBehaviour
     public void DecreaseVolume()
     {
         int newVol = PlayerPrefs.GetInt("SoundVolume") - 1;
-        newVol = newVol < 0 ? 0 : newVol;
+        newVol = newVol < 0 ? 0 : newVol; ;
         PlayerPrefs.SetInt("SoundVolume", newVol);
 
         text.text = newVol.ToString();

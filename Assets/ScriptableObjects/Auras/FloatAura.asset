@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: FloatAura
   m_EditorClassIdentifier: 
   auraName: Float Aura
-  baseDmg: 40
+  baseDmg: 15
   icon: {fileID: -8005029917173745291, guid: 38e4e8d1849812e4c943b506cef8ae6c, type: 3}

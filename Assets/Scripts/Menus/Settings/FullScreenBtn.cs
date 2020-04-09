@@ -14,7 +14,7 @@ public class FullScreenBtn : MonoBehaviour
 
     void Awake()
     {
-        //Show if currently in fulls creen
+        //Show if currently in fullscreen
         if (Screen.fullScreen)
         {
             img.color = selectedColor;

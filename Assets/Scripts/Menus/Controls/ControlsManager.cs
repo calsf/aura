@@ -375,8 +375,19 @@ public class ControlsManager : MonoBehaviour
     //Reset player pref, updates the displayed settings to default after
     public void ResetPref()
     {
+        // ONLY RESETING PLAYERPREFS FOR CONTROLS - reset other PlayerPrefs after deleting all player prefs
+        int soundVol = PlayerPrefs.GetInt("SoundVolume");
+        int width = PlayerPrefs.GetInt("Screenmanager Resolution Width");
+        int height = PlayerPrefs.GetInt("Screenmanager Resolution Height");
+        bool isFullScreen = Screen.fullScreen;
+
+        // Delete all PlayerPrefs and reset controls
         PlayerPrefs.DeleteAll();
         SetControls();
+
+        // Reset non-control related preferences to what they were before PlayerPrefs.DeleteAll()
+        PlayerPrefs.SetInt("SoundVolume", soundVol);
+        Screen.SetResolution(width, height, Screen.fullScreen);
 
         OnBindChange.Invoke();  // OnBindChange event since all keybinds are reset
     }
