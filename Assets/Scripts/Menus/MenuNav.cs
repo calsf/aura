@@ -64,6 +64,8 @@ public class MenuNav : MonoBehaviour
     bool axisDown;  // To treat axis input as key down
     bool isLeaving; // Disable actions if trying to leave and loading to return back
 
+    public bool IsLeaving { get { return isLeaving; } }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -229,7 +231,7 @@ public class MenuNav : MonoBehaviour
                     break;
                 case 3:     // Leave submenu set isLeaving true to avoid more actions while loading back IMPORTANT: LOADING INTO A NEW SCENE WHILE IN MENUS WILL STILL HAVE TIMESCALE = 0 SO NEED TO RESET IN NEW SCENE
                     isLeaving = true;
-                    subButtons[selectedSub][selectedSubBtn].onClick.Invoke();
+                    LoadLevel.LoadInstance.LoadScene(0);
                     break;
             }
             

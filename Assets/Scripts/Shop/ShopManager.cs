@@ -30,9 +30,6 @@ public class ShopManager : MonoBehaviour
     string healthMaxed;         // Chat text when health increase is bought and maxed
     string healthBought;        // Chat text when a health increase is bought
     string healthFail;          // Chat text when health increase cannot be bought
-
-    [SerializeField]
-    LoadLevel load;     // To return back to level selection
     
     SaveData saveData;
     SavedGold savedGold;
@@ -69,7 +66,7 @@ public class ShopManager : MonoBehaviour
         // On menu button, return back to level select scene
         if (Input.GetKeyDown(ControlsManager.ControlInstance.Keybinds["MenuButton"]) || Input.GetKeyDown(ControlsManager.ControlInstance.Padbinds["MenuPad"]))
         {
-            load.LoadScene(0);
+            LoadLevel.LoadInstance.LoadScene(0);
         }
     }
 

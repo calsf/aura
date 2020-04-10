@@ -112,10 +112,6 @@ public class CompleteLevel : MonoBehaviour
         // Once done, wait a bit and load back to level select
         yield return new WaitForSeconds(2.5f);
 
-        AsyncOperation op = SceneManager.LoadSceneAsync(0);
-        while (!op.isDone)
-        {
-            yield return null;
-        }
+        LoadLevel.LoadInstance.LoadScene(0);
     }
 }

@@ -40,8 +40,8 @@ public class MenuManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Do not toggle menu if player is not active or if trying to rebind a key
-        if (player.activeInHierarchy && !ControlsManager.ControlInstance.IsListen 
+        // Do not toggle menu if player is not active or if trying to rebind a key - if player is leaving and game is loading do not allow player to toggle menus
+        if (!menuNav.IsLeaving && player.activeInHierarchy && !ControlsManager.ControlInstance.IsListen 
             && (Input.GetKeyDown(ControlsManager.ControlInstance.Keybinds["MenuButton"]) || Input.GetKeyDown(ControlsManager.ControlInstance.Padbinds["MenuPad"])))
         {
             ToggleMenu();
