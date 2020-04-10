@@ -211,6 +211,7 @@ public class MenuNav : MonoBehaviour
                     {
                         slotButtons[selectedSlot].onClick.Invoke(); // Equip aura into currently selected slot and return control to submenus/nav
                         isEquipping = false;
+                        slotButtons[selectedSlot].GetComponent<Image>().sprite = unselectedSlotSprite;
                     }
                     else
                     {
