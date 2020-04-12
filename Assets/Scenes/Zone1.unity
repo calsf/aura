@@ -5795,7 +5795,7 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     spatialBlend: 0
-  - clipName: Explo1
+  - clipName: DeathExplo1
     clip: {fileID: 8300000, guid: af29e16ed3c6e8b4384f4c33d2c364cf, type: 3}
     volume: 0.5
     pitch: 1

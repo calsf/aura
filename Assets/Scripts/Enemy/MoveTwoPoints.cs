@@ -13,7 +13,6 @@ public class MoveTwoPoints : MonoBehaviour {
     Transform posB;
 
     Transform nextPos;
-    float speed;
 
     [SerializeField]
     bool xFlip;
@@ -23,14 +22,13 @@ public class MoveTwoPoints : MonoBehaviour {
     void Start()
     {
         enemyDefaults = GetComponent<EnemyDefaults>();
-        speed = enemyDefaults.MoveSpeed;   // Set movement based on moveSpeed in enemyDefaults
         nextPos = posB;
     }
 
     // Update is called once per frame
     void FixedUpdate ()
     {
-        transform.position = Vector3.MoveTowards(transform.position, nextPos.position, speed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, nextPos.position, enemyDefaults.MoveSpeed * Time.deltaTime);
 
         if (Vector3.Distance(transform.position, nextPos.position) <= 0.1f)
         {
