@@ -12,6 +12,9 @@ public class Parallax : MonoBehaviour
     [SerializeField] [Range(0, 1)]
     float moveValue;
 
+    [SerializeField]
+    bool noRepeat;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,7 +32,7 @@ public class Parallax : MonoBehaviour
         transform.position = new Vector3(startPos + dist, transform.position.y, transform.position.z);
 
         // Move backgrounds after a certain distance moved so backgrounds repeat
-        if (traveled > startPos + length)
+        if (!noRepeat && traveled > startPos + length)
         {
             startPos += length;
         }
