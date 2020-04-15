@@ -3379,6 +3379,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 519420028}
   moveValue: 0.4
+  noRepeat: 0
 --- !u!1 &143623584
 GameObject:
   m_ObjectHideFlags: 0
@@ -4737,6 +4738,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 519420028}
   moveValue: 0.6
+  noRepeat: 0
 --- !u!1 &183358847
 GameObject:
   m_ObjectHideFlags: 0
@@ -5933,7 +5935,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &235182082
 GameObject:
@@ -6827,7 +6829,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &283657098
 GameObject:
@@ -7934,6 +7936,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 519420028}
   moveValue: 0.43
+  noRepeat: 0
 --- !u!1 &333028209
 GameObject:
   m_ObjectHideFlags: 0
@@ -11442,7 +11445,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &513970376
 MonoBehaviour:
@@ -11633,7 +11636,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &518509270
 Animator:
@@ -60979,6 +60982,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 519420028}
   moveValue: 0.45
+  noRepeat: 0
 --- !u!1 &943711893
 GameObject:
   m_ObjectHideFlags: 0
@@ -63802,6 +63806,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 519420028}
   moveValue: 0.85
+  noRepeat: 0
 --- !u!1 &1041667559
 GameObject:
   m_ObjectHideFlags: 0
@@ -66003,6 +66008,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 519420028}
   moveValue: 0.65
+  noRepeat: 0
 --- !u!1 &1141085499
 GameObject:
   m_ObjectHideFlags: 0
@@ -66332,6 +66338,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 519420028}
   moveValue: 0.5
+  noRepeat: 0
 --- !u!1 &1150347808
 GameObject:
   m_ObjectHideFlags: 0
@@ -71559,6 +71566,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 519420028}
   moveValue: 0.85
+  noRepeat: 0
 --- !u!1 &1341193554
 GameObject:
   m_ObjectHideFlags: 0
@@ -72132,6 +72140,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 519420028}
   moveValue: 0.75
+  noRepeat: 0
 --- !u!1 &1372691235
 GameObject:
   m_ObjectHideFlags: 0
@@ -81613,7 +81622,7 @@ Transform:
   m_Children:
   - {fileID: 393750950}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1785289490
 MonoBehaviour:
@@ -83936,7 +83945,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1898023054
 GameObject:
