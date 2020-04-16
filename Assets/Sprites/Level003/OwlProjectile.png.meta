@@ -1,16 +1,19 @@
 fileFormatVersion: 2
-guid: 38e4b7b33f0e2ad4b9b3729e7bf48a83
+guid: 1672f4b645228934f862e334a07e11a6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3551287784963028691
-    second: Bird_0
+      213: 659663221820552879
+    second: OwlProjectile_0
   - first:
-      213: -2298939645060189070
-    second: Bird_1
+      213: 2461375774407966180
+    second: OwlProjectile_1
   - first:
-      213: 1895172606582820919
-    second: Bird_2
+      213: 3112045889931952519
+    second: OwlProjectile_2
+  - first:
+      213: 7621054814985612922
+    second: OwlProjectile_3
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -107,64 +110,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Bird_0
+      name: OwlProjectile_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
+        width: 16
         height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.375}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d29481a339a47bec0800000000000000
-      internalID: -3551287784963028691
+      spriteID: fa6f0088438972900800000000000000
+      internalID: 659663221820552879
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bird_1
+      name: OwlProjectile_1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 0
+        width: 16
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.375}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4edb654d930982220800000000000000
+      internalID: 2461375774407966180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OwlProjectile_2
       rect:
         serializedVersion: 2
         x: 32
         y: 0
-        width: 32
+        width: 16
         height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.375}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 274ff18b2968810e0800000000000000
-      internalID: -2298939645060189070
+      spriteID: 781cb12af35303b20800000000000000
+      internalID: 3112045889931952519
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bird_2
+      name: OwlProjectile_3
       rect:
         serializedVersion: 2
-        x: 64
+        x: 48
         y: 0
-        width: 32
+        width: 16
         height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.375}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7309b63d1710d4a10800000000000000
-      internalID: 1895172606582820919
+      spriteID: a7e6ff4e9fc63c960800000000000000
+      internalID: 7621054814985612922
       vertices: []
       indices: 
       edges: []

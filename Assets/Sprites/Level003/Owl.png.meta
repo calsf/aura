@@ -1,16 +1,13 @@
 fileFormatVersion: 2
-guid: 38e4b7b33f0e2ad4b9b3729e7bf48a83
+guid: 4be8b5466510b72468a84fd454d1cf7a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3551287784963028691
-    second: Bird_0
+      213: -1788626132936788117
+    second: Owl_0
   - first:
-      213: -2298939645060189070
-    second: Bird_1
-  - first:
-      213: 1895172606582820919
-    second: Bird_2
+      213: -6547531000066942689
+    second: Owl_1
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -107,12 +104,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Bird_0
+      name: Owl_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
+        width: 16
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -121,19 +118,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d29481a339a47bec0800000000000000
-      internalID: -3551287784963028691
+      spriteID: b67725632068d27e0800000000000000
+      internalID: -1788626132936788117
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bird_1
+      name: Owl_1
       rect:
         serializedVersion: 2
-        x: 32
+        x: 16
         y: 0
-        width: 32
+        width: 16
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -142,29 +139,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 274ff18b2968810e0800000000000000
-      internalID: -2298939645060189070
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bird_2
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7309b63d1710d4a10800000000000000
-      internalID: 1895172606582820919
+      spriteID: f19d629ee3f7225a0800000000000000
+      internalID: -6547531000066942689
       vertices: []
       indices: 
       edges: []

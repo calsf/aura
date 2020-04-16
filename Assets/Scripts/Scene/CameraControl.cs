@@ -20,7 +20,7 @@ public class CameraControl : MonoBehaviour
     bool followPlayer;
 
     // Camera offsets
-    float yOffset = 1f;
+    float yOffset = 0f;
     float xOffset = 0f;
 
     // Smoothing time for y movement of camera
