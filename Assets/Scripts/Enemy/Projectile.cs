@@ -6,6 +6,9 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
+    [SerializeField]
+    GameObject disabledEffectPrefab;
+    GameObject disabledEffect;
     CameraControl cam;
     Rigidbody2D rb;
     DamagePlayerDefaults dmgPlayer;
@@ -16,6 +19,19 @@ public class Projectile : MonoBehaviour
         cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraControl>();
         rb = GetComponent<Rigidbody2D>();
         dmgPlayer = GetComponent<DamagePlayerDefaults>();
+
+        disabledEffect = Instantiate(disabledEffectPrefab, transform.position, Quaternion.identity);
+        disabledEffect.SetActive(false);
+    }
+
+    // Show effect when projectile is disabled
+    void OnDisable()
+    {
+        if (disabledEffect != null)
+        {
+            disabledEffect.transform.position = transform.position;
+            disabledEffect.SetActive(true);
+        }
     }
 
     void Update()

@@ -9,9 +9,15 @@ EditorBuildSettings:
     path: Assets/Scenes/ZoneSelect.unity
     guid: c7faddccd0521264e8778ac37bb52247
   - enabled: 1
+    path: Assets/Scenes/Merchant.unity
+    guid: 5c15d96c1a30ee042b9aa7e88c41fa82
+  - enabled: 1
     path: Assets/Scenes/Zone1.unity
     guid: 18b2e45a56c65dd49a7299b6fe20605c
   - enabled: 1
-    path: Assets/Scenes/Merchant.unity
-    guid: 5c15d96c1a30ee042b9aa7e88c41fa82
+    path: Assets/Scenes/Zone2.unity
+    guid: 58006aa28ffd2084abe77e7813a37928
+  - enabled: 1
+    path: Assets/Scenes/Zone3.unity
+    guid: 619775a861e1a5a4ca94c0d5b9c4bdeb
   m_configObjects: {}

@@ -112,7 +112,7 @@ public static class SaveLoadManager
             // If no save file exists, start fresh (levels do not include level select)
             bool[] defaultLvls = new bool[]
             {
-                true, false
+                true, true, false, false
             };
 
             return defaultLvls;

@@ -72,7 +72,7 @@ public class ShootPlayer : MonoBehaviour
     // Play Shoot animation to indicate shooting, stop facing player to show where projectile is going to go
     public void StartShoot()
     {
-        anim.Play("Shoot");
+        anim.Play("Shoot"); // ANIMATION STATE MUST BE SAME NAME - ANIMATION CLIPS CAN BE DIFFERENT NAME
         facePlayer = false;
 
         // Get the player's position at time of StartShoot
