@@ -19,8 +19,9 @@ public class PlayerInView : MonoBehaviour
     {
         Vector3 point = cam.WorldToViewportPoint(other.position);
 
-        // If the transform is in view space
-        if (point.z > 0 && point.x < 1 && point.x > 0 && point.y > 0 && point.y < 1)
+        // If the transform is in view space (1 and 0 would mean transform is at very edge/perfect in camera view but we will consider
+        // in camera view to have an offset of .1f so InView behaviours are more easily noticeable upon entering camera view)
+        if (point.z > 0 && point.x < .9f && point.x > 0.1 && point.y > 0.1f && point.y < .9f)
         {
             return true;
         }
