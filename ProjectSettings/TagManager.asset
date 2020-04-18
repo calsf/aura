@@ -10,6 +10,7 @@ TagManager:
   - LevelManager
   - SaveData
   - MovingPlatform
+  - PlayerDamaged
   layers:
   - Default
   - TransparentFX

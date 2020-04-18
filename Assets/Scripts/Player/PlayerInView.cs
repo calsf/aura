@@ -30,4 +30,20 @@ public class PlayerInView : MonoBehaviour
             return false;
         }
     }
+
+    //Check if player is right outside of view of the transform that is passed in as argument
+    public bool EdgeOfView(Transform other)
+    {
+        Vector3 point = cam.WorldToViewportPoint(other.position);
+
+        // Return true if other transform is in view or right outside of the camera view
+        if (point.z > 0 && point.x < 1.05f && point.x > -.05 && point.y > -.05f && point.y < 1.05f)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 }

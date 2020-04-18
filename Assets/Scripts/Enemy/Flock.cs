@@ -61,7 +61,7 @@ public class Flock : MonoBehaviour
         foreach(Collider2D coll in contextColliders)
         {
             // Do not include self or player, only other nearby objects
-            if (coll != obj.Coll && coll.gameObject.tag != "Player")
+            if (coll != obj.Coll && coll.gameObject.tag != "PlayerDamaged" && coll.gameObject.tag != "Player")
             {
                 context.Add(coll.transform);
             }

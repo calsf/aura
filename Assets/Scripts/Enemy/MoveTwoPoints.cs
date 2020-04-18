@@ -4,7 +4,8 @@ using UnityEngine;
 
 //Move back and forth between two points
 
-public class MoveTwoPoints : MonoBehaviour {
+public class MoveTwoPoints : StoppableMovementBehaviour
+{
     EnemyDefaults enemyDefaults;
 
     [SerializeField]
@@ -19,6 +20,8 @@ public class MoveTwoPoints : MonoBehaviour {
     [SerializeField]
     bool yFlip;
 
+    bool stopMoving = false;
+
     void Start()
     {
         enemyDefaults = GetComponent<EnemyDefaults>();
@@ -28,6 +31,12 @@ public class MoveTwoPoints : MonoBehaviour {
     // Update is called once per frame
     void FixedUpdate ()
     {
+        // Stop movement
+        if (stopMoving)
+        {
+            return;
+        }
+
         transform.position = Vector3.MoveTowards(transform.position, nextPos.position, enemyDefaults.MoveSpeed * Time.deltaTime);
 
         if (Vector3.Distance(transform.position, nextPos.position) <= 0.1f)
@@ -46,6 +55,19 @@ public class MoveTwoPoints : MonoBehaviour {
         {
             transform.localScale = new Vector2(transform.localScale.x, -transform.localScale.y);
         }
+    }
+
+    /* For other scripts to stop and resume movement for any other actions */
+    // Stop moving
+    public override void StopMoving()
+    {
+        stopMoving = true;
+    }
+
+    // Resume moving
+    public override void ResumeMoving()
+    {
+        stopMoving = false;
     }
 
 }
