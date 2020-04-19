@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // Shoots projectiles in fixed directions, can also shoot in direction enemy is facing depending on shootBehaviour
+// THIS CAN STOP ENEMY MOVEMENT TO STOP ONLY IF IT IS ATTACHED TO MAIN ENEMY OBJECT
 
 // Stop to play animation to shoot -> attach to main enemy since enemy moving animation will be interrupted to play animation to shoot
 // Do not stop to play animation to shoot -> attach to child of enemy object since child can play animation without interrupting main enemy move animation
 // BUT can still attach to main enemy if animation to shoot transitions well from the move animation
 // If enemy has no movement, can attach to main enemy or enemy children
 
-public class ShootFixed : MonoBehaviour
+public class ShootFixed : ShootBehaviour
 {
     // Dynamic projectile pool
     List<GameObject> projectilePool;
@@ -18,7 +19,7 @@ public class ShootFixed : MonoBehaviour
 
     PlayerInView view;
     bool playerInView;
-    float lastShot;
+    float lastShot = -1;
     Transform spawnPos;     // Position of projectile spawn
     Animator anim;
     bool isShooting;
@@ -48,6 +49,16 @@ public class ShootFixed : MonoBehaviour
         }
     }
 
+    // Don't shoot immediately on enable
+    void OnEnable()
+    {
+        // Avoid rapid/irregular shots by going repeatedly going in and out of view
+        if (Time.time > lastShot)
+        {
+            lastShot = Time.time + Random.Range(shootBehaviour.minShootDelay, shootBehaviour.maxShootDelay);
+        }
+    }
+
     void Update()
     {
         // The first time player comes almost into view (or the first time this object comes into player's camera view), reset lastShot by a random delay
@@ -70,7 +81,7 @@ public class ShootFixed : MonoBehaviour
     }
 
     // Play Shoot animation to indicate shooting
-    public void StartShoot()
+    public override void StartShoot()
     {
         // If behaviour stops to shoot, stop movement to shoot
         if (shootBehaviour.stopToShoot)
@@ -85,7 +96,7 @@ public class ShootFixed : MonoBehaviour
     }
 
     // Shoot projectile at player during animation (Called during/in animation itself)
-    public void Shoot()
+    public override void Shoot()
     {
         for (int i = 0; i < shootBehaviour.numProj; i++)
         {
@@ -118,7 +129,7 @@ public class ShootFixed : MonoBehaviour
     }
 
     // Reset facePlayer after shoot animation is finished (Called during/in animation itself)
-    public void StopShooting()
+    public override void StopShooting()
     {
         // If behaviour stops to shoot, resume movement after shooting
         if (shootBehaviour.stopToShoot)

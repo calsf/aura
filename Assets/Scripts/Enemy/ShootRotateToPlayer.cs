@@ -8,8 +8,9 @@ using UnityEngine;
 // Shoot delay and stopping to shoot or not stopping to shoot determined by shootBehaviour scriptable object
 
 // ALWAYS ATTACHED TO CHILD OBJECT OF ENEMY SINCE OBJECT WILL ALWAYS ROTATE TO FACE PLAYER TO INDICATE THEY ARE BEING TARGETTED
+// THIS WILL NEVER STOP ENEMY MOVEMENT SINCE IT WILL BE THE CHILD OBJECT THAT PLAYS SHOOT ANIMATION WHICH MEANS MAIN ENEMY ANIMATION WILL NEVER BE AFFECTED
 
-public class ShootPlayer : MonoBehaviour
+public class ShootRotateToPlayer : ShootBehaviour
 {
     // Dynamic projectile pool
     List<GameObject> projectilePool;
@@ -25,24 +26,16 @@ public class ShootPlayer : MonoBehaviour
     Animator anim;  
     Vector3 shootPos;       // The position to shoot at
 
-
     bool wasAbove;
     bool wasBelow;
 
-    float lastShot;
-
-    StoppableMovementBehaviour[] movementBehaviours;
+    float lastShot = -1;
 
     [SerializeField]
-    ShootPlayerBehaviour shootBehaviour;
+    ShootRotateToPlayerBehaviour shootBehaviour;
 
     void Awake()
     {
-        // Get all movement behaviours enemy has so that they can be stopped and resumed, get behaviours based on if enemy or child object is handling shooting
-        // Unlike ShootFixed, since ShootPlayer object always faces player, it must be attached to child of enemy to avoid main enemy rotating towards player
-        // This means movement behaviours will always be in parent
-        movementBehaviours = GetComponentsInParent<StoppableMovementBehaviour>();
-
         facePlayer = true;
         player = GameObject.FindGameObjectWithTag("Player");
         view = player.GetComponent<PlayerInView>();
@@ -54,6 +47,16 @@ public class ShootPlayer : MonoBehaviour
         {
             projectilePool.Add(Instantiate(shootBehaviour.projectilePrefab, Vector3.zero, Quaternion.identity));
             projectilePool[i].SetActive(false);
+        }
+    }
+
+    // Don't shoot immediately on enable
+    void OnEnable()
+    {
+        // Avoid rapid/irregular shots by going repeatedly going in and out of view
+        if (Time.time > lastShot)
+        {
+            lastShot = Time.time + Random.Range(shootBehaviour.minShootDelay, shootBehaviour.maxShootDelay);
         }
     }
 
@@ -120,17 +123,8 @@ public class ShootPlayer : MonoBehaviour
     }
 
     // Play Shoot animation to indicate shooting, stop facing player to show where projectile is going to go
-    public void StartShoot()
+    public override void StartShoot()
     {
-        // If behaviour stops to shoot, stop movement to shoot
-        if (shootBehaviour.stopToShoot)
-        {
-            foreach (StoppableMovementBehaviour m in movementBehaviours)
-            {
-                m.StopMoving();
-            }
-        }
-
         anim.Play("Shoot"); // ANIMATION STATE MUST BE SAME NAME - ANIMATION CLIPS CAN BE DIFFERENT NAME
         facePlayer = false;
 
@@ -139,7 +133,7 @@ public class ShootPlayer : MonoBehaviour
     }
 
     // Shoot projectile at player during animation (Called during/in animation itself)
-    public void Shoot()
+    public override void Shoot()
     {
         GameObject proj = GetFromPool(projectilePool);
 
@@ -150,17 +144,8 @@ public class ShootPlayer : MonoBehaviour
     }
 
     // Reset facePlayer after shoot animation is finished (Called during/in animation itself)
-    public void StopShooting()
+    public override void StopShooting()
     {
-        // If behaviour stops to shoot, resume movement after shooting
-        if (shootBehaviour.stopToShoot)
-        {
-            foreach (StoppableMovementBehaviour m in movementBehaviours)
-            {
-                m.ResumeMoving();
-            }
-        }
-
         lastShot = Time.time + shootBehaviour.shootDelay;
         facePlayer = true;
     }

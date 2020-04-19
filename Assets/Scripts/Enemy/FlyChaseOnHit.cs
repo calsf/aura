@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Once enemy has lost health, it is aggro'd onto the player and will keep chasing the player
+// Once enemy has lost health, it is aggro'd onto the player and will keep chasing the player, AGGRO IS NEVER RESET ONCE ENEMY HAS BEEN HIT UNLIKE FLYCHASEINVIEW
 // Chase movement will ignore obstacles and go straight towards player
-// If player is dead or if aggroViewOnly, then the enemy will activate nonChasingMove behaviour until player is alive/back in view
+// If player is dead or out of enemy's view, then the enemy will activate nonChasingMove behaviour until player is alive/back in view but will remain aggro'd as soon as player comes into view
 
 public class FlyChaseOnHit : MonoBehaviour
 {
@@ -14,12 +14,20 @@ public class FlyChaseOnHit : MonoBehaviour
     PlayerHP playerHP;
     EnemyDefaults enemyDefaults;
     Animator anim;
-    MoveTwoPoints nonChasingMove;   // The movement of enemy if not chasing and has been aggro'd already
+
     bool isStartingAggro;
     bool isAggro;
 
+    // For non aggro movement after being hit
     [SerializeField]
-    bool aggroViewOnly;     // Should enemy chase only if in view?
+    Transform posA;
+    [SerializeField]
+    Transform posB;
+    Transform nextPos;
+    [SerializeField]
+    [Range(0, 1)]
+    float nonChaseSpeedMultiplier;  // Multiply base enemy move speed to get speed while enemy is not chasing
+
     bool playerInView;
 
     void Awake()
@@ -28,7 +36,7 @@ public class FlyChaseOnHit : MonoBehaviour
         playerHP = player.GetComponent<PlayerHP>();
         view = player.GetComponent<PlayerInView>();
 
-        nonChasingMove = GetComponent<MoveTwoPoints>();
+        nextPos = posB;
         enemyDefaults = GetComponent<EnemyDefaults>();
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
@@ -64,19 +72,28 @@ public class FlyChaseOnHit : MonoBehaviour
         }
 
         // Once aggro'd check if should be chasing or doing non chase movement instead
-        // If player is not in view and only chases player if player is in view, return
-        if ((aggroViewOnly && !playerInView) || playerHP.CurrentHP <= 0)
+        // If player is not in view, return
+        if (!playerInView || playerHP.CurrentHP <= 0)
         {
-            nonChasingMove.enabled = true;
+            // Move back and forth if not aggro'd
+            transform.position = Vector3.MoveTowards(transform.position, nextPos.position, (enemyDefaults.MoveSpeed * nonChaseSpeedMultiplier) * Time.deltaTime);
+            if (Vector3.Distance(transform.position, nextPos.position) <= 0.1f)
+            {
+                nextPos = nextPos != posA ? posA : posB;
+            }
+
+            //Swap facing x direction if necessary
+            if ((transform.localScale.x > 0 && transform.position.x < nextPos.position.x) || (transform.localScale.x < 0 && transform.position.x > nextPos.position.x))
+            {
+                transform.localScale = new Vector2(-transform.localScale.x, transform.localScale.y);
+            }
             return;
         }
         else
         {
-            nonChasingMove.enabled = false;
+            // Chase player if aggro'd
+            transform.position = Vector3.MoveTowards(transform.position, player.transform.position, enemyDefaults.MoveSpeed * Time.deltaTime);
         }
-
-        // Chase player if aggro'd
-        transform.position = Vector3.MoveTowards(transform.position, player.transform.position, enemyDefaults.MoveSpeed * Time.deltaTime);
     }
 
     // Play aggro animation
