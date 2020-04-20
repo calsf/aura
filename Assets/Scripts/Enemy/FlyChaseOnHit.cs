@@ -28,7 +28,7 @@ public class FlyChaseOnHit : MonoBehaviour
     [Range(0, 1)]
     float nonChaseSpeedMultiplier;  // Multiply base enemy move speed to get speed while enemy is not chasing
 
-    bool playerInView;
+    bool playerInView; // Must be in camera view and within distance to be in view (InView and InDistance)
 
     void Awake()
     {
@@ -44,7 +44,7 @@ public class FlyChaseOnHit : MonoBehaviour
 
     void Update()
     {
-        playerInView = view.InView(transform);
+        playerInView = view.InView(transform) && view.InDistance(transform);
 
         // Once lost HP, aggro onto player and chase them
         if (!isStartingAggro && enemyDefaults.HP < enemyDefaults.Enemy.maxHP)

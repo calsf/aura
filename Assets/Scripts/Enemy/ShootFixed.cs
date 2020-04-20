@@ -17,8 +17,8 @@ public class ShootFixed : ShootBehaviour
     [SerializeField]
     int poolNum;
 
-    PlayerInView view;
-    bool playerInView;
+    PlayerInView view;      
+    bool playerInView;      // Must be at camera edge view to be in view (EdgeOfView)
     float lastShot = -1;
     Transform spawnPos;     // Position of projectile spawn
     Animator anim;

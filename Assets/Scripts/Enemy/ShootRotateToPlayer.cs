@@ -20,7 +20,7 @@ public class ShootRotateToPlayer : ShootBehaviour
     GameObject player;
     PlayerInView view;
 
-    bool playerInView;
+    bool playerInView;      // Must be in camera view and within distance to be in view (InView and InDistance)
     Transform spawnPos;     // Position of projectile spawn
     bool facePlayer;        // Face player?
     Animator anim;  
@@ -64,7 +64,7 @@ public class ShootRotateToPlayer : ShootBehaviour
     void Update()
     {
         // The first time player comes into view (or the first time this object comes into player's camera view), reset lastShot by a random delay
-        if (!playerInView && view.InView(transform))
+        if (!playerInView && view.InView(transform) && view.InDistance(transform))
         {
             // Avoid rapid/irregular shots by going repeatedly going in and out of view
             if (Time.time > lastShot)
@@ -72,7 +72,7 @@ public class ShootRotateToPlayer : ShootBehaviour
                 lastShot = Time.time + Random.Range(shootBehaviour.minShootDelay, shootBehaviour.maxShootDelay);
             }
         }
-        playerInView = view.InView(transform);
+        playerInView = view.InView(transform) && view.InDistance(transform);
 
         // If above is restricted, means cannot turn and shoot player if player is above
         if (shootBehaviour.restrictAbove && player.transform.position.y > transform.position.y)

@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // Walks back and forth, when player in view, plays startup animation to chase player then chases player until player is dead or out of view
-// Chases along x and y axis / directly chases player
+// Chases along x axis and has a minX and maxX position cap in case of platform bound enemies
 // Movement can be interrupted and stopped to shoot - min shoot delay must be greater than aggro start animation to prevent animation/behaviours conflicting
 
-public class FlyChaseInView : StoppableMovementBehaviour
+public class GroundChaseInView : StoppableMovementBehaviour
 {
     Rigidbody2D rb;
     GameObject player;
@@ -21,7 +21,8 @@ public class FlyChaseInView : StoppableMovementBehaviour
     [SerializeField]
     Transform posB;
     Transform nextPos;
-    [SerializeField] [Range(0, 1)]
+    [SerializeField]
+    [Range(0, 1)]
     float nonChaseSpeedMultiplier;  // Multiply base enemy move speed to get speed while enemy is not chasing
 
     // Subtracts value from the max distance between player and enemy that is considered to be in distance
@@ -36,6 +37,18 @@ public class FlyChaseInView : StoppableMovementBehaviour
     bool isAggro;
     bool stopMoving;
 
+    [SerializeField]
+    float turnDelay;
+    float nextTurn;
+    float xPos;
+    bool playerInFront;
+
+    // Bound max chase positions
+    [SerializeField]
+    Transform minX;
+    [SerializeField]
+    Transform maxX;
+    
     bool playerInView; // Must be in camera view and within distance to be in view (InView and InDistance)
     ShootBehaviour shootBehaviourScript;
 
@@ -93,7 +106,7 @@ public class FlyChaseInView : StoppableMovementBehaviour
         // Check if should be chasing or doing non chase movement instead
         // If player out of view, is dead, or is not aggro'd, move between points A and B at same speed as enemyDefaults.MoveSpeed or slower depending on the nonChaseSpeedMultiplier
         // Otherwise, enemy should be chasing player
-        if (!playerInView || playerHP.CurrentHP <= 0 || (!isAggro && !isStartingAggro))
+        if (!playerInView || playerHP.CurrentHP <= 0 || (!isAggro && !isStartingAggro) )
         {
             // Reset aggro properties and animation from aggro or starting aggro if was aggro/starting aggro (for example, if player went out of view during aggro/start aggro)
             if (isAggro || isStartingAggro)
@@ -124,8 +137,34 @@ public class FlyChaseInView : StoppableMovementBehaviour
         }
         else
         {
-            // Chase player if aggro'd
-            transform.position = Vector3.MoveTowards(transform.position, player.transform.position, enemyDefaults.MoveSpeed * Time.deltaTime);
+            // If enemy can no longer chase player past bounds, set idle to true so can transition to idle animation since movement will be stopped, otherwise, set idle to false
+            if ((transform.position.x >= maxX.position.x && player.transform.position.x > maxX.position.x) || (transform.position.x <= minX.position.x && player.transform.position.x < minX.position.x))
+            {
+                anim.SetBool("Idle", true);
+                return; // Return to avoid moving enemy
+            }
+            else
+            {
+                anim.SetBool("Idle", false);
+            }
+           
+            // If player switched sides, delay turning to chase player by turnDelay
+            if ((playerInFront && transform.position.x > player.transform.position.x) || (!playerInFront && transform.position.x < player.transform.position.x))
+            {
+                nextTurn = Time.time + turnDelay;
+            }
+
+            // Update whether or not the player is in front of enemy
+            playerInFront = player.transform.position.x > transform.position.x;
+
+            // If can turn, update the new xPosition to chase to
+            if (Time.time > nextTurn)
+            {
+                xPos = playerInFront ? maxX.position.x : minX.position.x;
+            }
+
+            // Chase player
+            transform.position = Vector3.MoveTowards(transform.position, new Vector2(xPos, transform.position.y), enemyDefaults.MoveSpeed * Time.deltaTime);
         }
     }
 
