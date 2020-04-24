@@ -42,6 +42,14 @@ public class EnemyHPManager : MonoBehaviour
             barObject.transform.localScale = new Vector2(-barObject.transform.localScale.x, barObject.transform.localScale.y);
         }
 
+        if (enemy.gameObject.transform.localScale.y < 0 && barObject.transform.localScale.y > 0 || enemy.gameObject.transform.localScale.y > 0 && barObject.transform.localScale.y < 0)
+        {
+            barObject.transform.localPosition = new Vector2(barObject.transform.localPosition.x, -barObject.transform.localPosition.y);
+
+            // Flip localScale
+            barObject.transform.localScale = new Vector2(barObject.transform.localScale.x, -barObject.transform.localScale.y);
+        }
+
         // After some time from not being hit, hide enemy health bar
         if (Time.time > lastHit)
         {

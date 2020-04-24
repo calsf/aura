@@ -51,7 +51,7 @@ public class MoveTwoPoints : StoppableMovementBehaviour
         }
 
         //Swap facing y direction if necessary
-        if (yFlip && (transform.localScale.x > 0 && transform.position.y < nextPos.position.y) || (transform.localScale.y < 0 && transform.position.y > nextPos.position.y))
+        if (yFlip && (transform.localScale.y > 0 && transform.position.y > nextPos.position.y) || (transform.localScale.y < 0 && transform.position.y < nextPos.position.y))
         {
             transform.localScale = new Vector2(transform.localScale.x, -transform.localScale.y);
         }

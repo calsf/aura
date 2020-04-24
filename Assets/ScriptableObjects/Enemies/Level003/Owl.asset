@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Owl
   m_EditorClassIdentifier: 
   enemyName: Owl
-  maxHP: 35
+  maxHP: 30
   dmg: 1
   gold: 500
   baseMoveSpeed: 0
