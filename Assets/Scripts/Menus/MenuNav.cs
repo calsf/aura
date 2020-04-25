@@ -17,6 +17,8 @@ public class MenuNav : MonoBehaviour
     Button[] auraInvent;            // First submenu buttons as set by editor, includes all auras
     Button[] unlockedAuraInvent;    // Filtered aura select buttons so only can navigate through unlocked auras
     [SerializeField]
+    RectTransform auraList;
+    [SerializeField]
     Button[] controls;      // Second submenu buttons
     [SerializeField]
     Button[] settings;      // Third submenu buttons
@@ -102,6 +104,25 @@ public class MenuNav : MonoBehaviour
         {
             navImg[i] = nav[i].GetComponent<Image>();
         }
+
+        // Adjust the size of aura list so it scrolls when there are enough unlocked auras
+        // 5 auras can be displayed without scrolling so with more than 5 auras, increase aura list size so that navigating through auras scrolls
+        // Otherwise, will not increase aura list size and leave the aura list with no scrolling
+        int extraAuras = unlockedAuraInvent.Length - 5;
+        while (extraAuras > 0)
+        {
+            auraList.anchoredPosition = new Vector2(auraList.anchoredPosition.x, auraList.anchoredPosition.y - 35f);
+            auraList.sizeDelta = new Vector2(auraList.sizeDelta.x, auraList.sizeDelta.y + 35f);
+            extraAuras--;
+
+            // Add a little more space after increasing aura list size for all auras so that the last aura selection is completely visible when selected
+            if (extraAuras == 0)
+            {
+                auraList.anchoredPosition = new Vector2(auraList.anchoredPosition.x, auraList.anchoredPosition.y - 7f);
+                auraList.sizeDelta = new Vector2(auraList.sizeDelta.x, auraList.sizeDelta.y + 7f);
+            }
+        }
+
     }
 
     // Update is called once per frame
@@ -295,6 +316,7 @@ public class MenuNav : MonoBehaviour
             button = subButtons[selectedSub].Length - 1;
         }
         selectedSubBtn = button;
+
         // If submenu has a scrollbar, move scrollbar while navigating buttons
         if (scroll.Length - 1 >= selectedSub)
         {

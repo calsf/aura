@@ -78,12 +78,6 @@ public class MenuManager : MonoBehaviour
             isMenu = true;
             Time.timeScale = 0;
         }
-        
-        //Set menu defaults on menu open
-        if (isMenu)
-        {
-            menuNav.NavMenu(0);
-        }
     }
 
     //For submenu nav, toggle corresponding submenu's CanvasGroup with button
