@@ -11,6 +11,7 @@ TagManager:
   - SaveData
   - MovingPlatform
   - PlayerDamaged
+  - ExtraDamage
   layers:
   - Default
   - TransparentFX
@@ -23,7 +24,7 @@ TagManager:
   - Ground
   - Enemy
   - Player
-  - 
+  - Flame
   - 
   - 
   - 

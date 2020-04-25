@@ -18,8 +18,6 @@ public class Sound
     float pitch;
     [SerializeField]
     bool loop;
-    [SerializeField] [Range(0, 1)]
-    float spatialBlend;
 
     AudioSource audioSrc;
 
@@ -29,7 +27,6 @@ public class Sound
     public float Volume { get { return volume; } set { volume = value; } }
     public float Pitch { get { return pitch; } set { pitch = value; } }
     public bool Loop { get { return loop; } set { loop = value; } }
-    public float SpatialBlend { get { return spatialBlend; } set { spatialBlend = value; } }
     public AudioSource AudioSrc { get { return audioSrc; } set { audioSrc = value; } }
 
 }

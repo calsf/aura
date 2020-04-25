@@ -3,7 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// Sound manager for non spatial/global audio sources
+// Sound manager for non spatial/global audio sources 
+// (enemy hit and death sounds are spatial which should not be included here, each enemy should have their own audio sources attached to enemy object)
 
 public class SoundManager : MonoBehaviour
 {
@@ -38,7 +39,6 @@ public class SoundManager : MonoBehaviour
             sounds[i].AudioSrc = gameObject.AddComponent<AudioSource>();
             sounds[i].AudioSrc.clip = sounds[i].Clip;
             sounds[i].AudioSrc.loop = sounds[i].Loop;
-            sounds[i].AudioSrc.spatialBlend = sounds[i].SpatialBlend;
             sounds[i].AudioSrc.volume = sounds[i].Volume * soundVolume;
             sounds[i].AudioSrc.pitch = sounds[i].Pitch;
 

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &4598560185897053914
+--- !u!1 &6819243583851353889
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,38 +8,39 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4598560185897053918}
-  - component: {fileID: 4598560185897053919}
-  - component: {fileID: 4598560185897053912}
-  - component: {fileID: 4598560185897053913}
-  m_Layer: 0
-  m_Name: DeathExplo1
-  m_TagString: Untagged
+  - component: {fileID: 6819243583851353893}
+  - component: {fileID: 6819243583851353892}
+  - component: {fileID: 6819243583851353891}
+  - component: {fileID: 6819243583851353890}
+  - component: {fileID: -8312573053726195192}
+  m_Layer: 11
+  m_Name: WildfireFlame
+  m_TagString: ExtraDamage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &4598560185897053918
+  m_IsActive: 1
+--- !u!4 &6819243583851353893
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4598560185897053914}
+  m_GameObject: {fileID: 6819243583851353889}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalPosition: {x: 2.647, y: -1.196, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &4598560185897053919
+--- !u!212 &6819243583851353892
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4598560185897053914}
+  m_GameObject: {fileID: 6819243583851353889}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -71,30 +72,30 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 90
-  m_Sprite: {fileID: -263143034450290005, guid: db7522cb814523d4ba268ae5be775d51,
+  m_SortingOrder: 102
+  m_Sprite: {fileID: -4868950250757900845, guid: ac708c7dea8572a478ef1169f97e4a60,
     type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 4, y: 4}
+  m_Size: {x: 6, y: 6}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &4598560185897053912
+--- !u!95 &6819243583851353891
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4598560185897053914}
+  m_GameObject: {fileID: 6819243583851353889}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: e3a4ff8d80ba83b479ec39e35ea2fb6a, type: 2}
+  m_Controller: {fileID: 9100000, guid: 9541360ef68267b428f0a2767737de75, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -103,15 +104,31 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &4598560185897053913
+--- !u!58 &6819243583851353890
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6819243583851353889}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.0003851652, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.3496145
+--- !u!114 &-8312573053726195192
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4598560185897053914}
+  m_GameObject: {fileID: 6819243583851353889}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: deb1d881815ef2f4cb3f81682b94ae78, type: 3}
+  m_Script: {fileID: 11500000, guid: edcb65dcc30b40746afce26fa28c8823, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

@@ -10,6 +10,9 @@ public class Enemy : ScriptableObject
     public int dmg;
     public int gold;
     public int baseMoveSpeed;
-    public string deathSound;
+    public AudioClip deathSound;
+    [Range(0, 1)]
+    public float deathVolume;
     public GameObject deathFX;
+    public AudioClip[] hitSounds; // 3 hit sounds
 }
