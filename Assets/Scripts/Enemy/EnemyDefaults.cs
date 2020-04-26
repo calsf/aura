@@ -200,6 +200,18 @@ public class EnemyDefaults : MonoBehaviour {
         }
     }
 
+    // If enemy's move speed was affected by aura, reset
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.tag == "DamageEnemy")
+        {
+            if (moveSpeed != enemy.baseMoveSpeed)
+            {
+                moveSpeed = enemy.baseMoveSpeed;
+            }
+        }
+    }
+
     //Destroys object if hp is 0 or less
     void IsDead()
     {

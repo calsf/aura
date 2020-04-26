@@ -5,6 +5,9 @@ using UnityEngine;
 public class PlayerController : Raycasts
 {
     [SerializeField]
+    MeteoricAura meteoricAura;  // Meteoric aura for landings
+
+    [SerializeField]
     LayerMask collisionMask;
     float maxSlopeAngle = 70;
 
@@ -224,6 +227,13 @@ public class PlayerController : Raycasts
         if (collisions.below && !hasLanded)
         {
             hasLanded = true;
+
+            // If meteoric aura is active, call Landing()
+            if (meteoricAura.gameObject.activeInHierarchy)
+            {
+                meteoricAura.Landing();
+            }
+
             SoundManager.SoundInstance.PlaySound("Landing");
         }
     }

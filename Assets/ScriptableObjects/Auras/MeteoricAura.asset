@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e1c282029072a9048b9e8b3ff82d3437, type: 3}
-  m_Name: SlowAura
+  m_Name: MeteoricAura
   m_EditorClassIdentifier: 
-  auraName: Slow Aura
-  baseDmg: 5
-  icon: {fileID: 21300000, guid: 07797feaa31e419479cf2c278e395174, type: 3}
+  auraName: Meteoric Aura
+  baseDmg: 15
+  icon: {fileID: -2886004633257107465, guid: a5d3843854f5acc4581140adc4e8e71a, type: 3}
