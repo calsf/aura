@@ -42,30 +42,19 @@ public class WildfireAura : MonoBehaviour
         return newObj;
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    // Spawn wildfire flame at other position
+    public void SpawnFlame(Transform other)
     {
-        if (other.tag == "Enemy")
+        // Check if there is already a wildfire flame on top of other position, if there is, return and do not spawn flame
+        RaycastHit2D hit = Physics2D.Raycast(other.gameObject.transform.position, Vector2.zero, 0, flameMask);
+        if (hit.collider != null && hit.collider.gameObject.activeInHierarchy)
         {
-            // Check if there is already a wildfire flame on top of enemy position
-            RaycastHit2D hit = Physics2D.Raycast(other.gameObject.transform.position, Vector2.zero, 0, flameMask); //Raycast to detect any objects at mouse position
-            if (hit.collider != null)
-            {
-                return;
-            }
-
-            // Spawn a wildfire flame every time aura hits an enemy
-            if (Time.time > other.GetComponent<EnemyDefaults>().OnEnterTime)
-            {
-                GameObject flame = GetFromPool(flamePool);
-                flame.transform.position = other.gameObject.transform.position;
-                flame.SetActive(true);
-            }
+            return;
         }
-    }
 
-    void OnTriggerStay2D(Collider2D other)
-    {
-        OnTriggerEnter2D(other);
+        GameObject flame = GetFromPool(flamePool);
+        flame.transform.position = other.position;
+        flame.SetActive(true);
     }
 
 }

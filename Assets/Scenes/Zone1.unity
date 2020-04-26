@@ -7139,7 +7139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &270154632
 Transform:
   m_ObjectHideFlags: 0
@@ -17023,7 +17023,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flamePrefab: {fileID: 6819243583851353889, guid: 4932bbc82ce127548893334e7e045c66,
     type: 3}
-  poolNum: 33
+  poolNum: 100
   flameMask:
     serializedVersion: 2
     m_Bits: 2048
@@ -17194,7 +17194,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &699204114
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -68802,7 +68802,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1173759014
 MonoBehaviour:
   m_ObjectHideFlags: 0

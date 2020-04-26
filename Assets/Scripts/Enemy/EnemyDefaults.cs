@@ -139,6 +139,14 @@ public class EnemyDefaults : MonoBehaviour {
             onStayTime = Time.time + damageRate; //Delay to avoid OnStay triggering at same time
             onEnterTime = Time.time + damageRate;
 
+            // Spawn flame if was hit by wildfire aura
+            WildfireAura wfAura = other.GetComponent<WildfireAura>();
+            if (wfAura != null)
+            {
+                wfAura.SpawnFlame(transform);
+            }
+
+            // Deal damage to enemy
             int dmg = other.GetComponentInParent<AuraDefaults>().Dmg;
             DisplayDmgNum(dmg);
             hp -= dmg;
@@ -173,6 +181,14 @@ public class EnemyDefaults : MonoBehaviour {
             {
                 onStayTime = Time.time + damageRate;
 
+                // Spawn flame if was hit by wildfire aura
+                WildfireAura wfAura = other.GetComponent<WildfireAura>();
+                if (wfAura != null)
+                {
+                    wfAura.SpawnFlame(transform);
+                }
+
+                // Deal damage to enemy
                 int dmg = other.GetComponentInParent<AuraDefaults>().Dmg;
                 DisplayDmgNum(dmg);
                 hp -= dmg;
