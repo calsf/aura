@@ -38,7 +38,7 @@ public class PlayerHP : MonoBehaviour
     public UnityEvent OnDeath;
     public UnityEvent OnRespawning;
     public UnityEvent OnSpawn;
-    public int CurrentHP { get { return currentHP; } }
+    public int CurrentHP { get { return currentHP; } set { currentHP = value; } }
     public int MaxHP { get { return maxHP; } }
     public float RespawnDelay { get { return respawnDelay; } }
 

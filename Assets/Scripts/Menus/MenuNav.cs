@@ -111,16 +111,10 @@ public class MenuNav : MonoBehaviour
         int extraAuras = unlockedAuraInvent.Length - 5;
         while (extraAuras > 0)
         {
-            auraList.anchoredPosition = new Vector2(auraList.anchoredPosition.x, auraList.anchoredPosition.y - 35f);
-            auraList.sizeDelta = new Vector2(auraList.sizeDelta.x, auraList.sizeDelta.y + 35f);
+            // Add extra space depending on # of extra auras
+            auraList.anchoredPosition = new Vector2(auraList.anchoredPosition.x, auraList.anchoredPosition.y - 35f - (extraAuras + 1));
+            auraList.sizeDelta = new Vector2(auraList.sizeDelta.x, auraList.sizeDelta.y + 35f + (extraAuras + 1));
             extraAuras--;
-
-            // Add a little more space after increasing aura list size for all auras so that the last aura selection is completely visible when selected
-            if (extraAuras == 0)
-            {
-                auraList.anchoredPosition = new Vector2(auraList.anchoredPosition.x, auraList.anchoredPosition.y - 7f);
-                auraList.sizeDelta = new Vector2(auraList.sizeDelta.x, auraList.sizeDelta.y + 7f);
-            }
         }
 
     }
