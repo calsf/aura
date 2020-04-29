@@ -39,6 +39,10 @@ public class PlayerMoveInput : MonoBehaviour
     float diagDashAngle = 25f;
     bool dashing;
     bool hasDashed;
+    bool isTeleport; // For teleporting if teleport aura is activated
+    int teleportUnits = 7;
+    [SerializeField]
+    LayerMask teleMask; 
 
 
     bool canInput = true;  // Used to disable movement inputs, keeps calling ApplyMovement - used for when player gets hit
@@ -68,6 +72,7 @@ public class PlayerMoveInput : MonoBehaviour
     public Vector2 Velocity { get { return velocity; } set { velocity = value; } }
     public bool CanInput { get { return canInput; } set { canInput = value; } }
     public float DefaultGrav { get { return defaultGrav; } }
+    public bool IsTeleport { get { return isTeleport; } set { isTeleport = value; } }
 
     //For OnControlChange
     public void UpdateControls()
@@ -340,36 +345,121 @@ public class PlayerMoveInput : MonoBehaviour
     }
 
     // Dash movement, set dashing to true to temporarily disable normal movement to prevent overwriting dash velocity, also disable gravity
+    // If using teleport aura, replace dash with teleport
     IEnumerator Dash(float x, float y)
     {
-        SoundManager.SoundInstance.PlaySound("Dash");
-
         dashing = true;
         velocity.x = x;
         velocity.y = y;
         FlipX();
 
-        // Invoke proper dash event based on x and y velocity
-        if ((velocity.x > 0 && velocity.y > 0) || (velocity.x < 0 && velocity.y > 0))
+        if (isTeleport)
         {
-            OnDashDiagUp.Invoke();
-        }
-        else if ((velocity.x > 0 && velocity.y < 0) || (velocity.x < 0 && velocity.y < 0))
-        {
-            OnDashDiagDown.Invoke();
-        }
-        else if (velocity.x == 0 && velocity.y > 0)
-        {
-            OnDashUp.Invoke();
+            // Replace dash with teleport, teleport distance determined by units
+            int newX = 0;
+            int newY = 0;
+            if (x != 0 && y != 0)
+            {
+                newX = Mathf.Sign(x) > 0 ? teleportUnits - 3: -(teleportUnits - 3);
+                newY = Mathf.Sign(y) > 0 ? teleportUnits - 3 : -(teleportUnits - 3);
+            }
+            else if (x != 0)
+            {
+                newX = Mathf.Sign(x) > 0 ? teleportUnits : -teleportUnits;
+            }
+            else if (y != 0)
+            {
+                newY = Mathf.Sign(y) > 0 ? (teleportUnits - 1) : -(teleportUnits - 1);
+            }
+
+            Teleport(newX, newY);
         }
         else
         {
-            OnDash.Invoke();
+            // Play dash sound
+            SoundManager.SoundInstance.PlaySound("Dash");
+
+            // Invoke proper dash event based on x and y velocity
+            if ((velocity.x > 0 && velocity.y > 0) || (velocity.x < 0 && velocity.y > 0))
+            {
+                OnDashDiagUp.Invoke();
+            }
+            else if ((velocity.x > 0 && velocity.y < 0) || (velocity.x < 0 && velocity.y < 0))
+            {
+                OnDashDiagDown.Invoke();
+            }
+            else if (velocity.x == 0 && velocity.y > 0)
+            {
+                OnDashUp.Invoke();
+            }
+            else
+            {
+                OnDash.Invoke();
+            }
+
+            currGravity = 0;
+            yield return new WaitForSeconds(.25f);
+
+            hasDashed = true;    //Limit one dash in air, set after dash in case player dashed up from ground, if was grounded, dash will just reset
+
+            // Reset values to give control back to player
+            currGravity = defaultGrav;
+            velocity.x = 0;
+            velocity.y = 0;
+            dashing = false;
+        }
+    }
+
+    // Teleport to position, replaces dash command if isTeleport true
+    public void Teleport(int x, int y)
+    {
+        if ((velocity.x > 0 && velocity.y > 0) || (velocity.x < 0 && velocity.y > 0) || (velocity.x > 0 && velocity.y < 0) || (velocity.x < 0 && velocity.y < 0))   // Teleport diag
+        {
+            int adjustmentX = Mathf.Sign(x) > 0 ? 1 : -1;    // Check if teleporting left or right
+            int adjustmentY = Mathf.Sign(y) > 0 ? 1 : -1;    // Check if teleporting up or down
+            Vector2 newPos = new Vector2(transform.position.x + x, transform.position.y + y);
+
+            // Check if can teleport to new position, if not, keep reducing the new position, will eventually reach player's original position if something is blocking
+            RaycastHit2D hit = Physics2D.Raycast(newPos, Vector2.zero, 0, teleMask);
+            while (hit.collider != null)
+            {
+                newPos = new Vector2(newPos.x - (adjustmentX), newPos.y - (adjustmentY));
+                hit = Physics2D.Raycast(newPos, Vector2.zero, 0, teleMask);
+            }
+
+            transform.position = newPos;
+        }
+        else if (velocity.x == 0 && velocity.y > 0)     // Teleport up
+        {
+            Vector2 newPos = new Vector2(transform.position.x, transform.position.y + y);
+
+            // Check if can teleport to new position, if not, keep reducing the new position, will eventually reach player's original position if something is blocking
+            RaycastHit2D hit = Physics2D.Raycast(newPos, Vector2.zero, 0, teleMask);
+            while (hit.collider != null)
+            {
+                newPos = new Vector2(transform.position.x, newPos.y - 1);
+                hit = Physics2D.Raycast(newPos, Vector2.zero, 0, teleMask);
+            }
+
+            transform.position = newPos;
+        }
+        else    // Teleport left and right
+        {
+            int adjustment = Mathf.Sign(x) > 0 ? 1 : -1;    // Check if teleporting left or right
+            Vector2 newPos = new Vector2(transform.position.x + x, transform.position.y);
+
+            // Check if can teleport to new position, if not, keep reducing the new position, will eventually reach player's original position if something is blocking
+            RaycastHit2D hit = Physics2D.Raycast(newPos, Vector2.zero, 0, teleMask);
+            while (hit.collider != null)
+            {
+                newPos = new Vector2(newPos.x - (adjustment), transform.position.y);
+                hit = Physics2D.Raycast(newPos, Vector2.zero, 0, teleMask);
+            }
+
+            transform.position = newPos;
         }
 
-        currGravity = 0;
-        yield return new WaitForSeconds(.25f);
-        hasDashed = true;    //Limit one dash in air, set after dash in case player dashed up from ground, if was grounded, dash will just reset
+        hasDashed = true;    //Limit one teleport in air
 
         // Reset values to give control back to player
         currGravity = defaultGrav;

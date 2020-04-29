@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e1c282029072a9048b9e8b3ff82d3437, type: 3}
-  m_Name: AstralAura
+  m_Name: TeleportAura
   m_EditorClassIdentifier: 
-  auraName: Astral Aura
-  baseDmg: 10
-  icon: {fileID: 6619065866523524951, guid: d1ac3a26554483147b07a0ba967900d3, type: 3}
+  auraName: Teleport Aura
+  baseDmg: 15
+  icon: {fileID: 0}
