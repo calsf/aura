@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Decrease move speed of player, also decrease movespeed of any enemies but decrease movespeed by more than player slow
+// Decrease move speed of player, also decrease movespeed of any enemies but decreases movespeed by more than player slow
+// Reduces enemy move speed more than temporal aura
 
 public class SlowAura : MonoBehaviour
 {
-    float enemySlowMultiplier = .4f;
+    float enemySlowMultiplier = .3f;
+    float restoreEnemySpeedDelay = .5f;
+
     PlayerMoveInput playerMove;
 
     void OnDisable()
@@ -37,6 +40,7 @@ public class SlowAura : MonoBehaviour
             EnemyDefaults enemy = other.GetComponent<EnemyDefaults>();
             if (enemy != null)
             {
+                enemy.RestoreMoveSpeedTime = Time.time + restoreEnemySpeedDelay;
                 enemy.MoveSpeed = enemy.Enemy.baseMoveSpeed * enemySlowMultiplier;
             }
         }

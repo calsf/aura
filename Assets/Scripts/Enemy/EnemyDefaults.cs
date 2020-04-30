@@ -39,6 +39,8 @@ public class EnemyDefaults : MonoBehaviour {
     float onStayTimeExtra;
 
     float moveSpeed;
+    float restoreMoveSpeedTime = 0; // The time at which move speed should be restored
+    float restoreRate;
 
     AudioSource[] audioSources;
 
@@ -49,11 +51,13 @@ public class EnemyDefaults : MonoBehaviour {
     public int Dmg { get { return enemy.dmg; } }
     public float MoveSpeed { get { return moveSpeed; } set { moveSpeed = value; } }
     public float OnEnterTime { get { return onEnterTime; } }
+    public float RestoreMoveSpeedTime { get { return restoreMoveSpeedTime; } set { restoreMoveSpeedTime = value; } }
 
     // Use this for initialization
     void Awake () {
         hp = enemy.maxHP;
         moveSpeed = enemy.baseMoveSpeed;
+        restoreRate = enemy.baseMoveSpeed / 50f; // Restore rate relative to base speed
 
         collided = false;
         spriteRender = GetComponent<SpriteRenderer>();
@@ -101,7 +105,6 @@ public class EnemyDefaults : MonoBehaviour {
         audioSources[audioSources.Length-1].rolloffMode = AudioRolloffMode.Custom;
         audioSources[audioSources.Length-1].maxDistance = 30;
 
-
     }
 
     void Start()
@@ -115,6 +118,19 @@ public class EnemyDefaults : MonoBehaviour {
         collided = false;
         IsDead();
 	}
+
+    void FixedUpdate()
+    {
+        // Gradually restore speed for a decaying slow effect from slows
+        if (moveSpeed < enemy.baseMoveSpeed && Time.time > restoreMoveSpeedTime)
+        {
+            moveSpeed += restoreRate;
+            if (moveSpeed > enemy.baseMoveSpeed)
+            {
+                moveSpeed = enemy.baseMoveSpeed;
+            }
+        }
+    }
 
 
     //*Multiple colliders on an enemy ends up taking multiple damage, onEnterTime avoids this
@@ -196,18 +212,6 @@ public class EnemyDefaults : MonoBehaviour {
                 StartCoroutine(ColorChange());
                 other.GetComponentInParent<AuraDefaults>().ActivateStop(.01f); // Hitstop
                 collided = true;
-            }
-        }
-    }
-
-    // If enemy's move speed was affected by aura, reset
-    void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.tag == "DamageEnemy")
-        {
-            if (moveSpeed != enemy.baseMoveSpeed)
-            {
-                moveSpeed = enemy.baseMoveSpeed;
             }
         }
     }

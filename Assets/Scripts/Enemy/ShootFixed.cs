@@ -118,12 +118,12 @@ public class ShootFixed : ShootBehaviour
                     xDir = -1;
                 }
 
-                projProperties.SetDirection(new Vector2(xDir, shootBehaviour.yDirection[i]));   // Keep y direction of the projectile
+                projProperties.Dir = (new Vector2(xDir, shootBehaviour.yDirection[i]));   // Keep y direction of the projectile
             }
             else
             {
                 // Shoot projectiles in their fixed directions
-                projProperties.SetDirection(new Vector2(shootBehaviour.xDirection[i], shootBehaviour.yDirection[i]));
+                projProperties.Dir = (new Vector2(shootBehaviour.xDirection[i], shootBehaviour.yDirection[i]));
             }
         }
     }

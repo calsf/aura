@@ -12,6 +12,7 @@ TagManager:
   - MovingPlatform
   - PlayerDamaged
   - ExtraDamage
+  - DamagePlayer
   layers:
   - Default
   - TransparentFX

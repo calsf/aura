@@ -140,7 +140,7 @@ public class ShootRotateToPlayer : ShootBehaviour
         proj.transform.rotation = spawnPos.transform.rotation;
         proj.transform.position = spawnPos.transform.position;
         proj.SetActive(true);
-        proj.GetComponent<Projectile>().SetDirection(shootPos);
+        proj.GetComponent<Projectile>().Dir = shootPos;
     }
 
     // Reset facePlayer after shoot animation is finished (Called during/in animation itself)

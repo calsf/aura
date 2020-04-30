@@ -86,7 +86,7 @@ public static class SaveLoadManager
             // If no save file exists, start fresh with only 1 aura unlocked
             bool[] defaultAuras = new bool[]
             {
-                true, false, false, false, false, true, true, true, true, true, true
+                true, false, false, false, false, true, true, true, true, true, true, true
             };
 
             return defaultAuras;

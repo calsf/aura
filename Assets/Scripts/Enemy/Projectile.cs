@@ -13,6 +13,9 @@ public class Projectile : MonoBehaviour
     Rigidbody2D rb;
     DamagePlayerDefaults dmgPlayer;
     bool ignoreGround;  // If ignoreGround true, will not be set inactive on collision with Ground layer
+    Vector2 dir;
+
+    public Vector2 Dir { get { return dir; } set { dir = value; } }
 
     void Awake()
     {
@@ -34,6 +37,17 @@ public class Projectile : MonoBehaviour
         }
     }
 
+    void OnEnable()
+    {
+        if (dmgPlayer == null)
+        {
+            dmgPlayer = GetComponent<DamagePlayerDefaults>();
+        }
+
+        // Reset speed on enable
+        dmgPlayer.Speed = dmgPlayer.DmgPlayer.baseSpeed;
+    }
+
     void Update()
     {
         // Once projectile goes out of camera bounds, deactivate object, add offset to camera bounds for it to actually be off camera
@@ -43,7 +57,7 @@ public class Projectile : MonoBehaviour
         }
     }
 
-    public void SetDirection(Vector2 dir)
+    void FixedUpdate()
     {
         rb.velocity = dir * dmgPlayer.Speed;
     }

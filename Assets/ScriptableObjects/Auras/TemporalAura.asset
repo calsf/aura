@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e1c282029072a9048b9e8b3ff82d3437, type: 3}
-  m_Name: TeleportAura
+  m_Name: TemporalAura
   m_EditorClassIdentifier: 
-  auraName: Teleport Aura
-  baseDmg: 15
-  icon: {fileID: -1965054048315742894, guid: ba5bd0c8bbe9abf4b956e5a6d1e52596, type: 3}
+  auraName: Temporal Aura
+  baseDmg: 10
+  icon: {fileID: 21300000, guid: 55fc72057f7497e4e864b8e2098eed3f, type: 3}
