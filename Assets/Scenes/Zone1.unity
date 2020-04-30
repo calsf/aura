@@ -8846,7 +8846,7 @@ Animator:
   m_GameObject: {fileID: 303521933}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: fb9fe51200aeb4e4cbed728dd383b19c, type: 2}
+  m_Controller: {fileID: 9100000, guid: a2cd4a77f4bd1c64d86dab4017a1a42e, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -8923,9 +8923,9 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 101
-  m_Sprite: {fileID: 6619065866523524951, guid: d1ac3a26554483147b07a0ba967900d3,
+  m_Sprite: {fileID: -1965054048315742894, guid: ba5bd0c8bbe9abf4b956e5a6d1e52596,
     type: 3}
-  m_Color: {r: 0, g: 0.9400835, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -64705,6 +64705,10 @@ MonoBehaviour:
   teleMask:
     serializedVersion: 2
     m_Bits: 256
+  teleportAuraAnim: {fileID: 303521935}
+  teleportFromPrefab: {fileID: 154981572320497507, guid: 69c4ff233d226d249bb4976c11568be3,
+    type: 3}
+  poolNum: 10
   OnJump:
     m_PersistentCalls:
       m_Calls:

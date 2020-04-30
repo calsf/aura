@@ -39,10 +39,19 @@ public class PlayerMoveInput : MonoBehaviour
     float diagDashAngle = 25f;
     bool dashing;
     bool hasDashed;
-    bool isTeleport; // For teleporting if teleport aura is activated
+
+    // Teleport
+    bool isTeleport; // For teleporting to replace dash if teleport aura is activated
     int teleportUnits = 7;
     [SerializeField]
-    LayerMask teleMask; 
+    LayerMask teleMask;
+    [SerializeField]
+    Animator teleportAuraAnim;
+    [SerializeField]
+    GameObject teleportFromPrefab;
+    List<GameObject> telePool;
+    [SerializeField]
+    int poolNum;
 
 
     bool canInput = true;  // Used to disable movement inputs, keeps calling ApplyMovement - used for when player gets hit
@@ -94,6 +103,14 @@ public class PlayerMoveInput : MonoBehaviour
         lowGrav *= gravity;
         defaultGrav *= gravity;
         currGravity = defaultGrav;
+
+        // Init teleport from pool
+        telePool = new List<GameObject>();
+        for (int i = 0; i < poolNum; i++)
+        {
+            telePool.Add(Instantiate(teleportFromPrefab, Vector3.zero, Quaternion.identity));
+            telePool[i].SetActive(false);
+        }
     }
 
     void Update()
@@ -413,6 +430,11 @@ public class PlayerMoveInput : MonoBehaviour
     // Teleport to position, replaces dash command if isTeleport true
     public void Teleport(int x, int y)
     {
+        // Set a teleportFrom object at player's starting position to show where they teleported from
+        GameObject teleFrom = GetFromPool(telePool);
+        teleFrom.transform.position = transform.position;
+        teleFrom.SetActive(true);
+
         if ((velocity.x > 0 && velocity.y > 0) || (velocity.x < 0 && velocity.y > 0) || (velocity.x > 0 && velocity.y < 0) || (velocity.x < 0 && velocity.y < 0))   // Teleport diag
         {
             int adjustmentX = Mathf.Sign(x) > 0 ? 1 : -1;    // Check if teleporting left or right
@@ -459,6 +481,9 @@ public class PlayerMoveInput : MonoBehaviour
             transform.position = newPos;
         }
 
+        // Play teleport aura's default start animation
+        teleportAuraAnim.Play("TeleportAuraStart");
+
         hasDashed = true;    //Limit one teleport in air
 
         // Reset values to give control back to player
@@ -466,6 +491,23 @@ public class PlayerMoveInput : MonoBehaviour
         velocity.x = 0;
         velocity.y = 0;
         dashing = false;
+    }
+
+    //Get inactive object from pool
+    GameObject GetFromPool(List<GameObject> pool)
+    {
+        for (int i = 0; i < pool.Count; i++)
+        {
+            if (!pool[i].activeInHierarchy)
+            {
+                return pool[i];
+            }
+        }
+
+        // If no object in the pool is available, create a new object and  add to the pool
+        GameObject newObj = Instantiate(teleportFromPrefab, Vector3.zero, Quaternion.identity);
+        telePool.Add(newObj);
+        return newObj;
     }
 
     // Flips character facing direction
