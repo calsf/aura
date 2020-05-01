@@ -11,6 +11,7 @@ using UnityEngine.Events;
 public class EnemyDefaults : MonoBehaviour {
     [SerializeField]
     Enemy enemy;
+    Material defaultMat;
 
     GameObject deathFX;
 
@@ -18,8 +19,13 @@ public class EnemyDefaults : MonoBehaviour {
     List<GameObject> numPool;
     [SerializeField]
     GameObject numPrefab;
+    int poolNum = 30;
+
+    // Object pool of heal numbers
+    List<GameObject> healPool;
     [SerializeField]
-    int poolNum;
+    GameObject healNumPrefab;
+    int healPoolNum = 10;
 
     [SerializeField]
     GameObject goldPopupPrefab;
@@ -33,6 +39,9 @@ public class EnemyDefaults : MonoBehaviour {
     float damageRate = .1f; // Delay before taking damage again
     float onStayTime; //Delay for OnStay trigger
     float onEnterTime; //Delay for OnEnter trigger
+
+    float restoreHPTime = 0;
+    int restoreHPAmount;
 
     // Delay for taking extra damage (e.g: wildfire flames should deal damage without affecting damage delay from auras)
     float onEnterTimeExtra;
@@ -52,15 +61,20 @@ public class EnemyDefaults : MonoBehaviour {
     public float MoveSpeed { get { return moveSpeed; } set { moveSpeed = value; } }
     public float OnEnterTime { get { return onEnterTime; } }
     public float RestoreMoveSpeedTime { get { return restoreMoveSpeedTime; } set { restoreMoveSpeedTime = value; } }
+    public float RestoreHPTime { get { return restoreHPTime; } set { restoreHPTime = value; } }
+    public int RestoreHPAmount { get { return restoreHPAmount; } set { restoreHPAmount = value; } }
+    public SpriteRenderer SpriteRender { get { return spriteRender; } }
 
     // Use this for initialization
     void Awake () {
         hp = enemy.maxHP;
         moveSpeed = enemy.baseMoveSpeed;
         restoreRate = enemy.baseMoveSpeed / 50f; // Restore rate relative to base speed
+        
 
         collided = false;
         spriteRender = GetComponent<SpriteRenderer>();
+        defaultMat = spriteRender.material;     // Get enemy's default starting material
         levelManager = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>();
 
         // Each enemy has a gold popup for when killed and gold is given to player
@@ -77,6 +91,14 @@ public class EnemyDefaults : MonoBehaviour {
         {
             numPool.Add(Instantiate(numPrefab, Vector3.zero, Quaternion.identity));
             numPool[i].SetActive(false);
+        }
+
+        // Initialize heal numbers pool
+        healPool = new List<GameObject>();
+        for (int i = 0; i < healPoolNum; i++)
+        {
+            healPool.Add(Instantiate(healNumPrefab, Vector3.zero, Quaternion.identity));
+            healPool[i].SetActive(false);
         }
 
 
@@ -117,6 +139,18 @@ public class EnemyDefaults : MonoBehaviour {
     void Update () {
         collided = false;
         IsDead();
+
+        // Restore hp if was affected from demi aura
+        if (Time.time > restoreHPTime && spriteRender.material != defaultMat)
+        {
+            hp += restoreHPAmount;
+            if (restoreHPAmount > 0)
+            {
+                DisplayHealNum(restoreHPAmount);
+            }
+            spriteRender.material = defaultMat;
+            restoreHPAmount = 0;
+        }
 	}
 
     void FixedUpdate()
@@ -152,24 +186,28 @@ public class EnemyDefaults : MonoBehaviour {
         // Damage rate for direct aura damage
         if (other.tag == "DamageEnemy" && Time.time > onEnterTime)
         {
-            onStayTime = Time.time + damageRate; //Delay to avoid OnStay triggering at same time
-            onEnterTime = Time.time + damageRate;
-
-            // Spawn flame if was hit by wildfire aura
-            WildfireAura wfAura = other.GetComponent<WildfireAura>();
-            if (wfAura != null)
-            {
-                wfAura.SpawnFlame(transform);
-            }
-
-            // Deal damage to enemy
+            // Does not register as damaged if dmg is 0
             int dmg = other.GetComponentInParent<AuraDefaults>().Dmg;
-            DisplayDmgNum(dmg);
-            hp -= dmg;
-            OnDamaged.Invoke(); //OnDamaged event occurs after enemy HP has been adjusted
-            StartCoroutine(ColorChange());
-            other.GetComponentInParent<AuraDefaults>().ActivateStop(.03f); // Hitstop
-            collided = true;
+            if (dmg > 0)
+            {
+                onStayTime = Time.time + damageRate; //Delay to avoid OnStay triggering at same time
+                onEnterTime = Time.time + damageRate;
+
+                // Spawn flame if was hit by wildfire aura
+                WildfireAura wfAura = other.GetComponent<WildfireAura>();
+                if (wfAura != null)
+                {
+                    wfAura.SpawnFlame(transform);
+                }
+
+                // Deal damage to enemy
+
+                DisplayDmgNum(dmg);
+                hp -= dmg;
+                OnDamaged.Invoke(); //OnDamaged event occurs after enemy HP has been adjusted
+                StartCoroutine(ColorChange());
+                collided = true;
+            }
         }
     }
 
@@ -195,23 +233,26 @@ public class EnemyDefaults : MonoBehaviour {
         {
             if (Time.time > onStayTime)
             {
-                onStayTime = Time.time + damageRate;
-
-                // Spawn flame if was hit by wildfire aura
-                WildfireAura wfAura = other.GetComponent<WildfireAura>();
-                if (wfAura != null)
-                {
-                    wfAura.SpawnFlame(transform);
-                }
-
-                // Deal damage to enemy
+                // Does not register as damaged if dmg is 0
                 int dmg = other.GetComponentInParent<AuraDefaults>().Dmg;
-                DisplayDmgNum(dmg);
-                hp -= dmg;
-                OnDamaged.Invoke(); //OnDamaged event occurs after enemy HP has been adjusted
-                StartCoroutine(ColorChange());
-                other.GetComponentInParent<AuraDefaults>().ActivateStop(.01f); // Hitstop
-                collided = true;
+                if (dmg > 0)
+                {
+                    onStayTime = Time.time + damageRate;
+
+                    // Spawn flame if was hit by wildfire aura
+                    WildfireAura wfAura = other.GetComponent<WildfireAura>();
+                    if (wfAura != null)
+                    {
+                        wfAura.SpawnFlame(transform);
+                    }
+
+                    // Deal damage to enemy
+                    DisplayDmgNum(dmg);
+                    hp -= dmg;
+                    OnDamaged.Invoke(); //OnDamaged event occurs after enemy HP has been adjusted
+                    StartCoroutine(ColorChange());
+                    collided = true;
+                }
             }
         }
     }
@@ -240,25 +281,39 @@ public class EnemyDefaults : MonoBehaviour {
     }
 
     //Show damage number
-    void DisplayDmgNum(int dmg)
+    public void DisplayDmgNum(int dmg)
     {
-        if (PlayerPrefs.GetInt("Damage") == 0)
+
+        for (int i = 0; i < numPool.Count; i++)
         {
-            for (int i = 0; i < numPool.Count; i++)
+            if (!numPool[i].activeInHierarchy)
             {
-                if (!numPool[i].activeInHierarchy)
-                {
-                    numPool[i].GetComponent<TextMeshPro>().text = "-" + dmg.ToString();
-                    numPool[i].transform.position = transform.position;
-                    numPool[i].SetActive(true);
-                    return;
-                }
+                numPool[i].GetComponent<TextMeshPro>().text = "-" + dmg.ToString();
+                numPool[i].transform.position = transform.position;
+                numPool[i].SetActive(true);
+                return;
+            }
+        }
+        
+    }
+
+    //Show heal number
+    public void DisplayHealNum(int heal)
+    {
+        for (int i = 0; i < healPool.Count; i++)
+        {
+            if (!healPool[i].activeInHierarchy)
+            {
+                healPool[i].GetComponent<TextMeshPro>().text = "+" + heal.ToString();
+                healPool[i].transform.position = transform.position;
+                healPool[i].SetActive(true);
+                return;
             }
         }
     }
 
     //Flash on damaged
-    IEnumerator ColorChange()
+    public IEnumerator ColorChange()
     {
         // Choose random hit sound, set volume according to the sound volume setting then play a random enemy hit sound
         int hitSound = Random.Range(0, 3);
@@ -268,5 +323,11 @@ public class EnemyDefaults : MonoBehaviour {
         spriteRender.color = new Color(spriteRender.color.r, spriteRender.color.g, spriteRender.color.b, .4f);
         yield return new WaitForSeconds(.08f);
         spriteRender.color = new Color(spriteRender.color.r, spriteRender.color.g, spriteRender.color.b, 1f);
+    }
+
+    // If case other script such as demi aura wants to activate color change, makes sure that the coroutine is not suddenly stopped by calling it from enemy
+    public void StartColorChange()
+    {
+        StartCoroutine(ColorChange());
     }
 }

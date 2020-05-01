@@ -45,13 +45,13 @@ public class AuraDefaults : MonoBehaviour
     }
 
     // Called by EnemyHP for quick hit stop
-    public void ActivateStop (float dur)
-    {
-        if (!waiting)
-        {
-            StartCoroutine(Stop(dur));
-        }
-    }
+    //public void ActivateStop (float dur)
+    //{
+    //    if (!waiting)
+    //    {
+    //        StartCoroutine(Stop(dur));
+    //    }
+    //}
 
     // Hit stop
     IEnumerator Stop (float dur)
