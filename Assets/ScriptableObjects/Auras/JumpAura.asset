@@ -15,3 +15,6 @@ MonoBehaviour:
   auraName: Jump Aura
   baseDmg: 15
   icon: {fileID: -3432746517186286872, guid: a3b3461cc0552ae4692315a7c51cb682, type: 3}
+  price: 200
+  auraNumber: 4
+  desc: Energy flows upwards from this aura, boosting the user's jumping capabilities.

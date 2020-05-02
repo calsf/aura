@@ -15,3 +15,7 @@ MonoBehaviour:
   auraName: Wildfire Aura
   baseDmg: 2
   icon: {fileID: -8109899509940172705, guid: b8ec07a4e47256e4babd2182fc99e45d, type: 3}
+  price: 0
+  auraNumber: 7
+  desc: A ring of fire surrounds the user, sparking flames on every enemy it comes
+    in contact with.

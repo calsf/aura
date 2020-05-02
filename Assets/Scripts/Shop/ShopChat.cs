@@ -8,7 +8,9 @@ public class ShopChat : MonoBehaviour
 {
     [SerializeField]
     Text chatDisplay;
+
     [SerializeField]
+    [TextArea(3, 10)]
     string defaultChat;
 
     int currChar;

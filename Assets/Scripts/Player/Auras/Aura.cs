@@ -8,4 +8,9 @@ public class Aura : ScriptableObject
     public string auraName;
     public int baseDmg;
     public Sprite icon;
+    public int price;
+    public int auraNumber;
+
+    [TextArea(3, 10)]
+    public string desc;
 }

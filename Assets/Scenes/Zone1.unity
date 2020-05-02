@@ -738,7 +738,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Bladed Aura
+  m_Text: Jump Aura
 --- !u!222 &33833871
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1853,6 +1853,7 @@ GameObject:
   - component: {fileID: 77524291}
   - component: {fileID: 77524290}
   - component: {fileID: 77524289}
+  - component: {fileID: 77524292}
   m_Layer: 5
   m_Name: Meteoric
   m_TagString: Untagged
@@ -1932,6 +1933,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 77524287}
   m_CullTransparentMesh: 0
+--- !u!114 &77524292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 77524287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ca0925817659544ab9c3faf6f3bb6ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aura: {fileID: 11400000, guid: 46ac166751ce7b0429021d50549a7ec5, type: 2}
+  auraName: {fileID: 1458910122}
+  auraDesc: {fileID: 1703106612}
+  auraDmg: {fileID: 44304852}
+  auraPrice: {fileID: 0}
+  auraIcon: {fileID: 203618586}
 --- !u!1 &80698482
 GameObject:
   m_ObjectHideFlags: 0
@@ -2783,6 +2802,7 @@ GameObject:
   - component: {fileID: 109075392}
   - component: {fileID: 109075391}
   - component: {fileID: 109075390}
+  - component: {fileID: 109075393}
   m_Layer: 5
   m_Name: Teleport
   m_TagString: Untagged
@@ -2862,6 +2882,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 109075388}
   m_CullTransparentMesh: 0
+--- !u!114 &109075393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 109075388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ca0925817659544ab9c3faf6f3bb6ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aura: {fileID: 11400000, guid: 452f4d5b0f5a58b4c86620a9e7fc8299, type: 2}
+  auraName: {fileID: 1446781554}
+  auraDesc: {fileID: 692872236}
+  auraDmg: {fileID: 239744379}
+  auraPrice: {fileID: 0}
+  auraIcon: {fileID: 1725355334}
 --- !u!1 &110620071
 GameObject:
   m_ObjectHideFlags: 0
@@ -3824,6 +3862,7 @@ GameObject:
   - component: {fileID: 140440931}
   - component: {fileID: 140440930}
   - component: {fileID: 140440932}
+  - component: {fileID: 140440933}
   m_Layer: 5
   m_Name: Slow
   m_TagString: Untagged
@@ -3903,6 +3942,24 @@ MonoBehaviour:
   m_EffectColor: {r: 0.16862746, g: 0.14117648, b: 0.14117648, a: 0.5}
   m_EffectDistance: {x: 1.5, y: -1.5}
   m_UseGraphicAlpha: 1
+--- !u!114 &140440933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 140440928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ca0925817659544ab9c3faf6f3bb6ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aura: {fileID: 11400000, guid: ed3d40811f23c204c8d4654db07989fe, type: 2}
+  auraName: {fileID: 859989749}
+  auraDesc: {fileID: 47843938}
+  auraDmg: {fileID: 2013724573}
+  auraPrice: {fileID: 0}
+  auraIcon: {fileID: 1617128545}
 --- !u!1 &141854190
 GameObject:
   m_ObjectHideFlags: 0
@@ -12991,6 +13048,7 @@ GameObject:
   - component: {fileID: 470717834}
   - component: {fileID: 470717833}
   - component: {fileID: 470717832}
+  - component: {fileID: 470717835}
   m_Layer: 5
   m_Name: Demi
   m_TagString: Untagged
@@ -13070,6 +13128,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 470717830}
   m_CullTransparentMesh: 0
+--- !u!114 &470717835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 470717830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ca0925817659544ab9c3faf6f3bb6ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aura: {fileID: 11400000, guid: 19100b53d193da54ca24c1c8d192ac20, type: 2}
+  auraName: {fileID: 1177461630}
+  auraDesc: {fileID: 1214127752}
+  auraDmg: {fileID: 0}
+  auraPrice: {fileID: 0}
+  auraIcon: {fileID: 1372127337}
 --- !u!1 &473405195
 GameObject:
   m_ObjectHideFlags: 0
@@ -13478,7 +13554,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Temporal Aura
+  m_Text: Demi Aura
 --- !u!222 &482514835
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -13980,7 +14056,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: HAMMER
+  m_Text: Sacrificing range for heavy damage, this aura surrounds the user with multiple
+    hammers.
 --- !u!222 &499260563
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -17316,7 +17393,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: WILDFIRE
+  m_Text: A ring of fire surrounds the user, sparking flames on every enemy it comes
+    in contact with.
 --- !u!222 &612426839
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -17337,6 +17415,7 @@ GameObject:
   - component: {fileID: 612471030}
   - component: {fileID: 612471029}
   - component: {fileID: 612471032}
+  - component: {fileID: 612471033}
   m_Layer: 5
   m_Name: Base
   m_TagString: Untagged
@@ -17416,6 +17495,24 @@ MonoBehaviour:
   m_EffectColor: {r: 0.16862746, g: 0.14117648, b: 0.14117648, a: 0.5}
   m_EffectDistance: {x: 1.5, y: -1.5}
   m_UseGraphicAlpha: 1
+--- !u!114 &612471033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 612471028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ca0925817659544ab9c3faf6f3bb6ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aura: {fileID: 11400000, guid: 0b25cad1cd221204ea60dcd18edf7203, type: 2}
+  auraName: {fileID: 183358849}
+  auraDesc: {fileID: 69642562}
+  auraDmg: {fileID: 1750815662}
+  auraPrice: {fileID: 0}
+  auraIcon: {fileID: 1888397123}
 --- !u!1 &618463081
 GameObject:
   m_ObjectHideFlags: 0
@@ -20049,7 +20146,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: TELEPORT
+  m_Text: An aura that grants the user the ability to teleport, replacing their ability
+    to dash.
 --- !u!222 &692872237
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -72357,6 +72455,7 @@ GameObject:
   - component: {fileID: 1141085501}
   - component: {fileID: 1141085500}
   - component: {fileID: 1141085503}
+  - component: {fileID: 1141085504}
   m_Layer: 5
   m_Name: Float
   m_TagString: Untagged
@@ -72436,6 +72535,24 @@ MonoBehaviour:
   m_EffectColor: {r: 0.16862746, g: 0.14117648, b: 0.14117648, a: 0.5}
   m_EffectDistance: {x: 1.5, y: -1.5}
   m_UseGraphicAlpha: 1
+--- !u!114 &1141085504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1141085499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ca0925817659544ab9c3faf6f3bb6ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aura: {fileID: 11400000, guid: 43d49bb57b32f894681ac50e81b4ef30, type: 2}
+  auraName: {fileID: 618463083}
+  auraDesc: {fileID: 574656677}
+  auraDmg: {fileID: 1172309202}
+  auraPrice: {fileID: 0}
+  auraIcon: {fileID: 1738492762}
 --- !u!1 &1142796608
 GameObject:
   m_ObjectHideFlags: 0
@@ -74137,6 +74254,7 @@ GameObject:
   - component: {fileID: 1192340695}
   - component: {fileID: 1192340694}
   - component: {fileID: 1192340693}
+  - component: {fileID: 1192340696}
   m_Layer: 5
   m_Name: Astral
   m_TagString: Untagged
@@ -74216,6 +74334,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1192340691}
   m_CullTransparentMesh: 0
+--- !u!114 &1192340696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1192340691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ca0925817659544ab9c3faf6f3bb6ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aura: {fileID: 11400000, guid: e1a047983e602d44f97e926dd691ec1d, type: 2}
+  auraName: {fileID: 2073231301}
+  auraDesc: {fileID: 1757505468}
+  auraDmg: {fileID: 440076444}
+  auraPrice: {fileID: 0}
+  auraIcon: {fileID: 977188666}
 --- !u!1 &1194246601
 GameObject:
   m_ObjectHideFlags: 0
@@ -74844,7 +74980,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: DEMI
+  m_Text: The great equalizer, this aura temporarily halves the max health of an
+    enemy.
 --- !u!222 &1214127753
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -78710,6 +78847,7 @@ GameObject:
   - component: {fileID: 1336604216}
   - component: {fileID: 1336604215}
   - component: {fileID: 1336604214}
+  - component: {fileID: 1336604217}
   m_Layer: 5
   m_Name: Hammer
   m_TagString: Untagged
@@ -78789,6 +78927,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1336604212}
   m_CullTransparentMesh: 0
+--- !u!114 &1336604217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1336604212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ca0925817659544ab9c3faf6f3bb6ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aura: {fileID: 11400000, guid: 442fae63a700acd43a618fc675abb4b6, type: 2}
+  auraName: {fileID: 96033547}
+  auraDesc: {fileID: 499260562}
+  auraDmg: {fileID: 1190058073}
+  auraPrice: {fileID: 0}
+  auraIcon: {fileID: 2007504703}
 --- !u!1 &1340827867
 GameObject:
   m_ObjectHideFlags: 0
@@ -79562,7 +79718,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 55fc72057f7497e4e864b8e2098eed3f, type: 3}
+  m_Sprite: {fileID: -3541225868621755815, guid: f031e4212af4012479bfd9dce201f83a,
+    type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -85271,6 +85428,7 @@ GameObject:
   - component: {fileID: 1584822822}
   - component: {fileID: 1584822821}
   - component: {fileID: 1584822820}
+  - component: {fileID: 1584822823}
   m_Layer: 5
   m_Name: Wildfire
   m_TagString: Untagged
@@ -85350,6 +85508,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1584822818}
   m_CullTransparentMesh: 0
+--- !u!114 &1584822823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1584822818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ca0925817659544ab9c3faf6f3bb6ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aura: {fileID: 11400000, guid: f05903c7b6248fa4487d4858a634b99f, type: 2}
+  auraName: {fileID: 713607396}
+  auraDesc: {fileID: 612426838}
+  auraDmg: {fileID: 1322476140}
+  auraPrice: {fileID: 0}
+  auraIcon: {fileID: 1580027675}
 --- !u!1 &1585569423
 GameObject:
   m_ObjectHideFlags: 0
@@ -85801,6 +85977,7 @@ GameObject:
   - component: {fileID: 1612503495}
   - component: {fileID: 1612503494}
   - component: {fileID: 1612503497}
+  - component: {fileID: 1612503498}
   m_Layer: 5
   m_Name: Jump
   m_TagString: Untagged
@@ -85880,6 +86057,24 @@ MonoBehaviour:
   m_EffectColor: {r: 0.16862746, g: 0.14117648, b: 0.14117648, a: 0.5}
   m_EffectDistance: {x: 1.5, y: -1.5}
   m_UseGraphicAlpha: 1
+--- !u!114 &1612503498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1612503493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ca0925817659544ab9c3faf6f3bb6ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aura: {fileID: 11400000, guid: 2ec88918b7ce2704fba2a138a0d229db, type: 2}
+  auraName: {fileID: 33833870}
+  auraDesc: {fileID: 2065894320}
+  auraDmg: {fileID: 1225015604}
+  auraPrice: {fileID: 0}
+  auraIcon: {fileID: 47869234}
 --- !u!1 &1613653242
 GameObject:
   m_ObjectHideFlags: 0
@@ -88854,7 +89049,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: METEORRR
+  m_Text: An aura of concealed power, creating high impact explosions whenever the
+    user lands.
 --- !u!222 &1703106613
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -88968,6 +89164,7 @@ GameObject:
   - component: {fileID: 1711890065}
   - component: {fileID: 1711890064}
   - component: {fileID: 1711890063}
+  - component: {fileID: 1711890066}
   m_Layer: 5
   m_Name: Temporal
   m_TagString: Untagged
@@ -89047,6 +89244,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1711890061}
   m_CullTransparentMesh: 0
+--- !u!114 &1711890066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1711890061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ca0925817659544ab9c3faf6f3bb6ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aura: {fileID: 11400000, guid: 5dfe2e8f2afe5444996f9c6559e4d049, type: 2}
+  auraName: {fileID: 450916071}
+  auraDesc: {fileID: 1483936484}
+  auraDmg: {fileID: 2120239751}
+  auraPrice: {fileID: 0}
+  auraIcon: {fileID: 1194246603}
 --- !u!1 &1715766641
 GameObject:
   m_ObjectHideFlags: 0
@@ -89622,6 +89837,7 @@ GameObject:
   - component: {fileID: 1738936314}
   - component: {fileID: 1738936313}
   - component: {fileID: 1738936315}
+  - component: {fileID: 1738936316}
   m_Layer: 5
   m_Name: Bladed
   m_TagString: Untagged
@@ -89701,6 +89917,24 @@ MonoBehaviour:
   m_EffectColor: {r: 0.16862746, g: 0.14117648, b: 0.14117648, a: 0.5}
   m_EffectDistance: {x: 1.5, y: -1.5}
   m_UseGraphicAlpha: 1
+--- !u!114 &1738936316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1738936311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ca0925817659544ab9c3faf6f3bb6ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aura: {fileID: 11400000, guid: b9101a2c85ca19b4a9ee4529a2eb0fd7, type: 2}
+  auraName: {fileID: 148805371}
+  auraDesc: {fileID: 2038582778}
+  auraDmg: {fileID: 77265975}
+  auraPrice: {fileID: 0}
+  auraIcon: {fileID: 660246635}
 --- !u!1 &1743930977
 GameObject:
   m_ObjectHideFlags: 0
@@ -90287,7 +90521,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: ASTRAL
+  m_Text: An aura that separates the user from reality upon activation. Upon deactivation,
+    the user's position and health is restored to it's initial state.
 --- !u!222 &1757505469
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -92077,6 +92312,7 @@ GameObject:
   - component: {fileID: 1834432954}
   - component: {fileID: 1834432953}
   - component: {fileID: 1834432956}
+  - component: {fileID: 1834432957}
   m_Layer: 5
   m_Name: Speed
   m_TagString: Untagged
@@ -92156,6 +92392,24 @@ MonoBehaviour:
   m_EffectColor: {r: 0.16862746, g: 0.14117648, b: 0.14117648, a: 0.5}
   m_EffectDistance: {x: 1.5, y: -1.5}
   m_UseGraphicAlpha: 1
+--- !u!114 &1834432957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1834432952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ca0925817659544ab9c3faf6f3bb6ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aura: {fileID: 11400000, guid: f28fbe2db155f724b844713d5397914e, type: 2}
+  auraName: {fileID: 2102658937}
+  auraDesc: {fileID: 481452996}
+  auraDmg: {fileID: 441959585}
+  auraPrice: {fileID: 0}
+  auraIcon: {fileID: 581074929}
 --- !u!1 &1835682443
 GameObject:
   m_ObjectHideFlags: 0
@@ -97166,7 +97420,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: BLADED
+  m_Text: A long range aura that conjures up multiple blades to surround the user.
 --- !u!222 &2038582779
 CanvasRenderer:
   m_ObjectHideFlags: 0

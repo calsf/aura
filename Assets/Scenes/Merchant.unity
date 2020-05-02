@@ -916,6 +916,7 @@ GameObject:
   - component: {fileID: 200092371}
   - component: {fileID: 200092370}
   - component: {fileID: 200092369}
+  - component: {fileID: 200092372}
   m_Layer: 5
   m_Name: Slow Aura
   m_TagString: Untagged
@@ -1035,6 +1036,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 200092367}
   m_CullTransparentMesh: 0
+--- !u!114 &200092372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 200092367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ca0925817659544ab9c3faf6f3bb6ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aura: {fileID: 11400000, guid: ed3d40811f23c204c8d4654db07989fe, type: 2}
+  auraName: {fileID: 1700479283}
+  auraDesc: {fileID: 820449273}
+  auraDmg: {fileID: 1043363785}
+  auraPrice: {fileID: 602371976}
+  auraIcon: {fileID: 31502471}
 --- !u!1 &237954218
 GameObject:
   m_ObjectHideFlags: 0
@@ -2534,6 +2553,7 @@ GameObject:
   - component: {fileID: 415138554}
   - component: {fileID: 415138553}
   - component: {fileID: 415138552}
+  - component: {fileID: 415138555}
   m_Layer: 5
   m_Name: Speed Aura
   m_TagString: Untagged
@@ -2653,6 +2673,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 415138550}
   m_CullTransparentMesh: 0
+--- !u!114 &415138555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 415138550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ca0925817659544ab9c3faf6f3bb6ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aura: {fileID: 11400000, guid: f28fbe2db155f724b844713d5397914e, type: 2}
+  auraName: {fileID: 1086337451}
+  auraDesc: {fileID: 1198858239}
+  auraDmg: {fileID: 481701452}
+  auraPrice: {fileID: 1418076271}
+  auraIcon: {fileID: 864789489}
 --- !u!1 &418394158
 GameObject:
   m_ObjectHideFlags: 0
@@ -3966,6 +4004,7 @@ GameObject:
   - component: {fileID: 522096302}
   - component: {fileID: 522096301}
   - component: {fileID: 522096300}
+  - component: {fileID: 522096303}
   m_Layer: 5
   m_Name: Float Aura
   m_TagString: Untagged
@@ -4085,6 +4124,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 522096298}
   m_CullTransparentMesh: 0
+--- !u!114 &522096303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 522096298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ca0925817659544ab9c3faf6f3bb6ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aura: {fileID: 11400000, guid: 43d49bb57b32f894681ac50e81b4ef30, type: 2}
+  auraName: {fileID: 1557359141}
+  auraDesc: {fileID: 955455088}
+  auraDmg: {fileID: 274301814}
+  auraPrice: {fileID: 1811770782}
+  auraIcon: {fileID: 1605997746}
 --- !u!1 &529777711
 GameObject:
   m_ObjectHideFlags: 0
@@ -11428,8 +11485,11 @@ MonoBehaviour:
   - {fileID: 673176786}
   - {fileID: 748339614}
   - {fileID: 1382645967}
-  auraIndex: 01000000020000000300000004000000
-  auraPrice: 0a000000140000001e00000090010000
+  auras:
+  - {fileID: 11400000, guid: ed3d40811f23c204c8d4654db07989fe, type: 2}
+  - {fileID: 11400000, guid: f28fbe2db155f724b844713d5397914e, type: 2}
+  - {fileID: 11400000, guid: 43d49bb57b32f894681ac50e81b4ef30, type: 2}
+  - {fileID: 11400000, guid: 2ec88918b7ce2704fba2a138a0d229db, type: 2}
   auraBought:
   - Slow and steady wins the race!
   - Careful with this one, the last one who bought this off me tripped at full speed
@@ -14183,6 +14243,7 @@ GameObject:
   - component: {fileID: 1871711718}
   - component: {fileID: 1871711717}
   - component: {fileID: 1871711716}
+  - component: {fileID: 1871711719}
   m_Layer: 5
   m_Name: Jump Aura
   m_TagString: Untagged
@@ -14302,6 +14363,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1871711714}
   m_CullTransparentMesh: 0
+--- !u!114 &1871711719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1871711714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ca0925817659544ab9c3faf6f3bb6ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aura: {fileID: 11400000, guid: 2ec88918b7ce2704fba2a138a0d229db, type: 2}
+  auraName: {fileID: 280281433}
+  auraDesc: {fileID: 1678028738}
+  auraDmg: {fileID: 931553102}
+  auraPrice: {fileID: 810293042}
+  auraIcon: {fileID: 2046561477}
 --- !u!1 &1890059796
 GameObject:
   m_ObjectHideFlags: 0

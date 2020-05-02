@@ -9,13 +9,18 @@ public class ShopManager : MonoBehaviour
     // NOTE: auraIndex is the corresponding index to total auras (to match the unlockedAuras from SaveLoadManager) E.g: first button auraSelection may have auraIndex of 5 because the button is for aura index 5 of unlockedAuras
     [SerializeField]
     Button[] auraSelection;     // Button for each aura
+
     [SerializeField]
     GameObject[] auraPriceDisplay; // Containers for price display for each aura price, includes an image and text component in children
+
     [SerializeField]
+    Aura[] auras;               // Aura scriptable object
+
     int[] auraIndex;            // Index of each aura in the whole array of auras (Reminder: index 0 is always base aura and will never be in shop)
-    [SerializeField]
     int[] auraPrice;            // Price of each aura
+
     [SerializeField]
+    [TextArea(3, 10)]
     string[] auraBought;        // Chat text when aura is bought, specific to each aura
     string auraFail;          // Chat text when aura cannot be bought, generic for each aura
 
@@ -23,10 +28,13 @@ public class ShopManager : MonoBehaviour
     Button health;              // Button to increase max health
     [SerializeField]
     GameObject healthPriceDisplay; // Container for price display for health price, includes an image and text component in children
+
     int baseHealthPrice = 10;
     int healthPrice;
+
     [SerializeField]
     PlayerHearts playerHearts;
+
     string healthMaxed;         // Chat text when health increase is bought and maxed
     string healthBought;        // Chat text when a health increase is bought
     string healthFail;          // Chat text when health increase cannot be bought
@@ -44,6 +52,15 @@ public class ShopManager : MonoBehaviour
         healthBought = "Health boost coming right up! You'll need something a little stronger to further boost your health from here on out. Luckily I have just the thing - for a price of course.";
         healthFail = "Sorry but you're going to need some more gold if you want a health boost.";
         auraFail = "Auras don't come cheap, and for good reason! Come back when you have more gold.";
+
+        // Init aura prices and aura index number
+        auraPrice = new int[auras.Length];
+        auraIndex = new int[auras.Length];
+        for (int i = 0; i < auras.Length; i++)
+        {
+            auraPrice[i] = auras[i].price;
+            auraIndex[i] = auras[i].auraNumber;
+        }
     }
 
     // Start is called before the first frame update

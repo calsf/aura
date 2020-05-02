@@ -15,3 +15,7 @@ MonoBehaviour:
   auraName: Meteoric Aura
   baseDmg: 15
   icon: {fileID: -2886004633257107465, guid: a5d3843854f5acc4581140adc4e8e71a, type: 3}
+  price: 0
+  auraNumber: 8
+  desc: An aura of concealed power, creating high impact explosions whenever the
+    user lands.

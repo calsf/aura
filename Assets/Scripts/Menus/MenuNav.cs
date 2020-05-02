@@ -109,11 +109,18 @@ public class MenuNav : MonoBehaviour
         // 5 auras can be displayed without scrolling so with more than 5 auras, increase aura list size so that navigating through auras scrolls
         // Otherwise, will not increase aura list size and leave the aura list with no scrolling
         int extraAuras = unlockedAuraInvent.Length - 5;
+        if (extraAuras > 0)
+        {
+            float extraSpace = extraAuras == 1 ? 40 : 45;
+            auraList.anchoredPosition = new Vector2(auraList.anchoredPosition.x, auraList.anchoredPosition.y - extraSpace);
+            auraList.sizeDelta = new Vector2(auraList.sizeDelta.x, auraList.sizeDelta.y + extraSpace);
+            extraAuras--;
+        }
+
         while (extraAuras > 0)
         {
-            // Add extra space depending on # of extra auras
-            auraList.anchoredPosition = new Vector2(auraList.anchoredPosition.x, auraList.anchoredPosition.y - 35f - (extraAuras + 1));
-            auraList.sizeDelta = new Vector2(auraList.sizeDelta.x, auraList.sizeDelta.y + 35f + (extraAuras + 1));
+            auraList.anchoredPosition = new Vector2(auraList.anchoredPosition.x, auraList.anchoredPosition.y - 36f);
+            auraList.sizeDelta = new Vector2(auraList.sizeDelta.x, auraList.sizeDelta.y + 36);
             extraAuras--;
         }
 

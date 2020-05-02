@@ -26,10 +26,12 @@ public class CompleteLevel : MonoBehaviour
     SaveData saveData;
     LevelManager lvlManager;
     bool hasEntered = false;
+    CameraControl cam;
 
     // Start is called before the first frame update
     void Start()
     {
+        cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraControl>();
         lvlCompleteScreen.SetActive(false);
         totalGold = SaveLoadManager.LoadGold();
         saveData = GameObject.FindGameObjectWithTag("SaveData").GetComponent<SaveData>();
@@ -40,6 +42,7 @@ public class CompleteLevel : MonoBehaviour
     {
         if (other.tag == "Player" && !hasEntered)
         {
+            cam.FollowPlayer = false;
             hasEntered = true;
             other.gameObject.GetComponent<PlayerAuraControl>().AuraOff();   // Turn player aura off
             other.gameObject.SetActive(false);  // Turn player off
