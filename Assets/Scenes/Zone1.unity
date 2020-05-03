@@ -7033,7 +7033,7 @@ MonoBehaviour:
     loop: 0
   - clipName: WildfireAuraOn
     clip: {fileID: 8300000, guid: 4b04fc1df75b58243b268cceec9944db, type: 3}
-    volume: 0.6
+    volume: 0.35
     pitch: 1
     loop: 0
   - clipName: BladedAuraOn
@@ -7043,6 +7043,16 @@ MonoBehaviour:
     loop: 0
   - clipName: HammerheadAuraOn
     clip: {fileID: 8300000, guid: 01e1ff1dd5c32414a85841dfd72b9a3e, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+  - clipName: TemporalAuraOn
+    clip: {fileID: 8300000, guid: 10d44cfba45341d40b0e3d61b83c9737, type: 3}
+    volume: 0.35
+    pitch: 1
+    loop: 0
+  - clipName: MeteoricAuraOn
+    clip: {fileID: 8300000, guid: fd39ea05f67106746aac65e683d8717a, type: 3}
     volume: 0.5
     pitch: 1
     loop: 0
@@ -15777,7 +15787,7 @@ MonoBehaviour:
   meteorSpawn: {fileID: 2033268302}
   meteorPrefab: {fileID: 5323116032739674287, guid: 3d062da8157334142bf7a51171d7fc57,
     type: 3}
-  poolNum: 15
+  poolNum: 20
 --- !u!95 &538391785
 Animator:
   serializedVersion: 3
