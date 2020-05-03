@@ -7056,6 +7056,16 @@ MonoBehaviour:
     volume: 0.5
     pitch: 1
     loop: 0
+  - clipName: TeleportAuraOn
+    clip: {fileID: 8300000, guid: 8b1f1416198f50e4698f05422f0d794c, type: 3}
+    volume: 0.7
+    pitch: 1
+    loop: 0
+  - clipName: AstralAuraOn
+    clip: {fileID: 8300000, guid: cb65a31b9282e124e9759e760bb11873, type: 3}
+    volume: 0.6
+    pitch: 1
+    loop: 0
 --- !u!4 &231808691
 Transform:
   m_ObjectHideFlags: 0
@@ -9203,7 +9213,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &303521934
 Transform:
   m_ObjectHideFlags: 0
@@ -66826,7 +66836,7 @@ MonoBehaviour:
   teleportAuraAnim: {fileID: 303521935}
   teleportFromPrefab: {fileID: 154981572320497507, guid: 69c4ff233d226d249bb4976c11568be3,
     type: 3}
-  poolNum: 10
+  poolNum: 15
   OnJump:
     m_PersistentCalls:
       m_Calls:
