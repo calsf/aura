@@ -7026,6 +7026,26 @@ MonoBehaviour:
     volume: 0.35
     pitch: 1
     loop: 0
+  - clipName: DemiAuraOn
+    clip: {fileID: 8300000, guid: b3bec18f08f84e246b53bcf08f936c0c, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+  - clipName: WildfireAuraOn
+    clip: {fileID: 8300000, guid: 4b04fc1df75b58243b268cceec9944db, type: 3}
+    volume: 0.6
+    pitch: 1
+    loop: 0
+  - clipName: BladedAuraOn
+    clip: {fileID: 8300000, guid: 42d0d8486b315dc438c23053336ff91e, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+  - clipName: HammerheadAuraOn
+    clip: {fileID: 8300000, guid: 01e1ff1dd5c32414a85841dfd72b9a3e, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
 --- !u!4 &231808691
 Transform:
   m_ObjectHideFlags: 0
@@ -10008,12 +10028,12 @@ GameObject:
   - component: {fileID: 344103319}
   - component: {fileID: 344103322}
   m_Layer: 0
-  m_Name: HammerAura
+  m_Name: HammerheadAura
   m_TagString: DamageEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &344103318
 Transform:
   m_ObjectHideFlags: 0
@@ -18362,7 +18382,7 @@ MonoBehaviour:
   - {fileID: 371227286}
   - {fileID: 703755909}
   - {fileID: 1336576242}
-  selectedSubColor: {r: 0.6226415, g: 0.60303, b: 0.41998932, a: 1}
+  selectedSubColor: {r: 1, g: 1, b: 1, a: 1}
   unselectedSubColor: {r: 1, g: 1, b: 1, a: 0}
   selectedSlotSprite: {fileID: 21300000, guid: 35f045b381ef2bd45b65284635ad2c16, type: 3}
   unselectedSlotSprite: {fileID: 21300000, guid: 055f4f823a04d8541a740d9a6b7aaa1a,
@@ -25708,8 +25728,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: d5329c6eeebb87246bf4a11a7bc6ea15, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -69745,8 +69765,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: d5329c6eeebb87246bf4a11a7bc6ea15, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -80419,8 +80439,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: d5329c6eeebb87246bf4a11a7bc6ea15, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -88252,7 +88272,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 290.1, y: 25.41}
+  m_SizeDelta: {x: 290.1, y: 29.14}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1679846447
 MonoBehaviour:
@@ -98200,8 +98220,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: d5329c6eeebb87246bf4a11a7bc6ea15, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -101503,7 +101523,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 290.1, y: 25.41}
+  m_SizeDelta: {x: 290.1, y: 29.14}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2545610036989428165
 CanvasRenderer:
