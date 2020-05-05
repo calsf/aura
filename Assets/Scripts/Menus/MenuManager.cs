@@ -64,7 +64,7 @@ public class MenuManager : MonoBehaviour
         if (menu.alpha > 0)
         {
             menuAnim.Play("MenuClose");
-
+            SoundManager.SoundInstance.PlaySound("ButtonEnter");
             //menu.alpha = 0;
             menu.blocksRaycasts = false;
             isMenu = false;
@@ -73,7 +73,7 @@ public class MenuManager : MonoBehaviour
         else if (menu.alpha == 0)
         {
             menuAnim.Play("MenuOpen");
-            SoundManager.SoundInstance.PlaySound("MenuPopUp");
+            SoundManager.SoundInstance.PlaySound("ButtonEnter");
             menu.blocksRaycasts = true;
             isMenu = true;
             Time.timeScale = 0;

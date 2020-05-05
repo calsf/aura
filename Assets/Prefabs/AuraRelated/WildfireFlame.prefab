@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6819243583851353890}
   - component: {fileID: -8312573053726195192}
   - component: {fileID: -1828612252373180647}
+  - component: {fileID: 5845532113977152648}
   m_Layer: 11
   m_Name: WildfireFlame
   m_TagString: ExtraDamage
@@ -144,8 +145,8 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: c820617e3319ae148a375d163d79c06e, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 0.45
+  m_PlayOnAwake: 0
+  m_Volume: 0.7
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -229,3 +230,15 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &5845532113977152648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6819243583851353889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99cedf982c1880747b36bac82e7c269f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
