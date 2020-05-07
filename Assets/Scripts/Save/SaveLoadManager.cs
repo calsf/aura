@@ -67,6 +67,7 @@ public static class SaveLoadManager
         file.Close();
     }
 
+    /********* LOAD FROM FILE, LOADS NEW IF DOESN'T EXIST ****************/
     // Load auras
     public static bool[] LoadAuras()
     {
@@ -84,12 +85,7 @@ public static class SaveLoadManager
         else
         {
             // If no save file exists, start fresh with only 1 aura unlocked
-            bool[] defaultAuras = new bool[]
-            {
-                true, false, false, false, false, true, true, true, true, true, true, true, true
-            };
-
-            return defaultAuras;
+            return LoadAurasNew();
         }
     }
 
@@ -110,12 +106,7 @@ public static class SaveLoadManager
         else
         {
             // If no save file exists, start fresh (levels do not include level select)
-            bool[] defaultLvls = new bool[]
-            {
-                true, true, false, false
-            };
-
-            return defaultLvls;
+            return LoadLvlsNew();
         }
     }
 
@@ -136,12 +127,7 @@ public static class SaveLoadManager
         else
         {
             // If no save file exists, start fresh
-            int[] defaultEquip = new int[]
-            {
-                0, 0, 0, 0
-            };
-
-            return defaultEquip;
+            return LoadEquippedNew();
         }
     }
 
@@ -162,7 +148,7 @@ public static class SaveLoadManager
         else
         {
             // Return default health if no file exists
-            return 3;
+            return LoadHealthNew();
         }
     }
 
@@ -183,8 +169,62 @@ public static class SaveLoadManager
         else
         {
             // Return default of 0 gold if no file exists
-            return 0;
+            return LoadGoldNew();
         }
     }
+
+    /******* Load NEW data ****************/
+    // Load auras
+    public static bool[] LoadAurasNew()
+    {
+        // Start fresh with only 1 aura unlocked
+        bool[] defaultAuras = new bool[]
+        {
+            true, false, false, false, false, true, true, true, true, true, true, true, true
+        };
+
+        return defaultAuras;
+    }
+
+    // Load unlocked levels
+    public static bool[] LoadLvlsNew()
+    {
+        // Load new levels (levels do not include level select)
+        bool[] defaultLvls = new bool[]
+        {
+            true, true, false, false
+        };
+
+        return defaultLvls; 
+    }
+
+    // Load equipped auras
+    public static int[] LoadEquippedNew()
+    {
+        // If no save file exists, start fresh
+        int[] defaultEquip = new int[]
+        {
+            0, 0, 0, 0
+        };
+
+        return defaultEquip;
+        
+    }
+
+    // Load health
+    public static int LoadHealthNew()
+    {
+        // Return default health
+        return 3;
+    }
+
+    // Load gold
+    public static int LoadGoldNew()
+    {
+        // Return default of 0 gold
+        return 0;
+    }
+
+
 }
 

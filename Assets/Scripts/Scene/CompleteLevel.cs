@@ -115,6 +115,6 @@ public class CompleteLevel : MonoBehaviour
         // Once done, wait a bit and load back to level select
         yield return new WaitForSeconds(2.5f);
 
-        LoadLevel.LoadInstance.LoadScene(0);
+        LoadLevel.LoadInstance.LoadScene(1);
     }
 }

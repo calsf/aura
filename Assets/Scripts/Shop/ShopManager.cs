@@ -86,7 +86,7 @@ public class ShopManager : MonoBehaviour
         // On menu button, return back to level select scene
         if (Input.GetKeyDown(ControlsManager.ControlInstance.Keybinds["MenuButton"]) || Input.GetKeyDown(ControlsManager.ControlInstance.Padbinds["MenuPad"]))
         {
-            LoadLevel.LoadInstance.LoadScene(0);
+            LoadLevel.LoadInstance.LoadScene(1);
         }
     }
 

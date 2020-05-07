@@ -29,14 +29,26 @@ public class SaveData : MonoBehaviour
         health = SaveLoadManager.LoadHealth();
         gold = SaveLoadManager.LoadGold();
 
-        auraUnlocked = new bool[5];
         auraUnlocked = SaveLoadManager.LoadAuras();
 
-        lvlUnlocked = new bool[2];
         lvlUnlocked = SaveLoadManager.LoadLvls();
 
-        equippedAuras = new int[4];
         equippedAuras = SaveLoadManager.LoadEquipped();
+    }
+
+    // Resets data to new data
+    public SaveData LoadNew()
+    {
+        health = SaveLoadManager.LoadHealthNew();
+        gold = SaveLoadManager.LoadGoldNew();
+
+        auraUnlocked = SaveLoadManager.LoadAurasNew();
+
+        lvlUnlocked = SaveLoadManager.LoadLvlsNew();
+
+        equippedAuras = SaveLoadManager.LoadEquippedNew();
+
+        return this;
     }
 
     // Unlock aura
