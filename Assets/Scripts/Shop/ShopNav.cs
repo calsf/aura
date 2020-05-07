@@ -48,16 +48,33 @@ public class ShopNav : MonoBehaviour
         {
             if (!axisDown)
             {
+                int temp = selected;
+
                 axisDown = true;
                 NavShop(selected - 1);
+
+                // Only play nav sound if selected item changed
+                if (selected != temp)
+                {
+                    SoundManager.SoundInstance.PlaySound("ButtonNav");
+                }
+                
             }
         }
         else if (Input.GetKeyDown(ControlsManager.ControlInstance.Keybinds["RightButton"]) || Input.GetAxisRaw("Horizontal") == 1)
         {
             if (!axisDown)
             {
+                int temp = selected;
+
                 axisDown = true;
                 NavShop(selected + 1);
+
+                // Only play nav sound if selected item changed
+                if (selected != temp)
+                {
+                    SoundManager.SoundInstance.PlaySound("ButtonNav");
+                }
             }
         }
         else

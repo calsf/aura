@@ -90,7 +90,7 @@ SortingGroup:
   m_Enabled: 1
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 105
+  m_SortingOrder: 110
 --- !u!222 &7673720517506301117
 CanvasRenderer:
   m_ObjectHideFlags: 0

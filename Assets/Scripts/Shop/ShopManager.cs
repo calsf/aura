@@ -22,6 +22,8 @@ public class ShopManager : MonoBehaviour
     [SerializeField]
     [TextArea(3, 10)]
     string[] auraBought;        // Chat text when aura is bought, specific to each aura
+    [SerializeField]
+    [TextArea(3, 10)]
     string auraFail;          // Chat text when aura cannot be bought, generic for each aura
 
     [SerializeField]
@@ -35,8 +37,14 @@ public class ShopManager : MonoBehaviour
     [SerializeField]
     PlayerHearts playerHearts;
 
+    [SerializeField]
+    [TextArea(3, 10)]
     string healthMaxed;         // Chat text when health increase is bought and maxed
+    [SerializeField]
+    [TextArea(3, 10)]
     string healthBought;        // Chat text when a health increase is bought
+    [SerializeField]
+    [TextArea(3, 10)]
     string healthFail;          // Chat text when health increase cannot be bought
     
     SaveData saveData;
@@ -48,11 +56,6 @@ public class ShopManager : MonoBehaviour
 
     void Awake()
     {
-        healthMaxed = "Here you go, another boost to your health! Although you should probably stop taking these...Too much of anything can be bad.";
-        healthBought = "Health boost coming right up! You'll need something a little stronger to further boost your health from here on out. Luckily I have just the thing - for a price of course.";
-        healthFail = "Sorry but you're going to need some more gold if you want a health boost.";
-        auraFail = "Auras don't come cheap, and for good reason! Come back when you have more gold.";
-
         // Init aura prices and aura index number
         auraPrice = new int[auras.Length];
         auraIndex = new int[auras.Length];
@@ -104,10 +107,14 @@ public class ShopManager : MonoBehaviour
 
             // Move to next item
             shopNav.NavShop(shopNav.Selected + 1);
+
+            SoundManager.SoundInstance.PlaySound("ShopBuySuccess");
         }
         else
         {
             shopChat.SetChat(auraFail);     // Show chat response if can't afford aura
+
+            SoundManager.SoundInstance.PlaySound("ShopBuyFail");
         }
     }
 
@@ -138,10 +145,14 @@ public class ShopManager : MonoBehaviour
             {
                 shopChat.SetChat(healthBought);
             }
+
+            SoundManager.SoundInstance.PlaySound("ShopBuySuccess");
         }
         else
         {
             shopChat.SetChat(healthFail);     //Show chat response if not enough gold to buy
+
+            SoundManager.SoundInstance.PlaySound("ShopBuyFail");
         }
     }
 

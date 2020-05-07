@@ -197,7 +197,8 @@ public class EnemyDefaults : MonoBehaviour {
                 WildfireAura wfAura = other.GetComponent<WildfireAura>();
                 if (wfAura != null)
                 {
-                    wfAura.SpawnFlame(transform);
+                    // Spawn flame at collision point
+                    wfAura.SpawnFlame(other.ClosestPoint(transform.position));
                 }
 
                 // Deal damage to enemy
@@ -243,7 +244,8 @@ public class EnemyDefaults : MonoBehaviour {
                     WildfireAura wfAura = other.GetComponent<WildfireAura>();
                     if (wfAura != null)
                     {
-                        wfAura.SpawnFlame(transform);
+                        // Spawn flame at collision point
+                        wfAura.SpawnFlame(other.ClosestPoint(transform.position));
                     }
 
                     // Deal damage to enemy

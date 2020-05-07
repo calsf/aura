@@ -43,17 +43,17 @@ public class WildfireAura : MonoBehaviour
     }
 
     // Spawn wildfire flame at other position
-    public void SpawnFlame(Transform other)
+    public void SpawnFlame(Vector3 other)
     {
         // Check if there is already a wildfire flame on top of other position, if there is, return and do not spawn flame
-        RaycastHit2D hit = Physics2D.Raycast(other.gameObject.transform.position, Vector2.zero, 0, flameMask);
+        RaycastHit2D hit = Physics2D.Raycast(other, Vector2.zero, 0, flameMask);
         if (hit.collider != null && hit.collider.gameObject.activeInHierarchy)
         {
             return;
         }
 
         GameObject flame = GetFromPool(flamePool);
-        flame.transform.position = other.position;
+        flame.transform.position = other;
         flame.SetActive(true);
     }
 

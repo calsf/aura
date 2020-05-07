@@ -185,7 +185,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &28233685
 GameObject:
@@ -1810,6 +1810,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 608106534}
+  - {fileID: 446049456}
   m_Father: {fileID: 1095850340}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3294,13 +3295,86 @@ RectTransform:
   m_Children:
   - {fileID: 1095850340}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &446049455
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 446049456}
+  - component: {fileID: 446049458}
+  - component: {fileID: 446049457}
+  m_Layer: 5
+  m_Name: MerchantIcon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &446049456
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 446049455}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 296520816}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -204.59, y: 0.55}
+  m_SizeDelta: {x: 85, y: 82}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &446049457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 446049455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 5e8e962a173122740b19178f1ce9e4e8, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &446049458
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 446049455}
+  m_CullTransparentMesh: 0
 --- !u!1 &476209446
 GameObject:
   m_ObjectHideFlags: 0
@@ -4669,7 +4743,7 @@ GameObject:
   - component: {fileID: 608106536}
   - component: {fileID: 608106535}
   m_Layer: 5
-  m_Name: MerchantIcon
+  m_Name: MerchantIconBG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4996,7 +5070,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5c2a896b3f79e584c970ac5a7d5ec2d3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 21c9dc4a4d6027143b6bff4dc4493b3a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5514,7 +5588,7 @@ RectTransform:
   - {fileID: 392730319}
   - {fileID: 392807625}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -11336,6 +11410,65 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1418076269}
   m_CullTransparentMesh: 0
+--- !u!1 &1444669867
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1444669869}
+  - component: {fileID: 1444669868}
+  m_Layer: 0
+  m_Name: SoundManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1444669868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1444669867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43b36a8f4e9f1dc40a4292c520bd5ac3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - clipName: ButtonNav
+    clip: {fileID: 8300000, guid: b829d5000ccac514aa3ce163e08bce53, type: 3}
+    volume: 0.6
+    pitch: 1
+    loop: 0
+  - clipName: ShopBuySuccess
+    clip: {fileID: 8300000, guid: 034a5a47d16ae59458117262c7e50c87, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+  - clipName: ShopBuyFail
+    clip: {fileID: 8300000, guid: b99d975eeedd3044caa20fb7ea449135, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+--- !u!4 &1444669869
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1444669867}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1451121690
 GameObject:
   m_ObjectHideFlags: 0
@@ -11496,9 +11629,18 @@ MonoBehaviour:
     and died...
   - It isn't quite the same as flying but it's as close as you're going to get.
   - One jump and to the skies you'll go. Watch your head.
+  auraFail: Auras don't come cheap, and for good reason! Come back when you have
+    more gold.
   health: {fileID: 2102097327}
   healthPriceDisplay: {fileID: 482747645}
   playerHearts: {fileID: 1456894322}
+  healthMaxed: Here you go, another boost to your health! Although you should probably
+    stop taking these...Too much of anything can be bad.
+  healthBought: Health boost coming right up! You'll need something a little stronger
+    to further boost your health from here on out. Luckily I have just the thing
+    - for a price of course.
+  healthFail: Sorry but you're going to need some more gold if you want a health
+    boost.
   shopNav: {fileID: 1836561423}
 --- !u!114 &1456894320
 MonoBehaviour:
@@ -11524,7 +11666,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1456894322
 MonoBehaviour:
@@ -11554,7 +11696,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chatDisplay: {fileID: 1950933964}
-  defaultChat: Greetings!
+  defaultChat:
+  - Greetings! I might not have anything amazing but trust me, these are essentials!
+    Take a look for yourself.
+  - Ah, looking for auras are we? I'm not really the adventurous type myself so I
+    got plenty to spare if you have the coin.
 --- !u!1 &1459288291
 GameObject:
   m_ObjectHideFlags: 0
@@ -12461,7 +12607,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 90032492d61d9ac42acbf5f576bee66d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bc72553aa1f334b4b86df465c7777e16, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -13016,7 +13162,7 @@ RectTransform:
   - {fileID: 1985806387}
   - {fileID: 1769737662}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -14136,7 +14282,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1870788517
 GameObject:

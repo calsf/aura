@@ -91,7 +91,7 @@ SortingGroup:
   m_Enabled: 1
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 103
+  m_SortingOrder: 108
 --- !u!50 &6080576239220691970
 Rigidbody2D:
   serializedVersion: 4

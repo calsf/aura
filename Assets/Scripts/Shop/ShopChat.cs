@@ -11,7 +11,7 @@ public class ShopChat : MonoBehaviour
 
     [SerializeField]
     [TextArea(3, 10)]
-    string defaultChat;
+    string[] defaultChat;
 
     int currChar;
     StringBuilder sb;
@@ -23,7 +23,7 @@ public class ShopChat : MonoBehaviour
     {
         // Set default text on entering shop
         sb = new StringBuilder();
-        SetChat(defaultChat);
+        SetChat(defaultChat[Random.Range(0, defaultChat.Length)]);
     }
 
     // Show the new chat text one character at a time
