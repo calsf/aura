@@ -11,6 +11,8 @@ public class StartOptions : MonoBehaviour
     LoadLevel loadLevel;
 
     [SerializeField]
+    CanvasGroup buttonCanvas;
+    [SerializeField]
     Button[] optionsDefault;    // All options
     Button[] options;           // Options that can be navigated and selected
 
@@ -67,6 +69,12 @@ public class StartOptions : MonoBehaviour
 
     void Update()
     {
+        // Wait until fade in complete before accepting input
+        if (buttonCanvas.alpha != 1)
+        {
+            return;
+        }
+
         // Navigate options up and down
         if (Input.GetKeyDown(ControlsManager.ControlInstance.Keybinds["DownButton"]) || Input.GetAxisRaw("Vertical") == -1)
         {
