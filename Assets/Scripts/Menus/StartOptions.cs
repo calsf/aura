@@ -42,35 +42,30 @@ public class StartOptions : MonoBehaviour
 
     void Awake()
     {
-        // First option should be continue, if no save file, set interactable to false
-        if (!File.Exists(Application.persistentDataPath + "/aura.sav"))
-        {
-            optionsDefault[0].interactable = false;
-        }
-
         // Initialize options that can navigated
-        int index = 0;
-
-        // Init size of options and text
-        foreach (Button b in optionsDefault)
-        {
-            if (b.interactable)
-            {
-                index++;
-            }
-        }
-        options = new Button[index];
-        optionsText = new Text[index];
+        options = (File.Exists(Application.persistentDataPath + "/aura.sav")) ? new Button[optionsDefault.Length] : new Button[optionsDefault.Length - 1];
+        optionsText = new Text[options.Length];
 
         // Init option buttons and text
-        index = 0;
+        int optionsIndex = 0;
+        int defaultsIndex = 0;
         foreach (Button b in optionsDefault)
         {
-            if (b.interactable)
+            // Do not include continue if no save file
+            if (defaultsIndex != 0 || (defaultsIndex == 0 && File.Exists(Application.persistentDataPath + "/aura.sav")))
             {
-                options[index] = b;
-                optionsText[index] = b.GetComponentInChildren<Text>();
-                index++;
+                options[optionsIndex] = b;
+                optionsText[optionsIndex] = b.GetComponentInChildren<Text>();
+
+                // Move options and optionsdefaults index ahead
+                defaultsIndex++;
+                optionsIndex++;
+            }
+            else if (optionsIndex == 0 && !File.Exists(Application.persistentDataPath + "/aura.sav"))
+            {
+                // Grey out continue button if no save file
+                b.GetComponentInChildren<Text>().color = new Color(1, 1, 1, .5f);
+                defaultsIndex++;    // Do not increment options index since options is never updated
             }
         }
 
