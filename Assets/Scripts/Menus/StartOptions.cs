@@ -15,22 +15,30 @@ public class StartOptions : MonoBehaviour
     [SerializeField]
     Button[] optionsDefault;    // All options
     Button[] options;           // Options that can be navigated and selected
+    Text[] optionsText;
 
     [SerializeField]
     GameObject warning;
     [SerializeField]
     Button[] warningOptions;
+    Text[] warningOptionsText;
 
     int selected;
     int selectedWarning;
 
     bool axisDown;  // To treat axis input as key down
 
-    // Sprites for the selected button
+    // Sprites for the selected/unselected button
     [SerializeField]
     Sprite selectedSprite;
     [SerializeField]
     Sprite unselectedSprite;
+
+    // Color for the selected/unselected options text
+    [SerializeField]
+    Color unselectedColor;
+    [SerializeField]
+    Color selectedColor;
 
     void Awake()
     {
@@ -43,7 +51,7 @@ public class StartOptions : MonoBehaviour
         // Initialize options that can navigated
         int index = 0;
 
-        // Init size of options
+        // Init size of options and text
         foreach (Button b in optionsDefault)
         {
             if (b.interactable)
@@ -52,16 +60,24 @@ public class StartOptions : MonoBehaviour
             }
         }
         options = new Button[index];
+        optionsText = new Text[index];
 
-        // Init option buttons
+        // Init option buttons and text
         index = 0;
         foreach (Button b in optionsDefault)
         {
             if (b.interactable)
             {
                 options[index] = b;
+                optionsText[index] = b.GetComponentInChildren<Text>();
                 index++;
             }
+        }
+
+        warningOptionsText = new Text[warningOptions.Length];
+        for (int i = 0; i < warningOptions.Length; i++)
+        {
+            warningOptionsText[i] = warningOptions[i].GetComponentInChildren<Text>();
         }
 
         NavOptions(0, 0);   // Init selected option to first option
@@ -149,7 +165,9 @@ public class StartOptions : MonoBehaviour
         selected = button;
 
         options[lastButton].GetComponent<Image>().sprite = unselectedSprite;
+        optionsText[lastButton].color = unselectedColor;
         options[button].GetComponent<Image>().sprite = selectedSprite;
+        optionsText[button].color = selectedColor;
 
         // Only play sound if selection changed
         if (selected != lastButton)
@@ -173,7 +191,9 @@ public class StartOptions : MonoBehaviour
         selectedWarning = button;
 
         warningOptions[lastButton].GetComponent<Image>().sprite = unselectedSprite;
+        warningOptionsText[lastButton].color = unselectedColor;
         warningOptions[button].GetComponent<Image>().sprite = selectedSprite;
+        warningOptionsText[button].color = selectedColor;
 
         // Only play sound if selection changed
         if (selectedWarning != lastButton)
@@ -211,5 +231,11 @@ public class StartOptions : MonoBehaviour
     public void CancelNewGame()
     {
         warning.SetActive(false);
+    }
+
+    // Quit application
+    public void Quit()
+    {
+        Application.Quit();
     }
 }
