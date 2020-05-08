@@ -6,21 +6,271 @@ using UnityEngine.UI;
 public class LevelSelectManager : MonoBehaviour
 {
     bool[] lvlUnlocked;
-    Button[] lvlButtons;
+    [SerializeField]
+    Button[] firstFloor;
+    Button[] firstFloorUnlocked;
+    [SerializeField]
+    Button[] secondFloor;
+    Button[] secondFloorUnlocked;
+    [SerializeField]
+    Button[] thirdFloor;
+    Button[] thirdFloorUnlocked;
+    [SerializeField]
+    Button[] fourthFloor;
+    Button[] fourthFloorUnlocked;
+    int totalFloors = 4;
+
+    int floor;      // Current floor
+    int selected;   // Selected zone in a floor
+    bool axisDown;
 
     [SerializeField]
-    GameObject buttonParent;
+    Button[] lvlButtons;    // All level buttons
+
+    // Sprites for the selected/unselected buttons on each floor
+    [SerializeField]
+    Sprite[] firstSelected;
+    [SerializeField]
+    Sprite[] firstUnselected;
+    [SerializeField]
+    Sprite[] secondSelected;
+    [SerializeField]
+    Sprite[] secondUnselected;
+    [SerializeField]
+    Sprite[] thirdSelected;
+    [SerializeField]
+    Sprite[] thirdUnselected;
+    [SerializeField]
+    Sprite[] fourthSelected;
+    [SerializeField]
+    Sprite[] fourthUnselected;
+
 
     void Awake()
     {
         Time.timeScale = 1; // Set timescale back to 1 in the case player leaves a level
-        lvlButtons = buttonParent.GetComponentsInChildren<Button>();
 
         // Get levels unlocked from save and disable and enable level buttons accordingly
-        lvlUnlocked = SaveLoadManager.LoadLvls();
-        for (int i = 0; i < lvlButtons.Length; i++)
+        //lvlUnlocked = SaveLoadManager.LoadLvls();
+        //for (int i = 0; i < lvlButtons.Length; i++)
+        //{
+        //    lvlButtons[i].gameObject.SetActive(lvlUnlocked[i]);
+        //}
+
+        // Init unlocked floors
+        InitUnlockedFloors(ref firstFloor, ref firstFloorUnlocked);
+        InitUnlockedFloors(ref secondFloor, ref secondFloorUnlocked);
+        InitUnlockedFloors(ref thirdFloor, ref thirdFloorUnlocked);
+        InitUnlockedFloors(ref fourthFloor, ref fourthFloorUnlocked);
+
+        NavFloorHorizontal(0, 0);
+    }
+
+    void Update()
+    {
+        // Navigate up and down, left and right
+        if (Input.GetKeyDown(ControlsManager.ControlInstance.Keybinds["DownButton"]) || Input.GetAxisRaw("Vertical") == -1)
         {
-            lvlButtons[i].gameObject.SetActive(lvlUnlocked[i]);
+            if (!axisDown)
+            {
+                axisDown = true;
+
+                NavFloorVertical(floor, floor + 1);
+            }
         }
+        else if (Input.GetKeyDown(ControlsManager.ControlInstance.Keybinds["UpButton"]) || Input.GetAxisRaw("Vertical") == 1)
+        {
+            if (!axisDown)
+            {
+                axisDown = true;
+
+                NavFloorVertical(floor, floor - 1);
+            }
+        }
+        else if (Input.GetKeyDown(ControlsManager.ControlInstance.Keybinds["LeftButton"]) || Input.GetAxisRaw("Horizontal") == -1)
+        {
+            if (!axisDown)
+            {
+                axisDown = true;
+
+                NavFloorHorizontal(selected, selected - 1);
+            }
+        }
+        else if (Input.GetKeyDown(ControlsManager.ControlInstance.Keybinds["RightButton"]) || Input.GetAxisRaw("Horizontal") == 1)
+        {
+            if (!axisDown)
+            {
+                axisDown = true;
+
+                NavFloorHorizontal(selected, selected + 1);
+            }
+        }
+        else
+        {
+            axisDown = false;
+        }
+
+        // To click button, press jump
+        if (Input.GetKeyDown(ControlsManager.ControlInstance.Keybinds["JumpButton"]) || Input.GetKeyDown(ControlsManager.ControlInstance.Padbinds["JumpPad"]))
+        {
+            SoundManager.SoundInstance.PlaySound("ButtonEnter");    // Play button sound
+
+            Button[] curr;
+            switch (floor)
+            {
+                case 0:
+                    curr = firstFloorUnlocked;
+                    break;
+                case 1:
+                    curr = secondFloorUnlocked;
+                    break;
+                case 2:
+                    curr = thirdFloorUnlocked;
+                    break;
+                case 3:
+                    curr = fourthFloorUnlocked;
+                    break;
+                default:
+                    curr = firstFloorUnlocked;
+                    break;
+            }
+
+            curr[selected].GetComponent<Animator>().Play("Button");  // Play button anim
+            curr[selected].onClick.Invoke();     // Invoke on click of selected button
+        }
+    }
+
+    // Move up or down floors
+    void NavFloorVertical(int lastFloor, int floor)
+    {
+        Button[] curr;
+        Sprite[] unselectedBtns;
+        switch (lastFloor)
+        {
+            case 0:
+                curr = firstFloorUnlocked;
+                unselectedBtns = firstUnselected;
+                break;
+            case 1:
+                curr = secondFloorUnlocked;
+                unselectedBtns = secondUnselected;
+                break;
+            case 2:
+                curr = thirdFloorUnlocked;
+                unselectedBtns = thirdUnselected;
+                break;
+            case 3:
+                curr = fourthFloorUnlocked;
+                unselectedBtns = fourthUnselected;
+                break;
+            default:
+                curr = firstFloorUnlocked;
+                unselectedBtns = firstUnselected;
+                break;
+        }
+        curr[selected].GetComponent<Image>().sprite = unselectedBtns[selected]; // Deselect current zone
+
+
+        // If next floor goes past last floor, wrap back to beginning. If goes before first floor, wrap to last floor
+        if (floor > totalFloors - 1)
+        {
+            floor = 0;
+        }
+        else if (floor < 0)
+        {
+            floor = totalFloors - 1;
+        }
+        this.floor = floor;     // Move floors
+
+        // Reset to first zone in new floor
+        NavFloorHorizontal(0, 0);
+
+        // Only play sound if floor changed
+        if (this.floor != lastFloor)
+        {
+            SoundManager.SoundInstance.PlaySound("ButtonNav");
+        }
+    }
+
+    // Move to next/previous zone in current floor
+    void NavFloorHorizontal(int lastButton, int button)
+    {
+        Button[] curr;
+        Sprite[] unselectedBtns;
+        Sprite[] selectedBtns;
+        switch (floor)
+        {
+            case 0:
+                curr = firstFloorUnlocked;
+                unselectedBtns = firstUnselected;
+                selectedBtns = firstSelected;
+                break;
+            case 1:
+                curr = secondFloorUnlocked;
+                unselectedBtns = secondUnselected;
+                selectedBtns = secondSelected;
+                break;
+            case 2:
+                curr = thirdFloorUnlocked;
+                unselectedBtns = thirdUnselected;
+                selectedBtns = thirdSelected;
+                break;
+            case 3:
+                curr = fourthFloorUnlocked;
+                unselectedBtns = fourthUnselected;
+                selectedBtns = fourthSelected;
+                break;
+            default:
+                curr = firstFloorUnlocked;
+                unselectedBtns = firstUnselected;
+                selectedBtns = firstSelected;
+                break;
+        }
+
+        // If next button goes past last button, wrap back to beginning. If goes before first button, wrap to last button
+        if (button > curr.Length - 1)
+        {
+            button = 0;
+        }
+        else if (button < 0)
+        {
+            button = curr.Length - 1;
+        }
+        selected = button;
+
+        curr[lastButton].GetComponent<Image>().sprite = unselectedBtns[lastButton];
+        curr[button].GetComponent<Image>().sprite = selectedBtns[button];
+
+        // Only play sound if selection changed
+        if (selected != lastButton)
+        {
+            SoundManager.SoundInstance.PlaySound("ButtonNav");
+        }
+    }
+
+
+    // Initialize unlocked floors
+    void InitUnlockedFloors(ref Button[] allFloors, ref Button[] unlockedFloors)
+    {
+        int size = 0;
+        foreach (Button b in allFloors)
+        {
+            if (b.gameObject.activeInHierarchy)
+            {
+                size++;
+            }
+        }
+        unlockedFloors = new Button[size];
+
+        size = 0;
+        foreach (Button b in allFloors)
+        {
+            if (b.gameObject.activeInHierarchy)
+            {
+                unlockedFloors[size] = b;
+                size++;
+            }
+        }
+
     }
 }
