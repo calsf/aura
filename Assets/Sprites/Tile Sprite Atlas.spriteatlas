@@ -45,7 +45,8 @@ SpriteAtlas:
     - {fileID: 2800000, guid: 448a85e6adb7fe54ba15bcbb57a8cdf4, type: 3}
     - {fileID: 2800000, guid: 9372e97b33fdd2948b644e8bcc965134, type: 3}
     - {fileID: 2800000, guid: 8ce40e7607c62b34e8268dc5f259f969, type: 3}
-    totalSpriteSurfaceArea: 24832
+    - {fileID: 2800000, guid: 311569a923656bb4484e0f69bb787027, type: 3}
+    totalSpriteSurfaceArea: 27648
     bindAsDefault: 1
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
@@ -103,6 +104,17 @@ SpriteAtlas:
   - {fileID: 1306154761556544647, guid: 448a85e6adb7fe54ba15bcbb57a8cdf4, type: 3}
   - {fileID: 362252049289255196, guid: 448a85e6adb7fe54ba15bcbb57a8cdf4, type: 3}
   - {fileID: -1787484789985767110, guid: 448a85e6adb7fe54ba15bcbb57a8cdf4, type: 3}
+  - {fileID: -8566231691555818994, guid: 311569a923656bb4484e0f69bb787027, type: 3}
+  - {fileID: 9108506839123058777, guid: 311569a923656bb4484e0f69bb787027, type: 3}
+  - {fileID: -8543613910667291881, guid: 311569a923656bb4484e0f69bb787027, type: 3}
+  - {fileID: -7492271203522367903, guid: 311569a923656bb4484e0f69bb787027, type: 3}
+  - {fileID: -9036207608891441128, guid: 311569a923656bb4484e0f69bb787027, type: 3}
+  - {fileID: -7824493165532931671, guid: 311569a923656bb4484e0f69bb787027, type: 3}
+  - {fileID: -2557809595615348277, guid: 311569a923656bb4484e0f69bb787027, type: 3}
+  - {fileID: -2887068888523903560, guid: 311569a923656bb4484e0f69bb787027, type: 3}
+  - {fileID: 1804374892989401409, guid: 311569a923656bb4484e0f69bb787027, type: 3}
+  - {fileID: 794633616590433022, guid: 311569a923656bb4484e0f69bb787027, type: 3}
+  - {fileID: -7298172402953334263, guid: 311569a923656bb4484e0f69bb787027, type: 3}
   - {fileID: 3881043146882642805, guid: 9372e97b33fdd2948b644e8bcc965134, type: 3}
   - {fileID: 199539142298071526, guid: 9372e97b33fdd2948b644e8bcc965134, type: 3}
   - {fileID: -1481835517747944710, guid: 9372e97b33fdd2948b644e8bcc965134, type: 3}
@@ -201,6 +213,17 @@ SpriteAtlas:
   - Level1Tile_6
   - Level1Tile_1
   - Level1Tile_0
+  - ZoneSelectTile_10
+  - ZoneSelectTile_4
+  - ZoneSelectTile_5
+  - ZoneSelectTile_6
+  - ZoneSelectTile_7
+  - ZoneSelectTile_0
+  - ZoneSelectTile_1
+  - ZoneSelectTile_2
+  - ZoneSelectTile_3
+  - ZoneSelectTile_8
+  - ZoneSelectTile_9
   - Level2Tile_28
   - Level2Tile_29
   - Level2Tile_39

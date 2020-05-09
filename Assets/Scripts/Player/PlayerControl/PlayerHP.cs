@@ -96,6 +96,13 @@ public class PlayerHP : MonoBehaviour
         if ((enemyDmg != null || dmgPlayer != null) && Time.time > damagedTime && !dead)
         {
             int dmg = isEnemy ? enemyDmg.Dmg : dmgPlayer.Dmg;
+
+            // If dmg is 0 or less, do nothing and return
+            if (dmg <= 0)
+            {
+                return;
+            }
+
             DisplayDmgNum(dmg); //Show damage number
             currentHP -= dmg; //Calculate HP
             if (currentHP < 0) //Do not go below 0 hp

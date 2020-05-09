@@ -273,9 +273,12 @@ public class EnemyDefaults : MonoBehaviour {
             audioSources[audioSources.Length-1].Play();
 
             // Spawn gold pop up on death with a y offset above enemy
-            goldPopupText.text = "+" + enemy.gold + " Gold";
-            goldPopup.transform.position = transform.position + (Vector3.up * .1f);
-            goldPopup.SetActive(true);
+            if (enemy.gold > 0)
+            {
+                goldPopupText.text = "+" + enemy.gold + " Gold";
+                goldPopup.transform.position = transform.position + (Vector3.up * .1f);
+                goldPopup.SetActive(true);
+            }
 
             levelManager.Gold += enemy.gold;
             gameObject.SetActive(false);

@@ -12,7 +12,13 @@ EditorBuildSettings:
     path: Assets/Scenes/ZoneSelect.unity
     guid: c7faddccd0521264e8778ac37bb52247
   - enabled: 1
-    path: Assets/Scenes/Merchant.unity
+    path: Assets/Scenes/TutorialKeyboard.unity
+    guid: 9f5505236133b17439aa35f925a4d3c7
+  - enabled: 1
+    path: Assets/Scenes/TutorialGamepad.unity
+    guid: 1475df8c45c082845b5ddbfbc94d5cd9
+  - enabled: 1
+    path: Assets/Scenes/Shop1.unity
     guid: 5c15d96c1a30ee042b9aa7e88c41fa82
   - enabled: 1
     path: Assets/Scenes/Zone1.unity
