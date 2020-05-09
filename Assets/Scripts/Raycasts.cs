@@ -8,8 +8,8 @@ public class Raycasts : MonoBehaviour
     protected const float offset = .02f;
 
     // Number of raycasts
-    protected int horizontalRayCount = 10;
-    protected int verticalRayCount = 10;
+    protected int horizontalRayCount = 20;
+    protected int verticalRayCount = 20;
 
     // Spacing between each raycast in each group
     protected float horizontalRaySpacing;
