@@ -6,7 +6,6 @@ using UnityEngine;
 
 public class Flock : MonoBehaviour
 {
-    [SerializeField]
     FlockObject[] flockObjects;
 
     // Max speed of flock movement adjustments
@@ -29,6 +28,8 @@ public class Flock : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        flockObjects = GetComponentsInChildren<FlockObject>();
+
         squareMaxSpeed = maxSpeed * maxSpeed;
         squareNeighborRadius = neighborRadius * neighborRadius;
         squareAvoidRadius = squareNeighborRadius * avoidRadiusMultiplier * avoidRadiusMultiplier;
