@@ -40,7 +40,14 @@ public class ShootRotateToPlayer : ShootBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         view = player.GetComponent<PlayerInView>();
         anim = GetComponent<Animator>();
-        spawnPos = transform.GetChild(0); // Spawn positon MUST BE FIRST CHILD OBJECT
+
+        foreach (Transform child in transform)
+        {
+            if (child.tag == "SpawnPos")
+            {
+                spawnPos = child;
+            }
+        }
 
         projectilePool = new List<GameObject>();
         for (int i = 0; i < poolNum; i++)

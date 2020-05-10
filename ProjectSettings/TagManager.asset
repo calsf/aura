@@ -13,6 +13,7 @@ TagManager:
   - PlayerDamaged
   - ExtraDamage
   - DamagePlayer
+  - SpawnPos
   layers:
   - Default
   - TransparentFX
