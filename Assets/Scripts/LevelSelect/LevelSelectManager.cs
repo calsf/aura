@@ -24,7 +24,6 @@ public class LevelSelectManager : MonoBehaviour
     int selected;   // Selected zone in a floor
     bool axisDown;
 
-    [SerializeField]
     Button[] lvlButtons;    // All level buttons
 
     // Sprites for the selected/unselected buttons on each floor
@@ -51,11 +50,17 @@ public class LevelSelectManager : MonoBehaviour
         Time.timeScale = 1; // Set timescale back to 1 in the case player leaves a level
 
         // Get levels unlocked from save and disable and enable level buttons accordingly
-        //lvlUnlocked = SaveLoadManager.LoadLvls();
-        //for (int i = 0; i < lvlButtons.Length; i++)
-        //{
-        //    lvlButtons[i].gameObject.SetActive(lvlUnlocked[i]);
-        //}
+        lvlButtons = new Button[firstFloor.Length + secondFloor.Length + thirdFloor.Length + fourthFloor.Length];
+        firstFloor.CopyTo(lvlButtons, 0);
+        secondFloor.CopyTo(lvlButtons, firstFloor.Length);
+        thirdFloor.CopyTo(lvlButtons, firstFloor.Length + secondFloor.Length);
+        fourthFloor.CopyTo(lvlButtons, firstFloor.Length + secondFloor.Length + thirdFloor.Length);
+
+        lvlUnlocked = SaveLoadManager.LoadLvls();
+        for (int i = 0; i < lvlButtons.Length; i++)
+        {
+            lvlButtons[i].gameObject.GetComponent<Image>().enabled = lvlUnlocked[i];    // Set image inactive/active to maintain horizontal layout
+        }
 
         // Init unlocked floors
         InitUnlockedFloors(ref firstFloor, ref firstFloorUnlocked);
@@ -255,7 +260,7 @@ public class LevelSelectManager : MonoBehaviour
         int size = 0;
         foreach (Button b in allFloors)
         {
-            if (b.gameObject.activeInHierarchy)
+            if (b.gameObject.GetComponent<Image>().enabled)
             {
                 size++;
             }
@@ -265,7 +270,7 @@ public class LevelSelectManager : MonoBehaviour
         size = 0;
         foreach (Button b in allFloors)
         {
-            if (b.gameObject.activeInHierarchy)
+            if (b.gameObject.GetComponent<Image>().enabled)
             {
                 unlockedFloors[size] = b;
                 size++;

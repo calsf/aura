@@ -189,10 +189,10 @@ public static class SaveLoadManager
     // Load unlocked levels
     public static bool[] LoadLvlsNew()
     {
-        // Load new levels (levels do not include level select)
+        // Load new levels (levels do not include start screen or level select, minus 2 from the scene index)
         bool[] defaultLvls = new bool[]
         {
-            true, true, false, false
+            true, true, true, true, false, false, false, false, false, false, false, false, false, false, false, false, false, false
         };
 
         return defaultLvls; 
