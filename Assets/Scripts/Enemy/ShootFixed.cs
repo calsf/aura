@@ -116,13 +116,13 @@ public class ShootFixed : ShootBehaviour
             // Shoot in direction enemy is facing or shoot according to directions of each projectile
             if (shootBehaviour.shootFacingDirection && shootBehaviour.xDirection[i] != 0)
             {
-                // Change xDirection to enemy's facing direction - WILL NOT WORK UNLESS ENEMY FLIPS ITS LOCALSCALE PROPERLY, ENEMY MUST ORIGINALLY FACE TO THE RIGHT WHEN LOCALSCALE IS 1
-                int xDir = 1;
+                // Change xDirection to enemy's facing direction - WILL NOT WORK UNLESS ENEMY FLIPS ITS LOCALSCALE PROPERLY, ENEMY MUST ORIGINALLY FACE TO THE LEFT WHEN LOCALSCALE IS 1
+                int xDir = -1;
 
                 // Make sure to shoot in direction the main enemy object is facing, child objects of main enemy will not change their facing direction/localScale value
                 if ((shootBehaviour.shootIsChild && transform.parent.transform.localScale.x < 0) || (!shootBehaviour.shootIsChild && transform.localScale.x < 0))
                 {
-                    xDir = -1;
+                    xDir = 1;
                 }
 
                 projProperties.Dir = (new Vector2(xDir, shootBehaviour.yDirection[i]));   // Keep y direction of the projectile

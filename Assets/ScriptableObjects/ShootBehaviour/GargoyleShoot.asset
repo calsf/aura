@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90fa4d80050abf74895e176047d66331, type: 3}
+  m_Name: GargoyleShoot
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 5995899354325098581, guid: 96a96afe319d0684783b049782eb7f38,
+    type: 3}
+  minShootDelay: 0.6
+  maxShootDelay: 1.2
+  shootDelay: 2
+  stopToShoot: 0
+  shootFacingDirection: 1
+  shootIsChild: 0
+  numProj: 1
+  xDirection:
+  - 1
+  yDirection:
+  - 0
