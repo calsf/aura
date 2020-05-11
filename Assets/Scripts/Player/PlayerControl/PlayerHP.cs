@@ -34,6 +34,8 @@ public class PlayerHP : MonoBehaviour
     [SerializeField]
     int poolNum;
 
+    Camera cam;
+
     public UnityEvent OnHealthChange;
     public UnityEvent OnDeath;
     public UnityEvent OnRespawning;
@@ -47,6 +49,7 @@ public class PlayerHP : MonoBehaviour
         move = GetComponent<PlayerMoveInput>();
         controller = GetComponent<PlayerController>();
         auraControl = GetComponent<PlayerAuraControl>();
+        cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
     }
 
     // Start is called before the first frame update
@@ -185,7 +188,8 @@ public class PlayerHP : MonoBehaviour
         move.CanInput = true;    //Move canInput should be disabled upon knockback and is not restored if HP drops to 0, so restore it here
         auraControl.CanAura = true;
         currentHP = maxHP;
-        dead = false; 
+        dead = false;
+        cam.transform.position = transform.position;
         OnHealthChange.Invoke(); // OnHealthChanged event
     }
 

@@ -20,16 +20,20 @@ public class BackgroundScrolling : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        float dist = transform.position.x + moveValue;
-
-        // Move background
-        transform.position = new Vector3(startPos + dist, transform.position.y, transform.position.z);
-
-        // Reset once past certain length
-        if (transform.position.x > startPos + length)
+    { 
+        // Don't move if paused
+        if (Time.timeScale > 0)
         {
-            transform.position = new Vector2(startPos, transform.position.y);
+            float dist = transform.position.x + moveValue;
+
+            // Move background
+            transform.position = new Vector3(startPos + dist, transform.position.y, transform.position.z);
+
+            // Reset once past certain length
+            if (transform.position.x > startPos + length)
+            {
+                transform.position = new Vector2(startPos, transform.position.y);
+            }
         }
 
     }

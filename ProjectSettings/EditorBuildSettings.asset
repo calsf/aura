@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Zone4.unity
     guid: 371f6d8e693355f4cbb3240b9b25db83
+  - enabled: 1
+    path: Assets/Scenes/Shop2.unity
+    guid: f39420d4cb04c484490270ef641a83bc
   m_configObjects: {}

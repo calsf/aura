@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90fa4d80050abf74895e176047d66331, type: 3}
   m_Name: BansheeShoot
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 5995899354325098581, guid: 96a96afe319d0684783b049782eb7f38,
+  projectilePrefab: {fileID: 409402765058321914, guid: cb969cd9f763db24e911d60b2111f5d0,
     type: 3}
   minShootDelay: 0.8
   maxShootDelay: 1

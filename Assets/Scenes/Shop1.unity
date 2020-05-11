@@ -9530,7 +9530,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1548204659}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.33500737
+  m_Size: 0.33500734
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -11713,7 +11713,7 @@ MonoBehaviour:
   auraBought:
   - Slow and steady wins the race!
   - Careful with this one, the last one who bought this off me tripped at full speed
-    and died...
+    and died...An early end for such a young soul, I tell ya...
   - It isn't quite the same as flying but it's as close as you're going to get.
   - One jump and to the skies you'll go. Watch your head.
   auraFail: Auras don't come cheap, and for good reason! Come back when you have
@@ -11784,8 +11784,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chatDisplay: {fileID: 1950933964}
   defaultChat:
-  - Greetings! I might not have anything amazing but trust me, these are essentials!
-    Take a look for yourself.
+  - Are you going to venture down the pit? If so, take a look at these essentials!
   - Ah, looking for auras are we? I'm not really the adventurous type myself so I
     got plenty to spare if you have the coin.
 --- !u!1 &1459288291

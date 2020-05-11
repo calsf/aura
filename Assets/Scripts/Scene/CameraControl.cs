@@ -102,7 +102,6 @@ public class CameraControl : MonoBehaviour
         GetComponent<Camera>().transparencySortMode = TransparencySortMode.Orthographic;
     }
 
-    // Update is called once per frame
     void LateUpdate()
     {
         // Return if not following player or if player null

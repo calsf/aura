@@ -20,8 +20,12 @@ public class GoldPopup : MonoBehaviour
 
     void Update()
     {
-        dist += Time.deltaTime * (Vector3.up * .02f);
-        transform.position += dist;
+        // Don't move if paused
+        if (Time.timeScale > 0)
+        {
+            dist += Time.deltaTime * (Vector3.up * .02f);
+            transform.position += dist;
+        }
     }
 
     void OnEnable()
