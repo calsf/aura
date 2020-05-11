@@ -377,8 +377,15 @@ public class PlayerMoveInput : MonoBehaviour
             int newY = 0;
             if (x != 0 && y != 0)
             {
-                newX = Mathf.Sign(x) > 0 ? teleportUnits - 3: -(teleportUnits - 3);
-                newY = Mathf.Sign(y) > 0 ? teleportUnits - 3 : -(teleportUnits - 3);
+                newX = Mathf.Sign(x) > 0 ? teleportUnits - 2: -(teleportUnits - 2);
+                newY = Mathf.Sign(y) > 0 ? teleportUnits - 2 : -(teleportUnits - 2);
+
+                // Adjust teleport units on slopes
+                if ((controller.Collisions.descendingSlope && Mathf.Sign(y) < 0) || (controller.Collisions.climbingSlope && Mathf.Sign(y) > 0))
+                {
+                    newX = Mathf.Sign(x) > 0 ? teleportUnits - 2 : -(teleportUnits - 2);
+                    newY = Mathf.Sign(y) > 0 ? teleportUnits - 5 : -(teleportUnits - 5);
+                }
             }
             else if (x != 0)
             {

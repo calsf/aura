@@ -130,22 +130,7 @@ public class CameraControl : MonoBehaviour
         transform.position = new Vector3(focusPos.x, focusPos.y, -10);
 
         // Max y and x camera bounds
-        if (transform.position.y < minY)
-        {
-            transform.position = new Vector3(transform.position.x, minY, transform.position.z);
-        }
-        if (transform.position.y > maxY)
-        {
-            transform.position = new Vector3(transform.position.x, maxY, transform.position.z);
-        }
-        if (transform.position.x > maxX)
-        {
-            transform.position = new Vector3(maxX, transform.position.y, transform.position.z);
-        }
-        if (transform.position.x < minX)
-        {
-            transform.position = new Vector3(minX, transform.position.y, transform.position.z);
-        }
+        ResetCam(transform.position);
 
     }
 
@@ -153,5 +138,29 @@ public class CameraControl : MonoBehaviour
     {
         Gizmos.color = new Color(0, 0, 1, .4f);
         Gizmos.DrawCube(focusArea.center, focusAreaSize);
+    }
+
+    // Moves camera position directly to pos, calculating any min/max bounds before setting new position
+    public void ResetCam(Vector3 pos)
+    {
+        // Max y and x camera bounds
+        if (pos.y < minY)
+        {
+            pos = new Vector3(pos.x, minY, pos.z);
+        }
+        if (pos.y > maxY)
+        {
+            pos = new Vector3(pos.x, maxY, pos.z);
+        }
+        if (pos.x > maxX)
+        {
+            pos = new Vector3(maxX, pos.y, pos.z);
+        }
+        if (pos.x < minX)
+        {
+            pos = new Vector3(minX, pos.y, pos.z);
+        }
+
+        transform.position = pos;
     }
 }

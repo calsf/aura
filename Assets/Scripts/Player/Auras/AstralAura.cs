@@ -16,14 +16,14 @@ public class AstralAura : MonoBehaviour
     Vector2 savedPos;
     int savedHealth;
 
-    Camera cam;
+    CameraControl cam;
 
     void Awake()
     {
         playerHP = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHP>();
         playerSprite = GameObject.FindGameObjectWithTag("Player").GetComponent<SpriteRenderer>();
 
-        cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+        cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraControl>();
     }
 
     // Save position and health of player unless player is dead
@@ -51,7 +51,7 @@ public class AstralAura : MonoBehaviour
             playerHP.OnHealthChange.Invoke();
 
             playerHP.transform.position = savedPos;
-            cam.transform.position = savedPos;
+            cam.ResetCam(transform.position); // Move camera position directly to position
         }
 
         // Always deactivate aura/player clones

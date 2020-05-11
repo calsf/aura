@@ -34,7 +34,7 @@ public class PlayerHP : MonoBehaviour
     [SerializeField]
     int poolNum;
 
-    Camera cam;
+    CameraControl cam;
 
     public UnityEvent OnHealthChange;
     public UnityEvent OnDeath;
@@ -49,7 +49,7 @@ public class PlayerHP : MonoBehaviour
         move = GetComponent<PlayerMoveInput>();
         controller = GetComponent<PlayerController>();
         auraControl = GetComponent<PlayerAuraControl>();
-        cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+        cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraControl>();
     }
 
     // Start is called before the first frame update
@@ -189,7 +189,7 @@ public class PlayerHP : MonoBehaviour
         auraControl.CanAura = true;
         currentHP = maxHP;
         dead = false;
-        cam.transform.position = transform.position;
+        cam.ResetCam(transform.position);   // Move camera position directly to position
         OnHealthChange.Invoke(); // OnHealthChanged event
     }
 
