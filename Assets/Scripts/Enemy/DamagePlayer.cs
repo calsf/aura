@@ -7,4 +7,6 @@ public class DamagePlayer : ScriptableObject
 {
     public int dmg;
     public float baseSpeed;
+    public bool ignoreGround;
+    public bool ignoreFirstGround;
 }
