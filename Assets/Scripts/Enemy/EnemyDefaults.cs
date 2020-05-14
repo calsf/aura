@@ -166,6 +166,23 @@ public class EnemyDefaults : MonoBehaviour {
         }
     }
 
+    // For flashing alpha of sprite renderer when enemy is hit, called on LateUpdate to override any animations that change spriterender's color
+    bool isColorChange;
+    float startTime;
+    float delay = .08f;
+    void LateUpdate()
+    {
+        if (isColorChange)
+        {
+            spriteRender.color = new Color(spriteRender.color.r, spriteRender.color.g, spriteRender.color.b, .4f);
+            if (Time.time > startTime + delay)
+            {
+                spriteRender.color = new Color(spriteRender.color.r, spriteRender.color.g, spriteRender.color.b, 1f);
+                isColorChange = false;
+            }
+        }
+    }
+
 
     //*Multiple colliders on an enemy ends up taking multiple damage, onEnterTime avoids this
     //If collides with any player damage, take damage
@@ -180,7 +197,7 @@ public class EnemyDefaults : MonoBehaviour {
             DisplayDmgNum(dmg);
             hp -= dmg;
             OnDamaged.Invoke(); //OnDamaged event occurs after enemy HP has been adjusted
-            StartCoroutine(ColorChange());
+            StartColorChange();
         }
 
         // Damage rate for direct aura damage
@@ -206,7 +223,7 @@ public class EnemyDefaults : MonoBehaviour {
                 DisplayDmgNum(dmg);
                 hp -= dmg;
                 OnDamaged.Invoke(); //OnDamaged event occurs after enemy HP has been adjusted
-                StartCoroutine(ColorChange());
+                StartColorChange();
                 collided = true;
             }
         }
@@ -225,7 +242,7 @@ public class EnemyDefaults : MonoBehaviour {
                 DisplayDmgNum(dmg);
                 hp -= dmg;
                 OnDamaged.Invoke(); //OnDamaged event occurs after enemy HP has been adjusted
-                StartCoroutine(ColorChange());
+                StartColorChange();
             }
         }
 
@@ -252,7 +269,7 @@ public class EnemyDefaults : MonoBehaviour {
                     DisplayDmgNum(dmg);
                     hp -= dmg;
                     OnDamaged.Invoke(); //OnDamaged event occurs after enemy HP has been adjusted
-                    StartCoroutine(ColorChange());
+                    StartColorChange();
                     collided = true;
                 }
             }
@@ -318,21 +335,32 @@ public class EnemyDefaults : MonoBehaviour {
     }
 
     //Flash on damaged
-    public IEnumerator ColorChange()
+    //public IEnumerator ColorChange()
+    //{
+        // Choose random hit sound, set volume according to the sound volume setting then play a random enemy hit sound
+        //int hitSound = Random.Range(0, 3);
+        //audioSources[hitSound].volume = .4f * PlayerPrefs.GetInt("SoundVolume", 10) / 10f;
+        //audioSources[hitSound].Play();
+
+        //spriteRender.color = new Color(spriteRender.color.r, spriteRender.color.g, spriteRender.color.b, .4f);
+        //yield return new WaitForSeconds(.08f);
+        //spriteRender.color = new Color(spriteRender.color.r, spriteRender.color.g, spriteRender.color.b, 1f);
+    //}
+
+    // If case other script such as demi aura wants to activate color change
+    public void StartColorChange()
     {
         // Choose random hit sound, set volume according to the sound volume setting then play a random enemy hit sound
+        // Always play sound once when hit
         int hitSound = Random.Range(0, 3);
         audioSources[hitSound].volume = .4f * PlayerPrefs.GetInt("SoundVolume", 10) / 10f;
         audioSources[hitSound].Play();
 
-        spriteRender.color = new Color(spriteRender.color.r, spriteRender.color.g, spriteRender.color.b, .4f);
-        yield return new WaitForSeconds(.08f);
-        spriteRender.color = new Color(spriteRender.color.r, spriteRender.color.g, spriteRender.color.b, 1f);
-    }
-
-    // If case other script such as demi aura wants to activate color change, makes sure that the coroutine is not suddenly stopped by calling it from enemy
-    public void StartColorChange()
-    {
-        StartCoroutine(ColorChange());
+        // If not currently changing color, start changing color and set start time to current time
+        if (!isColorChange)
+        {
+            isColorChange = true;
+            startTime = Time.time;
+        }
     }
 }
