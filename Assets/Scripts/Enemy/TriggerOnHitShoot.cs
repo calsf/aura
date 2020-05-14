@@ -11,7 +11,9 @@ public class TriggerOnHitShoot : MonoBehaviour
 
     // Delay between triggering shoot fixed when hit
     [SerializeField]
-    float delay;
+    float minDelay;
+    [SerializeField]
+    float maxDelay;
     float lastTrigger;
 
     ShootFixed shoot;
@@ -35,14 +37,14 @@ public class TriggerOnHitShoot : MonoBehaviour
         playerInView = view.InView(transform);
         if (!startingOnHit && !onHitShoot && playerInView && !wasInView && Time.time > lastTrigger)
         {
-            lastTrigger = Time.time + Random.Range(0, delay);
+            lastTrigger = Time.time + Random.Range(0, maxDelay);
         }
         wasInView = playerInView;
 
-        if (!startingOnHit && Time.time > lastTrigger)
+        if (!startingOnHit && playerInView && Time.time > lastTrigger)
         {
             startingOnHit = true;
-            lastTrigger = Time.time + delay;
+            lastTrigger = Time.time + maxDelay;
             anim.Play("StartOnHitShoot");
         }
     }
@@ -57,7 +59,7 @@ public class TriggerOnHitShoot : MonoBehaviour
     public void StopOnHit()
     {
         onHitShoot = false;
-        lastTrigger = Time.time + delay;
+        lastTrigger = Time.time + (Random.Range(minDelay, maxDelay));
         startingOnHit = false;
     }
 
