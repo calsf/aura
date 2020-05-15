@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90fa4d80050abf74895e176047d66331, type: 3}
   m_Name: HeartShoot
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 5739557403492057295, guid: da873c7da40c0c74a95efbf632784087,
+  projectilePrefab: {fileID: 4606225661962688725, guid: e63785792463d0547bb497f5c9868478,
     type: 3}
   minShootDelay: 0.5
   maxShootDelay: 1
@@ -20,7 +20,7 @@ MonoBehaviour:
   stopToShoot: 0
   shootFacingDirection: 0
   shootIsChild: 0
-  numProj: 12
+  numProj: 10
   xDirection:
   - 1
   - -1
@@ -28,8 +28,6 @@ MonoBehaviour:
   - 1
   - -1
   - 0
-  - 1
-  - -1
   - 0.5
   - -0.5
   - 0.5
@@ -41,8 +39,6 @@ MonoBehaviour:
   - -1
   - -1
   - -1
-  - 0
-  - 0
   - 1
   - 1
   - -1
