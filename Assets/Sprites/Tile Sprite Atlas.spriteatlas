@@ -49,7 +49,8 @@ SpriteAtlas:
     - {fileID: 2800000, guid: 6c7c745f4af4b3b4eb2667498a28d16d, type: 3}
     - {fileID: 2800000, guid: 42871f7a93fa3b340900f1e9ab1a46c0, type: 3}
     - {fileID: 2800000, guid: ff79068d3b77f714a879091364064ff5, type: 3}
-    totalSpriteSurfaceArea: 50176
+    - {fileID: 2800000, guid: e05af8e720f4c19458ffa44a8ab6bf21, type: 3}
+    totalSpriteSurfaceArea: 63232
     bindAsDefault: 1
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
@@ -107,6 +108,57 @@ SpriteAtlas:
   - {fileID: 1306154761556544647, guid: 448a85e6adb7fe54ba15bcbb57a8cdf4, type: 3}
   - {fileID: 362252049289255196, guid: 448a85e6adb7fe54ba15bcbb57a8cdf4, type: 3}
   - {fileID: -1787484789985767110, guid: 448a85e6adb7fe54ba15bcbb57a8cdf4, type: 3}
+  - {fileID: 8875939624651844400, guid: e05af8e720f4c19458ffa44a8ab6bf21, type: 3}
+  - {fileID: 5066447258134379246, guid: e05af8e720f4c19458ffa44a8ab6bf21, type: 3}
+  - {fileID: 8161103836937853738, guid: e05af8e720f4c19458ffa44a8ab6bf21, type: 3}
+  - {fileID: -7275370587458161041, guid: e05af8e720f4c19458ffa44a8ab6bf21, type: 3}
+  - {fileID: 4921976169896841787, guid: e05af8e720f4c19458ffa44a8ab6bf21, type: 3}
+  - {fileID: 5203241990692069645, guid: e05af8e720f4c19458ffa44a8ab6bf21, type: 3}
+  - {fileID: 6726601469090259734, guid: e05af8e720f4c19458ffa44a8ab6bf21, type: 3}
+  - {fileID: 2230150419854421082, guid: e05af8e720f4c19458ffa44a8ab6bf21, type: 3}
+  - {fileID: -654830019990351034, guid: e05af8e720f4c19458ffa44a8ab6bf21, type: 3}
+  - {fileID: 3194415120380438709, guid: e05af8e720f4c19458ffa44a8ab6bf21, type: 3}
+  - {fileID: -4521706081054692102, guid: e05af8e720f4c19458ffa44a8ab6bf21, type: 3}
+  - {fileID: -1532125977645578748, guid: e05af8e720f4c19458ffa44a8ab6bf21, type: 3}
+  - {fileID: -3840766857292865710, guid: e05af8e720f4c19458ffa44a8ab6bf21, type: 3}
+  - {fileID: -2605766076315380407, guid: e05af8e720f4c19458ffa44a8ab6bf21, type: 3}
+  - {fileID: 7396935441139735207, guid: e05af8e720f4c19458ffa44a8ab6bf21, type: 3}
+  - {fileID: 7663154361610303846, guid: e05af8e720f4c19458ffa44a8ab6bf21, type: 3}
+  - {fileID: 60173845503589175, guid: e05af8e720f4c19458ffa44a8ab6bf21, type: 3}
+  - {fileID: 4761032503793772892, guid: e05af8e720f4c19458ffa44a8ab6bf21, type: 3}
+  - {fileID: -3627206605011005418, guid: e05af8e720f4c19458ffa44a8ab6bf21, type: 3}
+  - {fileID: 737340845271616665, guid: e05af8e720f4c19458ffa44a8ab6bf21, type: 3}
+  - {fileID: 1553920707598518546, guid: e05af8e720f4c19458ffa44a8ab6bf21, type: 3}
+  - {fileID: -673352402154620206, guid: e05af8e720f4c19458ffa44a8ab6bf21, type: 3}
+  - {fileID: 2122775425836336901, guid: e05af8e720f4c19458ffa44a8ab6bf21, type: 3}
+  - {fileID: -8263717025968502794, guid: e05af8e720f4c19458ffa44a8ab6bf21, type: 3}
+  - {fileID: -8073179349825255161, guid: e05af8e720f4c19458ffa44a8ab6bf21, type: 3}
+  - {fileID: 5692540422847491816, guid: e05af8e720f4c19458ffa44a8ab6bf21, type: 3}
+  - {fileID: 7306334413879469710, guid: e05af8e720f4c19458ffa44a8ab6bf21, type: 3}
+  - {fileID: 1342948210942586373, guid: e05af8e720f4c19458ffa44a8ab6bf21, type: 3}
+  - {fileID: -6991465126815750853, guid: e05af8e720f4c19458ffa44a8ab6bf21, type: 3}
+  - {fileID: 3338247135583173363, guid: e05af8e720f4c19458ffa44a8ab6bf21, type: 3}
+  - {fileID: -7214622866774362292, guid: e05af8e720f4c19458ffa44a8ab6bf21, type: 3}
+  - {fileID: 9121224054129335538, guid: e05af8e720f4c19458ffa44a8ab6bf21, type: 3}
+  - {fileID: -4667968956690807317, guid: e05af8e720f4c19458ffa44a8ab6bf21, type: 3}
+  - {fileID: 6849948649966941543, guid: e05af8e720f4c19458ffa44a8ab6bf21, type: 3}
+  - {fileID: 4931486582200915829, guid: e05af8e720f4c19458ffa44a8ab6bf21, type: 3}
+  - {fileID: -3977374012102693121, guid: e05af8e720f4c19458ffa44a8ab6bf21, type: 3}
+  - {fileID: -1701027883686408734, guid: e05af8e720f4c19458ffa44a8ab6bf21, type: 3}
+  - {fileID: -8835710837120094991, guid: e05af8e720f4c19458ffa44a8ab6bf21, type: 3}
+  - {fileID: -3800132999987498189, guid: e05af8e720f4c19458ffa44a8ab6bf21, type: 3}
+  - {fileID: 6282698818876529729, guid: e05af8e720f4c19458ffa44a8ab6bf21, type: 3}
+  - {fileID: 764783247839822805, guid: e05af8e720f4c19458ffa44a8ab6bf21, type: 3}
+  - {fileID: 7984894257576249333, guid: e05af8e720f4c19458ffa44a8ab6bf21, type: 3}
+  - {fileID: -8705239480222517739, guid: e05af8e720f4c19458ffa44a8ab6bf21, type: 3}
+  - {fileID: -8040737125041968421, guid: e05af8e720f4c19458ffa44a8ab6bf21, type: 3}
+  - {fileID: -5251252808543977553, guid: e05af8e720f4c19458ffa44a8ab6bf21, type: 3}
+  - {fileID: -2595862179937320620, guid: e05af8e720f4c19458ffa44a8ab6bf21, type: 3}
+  - {fileID: -4946077223372610006, guid: e05af8e720f4c19458ffa44a8ab6bf21, type: 3}
+  - {fileID: 8198927541878198261, guid: e05af8e720f4c19458ffa44a8ab6bf21, type: 3}
+  - {fileID: 6593598071038425683, guid: e05af8e720f4c19458ffa44a8ab6bf21, type: 3}
+  - {fileID: 3841528016742587806, guid: e05af8e720f4c19458ffa44a8ab6bf21, type: 3}
+  - {fileID: -7080269460928676155, guid: e05af8e720f4c19458ffa44a8ab6bf21, type: 3}
   - {fileID: -8566231691555818994, guid: 311569a923656bb4484e0f69bb787027, type: 3}
   - {fileID: 9108506839123058777, guid: 311569a923656bb4484e0f69bb787027, type: 3}
   - {fileID: -8543613910667291881, guid: 311569a923656bb4484e0f69bb787027, type: 3}
@@ -304,6 +356,57 @@ SpriteAtlas:
   - Level1Tile_6
   - Level1Tile_1
   - Level1Tile_0
+  - Level6Tile_6
+  - Level6Tile_7
+  - Level6Tile_4
+  - Level6Tile_5
+  - Level6Tile_2
+  - Level6Tile_3
+  - Level6Tile_0
+  - Level6Tile_1
+  - Level6Tile_46
+  - Level6Tile_47
+  - Level6Tile_44
+  - Level6Tile_45
+  - Level6Tile_42
+  - Level6Tile_8
+  - Level6Tile_43
+  - Level6Tile_9
+  - Level6Tile_40
+  - Level6Tile_41
+  - Level6Tile_28
+  - Level6Tile_29
+  - Level6Tile_50
+  - Level6Tile_48
+  - Level6Tile_24
+  - Level6Tile_49
+  - Level6Tile_25
+  - Level6Tile_26
+  - Level6Tile_27
+  - Level6Tile_20
+  - Level6Tile_21
+  - Level6Tile_22
+  - Level6Tile_23
+  - Level6Tile_15
+  - Level6Tile_14
+  - Level6Tile_17
+  - Level6Tile_16
+  - Level6Tile_11
+  - Level6Tile_10
+  - Level6Tile_13
+  - Level6Tile_12
+  - Level6Tile_19
+  - Level6Tile_18
+  - Level6Tile_39
+  - Level6Tile_38
+  - Level6Tile_37
+  - Level6Tile_36
+  - Level6Tile_35
+  - Level6Tile_34
+  - Level6Tile_33
+  - Level6Tile_32
+  - Level6Tile_31
+  - Level6Tile_30
   - ZoneSelectTile_10
   - ZoneSelectTile_4
   - ZoneSelectTile_5
