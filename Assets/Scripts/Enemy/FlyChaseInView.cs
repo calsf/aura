@@ -8,7 +8,6 @@ using UnityEngine;
 
 public class FlyChaseInView : StoppableMovementBehaviour
 {
-    Rigidbody2D rb;
     GameObject player;
     PlayerInView view;
     PlayerHP playerHP;
@@ -55,7 +54,6 @@ public class FlyChaseInView : StoppableMovementBehaviour
 
         enemyDefaults = GetComponent<EnemyDefaults>();
         anim = GetComponent<Animator>();
-        rb = GetComponent<Rigidbody2D>();
 
         nextPos = posB;
     }
