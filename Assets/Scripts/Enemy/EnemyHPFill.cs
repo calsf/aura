@@ -22,13 +22,13 @@ public class EnemyHPFill : MonoBehaviour
     void OnEnable()
     {
         // OnEnable, update health and listen for OnDamaged event
-        UpdateHealth(); 
-        enemy.OnDamaged.AddListener(UpdateHealth);
+        UpdateHealthDamaged(); 
+        enemy.OnDamaged.AddListener(UpdateHealthDamaged);
     }
 
     void OnDisable()
     {
-        enemy.OnDamaged.RemoveListener(UpdateHealth);
+        enemy.OnDamaged.RemoveListener(UpdateHealthDamaged);
     }
 
     // Flash fill bar on damaged
@@ -43,12 +43,17 @@ public class EnemyHPFill : MonoBehaviour
         sr.color = new Color(sr.color.r, sr.color.g, sr.color.b, 1f);
     }
 
-    // Update health
+    // Update healths
     public void UpdateHealth()
     {
         float barSize = barRatio * enemy.HP > 0 ? barRatio * enemy.HP : 0;
         health.localScale = new Vector2(barSize, health.localScale.y);
+    }
+
+    // Updates health and flashes for damaged
+    public void UpdateHealthDamaged()
+    {
+        UpdateHealth();
         StartCoroutine(Flash());
-        
     }
 }

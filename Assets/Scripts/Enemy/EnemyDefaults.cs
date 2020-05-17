@@ -14,6 +14,7 @@ public class EnemyDefaults : MonoBehaviour {
     Material defaultMat;
 
     GameObject deathFX;
+    EnemyHPFill hpDisplay;
 
     // Object pool of damage numbers
     List<GameObject> numPool;
@@ -70,6 +71,7 @@ public class EnemyDefaults : MonoBehaviour {
         hp = enemy.maxHP;
         moveSpeed = enemy.baseMoveSpeed;
         restoreRate = enemy.baseMoveSpeed / 50f; // Restore rate relative to base speed
+        hpDisplay = GetComponentInChildren<EnemyHPFill>();
         
 
         collided = false;
@@ -305,7 +307,6 @@ public class EnemyDefaults : MonoBehaviour {
     //Show damage number
     public void DisplayDmgNum(int dmg)
     {
-
         for (int i = 0; i < numPool.Count; i++)
         {
             if (!numPool[i].activeInHierarchy)
@@ -322,6 +323,12 @@ public class EnemyDefaults : MonoBehaviour {
     //Show heal number
     public void DisplayHealNum(int heal)
     {
+        // Do not display 0 heal
+        if (heal <= 0)
+        {
+            return;
+        }
+
         for (int i = 0; i < healPool.Count; i++)
         {
             if (!healPool[i].activeInHierarchy)
@@ -329,6 +336,8 @@ public class EnemyDefaults : MonoBehaviour {
                 healPool[i].GetComponent<TextMeshPro>().text = "+" + heal.ToString();
                 healPool[i].transform.position = transform.position;
                 healPool[i].SetActive(true);
+
+                hpDisplay.UpdateHealth();   // Update health to show correct amount of hp after a heal
                 return;
             }
         }

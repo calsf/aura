@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Crystal
   m_EditorClassIdentifier: 
   enemyName: Crystal
-  maxHP: 70
+  maxHP: 100
   dmg: 1
   gold: 100
   baseMoveSpeed: 0
