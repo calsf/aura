@@ -15,6 +15,10 @@ public class Projectile : MonoBehaviour
     bool ignoreGround;  // If ignoreGround true, will not be set inactive on collision with Ground layer
     bool ignoreFirstGround; // If ignoreFirstGround true, ignores first collision with Ground layer but triggers second collision
     bool hasExited;     // For if ignoreFirstGround true
+    Collider2D[] firstGroundResults = new Collider2D[1];
+    ContactFilter2D contactFilter;
+    Collider2D coll;
+
     Vector2 dir;
 
     LayerMask ground;
@@ -33,7 +37,9 @@ public class Projectile : MonoBehaviour
         ignoreGround = dmgPlayer.DmgPlayer.ignoreGround;
         ignoreFirstGround = dmgPlayer.DmgPlayer.ignoreFirstGround;
 
+        coll = GetComponent<Collider2D>();
         ground = LayerMask.NameToLayer("Ground");
+        contactFilter.SetLayerMask(LayerMask.GetMask("Ground"));    // Set contact filter to only look for ground layers
     }
 
     // Show effect when projectile is disabled
@@ -44,6 +50,8 @@ public class Projectile : MonoBehaviour
             disabledEffect.transform.position = transform.position;
             disabledEffect.SetActive(true);
         }
+
+        firstGroundResults[0] = null;
     }
 
     void OnEnable()
@@ -56,8 +64,10 @@ public class Projectile : MonoBehaviour
         // If ignoring first ground collision, check if projectile spawns inside ground
         if (ignoreFirstGround)
         {
-            RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.zero, 0, LayerMask.GetMask("Ground"));
-            if (hit.collider != null)
+            // Is collider overlapping with a ground layer on spawn?
+            coll.OverlapCollider(contactFilter, firstGroundResults);
+            
+            if (firstGroundResults[0] != null)
             {
                 hasExited = false;  // If inside ground, ignore this collision
             }
