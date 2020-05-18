@@ -9,4 +9,5 @@ public class DamagePlayer : ScriptableObject
     public float baseSpeed;
     public bool ignoreGround;
     public bool ignoreFirstGround;
+    public bool rotate;
 }

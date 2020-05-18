@@ -88,6 +88,12 @@ public class Projectile : MonoBehaviour
         {
             gameObject.SetActive(false);
         }
+
+        // If rotate of dmgPlayer object is true, rotate projectile in direction it is moving
+        if (dmgPlayer.DmgPlayer.rotate)
+        {
+            transform.right = dir;
+        }
     }
 
     void FixedUpdate()

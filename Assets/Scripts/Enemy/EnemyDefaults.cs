@@ -145,15 +145,21 @@ public class EnemyDefaults : MonoBehaviour {
         // Restore hp if was affected from demi aura
         if (Time.time > restoreHPTime && spriteRender.material != defaultMat)
         {
-            hp += restoreHPAmount;
-            if (restoreHPAmount > 0)
-            {
-                DisplayHealNum(restoreHPAmount);
-            }
-            spriteRender.material = defaultMat;
-            restoreHPAmount = 0;
+            RecoverFromDemi();
         }
 	}
+
+    // Restore enemy hp and material after demi effect is over
+    public void RecoverFromDemi()
+    {
+        hp += restoreHPAmount;
+        if (restoreHPAmount > 0)
+        {
+            DisplayHealNum(restoreHPAmount);
+        }
+        spriteRender.material = defaultMat;
+        restoreHPAmount = 0;
+    }
 
     void FixedUpdate()
     {

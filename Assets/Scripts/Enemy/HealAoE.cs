@@ -10,7 +10,7 @@ public class HealAoE : MonoBehaviour
     Dictionary<Collider2D, Affected> affected;
 
     int healAmount = 25;
-    float healDelay = .1f;
+    float healDelay = .15f;
 
     // An affected enemy has their enemy defaults and a timer for next heal
     public class Affected
@@ -48,7 +48,16 @@ public class HealAoE : MonoBehaviour
                 affected[other].enemy.HP += heal;
                 affected[other].enemy.DisplayHealNum(heal);
                 affected[other].nextHeal = Time.time + healDelay;
+
+                // Check for demi effect and reset if necessary      
+                if (Time.time < affected[other].enemy.RestoreHPTime)
+                {
+                    affected[other].enemy.RestoreHPAmount = 0;
+                    affected[other].enemy.RestoreHPTime = 0;
+                    affected[other].enemy.RecoverFromDemi();
+                }  
             }
+
         }
     }
 

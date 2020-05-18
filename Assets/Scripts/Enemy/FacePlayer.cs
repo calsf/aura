@@ -24,6 +24,8 @@ public class FacePlayer : MonoBehaviour
     bool playerInView; // Must be in camera view and within distance to be in view (InView and InDistance)
     Animator anim;
 
+    [SerializeField]
+    bool moveWhileFacing;   // Either move while facing player or stop movement and only face player
 
      void Awake()
     {
@@ -51,8 +53,12 @@ public class FacePlayer : MonoBehaviour
         // If player in view and not dead, stop moving and face player
         if (playerHP.CurrentHP > 0 && playerInView)
         {
-            anim.SetBool("StopMove", true);     // Need to set a trigger for animations to go into idle animation state
-            movement.StopMoving();
+            // If move while facing is false, stop moving and set animations to go to idle
+            if (!moveWhileFacing)
+            {
+                anim.SetBool("StopMove", true);     // Need to set a trigger for animations to go into idle animation state
+                movement.StopMoving();
+            }
 
             // Activate any attached shooting behaviour while in view
             if (shootBehaviourScript != null && !shootBehaviourScript.enabled)
@@ -70,10 +76,13 @@ public class FacePlayer : MonoBehaviour
         }
         else
         {
-            anim.SetBool("StopMove", false);
+            if (!moveWhileFacing)
+            {
+                anim.SetBool("StopMove", false);
+            }
 
             // If not shooting, resume moving, if mid shoot animation, don't resume moving
-            if (!anim.GetCurrentAnimatorStateInfo(0).IsName("Shoot"))
+            if (!moveWhileFacing && !anim.GetCurrentAnimatorStateInfo(0).IsName("Shoot"))
             {
                 movement.ResumeMoving();
             }
