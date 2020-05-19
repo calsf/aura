@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Mage
   m_EditorClassIdentifier: 
   enemyName: Mage
-  maxHP: 120
+  maxHP: 150
   dmg: 2
   gold: 1000
   baseMoveSpeed: 2
