@@ -83,8 +83,19 @@ public class JumpChase : Raycasts
     {
         playerInView = view.InView(transform) && view.InDistance(transform, xDistanceMinus, yDistanceMinus);
 
+        // Face player when on ground and aggro
+        if (isStartingAggro && collisions.below)
+        {
+            //Swap facing x direction to the player
+            if ((transform.localScale.x > 0 && transform.position.x < player.transform.position.x) 
+                || (transform.localScale.x < 0 && transform.position.x > player.transform.position.x))
+            {
+                transform.localScale = new Vector2(-transform.localScale.x, transform.localScale.y);
+            }
+        }
+
         // If player in view and not dead, start up aggro if haven't already, waits until enemy is on ground so it doesn't start up mid jump
-        if (playerHP.CurrentHP > 0 && playerInView && !isStartingAggro && collisions.below)
+        if (playerHP.CurrentHP > 0 && playerInView && !isStartingAggro && !isAggro && collisions.below)
         {
             isStartingAggro = true;
             StartAggro();
@@ -94,6 +105,7 @@ public class JumpChase : Raycasts
             // Reset aggro properties and animation from aggro or starting aggro if was aggro/starting aggro (for example, if player went out of view during aggro/start aggro)
             if (isAggro || isStartingAggro)
             {
+                anim.SetBool("isAggro", false);
                 isStartingAggro = false;
                 isAggro = false;
             }
@@ -116,23 +128,37 @@ public class JumpChase : Raycasts
         }
         else if (collisions.below)
         {
-             xMoveMultiplier *= -1;
+             xMoveMultiplier = -xMoveMultiplier;
         }
 
         // Face direction enemy is jumping/moving in
         transform.localScale = new Vector2(-Mathf.Sign(xMoveMultiplier), transform.localScale.y);
 
-        // Reset velocities if hits ground or ceiling
+        // Check if path is blocked by wall
+        if ((Mathf.Sign(xMoveMultiplier) > 0 && collisions.right) || (Mathf.Sign(xMoveMultiplier) < 0 && collisions.left))
+        {
+            velocity.x = 0;
+        }
+
+        // Reset velocity if hits ground or ceiling
         if (collisions.above || collisions.below)
         {
             velocity.y = 0;
-            velocity.x = 0;
 
             // Apply jump velocity if enemy is touching ground
             if (collisions.below)
             {
                 velocity.y = jumpVelocityMultiplier;
-                velocity.x = xMoveMultiplier;
+
+                // Check if path is blocked by wall
+                if ((Mathf.Sign(xMoveMultiplier) > 0 && collisions.right) || (Mathf.Sign(xMoveMultiplier) < 0 && collisions.left))
+                {
+                    velocity.x = 0;
+                }
+                else
+                {
+                    velocity.x = xMoveMultiplier;
+                }
             }
         }
 
@@ -153,6 +179,7 @@ public class JumpChase : Raycasts
     // Turn isAggro on in animation
     public void ToggleAggro()
     {
+        anim.SetBool("isAggro", true);
         isAggro = true;
         isStartingAggro = false;
     }
@@ -170,8 +197,9 @@ public class JumpChase : Raycasts
     }
 
     // Apply velocity to enemy
-    public void ApplyMovement(Vector2 velocity)
+    public void ApplyMovement(Vector2 velo)
     {
+        velo *= enemyDefaults.MoveSpeed;
         // Update raycast origins
         UpdateRaycastOrigins();
 
@@ -181,20 +209,19 @@ public class JumpChase : Raycasts
         }
 
         // Check for horizontal and vertical collisions
-        if (velocity.x != 0)
+        HorizontalCollisions(ref velo);
+
+        if (velo.y != 0)
         {
-            HorizontalCollisions(ref velocity);
+            VerticalCollisions(ref velo);
         }
-        if (velocity.y != 0)
-        {
-            VerticalCollisions(ref velocity);
-        }
+
 
         // Set animator values based on y velocity
-        //anim.SetFloat("yVelocity", Mathf.Sign(velocity.y));
+        anim.SetFloat("yVelocity", Mathf.Sign(velo.y));
 
         // Apply velocity which should be velocity * Time.deltaTime, is affected by enemy current move speed
-        transform.Translate(velocity * enemyDefaults.MoveSpeed);
+        transform.Translate(velo);
     }
 
     // Check vertical raycast collisions
@@ -227,8 +254,8 @@ public class JumpChase : Raycasts
     // Check horizontal raycast collisions
     void HorizontalCollisions(ref Vector2 velocity)
     {
-        float dirX = Mathf.Sign(velocity.x);
-        float rayLength = Mathf.Abs(velocity.x) + offset;
+        float dirX = -Mathf.Sign(transform.localScale.x);
+        float rayLength = .5f + offset;
 
         // Go through every raycast and check for hit
         for (int i = 0; i < horizontalRayCount; i++)
