@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.UIElements;
 using UnityEngine;
 
 // Walks back and forth, when player in view, plays startup animation to chase player then chases player until player is dead or out of view
@@ -43,7 +44,7 @@ public class GroundChaseInView : StoppableMovementBehaviour
     float xPos;
     bool playerInFront;
 
-    // Bound max chase positions
+    // Optional to set - Bound max chase positions, only checks for bounds if they are set
     [SerializeField]
     Transform minX;
     [SerializeField]
@@ -87,8 +88,8 @@ public class GroundChaseInView : StoppableMovementBehaviour
 
     void FixedUpdate()
     {
-        // Always face player when aggro or starting aggro
-        if (isStartingAggro || isAggro)
+        // Always face player when starting aggro, once aggro'd, do not face player until enemy turns due to turn delay
+        if (isStartingAggro && !isAggro)
         {
             //Swap facing x direction to the player
             if ((transform.localScale.x > 0 && transform.position.x < player.transform.position.x) || (transform.localScale.x < 0 && transform.position.x > player.transform.position.x))
@@ -137,17 +138,17 @@ public class GroundChaseInView : StoppableMovementBehaviour
         }
         else
         {
-            // If enemy can no longer chase player past bounds, set idle to true so can transition to idle animation since movement will be stopped, otherwise, set idle to false
-            if ((transform.position.x >= maxX.position.x && player.transform.position.x > maxX.position.x) || (transform.position.x <= minX.position.x && player.transform.position.x < minX.position.x))
+            // Check if has chase bounds
+            if (maxX != null && minX != null)
             {
-                anim.SetBool("Idle", true);
-                return; // Return to avoid moving enemy
+                // If enemy can no longer chase player past bounds, set idle to true so can transition to idle animation since movement will be stopped, otherwise, set idle to false
+                if ((transform.position.x >= maxX.position.x && player.transform.position.x > maxX.position.x) || (transform.position.x <= minX.position.x && player.transform.position.x < minX.position.x))
+                {
+                    anim.SetBool("Idle", true);
+                    return; // Return to avoid moving enemy
+                }
             }
-            else
-            {
-                anim.SetBool("Idle", false);
-            }
-           
+
             // If player switched sides, delay turning to chase player by turnDelay
             if ((playerInFront && transform.position.x > player.transform.position.x) || (!playerInFront && transform.position.x < player.transform.position.x))
             {
@@ -160,7 +161,24 @@ public class GroundChaseInView : StoppableMovementBehaviour
             // If can turn, update the new xPosition to chase to
             if (Time.time > nextTurn)
             {
-                xPos = playerInFront ? maxX.position.x : minX.position.x;
+                // Set new xPos to chase towards to max/min position of player's direction
+                if (maxX != null && minX != null)
+                {
+                    xPos = playerInFront ? maxX.position.x : minX.position.x;
+                }
+                else
+                {
+                    xPos = playerInFront ? int.MaxValue : int.MinValue;
+                }
+
+                //Swap facing x direction to the player
+                if ((transform.localScale.x > 0 && transform.position.x < player.transform.position.x) || (transform.localScale.x < 0 && transform.position.x > player.transform.position.x))
+                {
+                    transform.localScale = new Vector2(-transform.localScale.x, transform.localScale.y);
+                }
+
+                // Sets idle to false here to prevent early transition to movement due to possible turn delay when player comes back into bounds
+                anim.SetBool("Idle", false); 
             }
 
             // Chase player
