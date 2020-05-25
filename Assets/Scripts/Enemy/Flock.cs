@@ -41,6 +41,12 @@ public class Flock : MonoBehaviour
         // For every flock object, calculate the movement to be applied
         foreach (FlockObject obj in flockObjects)
         {
+            // If flock object is disabled, do not move it
+            if (!obj.enabled)
+            {
+                return;
+            }
+
             List<Transform> context = GetNearbyObjects(obj);
 
             Vector2 move = CalculateMove(obj, context, this);

@@ -39,7 +39,9 @@ public class GroundChaseInView : StoppableMovementBehaviour
     bool stopMoving;
 
     [SerializeField]
-    float turnDelay;
+    float maxTurnDelay;
+    [SerializeField]
+    float minTurnDelay;
     float nextTurn;
     float xPos;
     bool playerInFront;
@@ -152,7 +154,7 @@ public class GroundChaseInView : StoppableMovementBehaviour
             // If player switched sides, delay turning to chase player by turnDelay
             if ((playerInFront && transform.position.x > player.transform.position.x) || (!playerInFront && transform.position.x < player.transform.position.x))
             {
-                nextTurn = Time.time + turnDelay;
+                nextTurn = Time.time + Random.Range(minTurnDelay, maxTurnDelay);
             }
 
             // Update whether or not the player is in front of enemy

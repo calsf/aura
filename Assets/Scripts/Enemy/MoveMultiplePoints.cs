@@ -20,6 +20,11 @@ public class MoveMultiplePoints : StoppableMovementBehaviour
 
     bool stopMoving = false;
 
+    // If isCycle TRUE then positions cycle from last point to first point
+    // If isCycle FALSE then enemy reverses and goes back points
+    [SerializeField]
+    bool isCycle;   
+
     void Start()
     {
         enemyDefaults = GetComponent<EnemyDefaults>();
@@ -47,7 +52,12 @@ public class MoveMultiplePoints : StoppableMovementBehaviour
             if (nextPos > pos.Length - 1)
             {
                 nextPos = 0;
-                Array.Reverse(pos);     // Reverse pos to go back
+
+                // If not a cycle, reverse and go back
+                if (!isCycle)
+                {
+                    Array.Reverse(pos);     // Reverse pos to go back
+                }
             }
         }
 
