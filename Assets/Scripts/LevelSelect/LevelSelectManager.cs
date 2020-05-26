@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class LevelSelectManager : MonoBehaviour
 {
+    [SerializeField]
+    GameObject selectedHighlight;
+
     bool[] lvlUnlocked;
     [SerializeField]
     Button[] firstFloor;
@@ -44,6 +47,8 @@ public class LevelSelectManager : MonoBehaviour
     [SerializeField]
     Sprite[] fourthUnselected;
 
+    bool hasSelected; // Set true once an option is selected to disable controls
+
 
     void Awake()
     {
@@ -73,6 +78,33 @@ public class LevelSelectManager : MonoBehaviour
 
     void Update()
     {
+        if (hasSelected)
+        {
+            return;
+        }
+
+        // Move selectedHighlight object to selected position
+        Button[] curr;
+        switch (floor)
+        {
+            case 0:
+                curr = firstFloorUnlocked;
+                break;
+            case 1:
+                curr = secondFloorUnlocked;
+                break;
+            case 2:
+                curr = thirdFloorUnlocked;
+                break;
+            case 3:
+                curr = fourthFloorUnlocked;
+                break;
+            default:
+                curr = firstFloorUnlocked;
+                break;
+        }
+        selectedHighlight.transform.position = curr[selected].gameObject.transform.position;
+
         // Navigate up and down, left and right
         if (Input.GetKeyDown(ControlsManager.ControlInstance.Keybinds["DownButton"]) || Input.GetAxisRaw("Vertical") == -1)
         {
@@ -120,28 +152,10 @@ public class LevelSelectManager : MonoBehaviour
         {
             SoundManager.SoundInstance.PlaySound("ButtonEnter");    // Play button sound
 
-            Button[] curr;
-            switch (floor)
-            {
-                case 0:
-                    curr = firstFloorUnlocked;
-                    break;
-                case 1:
-                    curr = secondFloorUnlocked;
-                    break;
-                case 2:
-                    curr = thirdFloorUnlocked;
-                    break;
-                case 3:
-                    curr = fourthFloorUnlocked;
-                    break;
-                default:
-                    curr = firstFloorUnlocked;
-                    break;
-            }
-
             curr[selected].GetComponent<Animator>().Play("Button");  // Play button anim
             curr[selected].onClick.Invoke();     // Invoke on click of selected button
+
+            hasSelected = true;
         }
     }
 

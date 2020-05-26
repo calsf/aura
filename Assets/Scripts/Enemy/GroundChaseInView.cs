@@ -138,7 +138,7 @@ public class GroundChaseInView : StoppableMovementBehaviour
                 transform.localScale = new Vector2(-transform.localScale.x, transform.localScale.y);
             }
         }
-        else
+        else if (isAggro)
         {
             // Check if has chase bounds
             if (maxX != null && minX != null)

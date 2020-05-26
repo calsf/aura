@@ -57,6 +57,12 @@ public class EnemyHPManager : MonoBehaviour
         }
     }
 
+    // Hide bar by resetting last hit time, used for animation events
+    void HideBar()
+    {
+        lastHit = Time.time;
+    }
+
     // Show enemy health bar if not active, if health bar already active, reset the lastHit timer
     void ShowHealth()
     {
