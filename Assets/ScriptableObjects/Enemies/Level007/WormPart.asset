@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: WormPart
   m_EditorClassIdentifier: 
   enemyName: Worm Piece
-  maxHP: 60
+  maxHP: 70
   dmg: 1
   gold: 100
   baseMoveSpeed: 7

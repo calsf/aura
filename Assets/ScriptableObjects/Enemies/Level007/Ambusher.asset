@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Ambusher
   m_EditorClassIdentifier: 
   enemyName: Ambusher
-  maxHP: 90
+  maxHP: 100
   dmg: 1
   gold: 1000
   baseMoveSpeed: 0

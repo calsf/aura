@@ -185,6 +185,18 @@ public class GroundChaseInView : StoppableMovementBehaviour
 
             // Chase player
             transform.position = Vector3.MoveTowards(transform.position, new Vector2(xPos, transform.position.y), enemyDefaults.MoveSpeed * Time.deltaTime);
+            
+            // Set idle if enemy ends up hitting the x position while position
+            if (Vector3.Distance(transform.position, new Vector2(xPos, transform.position.y)) <= 0.1f)
+            {
+                anim.SetBool("Idle", true);
+            }
+
+            //Swap facing x direction to the position to run to
+            if ((transform.localScale.x > 0 && transform.position.x < xPos) || (transform.localScale.x < 0 && transform.position.x > xPos))
+            {
+                transform.localScale = new Vector2(-transform.localScale.x, transform.localScale.y);
+            }
         }
     }
 
