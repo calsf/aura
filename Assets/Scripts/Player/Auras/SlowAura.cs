@@ -20,6 +20,7 @@ public class SlowAura : MonoBehaviour
         }
 
         playerMove.Speed = playerMove.BaseSpeed;
+        playerMove.LastSpeed = playerMove.Speed;
     }
 
     void OnEnable()
@@ -30,6 +31,7 @@ public class SlowAura : MonoBehaviour
         }
 
         playerMove.Speed = playerMove.BaseSpeed / 2f;
+        playerMove.LastSpeed = playerMove.Speed;
     }
 
     // Slow enemy move speed

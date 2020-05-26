@@ -16,6 +16,7 @@ public class SpeedAura : MonoBehaviour
         }
 
         playerMove.Speed = playerMove.BaseSpeed;
+        playerMove.LastSpeed = playerMove.Speed;
     }
 
     void OnEnable()
@@ -26,6 +27,7 @@ public class SpeedAura : MonoBehaviour
         }
 
         playerMove.Speed = playerMove.BaseSpeed * 1.8f;
+        playerMove.LastSpeed = playerMove.Speed;
     }
 
 }

@@ -41,4 +41,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Zone6.unity
     guid: 8af2b557ec072354db75b19fb140a981
+  - enabled: 1
+    path: Assets/Scenes/Zone7.unity
+    guid: 7745769121f412d488cd1836a5228b6d
   m_configObjects: {}

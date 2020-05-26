@@ -15,6 +15,7 @@ public class PlayerMoveInput : MonoBehaviour
     float accelAir = .15f;
     float baseSpeed = 10f;
     float speed;
+    float lastSpeed;
     
     // Gravity
     float currGravity;
@@ -82,6 +83,7 @@ public class PlayerMoveInput : MonoBehaviour
     public bool CanInput { get { return canInput; } set { canInput = value; } }
     public float DefaultGrav { get { return defaultGrav; } }
     public bool IsTeleport { get { return isTeleport; } set { isTeleport = value; } }
+    public float LastSpeed { get { return lastSpeed; } set { lastSpeed = value; } }
 
     //For OnControlChange
     public void UpdateControls()
@@ -98,6 +100,7 @@ public class PlayerMoveInput : MonoBehaviour
         speed = baseSpeed;
         jumpVelocity = baseJump;
         maxFallSpeed = baseMaxFallSpeed;
+        lastSpeed = speed;
 
         // Set gravity values
         lowGrav *= gravity;
