@@ -42,17 +42,17 @@ SpriteAtlas:
       enableTightPacking: 1
     variantMultiplier: 1
     packables:
+    - {fileID: 2800000, guid: 311569a923656bb4484e0f69bb787027, type: 3}
+    - {fileID: 2800000, guid: 6c7c745f4af4b3b4eb2667498a28d16d, type: 3}
     - {fileID: 2800000, guid: 448a85e6adb7fe54ba15bcbb57a8cdf4, type: 3}
     - {fileID: 2800000, guid: 9372e97b33fdd2948b644e8bcc965134, type: 3}
     - {fileID: 2800000, guid: 8ce40e7607c62b34e8268dc5f259f969, type: 3}
-    - {fileID: 2800000, guid: 311569a923656bb4484e0f69bb787027, type: 3}
-    - {fileID: 2800000, guid: 6c7c745f4af4b3b4eb2667498a28d16d, type: 3}
     - {fileID: 2800000, guid: 42871f7a93fa3b340900f1e9ab1a46c0, type: 3}
     - {fileID: 2800000, guid: ff79068d3b77f714a879091364064ff5, type: 3}
     - {fileID: 2800000, guid: e05af8e720f4c19458ffa44a8ab6bf21, type: 3}
     - {fileID: 2800000, guid: deea72519a8e20f4fb9b4a22f6962414, type: 3}
     - {fileID: 2800000, guid: 977162859f5764146ae48f2463aa8756, type: 3}
-    totalSpriteSurfaceArea: 83456
+    totalSpriteSurfaceArea: 84992
     bindAsDefault: 1
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
@@ -240,6 +240,12 @@ SpriteAtlas:
   - {fileID: 6593598071038425683, guid: e05af8e720f4c19458ffa44a8ab6bf21, type: 3}
   - {fileID: 3841528016742587806, guid: e05af8e720f4c19458ffa44a8ab6bf21, type: 3}
   - {fileID: -7080269460928676155, guid: e05af8e720f4c19458ffa44a8ab6bf21, type: 3}
+  - {fileID: -4020695527833569134, guid: 311569a923656bb4484e0f69bb787027, type: 3}
+  - {fileID: 7577509800281825114, guid: 311569a923656bb4484e0f69bb787027, type: 3}
+  - {fileID: 6709806535736208590, guid: 311569a923656bb4484e0f69bb787027, type: 3}
+  - {fileID: 3152405976511491587, guid: 311569a923656bb4484e0f69bb787027, type: 3}
+  - {fileID: 2694412130535151296, guid: 311569a923656bb4484e0f69bb787027, type: 3}
+  - {fileID: 1718249695695157482, guid: 311569a923656bb4484e0f69bb787027, type: 3}
   - {fileID: -8566231691555818994, guid: 311569a923656bb4484e0f69bb787027, type: 3}
   - {fileID: 9108506839123058777, guid: 311569a923656bb4484e0f69bb787027, type: 3}
   - {fileID: -8543613910667291881, guid: 311569a923656bb4484e0f69bb787027, type: 3}
@@ -567,6 +573,12 @@ SpriteAtlas:
   - Level6Tile_32
   - Level6Tile_31
   - Level6Tile_30
+  - ZoneSelectTile_16
+  - ZoneSelectTile_15
+  - ZoneSelectTile_14
+  - ZoneSelectTile_13
+  - ZoneSelectTile_12
+  - ZoneSelectTile_11
   - ZoneSelectTile_10
   - ZoneSelectTile_4
   - ZoneSelectTile_5

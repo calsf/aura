@@ -103,7 +103,11 @@ public class LevelSelectManager : MonoBehaviour
                 curr = firstFloorUnlocked;
                 break;
         }
-        selectedHighlight.transform.position = curr[selected].gameObject.transform.position;
+
+        if (selected < curr.Length)
+        {
+            selectedHighlight.transform.position = curr[selected].gameObject.transform.position;
+        }
 
         // Navigate up and down, left and right
         if (Input.GetKeyDown(ControlsManager.ControlInstance.Keybinds["DownButton"]) || Input.GetAxisRaw("Vertical") == -1)
@@ -187,8 +191,8 @@ public class LevelSelectManager : MonoBehaviour
                 unselectedBtns = firstUnselected;
                 break;
         }
-        curr[selected].GetComponent<Image>().sprite = unselectedBtns[selected]; // Deselect current zone
 
+        curr[selected].GetComponent<Image>().sprite = unselectedBtns[selected]; // Deselect current zone
 
         // If next floor goes past last floor, wrap back to beginning. If goes before first floor, wrap to last floor
         if (floor > totalFloors - 1)
@@ -289,6 +293,12 @@ public class LevelSelectManager : MonoBehaviour
                 unlockedFloors[size] = b;
                 size++;
             }
+        }
+
+        // If size is 0, there is nothing unlocked on floor, remove from total floors
+        if (size == 0)
+        {
+            totalFloors--;
         }
 
     }
