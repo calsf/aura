@@ -7,6 +7,9 @@ public class LevelSelectManager : MonoBehaviour
 {
     [SerializeField]
     GameObject selectedHighlight;
+    Text selectedName;
+    [SerializeField]
+    Sprite lockedSprite;
 
     bool[] lvlUnlocked;
     [SerializeField]
@@ -47,6 +50,16 @@ public class LevelSelectManager : MonoBehaviour
     [SerializeField]
     Sprite[] fourthUnselected;
 
+    // Names of levels
+    [SerializeField]
+    string[] firstNames;
+    [SerializeField]
+    string[] secondNames;
+    [SerializeField]
+    string[] thirdNames;
+    [SerializeField]
+    string[] fourthNames;
+
     bool hasSelected; // Set true once an option is selected to disable controls
 
 
@@ -64,7 +77,11 @@ public class LevelSelectManager : MonoBehaviour
         lvlUnlocked = SaveLoadManager.LoadLvls();
         for (int i = 0; i < lvlButtons.Length; i++)
         {
-            lvlButtons[i].gameObject.GetComponent<Image>().enabled = lvlUnlocked[i];    // Set image inactive/active to maintain horizontal layout
+            if (!lvlUnlocked[i])
+            {
+                lvlButtons[i].gameObject.GetComponent<Image>().sprite = lockedSprite;
+            }
+            /*lvlButtons[i].gameObject.GetComponent<Image>().enabled = lvlUnlocked[i];   */ // Set image inactive/active to maintain horizontal layout
         }
 
         // Init unlocked floors
@@ -72,6 +89,8 @@ public class LevelSelectManager : MonoBehaviour
         InitUnlockedFloors(ref secondFloor, ref secondFloorUnlocked);
         InitUnlockedFloors(ref thirdFloor, ref thirdFloorUnlocked);
         InitUnlockedFloors(ref fourthFloor, ref fourthFloorUnlocked);
+
+        selectedName = selectedHighlight.GetComponentInChildren<Text>();
 
         NavFloorHorizontal(0, 0);
     }
@@ -85,28 +104,35 @@ public class LevelSelectManager : MonoBehaviour
 
         // Move selectedHighlight object to selected position
         Button[] curr;
+        string[] levelNames;
         switch (floor)
         {
             case 0:
                 curr = firstFloorUnlocked;
+                levelNames = firstNames;
                 break;
             case 1:
                 curr = secondFloorUnlocked;
+                levelNames = firstNames;
                 break;
             case 2:
                 curr = thirdFloorUnlocked;
+                levelNames = firstNames;
                 break;
             case 3:
                 curr = fourthFloorUnlocked;
+                levelNames = firstNames;
                 break;
             default:
                 curr = firstFloorUnlocked;
+                levelNames = firstNames;
                 break;
         }
 
         if (selected < curr.Length)
         {
             selectedHighlight.transform.position = curr[selected].gameObject.transform.position;
+            selectedName.text = levelNames[selected];
         }
 
         // Navigate up and down, left and right
@@ -192,8 +218,6 @@ public class LevelSelectManager : MonoBehaviour
                 break;
         }
 
-        curr[selected].GetComponent<Image>().sprite = unselectedBtns[selected]; // Deselect current zone
-
         // If next floor goes past last floor, wrap back to beginning. If goes before first floor, wrap to last floor
         if (floor > totalFloors - 1)
         {
@@ -204,6 +228,15 @@ public class LevelSelectManager : MonoBehaviour
             floor = totalFloors - 1;
         }
         this.floor = floor;     // Move floors
+
+        // If floor did not change, do not do anything and return
+        if (floor == lastFloor)
+        {
+            return;
+        }
+
+        // Deselect current zone
+        curr[selected].GetComponent<Image>().sprite = unselectedBtns[selected];
 
         // Reset to first zone in new floor
         NavFloorHorizontal(0, 0);
@@ -264,6 +297,7 @@ public class LevelSelectManager : MonoBehaviour
         curr[lastButton].GetComponent<Image>().sprite = unselectedBtns[lastButton];
         curr[button].GetComponent<Image>().sprite = selectedBtns[button];
 
+
         // Only play sound if selection changed
         if (selected != lastButton)
         {
@@ -278,7 +312,7 @@ public class LevelSelectManager : MonoBehaviour
         int size = 0;
         foreach (Button b in allFloors)
         {
-            if (b.gameObject.GetComponent<Image>().enabled)
+            if (b.gameObject.GetComponent<Image>().sprite != lockedSprite)
             {
                 size++;
             }
@@ -288,7 +322,7 @@ public class LevelSelectManager : MonoBehaviour
         size = 0;
         foreach (Button b in allFloors)
         {
-            if (b.gameObject.GetComponent<Image>().enabled)
+            if (b.gameObject.GetComponent<Image>().sprite != lockedSprite)
             {
                 unlockedFloors[size] = b;
                 size++;
