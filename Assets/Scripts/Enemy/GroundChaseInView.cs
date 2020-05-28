@@ -9,7 +9,6 @@ using UnityEngine;
 
 public class GroundChaseInView : StoppableMovementBehaviour
 {
-    Rigidbody2D rb;
     GameObject player;
     PlayerInView view;
     PlayerHP playerHP;
@@ -71,7 +70,6 @@ public class GroundChaseInView : StoppableMovementBehaviour
 
         enemyDefaults = GetComponent<EnemyDefaults>();
         anim = GetComponent<Animator>();
-        rb = GetComponent<Rigidbody2D>();
 
         nextPos = posB;
     }
