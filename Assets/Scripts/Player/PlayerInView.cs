@@ -15,6 +15,11 @@ public class PlayerInView : MonoBehaviour
     float maxX = 19f;
     float maxY = 12.5f;
 
+    // To manually check if player is out of view (such as if player entered pyramid in level 8, they should be considereded out of view)
+    bool outOfView; 
+
+    public bool OutOfView { get { return outOfView; } set { outOfView = value; } }
+
     void Awake()
     {
         cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
@@ -25,7 +30,12 @@ public class PlayerInView : MonoBehaviour
     
     public bool InView(Transform other)
     {
-        
+        // Check if out of view manually set to false
+        if (outOfView)
+        {
+            return false;
+        }
+
         Vector3 point = cam.WorldToViewportPoint(other.position);
 
         // If other transform is in camera view

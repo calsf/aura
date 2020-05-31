@@ -9,11 +9,19 @@ public class ToggleTile : MonoBehaviour
     [SerializeField]
     GameObject outsideTile;
 
+    PlayerInView view;
+
+    void Awake()
+    {
+        view = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInView>();
+    }
+
     void OnTriggerEnter2D (Collider2D other)
     {
         if (other.tag == "Player")
         {
             outsideTile.SetActive(false);
+            view.OutOfView = true;
         }   
     }
 
@@ -27,6 +35,7 @@ public class ToggleTile : MonoBehaviour
         if (other.tag == "Player")
         {
             outsideTile.SetActive(true);
+            view.OutOfView = false;
         }
     }
 

@@ -6,6 +6,7 @@ public class DashAtPlayer : Raycasts
 {
     GameObject player;
     PlayerHP playerHP;
+    PlayerInView playerInView;
     EnemyDefaults enemyDefaults;
     Animator anim;
 
@@ -62,6 +63,7 @@ public class DashAtPlayer : Raycasts
 
         player = GameObject.FindGameObjectWithTag("Player");
         playerHP = player.GetComponent<PlayerHP>();
+        playerInView = player.GetComponent<PlayerInView>();
 
         enemyDefaults = GetComponent<EnemyDefaults>();
         anim = GetComponent<Animator>();
@@ -71,7 +73,7 @@ public class DashAtPlayer : Raycasts
 
     void Update()
     {
-        playerInDist = Vector3.Distance(transform.position, player.transform.position) <= aggroDist;
+        playerInDist = Vector3.Distance(transform.position, player.transform.position) <= aggroDist && playerInView.InView(transform);
 
         // If player in dash distance and not dead, start up aggro if haven't already
         if (playerHP.CurrentHP > 0 && !isStartingAggro && playerInDist)
@@ -133,8 +135,9 @@ public class DashAtPlayer : Raycasts
                 UpdateRaycastOrigins();
                 collisions.Reset();
                 HorizontalCollisions();
+                VerticalCollisions();
 
-                // Reverse direction of dash if collided with a wall
+                // Reverse direction of dash if collided with a wall or if is about to fall off ground
                 if (collisions.left)
                 {
                     xPos = int.MaxValue;
@@ -142,6 +145,10 @@ public class DashAtPlayer : Raycasts
                 else if (collisions.right)
                 {
                     xPos = int.MinValue;
+                }
+                else if (!collisions.below)
+                {
+                    xPos = -xPos;
                 }
 
                 transform.position = 
@@ -212,6 +219,33 @@ public class DashAtPlayer : Raycasts
                 collisions.right = dirX == 1;
             }
         }
+    }
+
+    // Checks vertical raycasts to see if enemy is about to fall off
+    void VerticalCollisions()
+    {
+        float dirY = -1;
+        float rayLength = .5f + offset;
+
+        bool isGrounded = true;
+
+        // Go through every raycast and check for hit
+        for (int i = 0; i < verticalRayCount; i++)
+        {
+            Vector2 rayOrigin = raycastOrigins.bottomLeft;
+            rayOrigin += Vector2.right * (verticalRaySpacing * i + offset);
+            RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.up * dirY, rayLength, collisionMask);
+
+            Debug.DrawRay(rayOrigin, Vector2.up * dirY * rayLength, Color.red);
+
+            // If any vertical raycast is not hitting ground, set collisions below to false
+            if (!hit)
+            {
+                isGrounded = false;
+            }
+        }
+
+        collisions.below = isGrounded;
     }
 
 }

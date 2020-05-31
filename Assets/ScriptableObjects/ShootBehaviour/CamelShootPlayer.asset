@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cff6f9eacf5116c449dc19a550815882, type: 3}
   m_Name: CamelShootPlayer
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 8715582183515875135, guid: 3ba331d2354ca1a4c9beb01ac64005e8,
+  projectilePrefab: {fileID: 6899193545991907390, guid: 51ec196cf19e6494eb7a20b7cbc27891,
     type: 3}
   minShootDelay: 0.6
   maxShootDelay: 0.8
