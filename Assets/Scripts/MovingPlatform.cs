@@ -25,6 +25,14 @@ public class MovingPlatform : Raycasts
 
     PlayerController controller;
 
+    [SerializeField]
+    bool isTriggerPlatform;
+
+    int nextPos;
+
+    public int NextPos { get { return nextPos; } set { nextPos = value; } }
+    public float Progress { get { return progress; } set { progress = value; } }
+
     // Detect raycast hit and store calculated movement/info to apply to player
     List<PlayerMovement> playerMovement; 
     struct PlayerMovement
@@ -49,6 +57,12 @@ public class MovingPlatform : Raycasts
 
     void Update()
     {
+        // Stops moving platform if is a trigger to move platform and has reached destination
+        if (progress >= 1 && isTriggerPlatform)
+        {
+            return;
+        }
+
         UpdateRaycastOrigins();
 
         // Calculate velocity of platform
@@ -78,10 +92,13 @@ public class MovingPlatform : Raycasts
         }
 
         // Position to move to is of index current position + 1, if nextPos is outside array, wrap back to beginning
-        int nextPos = currPos + 1;
-        if (nextPos > pos.Length - 1)
+        if (!isTriggerPlatform)
         {
-            nextPos = 0;
+            nextPos = currPos + 1;
+            if (nextPos > pos.Length - 1)
+            {
+                nextPos = 0;
+            }
         }
 
         // Find distance between the two positions and calculate progress
@@ -94,6 +111,14 @@ public class MovingPlatform : Raycasts
 
         Vector2 newPos = Vector2.Lerp(pos[currPos].position, pos[nextPos].position, easedProgress);
 
+        // If is a move on trigger platform and reached destination, stop moving and set new curr pos to the nextPos
+        if (progress >= 1 && isTriggerPlatform)
+        {
+            currPos = nextPos;
+            return Vector2.zero;
+        }
+
+        // If not a trigger to move platform, move to next position
         // Has reached nextPos so reset progress and increment last position
         if (progress >= 1)
         {
