@@ -31,6 +31,8 @@ public class ShootRotateToPlayer : ShootBehaviour
 
     float lastShot = -1;
 
+    float initialDirection; // For saving initial facing direction upon starting shoot in case enemy turns around
+
     [SerializeField]
     ShootRotateToPlayerBehaviour shootBehaviour;
 
@@ -117,6 +119,13 @@ public class ShootRotateToPlayer : ShootBehaviour
         if (playerInView && facePlayer)
         {
             Vector3 target = player.transform.position - transform.position;
+
+            // In case enemy flips direction, this object will also flip so need to readjust target so that this object rotates and faces player
+            if (transform.parent.localScale.x < 0)
+            {
+                target = -target;
+            }
+
             float angle = Mathf.Atan2(target.y, target.x) * Mathf.Rad2Deg;
             Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
             transform.rotation = Quaternion.Slerp(transform.rotation, q, Time.deltaTime * shootBehaviour.turnSpeed);
@@ -136,7 +145,17 @@ public class ShootRotateToPlayer : ShootBehaviour
         facePlayer = false;
 
         // Get the enemy facing direction at time of StartShoot
-        shootPos = transform.right.normalized;
+        if (transform.parent.localScale.x < 0)
+        {
+            shootPos = -transform.right.normalized;
+        }
+        else
+        {
+            shootPos = transform.right.normalized;
+        }
+
+        // Save initial direction facing in when shoot begins in case enemy turns around
+        initialDirection = Mathf.Sign(transform.parent.localScale.x);
     }
 
     // Shoot projectile at player during animation (Called during/in animation itself)
@@ -147,7 +166,16 @@ public class ShootRotateToPlayer : ShootBehaviour
         proj.transform.rotation = spawnPos.transform.rotation;
         proj.transform.position = spawnPos.transform.position;
         proj.SetActive(true);
-        proj.GetComponent<Projectile>().Dir = shootPos;
+        
+        // In case enemy is flipped, adjust projectile direction accordingly
+        if ((Mathf.Sign(transform.parent.localScale.x) > 0 && initialDirection < 0) || (Mathf.Sign(transform.parent.localScale.x) < 0 && initialDirection > 0))
+        {
+            proj.GetComponent<Projectile>().Dir = new Vector2(-shootPos.x, shootPos.y);
+        }
+        else
+        {
+            proj.GetComponent<Projectile>().Dir = shootPos;
+        }
     }
 
     // Reset facePlayer after shoot animation is finished (Called during/in animation itself)

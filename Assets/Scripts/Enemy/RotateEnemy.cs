@@ -19,7 +19,6 @@ public class RotateEnemy : MonoBehaviour
         // Unparent the enemy health bar and rotate enemy itself, then reattach the health bar to maintain fixed health position
         barObject.transform.parent = null;
         transform.Rotate(0, 0, rotation);
-        barObject.transform.parent = transform;
-        
+        barObject.transform.parent = transform;  
     }
 }
