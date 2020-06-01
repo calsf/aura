@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: CamelProjectile
   m_EditorClassIdentifier: 
   dmg: 1
-  baseSpeed: 15
+  baseSpeed: 16
   ignoreGround: 0
   ignoreFirstGround: 0
   rotate: 1

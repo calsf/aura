@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90fa4d80050abf74895e176047d66331, type: 3}
+  m_Name: BookShoot
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 5161857534756067632, guid: 4c1cc1465d060ca44b65dbfb4a282589,
+    type: 3}
+  minShootDelay: 0.5
+  maxShootDelay: 0.8
+  shootDelay: 0.8
+  stopToShoot: 0
+  shootFacingDirection: 0
+  shootIsChild: 0
+  numProj: 1
+  xDirection:
+  - 0
+  yDirection:
+  - -1
