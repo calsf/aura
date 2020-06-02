@@ -20,6 +20,9 @@ public class MoveMultiplePoints : StoppableMovementBehaviour
 
     bool stopMoving = false;
 
+    [SerializeField]
+    bool xFlip;
+
     // If isCycle TRUE then positions cycle from last point to first point
     // If isCycle FALSE then enemy reverses and goes back points
     [SerializeField]
@@ -52,6 +55,12 @@ public class MoveMultiplePoints : StoppableMovementBehaviour
             if (nextPos > pos.Length - 1)
             {
                 nextPos = 0;
+
+                //Swap facing x direction if necessary
+                if (xFlip)
+                {
+                    transform.localScale = new Vector2(-transform.localScale.x, transform.localScale.y);
+                }
 
                 // If not a cycle, reverse and go back
                 if (!isCycle)

@@ -238,8 +238,9 @@ public class DashAtPlayer : Raycasts
 
             Debug.DrawRay(rayOrigin, Vector2.up * dirY * rayLength, Color.red);
 
-            // If any vertical raycast is not hitting ground, set collisions below to false
-            if (!hit)
+            // Depending on xPos (direction in which enemy is dashing), check if first or last raycast is not hitting ground
+            // Raycasts start from left to right
+            if (!hit && ((i == verticalRayCount-1 && Mathf.Sign(xPos) > 0) || (i == 0 && Mathf.Sign(xPos) < 0)))
             {
                 isGrounded = false;
             }
