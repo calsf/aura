@@ -9530,7 +9530,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1548204659}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.33500734
+  m_Size: 0.33500737
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -11713,7 +11713,7 @@ MonoBehaviour:
   auraBought:
   - Oh? Are you sure you're as sharp as these blades?
   - If you're going to get up close and personal, may I recommend a health boost
-    as well? Heh...
+    as well?
   - Such an uncivilized aura. Well, go on.
   - Hmph. I never could make use of this aura's full potential, I pray you have better
     luck with it.
@@ -11782,8 +11782,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chatDisplay: {fileID: 1950933964}
   defaultChat:
-  - I've seen plenty of the likes of you around. So many of them think they can go
-    on without stronger auras. Hah!
+  - Think you can go further without stronger auras? Be my guest. I'll be here if
+    you make it back.
   - The lower you go, the stronger the enemies. I do hope you consider some of these
     auras that I have...
 --- !u!1 &1459288291
