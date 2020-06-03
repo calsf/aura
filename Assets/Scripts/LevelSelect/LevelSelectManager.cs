@@ -105,6 +105,7 @@ public class LevelSelectManager : MonoBehaviour
         // Move selectedHighlight object to selected position
         Button[] curr;
         string[] levelNames;
+
         switch (floor)
         {
             case 0:
@@ -113,15 +114,15 @@ public class LevelSelectManager : MonoBehaviour
                 break;
             case 1:
                 curr = secondFloorUnlocked;
-                levelNames = firstNames;
+                levelNames = secondNames;
                 break;
             case 2:
                 curr = thirdFloorUnlocked;
-                levelNames = firstNames;
+                levelNames = thirdNames;
                 break;
             case 3:
                 curr = fourthFloorUnlocked;
-                levelNames = firstNames;
+                levelNames = fourthNames;
                 break;
             default:
                 curr = firstFloorUnlocked;
