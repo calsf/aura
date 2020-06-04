@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.UIElements;
 using UnityEngine;
 
 // Walks back and forth, when player in view, plays startup animation to chase player then chases player until player is dead or out of view

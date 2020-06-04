@@ -3357,8 +3357,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1838509467679377211, guid: f99d137dca557964b8028571a3c3da78,
-    type: 3}
+  m_Sprite: {fileID: 21300000, guid: dfdf9147f7536cc4fb8600d6e50d3fa0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -11721,7 +11720,7 @@ MonoBehaviour:
   health: {fileID: 2102097327}
   healthPriceDisplay: {fileID: 482747645}
   playerHearts: {fileID: 1456894322}
-  healthMaxed: You more than enough health now. Good luck.
+  healthMaxed: You have more than enough health now. Good luck.
   healthBought: Here you go. That should improve your health a bit.
   healthFail: Hmm...Looks like you're short on gold.
   shopNav: {fileID: 1836561423}
@@ -11780,7 +11779,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chatDisplay: {fileID: 1950933964}
   defaultChat:
-  - Greetings. You're the first soul I've seen down here in awhile.
+  - Greetings. You're the first soul I've seen down here in a long time. Is there
+    anything you need?
   - Care to buy anything before you head out? No one has made it past this floor
     and although it's probably for the best, I am still curious as to what lies below.
 --- !u!1 &1459288291
