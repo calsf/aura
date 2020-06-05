@@ -12,13 +12,46 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90fa4d80050abf74895e176047d66331, type: 3}
   m_Name: ThingShoot
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 0}
-  minShootDelay: 0
-  maxShootDelay: 0
-  shootDelay: 0
+  projectilePrefab: {fileID: 3287642755709996191, guid: 6b80159fe666a3d44a2d3ad8990ef9f9,
+    type: 3}
+  minShootDelay: 2
+  maxShootDelay: 3
+  shootDelay: 3
   stopToShoot: 0
   shootFacingDirection: 0
   shootIsChild: 0
-  numProj: 0
-  xDirection: []
-  yDirection: []
+  numProj: 16
+  xDirection:
+  - 0
+  - 0
+  - 1
+  - -1
+  - 1
+  - -1
+  - -1
+  - 1
+  - -0.5
+  - -0.5
+  - 0.5
+  - 0.5
+  - -1
+  - -1
+  - 1
+  - 1
+  yDirection:
+  - -1
+  - 1
+  - 0
+  - 0
+  - -1
+  - -1
+  - 1
+  - 1
+  - -1
+  - 1
+  - -1
+  - 1
+  - 0.5
+  - -0.5
+  - 0.5
+  - -0.5
