@@ -1269,6 +1269,7 @@ MonoBehaviour:
   speed: 10
   ease: 0
   moveDelay: 0
+  isTriggerPlatform: 0
 --- !u!251 &36647077
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -5024,6 +5025,7 @@ MonoBehaviour:
   speed: 5
   ease: 1.41
   moveDelay: 0.5
+  isTriggerPlatform: 0
 --- !u!251 &121351122
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -5659,6 +5661,7 @@ MonoBehaviour:
   speed: 10
   ease: 0.8
   moveDelay: 0.2
+  isTriggerPlatform: 0
 --- !u!251 &137586912
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -8305,6 +8308,7 @@ MonoBehaviour:
   speed: 5
   ease: 1.41
   moveDelay: 0.5
+  isTriggerPlatform: 0
 --- !u!251 &192388276
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -8723,6 +8727,7 @@ MonoBehaviour:
   speed: 10
   ease: 0.8
   moveDelay: 0.2
+  isTriggerPlatform: 0
 --- !u!251 &203171838
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -9361,6 +9366,7 @@ MonoBehaviour:
   speed: 6
   ease: 2
   moveDelay: 0.2
+  isTriggerPlatform: 0
 --- !u!251 &221380348
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -29562,6 +29568,7 @@ MonoBehaviour:
   speed: 10
   ease: 0.8
   moveDelay: 0.2
+  isTriggerPlatform: 0
 --- !u!251 &753334227
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -34018,6 +34025,7 @@ MonoBehaviour:
   speed: 10
   ease: 0.4
   moveDelay: 0.2
+  isTriggerPlatform: 0
 --- !u!251 &902639372
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -52776,6 +52784,7 @@ MonoBehaviour:
   speed: 10
   ease: 0
   moveDelay: 0
+  isTriggerPlatform: 0
 --- !u!251 &1035093307
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -54231,6 +54240,7 @@ MonoBehaviour:
   speed: 10
   ease: 0.8
   moveDelay: 0.2
+  isTriggerPlatform: 0
 --- !u!251 &1084255025
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -54541,6 +54551,7 @@ MonoBehaviour:
   speed: 10
   ease: 0
   moveDelay: 0
+  isTriggerPlatform: 0
 --- !u!251 &1096661866
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -55010,6 +55021,7 @@ MonoBehaviour:
   speed: 10
   ease: 0
   moveDelay: 0
+  isTriggerPlatform: 0
 --- !u!251 &1109982949
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -58187,6 +58199,7 @@ MonoBehaviour:
   speed: 10
   ease: 0
   moveDelay: 0
+  isTriggerPlatform: 0
 --- !u!251 &1183813189
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -71340,6 +71353,7 @@ MonoBehaviour:
   speed: 10
   ease: 0.4
   moveDelay: 0.2
+  isTriggerPlatform: 0
 --- !u!251 &1300512096
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -71836,7 +71850,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 200.35211, y: -10.022923}
+  m_Offset: {x: 264.6906, y: -10.022923}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -71847,7 +71861,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1612.2255, y: 15.482637}
+  m_Size: {x: 2296.7583, y: 15.482637}
   m_EdgeRadius: 0
 --- !u!114 &1324439515
 MonoBehaviour:
@@ -76658,6 +76672,7 @@ MonoBehaviour:
   speed: 10
   ease: 0
   moveDelay: 0
+  isTriggerPlatform: 0
 --- !u!251 &1443825742
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -80829,6 +80844,7 @@ MonoBehaviour:
   speed: 5
   ease: 1.41
   moveDelay: 0.5
+  isTriggerPlatform: 0
 --- !u!251 &1555112603
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -88371,6 +88387,7 @@ MonoBehaviour:
   speed: 6
   ease: 2
   moveDelay: 0.2
+  isTriggerPlatform: 0
 --- !u!251 &1801441934
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -88475,6 +88492,7 @@ MonoBehaviour:
   speed: 5
   ease: 1.41
   moveDelay: 0.5
+  isTriggerPlatform: 0
 --- !u!251 &1803041604
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -89561,6 +89579,7 @@ MonoBehaviour:
   speed: 5
   ease: 1.41
   moveDelay: 0.5
+  isTriggerPlatform: 0
 --- !u!251 &1854748642
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -94255,6 +94274,7 @@ MonoBehaviour:
   speed: 5
   ease: 1.41
   moveDelay: 0.5
+  isTriggerPlatform: 0
 --- !u!251 &1990709648
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -94418,6 +94438,7 @@ MonoBehaviour:
   speed: 10
   ease: 0
   moveDelay: 0
+  isTriggerPlatform: 0
 --- !u!251 &2000815891
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -95556,6 +95577,7 @@ MonoBehaviour:
   speed: 6
   ease: 2
   moveDelay: 0.2
+  isTriggerPlatform: 0
 --- !u!251 &2037419463
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -101884,8 +101906,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8161116549005874269}
   m_HandleRect: {fileID: 8343490628234766391}
   m_Direction: 2
-  m_Value: 0.24159737
-  m_Size: 0.2750218
+  m_Value: 0.24159727
+  m_Size: 0.27502182
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
