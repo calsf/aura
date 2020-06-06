@@ -9,7 +9,7 @@ public class WildfireFlame : MonoBehaviour
 {
     int dmg = 2;
     float deactivateTime;
-    float aliveTime = 5f;
+    float aliveTime = 10f;
     bool hasDeactivated;
     Animator anim;
 
