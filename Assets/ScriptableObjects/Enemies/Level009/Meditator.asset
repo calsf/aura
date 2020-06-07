@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bc601cbb1895ddb488039e78f84aea70, type: 3}
-  m_Name: Bike
+  m_Name: Meditator
   m_EditorClassIdentifier: 
-  enemyName: Bike
-  maxHP: 80
+  enemyName: Meditator
+  maxHP: 40
   dmg: 1
   gold: 1000
-  baseMoveSpeed: 18
+  baseMoveSpeed: 0
   deathSound: {fileID: 8300000, guid: af29e16ed3c6e8b4384f4c33d2c364cf, type: 3}
   deathVolume: 0.5
   deathFX: {fileID: 4598560185897053914, guid: c5212d2f01e1fdc4b841f9c9f2628e72, type: 3}
   hitSounds:
   - {fileID: 8300000, guid: 13bb53549a66d2b4eacec1804e82b499, type: 3}
   - {fileID: 8300000, guid: 5a588938af607e34aa0eae640fb3015f, type: 3}
-  - {fileID: 0}
+  - {fileID: 8300000, guid: 27a48f423c62a1b4fb270e0f41df4eaa, type: 3}
