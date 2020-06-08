@@ -44,6 +44,12 @@ TextureImporter:
   - first:
       213: -1360230783539935212
     second: StompBot_13
+  - first:
+      213: 4135345214058549631
+    second: StompBot_14
+  - first:
+      213: 521481817754955154
+    second: StompBot_15
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -417,6 +423,48 @@ TextureImporter:
       bones: []
       spriteID: 4180d862f4d7f1de0800000000000000
       internalID: -1360230783539935212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StompBot_14
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 0
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f71529bef82b36930800000000000000
+      internalID: 4135345214058549631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StompBot_15
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 0
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29deb1843fcac3700800000000000000
+      internalID: 521481817754955154
       vertices: []
       indices: 
       edges: []

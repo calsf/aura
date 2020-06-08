@@ -31,8 +31,11 @@ public class Projectile : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         dmgPlayer = GetComponent<DamagePlayerDefaults>();
 
-        disabledEffect = Instantiate(disabledEffectPrefab, transform.position, Quaternion.identity);
-        disabledEffect.SetActive(false);
+        if (disabledEffectPrefab != null)
+        {
+            disabledEffect = Instantiate(disabledEffectPrefab, transform.position, Quaternion.identity);
+            disabledEffect.SetActive(false);
+        }
 
         ignoreGround = dmgPlayer.DmgPlayer.ignoreGround;
         ignoreFirstGround = dmgPlayer.DmgPlayer.ignoreFirstGround;
