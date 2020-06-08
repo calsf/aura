@@ -76,6 +76,19 @@ public class EnemyDefaults : MonoBehaviour {
 
         collided = false;
         spriteRender = GetComponent<SpriteRenderer>();
+        
+        // Check children for sprite if none in current object
+        if (spriteRender == null)
+        {
+            foreach (Transform child in transform)
+            {
+                if (child.tag == "Sprite")
+                {
+                    spriteRender = child.GetComponent<SpriteRenderer>();
+                }
+            }
+        }
+
         defaultMat = spriteRender.material;     // Get enemy's default starting material
         levelManager = GameObject.FindGameObjectWithTag("LevelManager").GetComponent<LevelManager>();
 
