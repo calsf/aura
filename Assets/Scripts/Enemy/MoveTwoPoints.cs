@@ -19,6 +19,8 @@ public class MoveTwoPoints : StoppableMovementBehaviour
     bool xFlip;
     [SerializeField]
     bool yFlip;
+    [SerializeField]
+    bool flipWithNext;
 
     bool stopMoving = false;
 
@@ -39,9 +41,16 @@ public class MoveTwoPoints : StoppableMovementBehaviour
 
         transform.position = Vector3.MoveTowards(transform.position, nextPos.position, enemyDefaults.MoveSpeed * Time.deltaTime);
 
+        Transform lastPos = nextPos;
         if (Vector3.Distance(transform.position, nextPos.position) <= 0.1f)
         {
             nextPos = nextPos != posA ? posA : posB;
+        }
+
+        // Flip x localscale when transitioning to next position
+        if (flipWithNext && lastPos != nextPos)
+        {
+            transform.localScale = new Vector2(-transform.localScale.x, transform.localScale.y);
         }
 
         //Swap facing x direction if necessary
