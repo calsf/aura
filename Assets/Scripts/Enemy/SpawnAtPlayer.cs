@@ -7,11 +7,13 @@ using UnityEngine;
 public class SpawnAtPlayer : MonoBehaviour
 {
     GameObject player;
+    PlayerMoveInput playerMove;
     Transform spawnPos;
 
     void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        playerMove = player.GetComponent<PlayerMoveInput>();
 
         foreach (Transform child in transform)
         {
@@ -24,6 +26,17 @@ public class SpawnAtPlayer : MonoBehaviour
 
     public void SetPosition()
     {
-        spawnPos.position = new Vector2(player.transform.position.x, spawnPos.position.y);
+        // Set slightly ahead of player position
+        float offset = 0;
+        if (playerMove.Move > 0)
+        {
+            offset = 1.5f;
+        }
+        else if (playerMove.Move < 0)
+        {
+            offset = -1.5f;
+        }
+
+        spawnPos.position = new Vector2(player.transform.position.x + offset, spawnPos.position.y);
     }
 }

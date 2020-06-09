@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90fa4d80050abf74895e176047d66331, type: 3}
   m_Name: DroneShoot
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 559569054355730805, guid: c177021a5eeed084c9da33c3ab6e0f21,
+  projectilePrefab: {fileID: 7629242971235053478, guid: 81adee880c6c415428f1b02c5d90a388,
     type: 3}
-  minShootDelay: 0.5
-  maxShootDelay: 0.5
-  shootDelay: 0.5
+  minShootDelay: 0.4
+  maxShootDelay: 0.4
+  shootDelay: 0.4
   stopToShoot: 0
   shootFacingDirection: 1
   shootIsChild: 1
