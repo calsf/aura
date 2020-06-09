@@ -22,7 +22,7 @@ public class MoveWithGravity : Raycasts
     [SerializeField]
     float gravityScale;
 
-    float maxFallSpeed = -15f;
+    float maxFallSpeed = -2.5f;
     float gravity;
 
     // Store properties/info of current collisions
@@ -92,6 +92,7 @@ public class MoveWithGravity : Raycasts
         // Apply gravity, do not go lower than maxFallSpeed y velocity
         // Amount of gravity to apply based on enemys current move speed
         velocity.y += (gravity * (enemyDefaults.MoveSpeed / enemyDefaults.Enemy.baseMoveSpeed)) * Time.deltaTime;
+
         if (velocity.y < maxFallSpeed)
         {
             velocity.y = maxFallSpeed;

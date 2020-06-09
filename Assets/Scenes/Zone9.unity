@@ -218,7 +218,7 @@ MonoBehaviour:
   OnDamaged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 519420033}
         m_MethodName: Shake
         m_Mode: 1
         m_Arguments:
@@ -3635,7 +3635,7 @@ MonoBehaviour:
   OnDamaged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 519420033}
         m_MethodName: Shake
         m_Mode: 1
         m_Arguments:
@@ -4179,7 +4179,7 @@ MonoBehaviour:
   OnDamaged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 519420033}
         m_MethodName: Shake
         m_Mode: 1
         m_Arguments:
@@ -7722,8 +7722,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xDistanceMinus: 2
   yDistanceMinus: 0
-  minTeleDelay: 1
-  maxTeleDelay: 1.75
+  minTeleDelay: 0.8
+  maxTeleDelay: 1
 --- !u!114 &136483051
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7757,7 +7757,7 @@ MonoBehaviour:
   OnDamaged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 519420033}
         m_MethodName: Shake
         m_Mode: 1
         m_Arguments:
@@ -25940,8 +25940,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xDistanceMinus: 2
   yDistanceMinus: 0
-  minTeleDelay: 1
-  maxTeleDelay: 1.75
+  minTeleDelay: 0.8
+  maxTeleDelay: 1
 --- !u!114 &436127416
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25975,7 +25975,7 @@ MonoBehaviour:
   OnDamaged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 519420033}
         m_MethodName: Shake
         m_Mode: 1
         m_Arguments:
@@ -37341,7 +37341,7 @@ MonoBehaviour:
   OnDamaged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 519420033}
         m_MethodName: Shake
         m_Mode: 1
         m_Arguments:
@@ -37798,8 +37798,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xDistanceMinus: 2
   yDistanceMinus: 0
-  minTeleDelay: 1
-  maxTeleDelay: 1.75
+  minTeleDelay: 0.8
+  maxTeleDelay: 1
 --- !u!114 &604377914
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37833,7 +37833,7 @@ MonoBehaviour:
   OnDamaged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 519420033}
         m_MethodName: Shake
         m_Mode: 1
         m_Arguments:
@@ -38117,8 +38117,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xDistanceMinus: 2
   yDistanceMinus: 0
-  minTeleDelay: 1
-  maxTeleDelay: 1.75
+  minTeleDelay: 0.8
+  maxTeleDelay: 1
 --- !u!114 &606617499
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38152,7 +38152,7 @@ MonoBehaviour:
   OnDamaged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 519420033}
         m_MethodName: Shake
         m_Mode: 1
         m_Arguments:
@@ -41044,8 +41044,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xDistanceMinus: 2
   yDistanceMinus: 0
-  minTeleDelay: 1
-  maxTeleDelay: 1.75
+  minTeleDelay: 0.8
+  maxTeleDelay: 1
 --- !u!114 &664164970
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41079,7 +41079,7 @@ MonoBehaviour:
   OnDamaged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 519420033}
         m_MethodName: Shake
         m_Mode: 1
         m_Arguments:
@@ -45375,7 +45375,7 @@ MonoBehaviour:
   OnDamaged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 519420033}
         m_MethodName: Shake
         m_Mode: 1
         m_Arguments:
@@ -48493,8 +48493,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xDistanceMinus: 2
   yDistanceMinus: 0
-  minTeleDelay: 1
-  maxTeleDelay: 1.75
+  minTeleDelay: 0.8
+  maxTeleDelay: 1
 --- !u!114 &774735230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48528,7 +48528,7 @@ MonoBehaviour:
   OnDamaged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 519420033}
         m_MethodName: Shake
         m_Mode: 1
         m_Arguments:
@@ -51396,7 +51396,7 @@ MonoBehaviour:
   OnDamaged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 519420033}
         m_MethodName: Shake
         m_Mode: 1
         m_Arguments:
@@ -55359,7 +55359,7 @@ MonoBehaviour:
   OnDamaged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 519420033}
         m_MethodName: Shake
         m_Mode: 1
         m_Arguments:
@@ -75166,8 +75166,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xDistanceMinus: 2
   yDistanceMinus: 0
-  minTeleDelay: 1
-  maxTeleDelay: 1.75
+  minTeleDelay: 0.8
+  maxTeleDelay: 1
 --- !u!114 &1106152533
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75201,7 +75201,7 @@ MonoBehaviour:
   OnDamaged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 519420033}
         m_MethodName: Shake
         m_Mode: 1
         m_Arguments:
@@ -80941,8 +80941,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xDistanceMinus: 2
   yDistanceMinus: 0
-  minTeleDelay: 1
-  maxTeleDelay: 1.75
+  minTeleDelay: 0.8
+  maxTeleDelay: 1
 --- !u!114 &1201052587
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80976,7 +80976,7 @@ MonoBehaviour:
   OnDamaged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 519420033}
         m_MethodName: Shake
         m_Mode: 1
         m_Arguments:
@@ -85571,8 +85571,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xDistanceMinus: 2
   yDistanceMinus: 0
-  minTeleDelay: 1
-  maxTeleDelay: 1.75
+  minTeleDelay: 0.8
+  maxTeleDelay: 1
 --- !u!114 &1279913206
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -85606,7 +85606,7 @@ MonoBehaviour:
   OnDamaged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 519420033}
         m_MethodName: Shake
         m_Mode: 1
         m_Arguments:
@@ -90678,7 +90678,7 @@ MonoBehaviour:
   OnDamaged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 519420033}
         m_MethodName: Shake
         m_Mode: 1
         m_Arguments:
@@ -91288,7 +91288,7 @@ MonoBehaviour:
   OnDamaged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 519420033}
         m_MethodName: Shake
         m_Mode: 1
         m_Arguments:
@@ -102743,8 +102743,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xDistanceMinus: 2
   yDistanceMinus: 0
-  minTeleDelay: 1
-  maxTeleDelay: 1.75
+  minTeleDelay: 0.8
+  maxTeleDelay: 1
 --- !u!114 &1531301973
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -102778,7 +102778,7 @@ MonoBehaviour:
   OnDamaged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 519420033}
         m_MethodName: Shake
         m_Mode: 1
         m_Arguments:
@@ -106795,7 +106795,7 @@ MonoBehaviour:
   OnDamaged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 519420033}
         m_MethodName: Shake
         m_Mode: 1
         m_Arguments:
@@ -110034,7 +110034,7 @@ MonoBehaviour:
   OnDamaged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 519420033}
         m_MethodName: Shake
         m_Mode: 1
         m_Arguments:
@@ -114699,8 +114699,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xDistanceMinus: 2
   yDistanceMinus: 0
-  minTeleDelay: 1
-  maxTeleDelay: 1.75
+  minTeleDelay: 0.8
+  maxTeleDelay: 1
 --- !u!114 &1733689053
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114734,7 +114734,7 @@ MonoBehaviour:
   OnDamaged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 519420033}
         m_MethodName: Shake
         m_Mode: 1
         m_Arguments:
@@ -117234,7 +117234,7 @@ MonoBehaviour:
   OnDamaged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 519420033}
         m_MethodName: Shake
         m_Mode: 1
         m_Arguments:
@@ -118651,7 +118651,7 @@ MonoBehaviour:
   OnDamaged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 519420033}
         m_MethodName: Shake
         m_Mode: 1
         m_Arguments:
@@ -124722,7 +124722,7 @@ MonoBehaviour:
   OnDamaged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 519420033}
         m_MethodName: Shake
         m_Mode: 1
         m_Arguments:
@@ -131031,8 +131031,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xDistanceMinus: 2
   yDistanceMinus: 0
-  minTeleDelay: 1
-  maxTeleDelay: 1.75
+  minTeleDelay: 0.8
+  maxTeleDelay: 1
 --- !u!114 &2049791244
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -131066,7 +131066,7 @@ MonoBehaviour:
   OnDamaged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 519420033}
         m_MethodName: Shake
         m_Mode: 1
         m_Arguments:
