@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 1245101505962291804, guid: eca339d397931804084e38837c778fbc,
     type: 3}
-  minShootDelay: 0.75
+  minShootDelay: 0.8
   maxShootDelay: 1
-  shootDelay: 0.75
+  shootDelay: 0.8
   stopToShoot: 0
   shootFacingDirection: 0
   shootIsChild: 0
