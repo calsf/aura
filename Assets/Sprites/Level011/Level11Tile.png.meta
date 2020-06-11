@@ -1,0 +1,871 @@
+fileFormatVersion: 2
+guid: 93c94dfff046a66459183ef31d922ab6
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7821157697186383965
+    second: Level11Tile_0
+  - first:
+      213: 5782243075092175743
+    second: Level11Tile_1
+  - first:
+      213: 1088265941432547323
+    second: Level11Tile_2
+  - first:
+      213: -2304893622397920392
+    second: Level11Tile_3
+  - first:
+      213: 6493638594554820643
+    second: Level11Tile_4
+  - first:
+      213: 8341047759419517225
+    second: Level11Tile_5
+  - first:
+      213: 8256618875797516193
+    second: Level11Tile_6
+  - first:
+      213: 2811937907695989648
+    second: Level11Tile_7
+  - first:
+      213: -5513041948216419523
+    second: Level11Tile_8
+  - first:
+      213: -8323884008204078572
+    second: Level11Tile_9
+  - first:
+      213: 4627334936617870417
+    second: Level11Tile_10
+  - first:
+      213: 2726919714936220147
+    second: Level11Tile_11
+  - first:
+      213: 6637419679179125517
+    second: Level11Tile_12
+  - first:
+      213: -8686576858163799512
+    second: Level11Tile_13
+  - first:
+      213: 2618377448232296423
+    second: Level11Tile_14
+  - first:
+      213: -1611939338385739742
+    second: Level11Tile_15
+  - first:
+      213: 675602760119229963
+    second: Level11Tile_16
+  - first:
+      213: 8887056547556374545
+    second: Level11Tile_17
+  - first:
+      213: 1607495650361125471
+    second: Level11Tile_18
+  - first:
+      213: -3136149960197703693
+    second: Level11Tile_19
+  - first:
+      213: 6440764425924928254
+    second: Level11Tile_20
+  - first:
+      213: 1775884675590967691
+    second: Level11Tile_21
+  - first:
+      213: 1430246169926158423
+    second: Level11Tile_22
+  - first:
+      213: 8235334701826361223
+    second: Level11Tile_23
+  - first:
+      213: -7897804700414487708
+    second: Level11Tile_24
+  - first:
+      213: 8768053770634015892
+    second: Level11Tile_25
+  - first:
+      213: -155951399582289043
+    second: Level11Tile_26
+  - first:
+      213: 657888797482904944
+    second: Level11Tile_27
+  - first:
+      213: -6252555419833580949
+    second: Level11Tile_28
+  - first:
+      213: -8553090457841734847
+    second: Level11Tile_29
+  - first:
+      213: -6531838209218760940
+    second: Level11Tile_30
+  - first:
+      213: -2094900680374655696
+    second: Level11Tile_31
+  - first:
+      213: 143339194371150425
+    second: Level11Tile_32
+  - first:
+      213: 9198595141974430919
+    second: Level11Tile_33
+  - first:
+      213: 1516591016870701389
+    second: Level11Tile_34
+  - first:
+      213: 6012993339570868105
+    second: Level11Tile_35
+  - first:
+      213: 7906100623166281344
+    second: Level11Tile_36
+  - first:
+      213: -2638508873531373611
+    second: Level11Tile_37
+  - first:
+      213: -5627758691028398968
+    second: Level11Tile_38
+  - first:
+      213: -6116643991451672582
+    second: Level11Tile_39
+  - first:
+      213: 1227320096056784170
+    second: Level11Tile_40
+  - first:
+      213: -5823834565565748387
+    second: Level11Tile_41
+  - first:
+      213: -1497192030589447389
+    second: Level11Tile_42
+  - first:
+      213: -6763780712942176491
+    second: Level11Tile_43
+  - first:
+      213: -2653986334642189628
+    second: Level11Tile_44
+  - first:
+      213: -1634773498373261827
+    second: Level11Tile_45
+  - first:
+      213: 5151979071844702295
+    second: Level11Tile_46
+  - first:
+      213: -5916838933759922240
+    second: Level11Tile_47
+  - first:
+      213: 864821215577682120
+    second: Level11Tile_48
+  - first:
+      213: -149010417345945787
+    second: Level11Tile_49
+  - first:
+      213: -5072548328286707136
+    second: Level11Tile_50
+  - first:
+      213: 7103773815636824540
+    second: Level11Tile_51
+  - first:
+      213: 3320831669144759062
+    second: Level11Tile_52
+  - first:
+      213: 1597592248592485077
+    second: Level11Tile_53
+  - first:
+      213: 6589523329424441697
+    second: Level11Tile_54
+  - first:
+      213: 751340443589423103
+    second: Level11Tile_55
+  - first:
+      213: -1462661169480227243
+    second: Level11Tile_56
+  - first:
+      213: -7076325388889511569
+    second: Level11Tile_57
+  - first:
+      213: 8791049962789139669
+    second: Level11Tile_58
+  - first:
+      213: -4235657290945834123
+    second: Level11Tile_59
+  - first:
+      213: -7786210349479946325
+    second: Level11Tile_60
+  - first:
+      213: 4676871286107264827
+    second: Level11Tile_61
+  - first:
+      213: -488224684042497162
+    second: Level11Tile_62
+  - first:
+      213: 5585309385139698847
+    second: Level11Tile_63
+  - first:
+      213: -5180199326503211392
+    second: Level11Tile_0
+  - first:
+      213: -6970645464887702654
+    second: Level11Tile_1
+  - first:
+      213: -283176078862901861
+    second: Level11Tile_2
+  - first:
+      213: -5845323492386073034
+    second: Level11Tile_3
+  - first:
+      213: -7288171401099115145
+    second: Level11Tile_4
+  - first:
+      213: 456973394103644340
+    second: Level11Tile_5
+  - first:
+      213: 3819119366037428262
+    second: Level11Tile_6
+  - first:
+      213: 1763120280309409120
+    second: Level11Tile_7
+  - first:
+      213: -2700456957409414369
+    second: Level11Tile_8
+  - first:
+      213: -2649339796338887912
+    second: Level11Tile_9
+  - first:
+      213: -5013055012659643191
+    second: Level11Tile_10
+  - first:
+      213: -5296841336906853472
+    second: Level11Tile_11
+  - first:
+      213: 6113127138531741253
+    second: Level11Tile_12
+  - first:
+      213: -759398744288972605
+    second: Level11Tile_13
+  - first:
+      213: -2205630793596321566
+    second: Level11Tile_14
+  - first:
+      213: 883773795229106393
+    second: Level11Tile_15
+  - first:
+      213: 1188037049155226282
+    second: Level11Tile_16
+  - first:
+      213: 7524401029549294041
+    second: Level11Tile_17
+  - first:
+      213: 3094564585560992762
+    second: Level11Tile_18
+  - first:
+      213: -5381682514936069274
+    second: Level11Tile_19
+  - first:
+      213: 7173982116307244233
+    second: Level11Tile_20
+  - first:
+      213: -8716291857231357111
+    second: Level11Tile_21
+  - first:
+      213: -3815299273338099128
+    second: Level11Tile_22
+  - first:
+      213: 3558540956762882126
+    second: Level11Tile_23
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Level11Tile_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08eee0e882c3c18b0800000000000000
+      internalID: -5180199326503211392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level11Tile_1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28b4e2ab1ea434f90800000000000000
+      internalID: -6970645464887702654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level11Tile_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9d1d7a4bd4f11cf0800000000000000
+      internalID: -283176078862901861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level11Tile_3
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6361517e04d31eea0800000000000000
+      internalID: -5845323492386073034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level11Tile_4
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 775835f99b63bda90800000000000000
+      internalID: -7288171401099115145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level11Tile_5
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b03a5b71ee775600800000000000000
+      internalID: 456973394103644340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level11Tile_6
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 628d97f24dc300530800000000000000
+      internalID: 3819119366037428262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level11Tile_7
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0652124bd8cd77810800000000000000
+      internalID: 1763120280309409120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level11Tile_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f13316274bc068ad0800000000000000
+      internalID: -2700456957409414369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level11Tile_9
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8133ae5fd77ab3bd0800000000000000
+      internalID: -2649339796338887912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level11Tile_10
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cc3eeab60d0e6ab0800000000000000
+      internalID: -5013055012659643191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level11Tile_11
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a3df023ed6dd76b0800000000000000
+      internalID: -5296841336906853472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level11Tile_12
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54e0cf66eb036d450800000000000000
+      internalID: 6113127138531741253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level11Tile_13
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c037c39dd21675f0800000000000000
+      internalID: -759398744288972605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level11Tile_14
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e0470aaa760461e0800000000000000
+      internalID: -2205630793596321566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level11Tile_15
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d00e66959bc34c00800000000000000
+      internalID: 883773795229106393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level11Tile_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aaa86e6d661cc7010800000000000000
+      internalID: 1188037049155226282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level11Tile_17
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d18ed1deda0c6860800000000000000
+      internalID: 7524401029549294041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level11Tile_18
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afbedd8481a12fa20800000000000000
+      internalID: 3094564585560992762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level11Tile_19
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6630e4b144c6055b0800000000000000
+      internalID: -5381682514936069274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level11Tile_20
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c49f73b9ba1f8360800000000000000
+      internalID: 7173982116307244233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level11Tile_21
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94b581b9cb2890780800000000000000
+      internalID: -8716291857231357111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level11Tile_22
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84a60e476855d0bc0800000000000000
+      internalID: -3815299273338099128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level11Tile_23
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e40c78e652a726130800000000000000
+      internalID: 3558540956762882126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

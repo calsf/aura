@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Dynamic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -81,9 +82,14 @@ public class PlayerMoveInput : MonoBehaviour
     public bool Dashing { get { return dashing; } }
     public Vector2 Velocity { get { return velocity; } set { velocity = value; } }
     public bool CanInput { get { return canInput; } set { canInput = value; } }
-    public float DefaultGrav { get { return defaultGrav; } }
+    public float DefaultGrav { get { return defaultGrav; } set { defaultGrav = value; } }
     public bool IsTeleport { get { return isTeleport; } set { isTeleport = value; } }
     public float LastSpeed { get { return lastSpeed; } set { lastSpeed = value; } }
+    public float AccelAir { get { return accelAir; } set { accelAir = value; } }
+    public float AccelGrounded { get { return accelGrounded; } set { accelGrounded = value; } }
+    public float LowGrav { get { return lowGrav; } set { lowGrav = value; } }
+    public float Gravity { get { return gravity; } }
+    public bool CanDoubleJump { get { return canDoubleJump; } set { canDoubleJump = value; } }
 
     //For OnControlChange
     public void UpdateControls()
