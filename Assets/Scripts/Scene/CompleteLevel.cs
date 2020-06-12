@@ -81,7 +81,7 @@ public class CompleteLevel : MonoBehaviour
 
         int targetTotal = totalGold + goldEarned;   // New total gold
         // Start coin counting sound effect
-        SoundManager.SoundInstance.PlaySound("CoinCount");
+        SoundManager.SoundInstance.PlayStoppableSound("CoinCount");
         // Decrease gold earned and add to total gold, updating text display each time
         while (goldEarned > 0)
         {

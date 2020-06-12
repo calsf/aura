@@ -46,8 +46,18 @@ public class SoundManager : MonoBehaviour
         }
     }
 
-    // Play sound
+    // Play sound one shot, cannot be stopped
     public void PlaySound (string name)
+    {
+        Sound s = Array.Find(sounds, Sound => Sound.ClipName == name);
+        if (s != null)
+        {
+            s.AudioSrc.PlayOneShot(s.Clip);
+        }
+    }
+
+    // Play sound that can be stopped but will cut off if replayed
+    public void PlayStoppableSound (string name)
     {
         Sound s = Array.Find(sounds, Sound => Sound.ClipName == name);
         if (s != null)

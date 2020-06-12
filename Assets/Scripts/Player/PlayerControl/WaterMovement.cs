@@ -8,10 +8,25 @@ public class WaterMovement : MonoBehaviour
 {
     PlayerMoveInput playerMove;
 
+    [SerializeField]
+    SoundManager sound;
+    bool wasFalling;
+
     void Awake()
     {
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         playerMove = player.GetComponent<PlayerMoveInput>();
+    }
+
+    void Update()
+    {
+        // Play falling in water sound when player starts descending in water
+        if (!wasFalling && playerMove.Velocity.y < -1)
+        {
+            sound.PlaySound("FallingInWater");
+        }
+
+        wasFalling = playerMove.Velocity.y < -1;
     }
 
     void OnTriggerEnter2D(Collider2D other)

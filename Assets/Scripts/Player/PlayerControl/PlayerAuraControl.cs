@@ -131,7 +131,7 @@ public class PlayerAuraControl : MonoBehaviour
             currAura.SetActive(true);
 
             // Play AuraOn sound for the selected aura to activate
-           SoundManager.SoundInstance.PlaySound($"{auras[selectedAuras[selected]].name}On");
+           SoundManager.SoundInstance.PlayStoppableSound($"{auras[selectedAuras[selected]].name}On");
 
             lastSelected = selected;
             OnActivateAura.Invoke();    // OnActivateAura event
