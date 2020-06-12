@@ -10949,6 +10949,10 @@ MonoBehaviour:
     type: 3}
   bubblesPrefab2: {fileID: 6462910772407528884, guid: 1b1006d84cd99a84cba156319aca695c,
     type: 3}
+  mBubblesPrefab1: {fileID: 3315065322386063898, guid: 4cc31d70a88bdcb4c9aac4b055192fc3,
+    type: 3}
+  mBubblesPrefab2: {fileID: 5948090835599586920, guid: 176ea6ce7314b3548992a2031d6589c6,
+    type: 3}
   bubblesNum: 10
 --- !u!1 &556730651
 GameObject:
@@ -32115,7 +32119,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1227498381
 MonoBehaviour:
   m_ObjectHideFlags: 0
