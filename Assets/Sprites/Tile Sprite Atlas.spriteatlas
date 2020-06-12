@@ -55,7 +55,7 @@ SpriteAtlas:
     - {fileID: 2800000, guid: e2c57207d890b3c4fa4d23b827ba80b8, type: 3}
     - {fileID: 2800000, guid: c49dbd8c1f836634e9cb398d079f6215, type: 3}
     - {fileID: 2800000, guid: 93c94dfff046a66459183ef31d922ab6, type: 3}
-    totalSpriteSurfaceArea: 140288
+    totalSpriteSurfaceArea: 141824
     bindAsDefault: 1
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
@@ -589,7 +589,9 @@ SpriteAtlas:
   - {fileID: 2618377448232296423, guid: 93c94dfff046a66459183ef31d922ab6, type: 3}
   - {fileID: -8686576858163799512, guid: 93c94dfff046a66459183ef31d922ab6, type: 3}
   - {fileID: 6637419679179125517, guid: 93c94dfff046a66459183ef31d922ab6, type: 3}
+  - {fileID: -6252555419833580949, guid: 93c94dfff046a66459183ef31d922ab6, type: 3}
   - {fileID: 2726919714936220147, guid: 93c94dfff046a66459183ef31d922ab6, type: 3}
+  - {fileID: -8553090457841734847, guid: 93c94dfff046a66459183ef31d922ab6, type: 3}
   - {fileID: 4627334936617870417, guid: 93c94dfff046a66459183ef31d922ab6, type: 3}
   - {fileID: 1430246169926158423, guid: 93c94dfff046a66459183ef31d922ab6, type: 3}
   - {fileID: 8235334701826361223, guid: 93c94dfff046a66459183ef31d922ab6, type: 3}
@@ -597,6 +599,10 @@ SpriteAtlas:
   - {fileID: -3136149960197703693, guid: 93c94dfff046a66459183ef31d922ab6, type: 3}
   - {fileID: 1775884675590967691, guid: 93c94dfff046a66459183ef31d922ab6, type: 3}
   - {fileID: 1607495650361125471, guid: 93c94dfff046a66459183ef31d922ab6, type: 3}
+  - {fileID: -155951399582289043, guid: 93c94dfff046a66459183ef31d922ab6, type: 3}
+  - {fileID: 657888797482904944, guid: 93c94dfff046a66459183ef31d922ab6, type: 3}
+  - {fileID: -7897804700414487708, guid: 93c94dfff046a66459183ef31d922ab6, type: 3}
+  - {fileID: 8768053770634015892, guid: 93c94dfff046a66459183ef31d922ab6, type: 3}
   - {fileID: -5513041948216419523, guid: 93c94dfff046a66459183ef31d922ab6, type: 3}
   - {fileID: -8323884008204078572, guid: 93c94dfff046a66459183ef31d922ab6, type: 3}
   - {fileID: 6493638594554820643, guid: 93c94dfff046a66459183ef31d922ab6, type: 3}
@@ -1138,7 +1144,9 @@ SpriteAtlas:
   - Level11Tile_14
   - Level11Tile_13
   - Level11Tile_12
+  - Level11Tile_28
   - Level11Tile_11
+  - Level11Tile_29
   - Level11Tile_10
   - Level11Tile_22
   - Level11Tile_23
@@ -1146,6 +1154,10 @@ SpriteAtlas:
   - Level11Tile_19
   - Level11Tile_21
   - Level11Tile_18
+  - Level11Tile_26
+  - Level11Tile_27
+  - Level11Tile_24
+  - Level11Tile_25
   - Level11Tile_8
   - Level11Tile_9
   - Level11Tile_4
