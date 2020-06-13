@@ -13,6 +13,8 @@ public class EnemyHPManager : MonoBehaviour
     float hideTime = 3.5f;
     float lastHit = 0;
 
+    public GameObject BarObject { get { return barObject; } }
+
     void Awake()
     {
         barObject = transform.GetChild(0).gameObject;   // barObject MUST BE FIRST CHILD OF OBJECT THIS SCRIPT IS ATTACHED TO

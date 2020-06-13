@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90fa4d80050abf74895e176047d66331, type: 3}
+  m_Name: ClamShoot
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 6068738735120291503, guid: 56602dfc35110a7438578c8c9ae85cf9,
+    type: 3}
+  minShootDelay: 0.6
+  maxShootDelay: 0.8
+  shootDelay: 0.6
+  stopToShoot: 0
+  shootFacingDirection: 0
+  shootIsChild: 0
+  numProj: 3
+  xDirection:
+  - 1
+  - -1
+  - 0
+  yDirection:
+  - 1
+  - 1
+  - 1
