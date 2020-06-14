@@ -135,6 +135,15 @@ public class ShootFixed : ShootBehaviour
         }
     }
 
+    // Use for shooting in animation without using this script
+    public void ShootAnim()
+    {
+        if (!playerInView && view.EdgeOfView(transform))
+        {
+            Shoot();
+        }
+    }
+
     // Reset facePlayer after shoot animation is finished (Called during/in animation itself)
     public override void StopShooting()
     {

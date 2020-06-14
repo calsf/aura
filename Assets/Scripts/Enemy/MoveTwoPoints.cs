@@ -22,6 +22,9 @@ public class MoveTwoPoints : StoppableMovementBehaviour
     [SerializeField]
     bool flipWithNext;
 
+    [SerializeField]
+    bool flipBothWithNext;
+
     bool stopMoving = false;
 
     void Start()
@@ -51,6 +54,12 @@ public class MoveTwoPoints : StoppableMovementBehaviour
         if (flipWithNext && lastPos != nextPos)
         {
             transform.localScale = new Vector2(-transform.localScale.x, transform.localScale.y);
+        }
+
+        // Flip x and y localsale when transitioning to next position
+        if (flipBothWithNext && lastPos != nextPos)
+        {
+            transform.localScale = new Vector2(-transform.localScale.x, -transform.localScale.y);
         }
 
         //Swap facing x direction if necessary
