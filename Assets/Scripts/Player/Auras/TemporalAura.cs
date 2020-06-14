@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class TemporalAura : MonoBehaviour
 {
-    float projectileSlowMultiplier = .3f;
+    float projectileSlowMultiplier = .1f;
     float restoreProjectileSpeedDelay = 1f;
 
     float enemySlowMultiplier = .6f;

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Spearfish
   m_EditorClassIdentifier: 
   enemyName: Spearfish
-  maxHP: 120
+  maxHP: 100
   dmg: 1
   gold: 1000
   baseMoveSpeed: 5
