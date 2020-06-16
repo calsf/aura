@@ -66,7 +66,7 @@ public class MenuNav : MonoBehaviour
     bool axisDown;  // To treat axis input as key down
     bool isLeaving; // Disable actions if trying to leave and loading to return back
 
-    public bool IsLeaving { get { return isLeaving; } }
+    public bool IsLeaving { get { return isLeaving; } set { isLeaving = true; } }
 
     // Start is called before the first frame update
     void Start()

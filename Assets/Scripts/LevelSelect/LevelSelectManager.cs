@@ -62,6 +62,10 @@ public class LevelSelectManager : MonoBehaviour
 
     bool hasSelected; // Set true once an option is selected to disable controls
 
+    [SerializeField]
+    CanvasGroup menu;
+    [SerializeField]
+    MenuNav menuNav;
 
     void Awake()
     {
@@ -97,7 +101,7 @@ public class LevelSelectManager : MonoBehaviour
 
     void Update()
     {
-        if (hasSelected)
+        if (hasSelected || menu.alpha > 0)
         {
             return;
         }
@@ -181,6 +185,8 @@ public class LevelSelectManager : MonoBehaviour
         // To click button, press jump
         if (Input.GetKeyDown(ControlsManager.ControlInstance.Keybinds["JumpButton"]) || Input.GetKeyDown(ControlsManager.ControlInstance.Padbinds["JumpPad"]))
         {
+            menuNav.IsLeaving = true;   // Set leaving to true to avoid menu input
+
             SoundManager.SoundInstance.PlaySound("ButtonEnter");    // Play button sound
 
             curr[selected].GetComponent<Animator>().Play("Button");  // Play button anim
