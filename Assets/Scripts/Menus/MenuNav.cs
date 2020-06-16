@@ -66,6 +66,9 @@ public class MenuNav : MonoBehaviour
     bool axisDown;  // To treat axis input as key down
     bool isLeaving; // Disable actions if trying to leave and loading to return back
 
+    [SerializeField]
+    bool isQuit;    // Determine if leaving level or quitting game for last submenu
+
     public bool IsLeaving { get { return isLeaving; } set { isLeaving = true; } }
 
     // Start is called before the first frame update
@@ -253,7 +256,15 @@ public class MenuNav : MonoBehaviour
                     break;
                 case 3:     // Leave submenu set isLeaving true to avoid more actions while loading back IMPORTANT: LOADING INTO A NEW SCENE WHILE IN MENUS WILL STILL HAVE TIMESCALE = 0 SO NEED TO RESET IN NEW SCENE
                     isLeaving = true;
-                    LoadLevel.LoadInstance.LoadScene(1);
+
+                    if (!isQuit)
+                    {
+                        LoadLevel.LoadInstance.LoadScene(1);
+                    }
+                    else
+                    {
+                        Application.Quit();
+                    }
                     break;
             }
             
