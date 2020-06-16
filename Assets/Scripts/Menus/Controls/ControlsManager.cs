@@ -62,6 +62,12 @@ public class ControlsManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+    }
+
+    // LateUpdate so that actions are not activated when trying to cancel/assign buttons
+    void LateUpdate()
+    {
         // Press menu to cancel listening to a new binding
         if (isListen && (Input.GetKeyDown(keybinds["MenuButton"]) || Input.GetKeyDown(padbinds["MenuPad"])))
         {

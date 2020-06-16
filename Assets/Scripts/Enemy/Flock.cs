@@ -67,8 +67,9 @@ public class Flock : MonoBehaviour
 
         foreach(Collider2D coll in contextColliders)
         {
-            // Do not include self or player, only other nearby objects
-            if (coll != obj.Coll && coll.gameObject.tag != "PlayerDamaged" && coll.gameObject.tag != "Player")
+            // Do not include self, player, or things that will damage enemy such as auras, only other nearby objects
+            if (coll != obj.Coll && coll.gameObject.tag != "PlayerDamaged" && coll.gameObject.tag != "Player" 
+                && coll.gameObject.tag != "DamageEnemy" && coll.gameObject.tag != "ExtraDamage")
             {
                 context.Add(coll.transform);
             }
