@@ -15,6 +15,7 @@ TagManager:
   - DamagePlayer
   - SpawnPos
   - Sprite
+  - NavText
   layers:
   - Default
   - TransparentFX

@@ -263,7 +263,7 @@ public class MenuNav : MonoBehaviour
             // Wait for next input if trying to rebind key
             // Key rebindings should be all buttons before Other options in controls
             // subButtons[selectedSub].Length - (# of Option buttons)
-            if (selectedSub == 1 && selectedSubBtn < subButtons[selectedSub].Length - 3)
+            if (selectedSub == 1 && selectedSubBtn < subButtons[selectedSub].Length - 5)
             {
                 ControlsManager.ControlInstance.IsListen = true;
             }

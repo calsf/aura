@@ -354,6 +354,8 @@ public class ControlsManager : MonoBehaviour
         //Other options
         UpdateToggle("ToggleAura");
         UpdateToggle("UpJump");
+        UpdateToggle("HideKeyboardControls");
+        UpdateToggle("HideGamepadControls");
     }
 
     // Toggle control option on and off

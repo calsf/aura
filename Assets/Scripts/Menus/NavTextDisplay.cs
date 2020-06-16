@@ -15,6 +15,27 @@ public class NavTextDisplay : MonoBehaviour
 
     Text text;
 
+    bool isKeyboard;
+    bool hasUpdated;
+
+    bool hasDisabled;
+
+    public bool IsKeyboard { get { return isKeyboard; } }
+    public bool HasUpdated { get { return hasUpdated; } }
+
+    void Awake()
+    {
+        // Determine whether nav text is display for gamepad or keyboard control
+        if (navText.keyName != "")
+        {
+            isKeyboard = true;
+        }
+        else
+        {
+            isKeyboard = false;
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +45,17 @@ public class NavTextDisplay : MonoBehaviour
 
     void OnDisable()
     {
+        hasDisabled = true;
         ControlsManager.ControlInstance.OnBindChange.RemoveListener(UpdateNavText);
+    }
+
+    void OnEnable()
+    {
+        if (hasDisabled)
+        {
+            UpdateNavText();
+            ControlsManager.ControlInstance.OnBindChange.AddListener(UpdateNavText);
+        }
     }
 
     // Update the nav text at start and also update when OnControlChange event in ControlsManager occurs
@@ -61,5 +92,11 @@ public class NavTextDisplay : MonoBehaviour
         // Update the text display with modified string
         text = GetComponent<Text>();
         text.text = newString;
+
+        // Indicate this nav text has been updated
+        hasUpdated = true;
+
+        // Invoke OnControlChange event to update nav text displays on or off
+        ControlsManager.ControlInstance.OnControlChange.Invoke();
     }
 }
