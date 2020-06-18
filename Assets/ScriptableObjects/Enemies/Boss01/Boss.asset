@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Boss
   m_EditorClassIdentifier: 
   enemyName: Skeleton
-  maxHP: 600
+  maxHP: 1500
   dmg: 1
   gold: 10000
   baseMoveSpeed: 35
