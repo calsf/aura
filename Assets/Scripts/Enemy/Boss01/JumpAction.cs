@@ -5,7 +5,7 @@ using UnityEngine;
 public class JumpAction : StateMachineBehaviour
 {
     bool hasJumped;
-    float delay = 2f;
+    float delay = 1.5f;
     float nextJump;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
