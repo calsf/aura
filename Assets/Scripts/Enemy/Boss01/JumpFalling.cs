@@ -13,15 +13,30 @@ public class JumpFalling : StateMachineBehaviour
     Transform boss;
     EnemyDefaults enemyDefaults;
 
+    GameObject player;
+
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        player = GameObject.FindGameObjectWithTag("Player");
+
         animator.applyRootMotion = true;
         boss = animator.gameObject.transform;
         enemyDefaults = boss.GetComponent<EnemyDefaults>();
 
-        // Choose x target position and set boss to the x position
-        chosenX = targetsX[Random.Range(0, targetsX.Length)];
+        // Choose closest x position to player
+        float closest = int.MaxValue;
+        float playerPos = player.transform.position.x;
+        for (int i = 0; i < targetsX.Length; i++)
+        {
+            if (Mathf.Abs(targetsX[i] - playerPos) < Mathf.Abs(closest - playerPos))
+            {
+                closest = targetsX[i];
+            }
+        }
+        chosenX = closest;
+
+        // Set boss to the chosen x position
         boss.transform.position = new Vector2(chosenX, boss.transform.position.y);
     }
 

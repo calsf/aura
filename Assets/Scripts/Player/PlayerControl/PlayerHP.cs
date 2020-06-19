@@ -43,6 +43,7 @@ public class PlayerHP : MonoBehaviour
     public int CurrentHP { get { return currentHP; } set { currentHP = value; } }
     public int MaxHP { get { return maxHP; } }
     public float RespawnDelay { get { return respawnDelay; } }
+    public float DamagedTime { get { return damagedTime; } set { damagedTime = value; } }
 
     void Awake()
     {

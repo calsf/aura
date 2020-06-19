@@ -5791,7 +5791,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1912156544}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.9999998
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -18246,6 +18246,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 833cf5bc3756ec548a3f0aed4eaa7c9e, type: 3}
   - {fileID: 21300000, guid: 833cf5bc3756ec548a3f0aed4eaa7c9e, type: 3}
   - {fileID: 21300000, guid: 2944018daa7fec14c89b104280efde94, type: 3}
+  isQuit: 0
 --- !u!1 &654085370
 GameObject:
   m_ObjectHideFlags: 0
@@ -78835,6 +78836,7 @@ GameObject:
   - component: {fileID: 1324439513}
   - component: {fileID: 1324439514}
   - component: {fileID: 1324439515}
+  - component: {fileID: 1324439516}
   m_Layer: 9
   m_Name: Death(0)
   m_TagString: Enemy
@@ -78895,6 +78897,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dmgPlayer: {fileID: 11400000, guid: 4ac6a9089b756dd45b316356327625b4, type: 2}
+--- !u!114 &1324439516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1324439512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff32106632e8daf4faa4e3e670319033, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1330215053
 GameObject:
   m_ObjectHideFlags: 0
@@ -103390,8 +103404,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8161116549005874269}
   m_HandleRect: {fileID: 8343490628234766391}
   m_Direction: 2
-  m_Value: 1
-  m_Size: 0.2574561
+  m_Value: 0.9999999
+  m_Size: 0.25745606
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:

@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: Boss
   m_EditorClassIdentifier: 
   enemyName: Skeleton
-  maxHP: 1500
+  maxHP: 1200
   dmg: 1
   gold: 10000
   baseMoveSpeed: 35
   deathSound: {fileID: 8300000, guid: af29e16ed3c6e8b4384f4c33d2c364cf, type: 3}
-  deathVolume: 0
+  deathVolume: 0.5
   deathFX: {fileID: 4598560185897053914, guid: c5212d2f01e1fdc4b841f9c9f2628e72, type: 3}
   hitSounds:
   - {fileID: 8300000, guid: 13bb53549a66d2b4eacec1804e82b499, type: 3}

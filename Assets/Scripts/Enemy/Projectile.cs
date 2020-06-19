@@ -23,10 +23,13 @@ public class Projectile : MonoBehaviour
 
     LayerMask ground;
 
+    Vector2 origScale;
+
     public Vector2 Dir { get { return dir; } set { dir = value; } }
 
     void Awake()
     {
+        origScale = transform.localScale;
         cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraControl>();
         rb = GetComponent<Rigidbody2D>();
         dmgPlayer = GetComponent<DamagePlayerDefaults>();
@@ -54,6 +57,8 @@ public class Projectile : MonoBehaviour
             disabledEffect.SetActive(true);
         }
 
+        // Reset scale to original scale so it is the correct scale when re-activated
+        transform.localScale = origScale;
         firstGroundResults[0] = null;
     }
 
