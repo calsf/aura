@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -36,6 +37,12 @@ public class PlayerHP : MonoBehaviour
 
     CameraControl cam;
 
+    // Determine if should leave on death, if leave on death is on, will need menuNav to disable menu as it loads zone select
+    [SerializeField]
+    bool leaveOnDeath;
+    [SerializeField]
+    MenuNav menuNav;
+
     public UnityEvent OnHealthChange;
     public UnityEvent OnDeath;
     public UnityEvent OnRespawning;
@@ -44,6 +51,7 @@ public class PlayerHP : MonoBehaviour
     public int MaxHP { get { return maxHP; } }
     public float RespawnDelay { get { return respawnDelay; } }
     public float DamagedTime { get { return damagedTime; } set { damagedTime = value; } }
+    public bool LeaveOnDeath { get { return leaveOnDeath; } }
 
     void Awake()
     {
@@ -183,15 +191,24 @@ public class PlayerHP : MonoBehaviour
         SoundManager.SoundInstance.PlaySound("BaseAuraOn");
         yield return new WaitForSeconds(2f);    // Time of animations before respawning
 
-        //Reset player values and control
-        OnSpawn.Invoke();   // After respawned
-        move.Velocity = Vector2.zero;
-        move.CanInput = true;    //Move canInput should be disabled upon knockback and is not restored if HP drops to 0, so restore it here
-        auraControl.CanAura = true;
-        currentHP = maxHP;
-        dead = false;
-        cam.ResetCam(transform.position);   // Move camera position directly to position
-        OnHealthChange.Invoke(); // OnHealthChanged event
+        // Return to zone select on death or respawn in same level
+        if (leaveOnDeath)
+        {
+            menuNav.IsLeaving = true;
+            LoadLevel.LoadInstance.LoadScene(1);
+        }
+        else
+        {
+            //Reset player values and control
+            OnSpawn.Invoke();   // After respawned
+            move.Velocity = Vector2.zero;
+            move.CanInput = true;    //Move canInput should be disabled upon knockback and is not restored if HP drops to 0, so restore it here
+            auraControl.CanAura = true;
+            currentHP = maxHP;
+            dead = false;
+            cam.ResetCam(transform.position);   // Move camera position directly to position
+            OnHealthChange.Invoke(); // OnHealthChanged event
+        }
     }
 
     // Knockback on damaged - disable movement, apply knockback, re-enable player movement

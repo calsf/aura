@@ -67,7 +67,11 @@ public class LevelManager : MonoBehaviour
     // Start coroutine to respawn player
     void SpawnPlayer()
     {
-        StartCoroutine(Respawn());
+        // Do not call Respawn() coroutine if player leaves zone on death
+        if (!playerHP.LeaveOnDeath)
+        {
+            StartCoroutine(Respawn());
+        }
     }
 
     // Move player to designated spawn location - PlayerHP handles resetting player values

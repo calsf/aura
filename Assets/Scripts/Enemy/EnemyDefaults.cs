@@ -34,6 +34,11 @@ public class EnemyDefaults : MonoBehaviour {
     TextMeshPro goldPopupText;
     LevelManager levelManager;
 
+    // If assigned, will use transform numSpawn position as spawn for gold popup, damage number, and heal numbers
+    // If not assigned, will default to this object's transform position
+    [SerializeField]
+    Transform numSpawn;
+
     int hp;
     SpriteRenderer spriteRender;
     bool collided;
@@ -314,7 +319,7 @@ public class EnemyDefaults : MonoBehaviour {
             if (enemy.gold > 0)
             {
                 goldPopupText.text = "+" + enemy.gold + " Gold";
-                goldPopup.transform.position = transform.position + (Vector3.up * .1f);
+                goldPopup.transform.position = numSpawn == null ? transform.position + (Vector3.up * .1f) : numSpawn.position + (Vector3.up * .1f);
                 goldPopup.SetActive(true);
             }
 
@@ -331,7 +336,7 @@ public class EnemyDefaults : MonoBehaviour {
             if (!numPool[i].activeInHierarchy)
             {
                 numPool[i].GetComponent<TextMeshPro>().text = "-" + dmg.ToString();
-                numPool[i].transform.position = transform.position;
+                numPool[i].transform.position = numSpawn == null ? transform.position : numSpawn.position;
                 numPool[i].SetActive(true);
                 return;
             }
@@ -353,7 +358,7 @@ public class EnemyDefaults : MonoBehaviour {
             if (!healPool[i].activeInHierarchy)
             {
                 healPool[i].GetComponent<TextMeshPro>().text = "+" + heal.ToString();
-                healPool[i].transform.position = transform.position;
+                healPool[i].transform.position = numSpawn == null ? transform.position : numSpawn.position;
                 healPool[i].SetActive(true);
 
                 hpDisplay.UpdateHealth();   // Update health to show correct amount of hp after a heal
