@@ -2,12 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DropDown : StateMachineBehaviour
+// Moves to destination Y position, keeping x position the same. Once reached, plays nextAnim
+// Sets facing direction in preparation for dash
+
+public class MoveToY : StateMachineBehaviour
 {
     [SerializeField]
-    float fallMultiplier;
+    string nextAnim;
     [SerializeField]
-    float groundY;
+    float multiplier;
+    [SerializeField]
+    float targetY;
 
     [SerializeField]
     float rightX;
@@ -34,13 +39,13 @@ public class DropDown : StateMachineBehaviour
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         // Start falling down from current position
-        boss.transform.position = Vector3.MoveTowards(boss.transform.position, new Vector2(boss.transform.position.x, groundY),
-            (enemyDefaults.MoveSpeed * fallMultiplier) * Time.deltaTime);
+        boss.transform.position = Vector3.MoveTowards(boss.transform.position, new Vector2(boss.transform.position.x, targetY),
+            (enemyDefaults.MoveSpeed * multiplier) * Time.deltaTime);
 
         // Once reach ground floor, play dash start up
-        if (Mathf.Abs(groundY - boss.transform.position.y) <= 0.1f)
+        if (Mathf.Abs(targetY - boss.transform.position.y) <= 0.1f)
         {
-            animator.Play("DashStartUp");
+            animator.Play(nextAnim);
         }
     }
 }

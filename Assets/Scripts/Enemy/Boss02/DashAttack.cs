@@ -5,6 +5,7 @@ using UnityEngine;
 public class DashAttack : StateMachineBehaviour
 {
     [SerializeField]
+    float x;
     float nextX;
 
     [SerializeField]
@@ -21,7 +22,7 @@ public class DashAttack : StateMachineBehaviour
         enemyDefaults = boss.GetComponent<EnemyDefaults>();
 
         // Move to position based on current facing direction
-        nextX = boss.transform.localScale.x > 0 ? -nextX : nextX;
+        nextX = boss.transform.localScale.x > 0 ? -x : x;
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -34,7 +35,7 @@ public class DashAttack : StateMachineBehaviour
         // Once reach target, rise back up
         if (Mathf.Abs(nextX- boss.transform.position.x) <= 0.1f)
         {
-            animator.Play("RiseStartUp");
+            animator.Play("ResetToTornadoStartUp");
         }
 
     }

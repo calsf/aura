@@ -9,11 +9,10 @@ public class TornadoMove : StateMachineBehaviour
     [SerializeField]
     float leftX;
 
+    float lastX;
     float nextX;
     Transform boss;
     EnemyDefaults enemyDefaults;
-
-    float movedCount;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -22,8 +21,9 @@ public class TornadoMove : StateMachineBehaviour
         boss = animator.gameObject.transform;
         enemyDefaults = boss.GetComponent<EnemyDefaults>();
 
-        nextX = Random.Range(0, 2) == 1 ? rightX : leftX;
-        movedCount = 0;
+        // Alternate directions
+        nextX = lastX == rightX ? leftX : rightX;
+        lastX = nextX;
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -33,14 +33,8 @@ public class TornadoMove : StateMachineBehaviour
         boss.transform.position = Vector3.MoveTowards(boss.transform.position, new Vector2(nextX, boss.transform.position.y),
             (enemyDefaults.MoveSpeed) * Time.deltaTime);
 
-        // Move back and forth x positions
+        // Turn tornados off after reaching target
         if (Mathf.Abs(nextX - boss.transform.position.x) <= 0.1f)
-        {
-            nextX = nextX == rightX ? leftX : rightX;
-            movedCount++;
-        }
-
-        if (movedCount > 2)
         {
             animator.Play("TornadoStateOff");
         }
