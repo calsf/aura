@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 8715582183515875135}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.54, y: 2.89, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -133,9 +133,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   disabledEffectPrefab: {fileID: 4598560185897053914, guid: c5212d2f01e1fdc4b841f9c9f2628e72,
     type: 3}
-  ground:
-    serializedVersion: 2
-    m_Bits: 256
 --- !u!50 &8715582183515875074
 Rigidbody2D:
   serializedVersion: 4

@@ -5,7 +5,7 @@ using UnityEngine;
 // Reset sprite renderer color and sprite upon disabling so it is re-enabled with same properties
 // Reset collider as well
 
-public class ResetNado : MonoBehaviour
+public class ResetColliderAndSprite : MonoBehaviour
 {
     SpriteRenderer sr;
     Color origColor;

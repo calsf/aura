@@ -134,6 +134,7 @@ public class EnemyDefaults : MonoBehaviour {
             audioSources[i].clip = enemy.hitSounds[i];
             audioSources[i].spatialBlend = 1;
             audioSources[i].pitch = 1f;
+            audioSources[i].playOnAwake = false;
 
             audioSources[i].rolloffMode = AudioRolloffMode.Custom;
             audioSources[i].maxDistance = 30;
