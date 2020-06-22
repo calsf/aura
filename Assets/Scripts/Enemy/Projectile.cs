@@ -24,6 +24,7 @@ public class Projectile : MonoBehaviour
     LayerMask ground;
 
     Vector2 origScale;
+    bool pause;
 
     public Vector2 Dir { get { return dir; } set { dir = value; } }
 
@@ -106,6 +107,11 @@ public class Projectile : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (pause)
+        {
+            return;
+        }
+
         rb.velocity = dir * dmgPlayer.Speed;
     }
 
@@ -131,5 +137,15 @@ public class Projectile : MonoBehaviour
         {
             hasExited = true;
         }
+    }
+
+    public void PauseProjectile()
+    {
+        pause = true;
+    }
+
+    public void ResumeProjectile()
+    {
+        pause = false;
     }
 }

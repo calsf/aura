@@ -1,94 +1,55 @@
 fileFormatVersion: 2
-guid: 32a650df7d22620408606c59abc26a5c
+guid: 3d559ff08aeaec449bb81f9248e47127
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4036782484943116695
-    second: RisingSands_0
+      213: 2971397311781785776
+    second: Keeper (Phase2)_0
   - first:
-      213: 8886952176117142058
-    second: RisingSands_1
+      213: 7511856715772783247
+    second: Keeper (Phase2)_1
   - first:
-      213: 8492547064547460293
-    second: RisingSands_2
+      213: 3731910606362478833
+    second: Keeper (Phase2)_2
   - first:
-      213: -7407499997012635086
-    second: RisingSands_3
+      213: -1252349185313600331
+    second: Keeper (Phase2)_3
   - first:
-      213: -1437561282865299764
-    second: RisingSands_4
+      213: 6130161916759766910
+    second: Keeper (Phase2)_4
   - first:
-      213: -8511569742874213729
-    second: RisingSands_5
+      213: -7907707096131726661
+    second: Keeper (Phase2)_5
   - first:
-      213: 2344141390412809147
-    second: RisingSands_6
+      213: -5098153856786400263
+    second: Keeper (Phase2)_6
   - first:
-      213: 4807447584591898970
-    second: RisingSands_7
+      213: 1181804317415981979
+    second: Keeper (Phase2)_7
   - first:
-      213: 1078465764468520043
-    second: RisingSands_8
+      213: -8002647258202813366
+    second: Keeper (Phase2)_8
   - first:
-      213: 6779610980963426265
-    second: RisingSands_9
+      213: -4873002035330947075
+    second: Keeper (Phase2)_9
   - first:
-      213: -1703874105003114485
-    second: RisingSands_10
+      213: 2950253339780167628
+    second: Keeper (Phase2)_10
   - first:
-      213: -3701506173897507022
-    second: RisingSands_11
+      213: -1681830454166316858
+    second: Keeper (Phase2)_11
   - first:
-      213: -4132238327035677644
-    second: RisingSands_0
+      213: -9151848331730617216
+    second: Keeper (Phase2)_12
   - first:
-      213: -3349979726167921857
-    second: RisingSands_1
+      213: -626292780781714625
+    second: Keeper (Phase2)_13
   - first:
-      213: -1313715888867617264
-    second: RisingSands_2
+      213: -6765481865447579326
+    second: Keeper (Phase2)_14
   - first:
-      213: -6411854542792877522
-    second: RisingSands_3
-  - first:
-      213: -754877106063366788
-    second: RisingSands_4
-  - first:
-      213: -3517274606769057520
-    second: RisingSands_5
-  - first:
-      213: -8247780141549983697
-    second: RisingSands_6
-  - first:
-      213: 4343285860768963774
-    second: RisingSands_7
-  - first:
-      213: 7749042197934767823
-    second: RisingSands_8
-  - first:
-      213: 4500026163299818671
-    second: RisingSands_9
-  - first:
-      213: -8609556709099580730
-    second: RisingSands_10
-  - first:
-      213: 7374197878450062257
-    second: RisingSands_11
-  - first:
-      213: 7799199530121378622
-    second: RisingSands_12
-  - first:
-      213: 1913107728928608167
-    second: RisingSands_13
-  - first:
-      213: -4546511761903926961
-    second: RisingSands_14
-  - first:
-      213: 3152851410285500810
-    second: RisingSands_15
-  - first:
-      213: -2938434914835791825
-    second: RisingSands_16
+      213: -8023330955535300820
+    second: Keeper (Phase2)_15
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -173,13 +134,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: RisingSands_0
+      name: Keeper (Phase2)_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
-        height: 256
+        width: 96
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,62 +148,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 434b8c5922757a6c0800000000000000
-      internalID: -4132238327035677644
+      spriteID: 0b0dd47ac168c3920800000000000000
+      internalID: 2971397311781785776
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RisingSands_1
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 0
-        width: 32
-        height: 256
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f3b2001203b7281d0800000000000000
-      internalID: -3349979726167921857
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RisingSands_2
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 32
-        height: 256
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 01652440c5eb4cde0800000000000000
-      internalID: -1313715888867617264
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RisingSands_3
+      name: Keeper (Phase2)_1
       rect:
         serializedVersion: 2
         x: 96
         y: 0
-        width: 32
-        height: 256
+        width: 96
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -250,62 +169,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e2a1b59c3448407a0800000000000000
-      internalID: -6411854542792877522
+      spriteID: f8ae44b22e97f3860800000000000000
+      internalID: 7511856715772783247
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RisingSands_4
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 0
-        width: 32
-        height: 256
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c75a40485432685f0800000000000000
-      internalID: -754877106063366788
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RisingSands_5
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 0
-        width: 32
-        height: 256
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 01157066161203fc0800000000000000
-      internalID: -3517274606769057520
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RisingSands_6
+      name: Keeper (Phase2)_2
       rect:
         serializedVersion: 2
         x: 192
         y: 0
-        width: 32
-        height: 256
+        width: 96
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -313,62 +190,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f28646de8aff98d80800000000000000
-      internalID: -8247780141549983697
+      spriteID: 1f88fb98ce86ac330800000000000000
+      internalID: 3731910606362478833
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RisingSands_7
-      rect:
-        serializedVersion: 2
-        x: 224
-        y: 0
-        width: 32
-        height: 256
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ebc5c198a73764c30800000000000000
-      internalID: 4343285860768963774
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RisingSands_8
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 0
-        width: 32
-        height: 256
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fcef965a2d02a8b60800000000000000
-      internalID: 7749042197934767823
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RisingSands_9
+      name: Keeper (Phase2)_3
       rect:
         serializedVersion: 2
         x: 288
         y: 0
-        width: 32
-        height: 256
+        width: 96
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -376,20 +211,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fac137f04fd437e30800000000000000
-      internalID: 4500026163299818671
+      spriteID: 5bc02aa1d03ce9ee0800000000000000
+      internalID: -1252349185313600331
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RisingSands_12
+      name: Keeper (Phase2)_4
       rect:
         serializedVersion: 2
         x: 384
         y: 0
-        width: 32
-        height: 256
+        width: 96
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -397,20 +232,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e3b374596a25c3c60800000000000000
-      internalID: 7799199530121378622
+      spriteID: e77f718c8c5b21550800000000000000
+      internalID: 6130161916759766910
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RisingSands_13
+      name: Keeper (Phase2)_5
       rect:
         serializedVersion: 2
-        x: 416
+        x: 480
         y: 0
-        width: 32
-        height: 256
+        width: 96
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -418,20 +253,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7af08d7e759bc8a10800000000000000
-      internalID: 1913107728928608167
+      spriteID: bb29b3bfa4e224290800000000000000
+      internalID: -7907707096131726661
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RisingSands_14
+      name: Keeper (Phase2)_6
       rect:
         serializedVersion: 2
-        x: 448
+        x: 576
         y: 0
-        width: 32
-        height: 256
+        width: 96
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -439,20 +274,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f41c49814ab87e0c0800000000000000
-      internalID: -4546511761903926961
+      spriteID: 9fb75f31418bf39b0800000000000000
+      internalID: -5098153856786400263
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RisingSands_10
+      name: Keeper (Phase2)_7
       rect:
         serializedVersion: 2
-        x: 320
+        x: 672
         y: 0
-        width: 32
-        height: 256
+        width: 96
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -460,20 +295,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b008d4d678f9a58e0800000000000000
-      internalID: -1703874105003114485
+      spriteID: b934a95e3cc966010800000000000000
+      internalID: 1181804317415981979
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RisingSands_11
+      name: Keeper (Phase2)_8
       rect:
         serializedVersion: 2
-        x: 352
+        x: 768
         y: 0
-        width: 32
-        height: 256
+        width: 96
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -481,8 +316,155 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 23f7cea0fbb91acc0800000000000000
-      internalID: -3701506173897507022
+      spriteID: a4c4110f7b2e0f090800000000000000
+      internalID: -8002647258202813366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keeper (Phase2)_9
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 0
+        width: 96
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df7e756977e9f5cb0800000000000000
+      internalID: -4873002035330947075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keeper (Phase2)_10
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 0
+        width: 96
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc7b10b08c761f820800000000000000
+      internalID: 2950253339780167628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keeper (Phase2)_11
+      rect:
+        serializedVersion: 2
+        x: 1056
+        y: 0
+        width: 96
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c89bf6dc10f8a8e0800000000000000
+      internalID: -1681830454166316858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keeper (Phase2)_12
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 0
+        width: 96
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08cf1fc4e6a1ef080800000000000000
+      internalID: -9151848331730617216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keeper (Phase2)_13
+      rect:
+        serializedVersion: 2
+        x: 1248
+        y: 0
+        width: 96
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f334d1cb806fe47f0800000000000000
+      internalID: -626292780781714625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keeper (Phase2)_14
+      rect:
+        serializedVersion: 2
+        x: 1344
+        y: 0
+        width: 96
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24166a3a61e2c12a0800000000000000
+      internalID: -6765481865447579326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Keeper (Phase2)_15
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 0
+        width: 96
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c274cef510767a090800000000000000
+      internalID: -8023330955535300820
       vertices: []
       indices: 
       edges: []
