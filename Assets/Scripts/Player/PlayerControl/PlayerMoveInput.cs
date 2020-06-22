@@ -29,6 +29,8 @@ public class PlayerMoveInput : MonoBehaviour
     bool canDoubleJump;
     float baseJump = 15f;
     float jumpVelocity;
+    float jumpPressBufferTime = .1f;    // If player has pressed jump within this time, will jump upon grounded (only for ground jump)
+    float jumpPressTrackTime;
 
     // Max fall speed
     float baseMaxFallSpeed = -20f;
@@ -253,11 +255,19 @@ public class PlayerMoveInput : MonoBehaviour
             }
         }
 
+        // Slight input buffer for ground jump, Keep track of when player last pressed jump, if within time interval, will jump when grounded
+        jumpPressTrackTime -= Time.deltaTime;
+        if ((Input.GetKeyDown(ControlsManager.ControlInstance.Keybinds["JumpButton"]) || Input.GetKeyDown(ControlsManager.ControlInstance.Padbinds["JumpPad"])
+            || (upJump && Input.GetKeyDown(ControlsManager.ControlInstance.Keybinds["UpButton"]) || (upJump && Input.GetAxisRaw("Vertical") == 1))))
+        {
+            jumpPressTrackTime = jumpPressBufferTime; 
+        }
 
         // Can jump once off ground and can jump again in air if double jump hasn't been used
-        if (( (canJump) || (canDoubleJump))
-            && (Input.GetKeyDown(ControlsManager.ControlInstance.Keybinds["JumpButton"]) || Input.GetKeyDown(ControlsManager.ControlInstance.Padbinds["JumpPad"])
-            || (upJump && Input.GetKeyDown(ControlsManager.ControlInstance.Keybinds["UpButton"]) || (upJump && Input.GetAxisRaw("Vertical") == 1))))
+        if (( (canJump && jumpPressTrackTime > 0) 
+            || (canDoubleJump && (Input.GetKeyDown(ControlsManager.ControlInstance.Keybinds["JumpButton"]) || Input.GetKeyDown(ControlsManager.ControlInstance.Padbinds["JumpPad"])
+            || (upJump && Input.GetKeyDown(ControlsManager.ControlInstance.Keybinds["UpButton"]) || (upJump && Input.GetAxisRaw("Vertical") == 1)))))
+            )
         {
             // Treat axis input up as a KeyDown event
             if (!axisUpDown)
