@@ -23,6 +23,11 @@ public class EnemyHPManager : MonoBehaviour
 
     void OnEnable()
     {
+        if (Time.time > lastHit)
+        {
+            barObject.SetActive(false);
+        }
+
         enemy.OnDamaged.AddListener(ShowHealth);
     }
 
@@ -60,9 +65,9 @@ public class EnemyHPManager : MonoBehaviour
     }
 
     // Hide bar by resetting last hit time, used for animation events
-    void HideBar()
+    public void HideBar()
     {
-        lastHit = Time.time;
+        lastHit = Time.time - 1;
     }
 
     // Show enemy health bar if not active, if health bar already active, reset the lastHit timer

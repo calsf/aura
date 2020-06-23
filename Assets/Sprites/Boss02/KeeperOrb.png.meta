@@ -1,0 +1,787 @@
+fileFormatVersion: 2
+guid: 1e1e57dc5b157bc408547b553ed93038
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2399946675698407660
+    second: KeeperOrb_0
+  - first:
+      213: -3229704717168746269
+    second: KeeperOrb_1
+  - first:
+      213: 2250482522329009882
+    second: KeeperOrb_2
+  - first:
+      213: -4231737063457468473
+    second: KeeperOrb_3
+  - first:
+      213: -5063727393564588726
+    second: KeeperOrb_4
+  - first:
+      213: -3414553864005233645
+    second: KeeperOrb_5
+  - first:
+      213: 3403198000166251560
+    second: KeeperOrb_6
+  - first:
+      213: -6989063634313033039
+    second: KeeperOrb_7
+  - first:
+      213: 1147183797423170556
+    second: KeeperOrb_8
+  - first:
+      213: 4109730311746942222
+    second: KeeperOrb_9
+  - first:
+      213: -1735032371623632775
+    second: KeeperOrb_10
+  - first:
+      213: 4085400276706209533
+    second: KeeperOrb_11
+  - first:
+      213: -6455219487663958151
+    second: KeeperOrb_12
+  - first:
+      213: -840810668625155003
+    second: KeeperOrb_13
+  - first:
+      213: -8451404663383387401
+    second: KeeperOrb_14
+  - first:
+      213: -3275440547826328422
+    second: KeeperOrb_15
+  - first:
+      213: -3330446678276412910
+    second: KeeperOrb_16
+  - first:
+      213: 6136240039008337965
+    second: KeeperOrb_17
+  - first:
+      213: -1834708558603168620
+    second: KeeperOrb_18
+  - first:
+      213: 2928935479857936323
+    second: KeeperOrb_19
+  - first:
+      213: 1826799466603320273
+    second: KeeperOrb_20
+  - first:
+      213: 7105046595942772015
+    second: KeeperOrb_21
+  - first:
+      213: -1621831801003944540
+    second: KeeperOrb_22
+  - first:
+      213: -7642793082631454541
+    second: KeeperOrb_23
+  - first:
+      213: -428857489211857689
+    second: KeeperOrb_24
+  - first:
+      213: -3845776820578847436
+    second: KeeperOrb_25
+  - first:
+      213: -5272567662604066962
+    second: KeeperOrb_26
+  - first:
+      213: 3822523008374018586
+    second: KeeperOrb_27
+  - first:
+      213: -2344799535388485333
+    second: KeeperOrb_28
+  - first:
+      213: 4891403280696598209
+    second: KeeperOrb_29
+  - first:
+      213: 8452690343719666088
+    second: KeeperOrb_30
+  - first:
+      213: -5501559834345899035
+    second: KeeperOrb_31
+  - first:
+      213: -1658076316480317017
+    second: KeeperOrb_32
+  - first:
+      213: -5462214294807234603
+    second: KeeperOrb_33
+  - first:
+      213: -6510978622373692814
+    second: KeeperOrb_34
+  - first:
+      213: -1438410363395845422
+    second: KeeperOrb_35
+  - first:
+      213: 597673561525544089
+    second: KeeperOrb_0
+  - first:
+      213: -2130176432310866979
+    second: KeeperOrb_1
+  - first:
+      213: 3107897640232745053
+    second: KeeperOrb_2
+  - first:
+      213: 3949251832598094212
+    second: KeeperOrb_3
+  - first:
+      213: 5224302852135563240
+    second: KeeperOrb_4
+  - first:
+      213: 5786367369798624261
+    second: KeeperOrb_5
+  - first:
+      213: 1242082205170516786
+    second: KeeperOrb_6
+  - first:
+      213: -2232862899572567613
+    second: KeeperOrb_7
+  - first:
+      213: -5447574251205342467
+    second: KeeperOrb_8
+  - first:
+      213: 1277028916651716352
+    second: KeeperOrb_9
+  - first:
+      213: 8776603711960555842
+    second: KeeperOrb_10
+  - first:
+      213: -7041499875459724244
+    second: KeeperOrb_11
+  - first:
+      213: 8122957462990260957
+    second: KeeperOrb_12
+  - first:
+      213: 2562730788315513290
+    second: KeeperOrb_13
+  - first:
+      213: -7539786199385487692
+    second: KeeperOrb_14
+  - first:
+      213: -3742367051797033259
+    second: KeeperOrb_15
+  - first:
+      213: -153289957554226464
+    second: KeeperOrb_16
+  - first:
+      213: 985619790476755289
+    second: KeeperOrb_17
+  - first:
+      213: 7217915243192256287
+    second: KeeperOrb_18
+  - first:
+      213: -1191435567057628447
+    second: KeeperOrb_19
+  - first:
+      213: -2874572769428383405
+    second: KeeperOrb_20
+  - first:
+      213: 4158492774305322649
+    second: KeeperOrb_21
+  - first:
+      213: 3538897676331146408
+    second: KeeperOrb_22
+  - first:
+      213: 230191819033722028
+    second: KeeperOrb_23
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: KeeperOrb_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9946f5600fc5b4800800000000000000
+      internalID: 597673561525544089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KeeperOrb_1
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ddba33b22d71072e0800000000000000
+      internalID: -2130176432310866979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KeeperOrb_2
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d58f85cff68712b20800000000000000
+      internalID: 3107897640232745053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KeeperOrb_3
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 481e1922e9f8ec630800000000000000
+      internalID: 3949251832598094212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KeeperOrb_4
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8efa994b3c3708840800000000000000
+      internalID: 5224302852135563240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KeeperOrb_5
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50422c0277e4d4050800000000000000
+      internalID: 5786367369798624261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KeeperOrb_6
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 233c50d4f23cc3110800000000000000
+      internalID: 1242082205170516786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KeeperOrb_7
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c114d6e5074301e0800000000000000
+      internalID: -2232862899572567613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KeeperOrb_8
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfa475db4145664b0800000000000000
+      internalID: -5447574251205342467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KeeperOrb_9
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00f6de0a80be8b110800000000000000
+      internalID: 1277028916651716352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KeeperOrb_10
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 241a8c95392ccc970800000000000000
+      internalID: 8776603711960555842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KeeperOrb_11
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2c0445bb21974e90800000000000000
+      internalID: -7041499875459724244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KeeperOrb_12
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dda842b76ca8ab070800000000000000
+      internalID: 8122957462990260957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KeeperOrb_13
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac1c084f216a09320800000000000000
+      internalID: 2562730788315513290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KeeperOrb_14
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b64c3f266c4d5790800000000000000
+      internalID: -7539786199385487692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KeeperOrb_15
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5de038a8ef0701cc0800000000000000
+      internalID: -3742367051797033259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KeeperOrb_16
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ea785488976fddf0800000000000000
+      internalID: -153289957554226464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KeeperOrb_17
+      rect:
+        serializedVersion: 2
+        x: 816
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95146f63aff9dad00800000000000000
+      internalID: 985619790476755289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KeeperOrb_18
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f170a59ebaf2b2460800000000000000
+      internalID: 7217915243192256287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KeeperOrb_19
+      rect:
+        serializedVersion: 2
+        x: 912
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e293cc0aab277fe0800000000000000
+      internalID: -1191435567057628447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KeeperOrb_20
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 359d53ddb477b18d0800000000000000
+      internalID: -2874572769428383405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KeeperOrb_21
+      rect:
+        serializedVersion: 2
+        x: 1008
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9965f75452fe5b930800000000000000
+      internalID: 4158492774305322649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KeeperOrb_22
+      rect:
+        serializedVersion: 2
+        x: 1056
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ac5c2ecfa0bc1130800000000000000
+      internalID: 3538897676331146408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KeeperOrb_23
+      rect:
+        serializedVersion: 2
+        x: 1104
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cacb4b36d3ec13300800000000000000
+      internalID: 230191819033722028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
