@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Boss2
   m_EditorClassIdentifier: 
   enemyName: Keeper
-  maxHP: 2500
+  maxHP: 5000
   dmg: 1
   gold: 20000
   baseMoveSpeed: 6

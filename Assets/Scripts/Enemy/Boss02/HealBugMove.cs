@@ -15,6 +15,8 @@ public class HealBugMove : MonoBehaviour
 
     EnemyDefaults enemyDefaults;
 
+    bool move;
+
     void Awake()
     {
         enemyDefaults = GetComponent<EnemyDefaults>();
@@ -24,9 +26,11 @@ public class HealBugMove : MonoBehaviour
 
     void OnEnable()
     {
+        move = false;
+
         // Face bug in direction of assigned target
-        if ((transform.localScale.x > 0 && transform.position.x < target.transform.position.x)
-            || (transform.localScale.x < 0 && transform.position.x > target.transform.position.x))
+        if ((transform.localScale.x > 0 && transform.localPosition.x < target.gameObject.transform.position.x)
+                || (transform.localScale.x < 0 && transform.localPosition.x > target.gameObject.transform.position.x))
         {
             transform.localScale = new Vector2(-transform.localScale.x, transform.localScale.y);
         }
@@ -35,6 +39,11 @@ public class HealBugMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!move)
+        {
+            return;
+        }
+
         // Move towards target
         transform.position = Vector3.MoveTowards(transform.position, target.transform.position, enemyDefaults.MoveSpeed * Time.deltaTime);
 
@@ -51,6 +60,10 @@ public class HealBugMove : MonoBehaviour
             targetReachedEffect.SetActive(true);
             gameObject.SetActive(false);
         }
+    }
 
+    public void StartMove()
+    {
+        move = true;
     }
 }

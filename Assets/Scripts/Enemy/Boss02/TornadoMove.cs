@@ -5,6 +5,8 @@ using UnityEngine;
 public class TornadoMove : StateMachineBehaviour
 {
     [SerializeField]
+    float moveMultiplier;
+    [SerializeField]
     float rightX;
     [SerializeField]
     float leftX;
@@ -31,7 +33,7 @@ public class TornadoMove : StateMachineBehaviour
     {
         // Move to next x position
         boss.transform.position = Vector3.MoveTowards(boss.transform.position, new Vector2(nextX, boss.transform.position.y),
-            (enemyDefaults.MoveSpeed) * Time.deltaTime);
+            (enemyDefaults.MoveSpeed * moveMultiplier) * Time.deltaTime);
 
         // Turn tornados off after reaching target
         if (Mathf.Abs(nextX - boss.transform.position.x) <= 0.1f)
