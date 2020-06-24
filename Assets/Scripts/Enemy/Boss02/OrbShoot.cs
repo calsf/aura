@@ -33,10 +33,17 @@ public class OrbShoot : MonoBehaviour
     float speed;
     float maxSpeed = 5;
 
+    [SerializeField]
+    GameObject barObject;
+    [SerializeField]
+    float barTargetY;
+    Vector2 barOrigPos;
+
     Animator anim;
 
     void Awake()
     {
+        barOrigPos = barObject.transform.localPosition;
         anim = GetComponent<Animator>();
 
         projectilePool = new List<GameObject>();
@@ -50,8 +57,16 @@ public class OrbShoot : MonoBehaviour
     // Reset values when enabled
     void OnEnable()
     {
+        // Move bar object to new position
+        barObject.transform.localPosition = new Vector2(barObject.transform.localPosition.x, barTargetY);
         rotation = 0;
         speed = 1;
+    }
+
+    void OnDisable()
+    {
+        // Reset bar object position to initial position
+        barObject.transform.localPosition = barOrigPos;
     }
 
     public void Shoot()

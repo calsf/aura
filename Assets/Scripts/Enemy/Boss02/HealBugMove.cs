@@ -22,6 +22,16 @@ public class HealBugMove : MonoBehaviour
         targetReachedEffect.SetActive(false);
     }
 
+    void OnEnable()
+    {
+        // Face bug in direction of assigned target
+        if ((transform.localScale.x > 0 && transform.position.x < target.transform.position.x)
+            || (transform.localScale.x < 0 && transform.position.x > target.transform.position.x))
+        {
+            transform.localScale = new Vector2(-transform.localScale.x, transform.localScale.y);
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {

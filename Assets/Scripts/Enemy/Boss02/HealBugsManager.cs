@@ -80,12 +80,6 @@ public class HealBugsManager : MonoBehaviour
             bug.gameObject.transform.position = spawnPos;
             spawned.Add(spawnPos);
 
-            // Face bug in direction of assigned enemy to heal and activate
-            if ((bug.transform.localScale.x > 0 && bug.transform.position.x < enemyToHeal.transform.position.x) 
-                || (bug.transform.localScale.x < 0 && bug.transform.position.x > enemyToHeal.transform.position.x))
-            {
-                bug.transform.localScale = new Vector2(-bug.transform.localScale.x, bug.transform.localScale.y);
-            }
             bug.gameObject.SetActive(true);
         }
 
