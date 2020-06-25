@@ -26,7 +26,10 @@ public class EnablePause : MonoBehaviour
     // Disable player at the start
     void Start()
     {
-        player.SetActive(false);
+        if (player != null)
+        {
+            player.SetActive(false);
+        }
     }
 
     // Re-enable menu toggle and player after fade
@@ -43,6 +46,9 @@ public class EnablePause : MonoBehaviour
     // Re-enable player
     public void EnablePlayer()
     {
-        player.SetActive(true);
+        if (player != null)
+        {
+            player.SetActive(true);
+        }
     }
 }

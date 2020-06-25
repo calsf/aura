@@ -50,6 +50,12 @@ public class LevelSelectManager : MonoBehaviour
     [SerializeField]
     Sprite[] fourthUnselected;
 
+    // Substitute for the second shopkeeper
+    [SerializeField]
+    Sprite subShopSelected;
+    [SerializeField]
+    Sprite subShopUnselected;
+
     // Names of levels
     [SerializeField]
     string[] firstNames;
@@ -66,6 +72,10 @@ public class LevelSelectManager : MonoBehaviour
     CanvasGroup menu;
     [SerializeField]
     MenuNav menuNav;
+
+    SaveData saveData;
+    [SerializeField]
+    LoadLevel loadLevel;
 
     void Awake()
     {
@@ -95,8 +105,29 @@ public class LevelSelectManager : MonoBehaviour
         InitUnlockedFloors(ref fourthFloor, ref fourthFloorUnlocked);
 
         selectedName = selectedHighlight.GetComponentInChildren<Text>();
+    }
+
+    void Start()
+    {
+        // Use substitute shop keeper if boss 2 has been visited/revealed
+        saveData = GameObject.FindGameObjectWithTag("SaveData").GetComponent<SaveData>();
+        if (saveData.VisitedBoss2)
+        {
+            secondFloor[0].GetComponent<Image>().sprite = subShopUnselected;
+            secondSelected[0] = subShopSelected;
+            secondUnselected[0] = subShopUnselected;
+
+            // Remove current on click listener and load alternate shop on click if has visited boss 2
+            secondFloor[0].onClick.RemoveAllListeners();
+            secondFloor[0].onClick.AddListener(loadLevel.LoadAlternateShop);
+        }
 
         NavFloorHorizontal(0, 0);
+    }
+
+    void OnDisable()
+    {
+        secondFloor[0].onClick.RemoveAllListeners();
     }
 
     void Update()

@@ -43,6 +43,13 @@ public class LoadLevel : MonoBehaviour
         anim.Play("FadeOutToLoading");
     }
 
+    // Load alternate
+    public void LoadAlternateShop()
+    {
+        nextScene = 11;
+        anim.Play("FadeOutToLoading");
+    }
+
     // Once scene transition completed, fade into the loading screen
     public void ShowLoading()
     {

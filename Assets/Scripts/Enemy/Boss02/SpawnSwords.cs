@@ -35,6 +35,11 @@ public class SpawnSwords : MonoBehaviour
         }
     }
 
+    void OnEnable()
+    {
+        nextShoot = Time.time + shootDelay;
+    }
+
     void Update()
     {
         if (Time.time > nextShoot)

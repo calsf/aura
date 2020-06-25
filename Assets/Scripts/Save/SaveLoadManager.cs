@@ -16,11 +16,15 @@ public class Save
     int gold;               // Loaded by SaveGold to get saved gold // Saved in CompleteLevel
     int health;             // Loaded by PlayerHP to set player's max hp
 
+    bool visitedBoss2;      // Loaded by LevelSelectManager, updated in Boss 2, if true, will replace shopkeeper 2 with an alternate shop
+
     public bool[] AuraUnlocked { get { return auraUnlocked; } }
     public bool[] LvlUnlocked { get { return lvlUnlocked; } }
     public int[] EquippedAuras { get { return equippedAuras; } }
     public int Gold { get { return gold; } }
     public int Health { get { return health; } }
+
+    public bool VisitedBoss2 { get { return visitedBoss2; } }
 
     // Init Save with SaveData data
     public Save(SaveData data)
@@ -30,6 +34,7 @@ public class Save
         equippedAuras = new int[data.EquippedAuras.Length];
         gold = data.Gold;
         health = data.Health;
+        visitedBoss2 = data.VisitedBoss2;
 
         for (int i = 0; i < auraUnlocked.Length; i++)
         {
@@ -173,6 +178,27 @@ public static class SaveLoadManager
         }
     }
 
+    // Load if has visited boss 2
+    public static bool LoadVisitedBoss2()
+    {
+        // Load from file if it exists
+        if (File.Exists(Application.persistentDataPath + "/aura.sav"))
+        {
+            BinaryFormatter bf = new BinaryFormatter();
+            FileStream file = new FileStream(Application.persistentDataPath + "/aura.sav", FileMode.Open);
+
+            Save saveData = (Save)bf.Deserialize(file);
+            file.Close();
+
+            return saveData.VisitedBoss2;
+        }
+        else
+        {
+            // If no save file exists, start fresh has not visited boss 2
+            return LoadVisitedBoss2New();
+        }
+    }
+
     /******* Load NEW data ****************/
     // Load auras
     public static bool[] LoadAurasNew()
@@ -192,7 +218,7 @@ public static class SaveLoadManager
         // Load new levels (levels do not include start screen or level select, minus 2 from the scene index)
         bool[] defaultLvls = new bool[]
         {
-            true, true, true, true, false, false, false, false, false, false, false, false, false, false, false, false, false, false
+            true, true, true, true, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false
         };
 
         return defaultLvls; 
@@ -223,6 +249,12 @@ public static class SaveLoadManager
     {
         // Return default of 0 gold
         return 0;
+    }
+
+    // Load if has visited boss 2
+    public static bool LoadVisitedBoss2New()
+    {
+        return false;
     }
 
 

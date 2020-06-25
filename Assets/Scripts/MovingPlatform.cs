@@ -49,10 +49,14 @@ public class MovingPlatform : Raycasts
         }
     }
 
+    void Awake()
+    {
+        controller = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+    }
+
     public override void Start()
     {
         base.Start();
-        controller = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
     }
 
     void Update()

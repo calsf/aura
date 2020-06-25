@@ -362,7 +362,10 @@ public class EnemyDefaults : MonoBehaviour {
                 healPool[i].transform.position = numSpawn == null ? transform.position : numSpawn.position;
                 healPool[i].SetActive(true);
 
-                hpDisplay.UpdateHealth();   // Update health to show correct amount of hp after a heal
+                if (hpDisplay != null)
+                {
+                    hpDisplay.UpdateHealth();   // Update health to show correct amount of hp after a heal
+                }
                 return;
             }
         }

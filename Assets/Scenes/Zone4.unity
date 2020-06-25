@@ -3470,6 +3470,7 @@ MonoBehaviour:
     type: 3}
   goldPopupPrefab: {fileID: 7597277163400944611, guid: 62f1dae512fd3f54d82792ffe9352bda,
     type: 3}
+  numSpawn: {fileID: 0}
   OnDamaged:
     m_PersistentCalls:
       m_Calls:
@@ -4765,6 +4766,7 @@ MonoBehaviour:
     type: 3}
   goldPopupPrefab: {fileID: 7597277163400944611, guid: 62f1dae512fd3f54d82792ffe9352bda,
     type: 3}
+  numSpawn: {fileID: 0}
   OnDamaged:
     m_PersistentCalls:
       m_Calls:
@@ -5056,6 +5058,7 @@ MonoBehaviour:
     type: 3}
   goldPopupPrefab: {fileID: 7597277163400944611, guid: 62f1dae512fd3f54d82792ffe9352bda,
     type: 3}
+  numSpawn: {fileID: 0}
   OnDamaged:
     m_PersistentCalls:
       m_Calls:
@@ -5276,6 +5279,7 @@ MonoBehaviour:
     type: 3}
   goldPopupPrefab: {fileID: 7597277163400944611, guid: 62f1dae512fd3f54d82792ffe9352bda,
     type: 3}
+  numSpawn: {fileID: 0}
   OnDamaged:
     m_PersistentCalls:
       m_Calls:
@@ -5862,6 +5866,7 @@ MonoBehaviour:
     type: 3}
   goldPopupPrefab: {fileID: 7597277163400944611, guid: 62f1dae512fd3f54d82792ffe9352bda,
     type: 3}
+  numSpawn: {fileID: 0}
   OnDamaged:
     m_PersistentCalls:
       m_Calls:
@@ -7272,6 +7277,7 @@ MonoBehaviour:
     type: 3}
   goldPopupPrefab: {fileID: 7597277163400944611, guid: 62f1dae512fd3f54d82792ffe9352bda,
     type: 3}
+  numSpawn: {fileID: 0}
   OnDamaged:
     m_PersistentCalls:
       m_Calls:
@@ -7994,6 +8000,7 @@ MonoBehaviour:
     type: 3}
   goldPopupPrefab: {fileID: 7597277163400944611, guid: 62f1dae512fd3f54d82792ffe9352bda,
     type: 3}
+  numSpawn: {fileID: 0}
   OnDamaged:
     m_PersistentCalls:
       m_Calls:
@@ -8459,6 +8466,7 @@ MonoBehaviour:
     type: 3}
   goldPopupPrefab: {fileID: 7597277163400944611, guid: 62f1dae512fd3f54d82792ffe9352bda,
     type: 3}
+  numSpawn: {fileID: 0}
   OnDamaged:
     m_PersistentCalls:
       m_Calls:
@@ -9196,6 +9204,7 @@ MonoBehaviour:
     type: 3}
   goldPopupPrefab: {fileID: 7597277163400944611, guid: 62f1dae512fd3f54d82792ffe9352bda,
     type: 3}
+  numSpawn: {fileID: 0}
   OnDamaged:
     m_PersistentCalls:
       m_Calls:
@@ -10076,6 +10085,7 @@ MonoBehaviour:
     type: 3}
   goldPopupPrefab: {fileID: 7597277163400944611, guid: 62f1dae512fd3f54d82792ffe9352bda,
     type: 3}
+  numSpawn: {fileID: 0}
   OnDamaged:
     m_PersistentCalls:
       m_Calls:
@@ -10613,6 +10623,7 @@ MonoBehaviour:
     type: 3}
   goldPopupPrefab: {fileID: 7597277163400944611, guid: 62f1dae512fd3f54d82792ffe9352bda,
     type: 3}
+  numSpawn: {fileID: 0}
   OnDamaged:
     m_PersistentCalls:
       m_Calls:
@@ -14924,6 +14935,7 @@ MonoBehaviour:
     type: 3}
   goldPopupPrefab: {fileID: 7597277163400944611, guid: 62f1dae512fd3f54d82792ffe9352bda,
     type: 3}
+  numSpawn: {fileID: 0}
   OnDamaged:
     m_PersistentCalls:
       m_Calls:
@@ -15905,6 +15917,7 @@ MonoBehaviour:
     type: 3}
   goldPopupPrefab: {fileID: 7597277163400944611, guid: 62f1dae512fd3f54d82792ffe9352bda,
     type: 3}
+  numSpawn: {fileID: 0}
   OnDamaged:
     m_PersistentCalls:
       m_Calls:
@@ -16462,6 +16475,7 @@ MonoBehaviour:
     type: 3}
   goldPopupPrefab: {fileID: 7597277163400944611, guid: 62f1dae512fd3f54d82792ffe9352bda,
     type: 3}
+  numSpawn: {fileID: 0}
   OnDamaged:
     m_PersistentCalls:
       m_Calls:
@@ -17180,6 +17194,7 @@ MonoBehaviour:
     type: 3}
   goldPopupPrefab: {fileID: 7597277163400944611, guid: 62f1dae512fd3f54d82792ffe9352bda,
     type: 3}
+  numSpawn: {fileID: 0}
   OnDamaged:
     m_PersistentCalls:
       m_Calls:
@@ -17616,6 +17631,7 @@ MonoBehaviour:
     type: 3}
   goldPopupPrefab: {fileID: 7597277163400944611, guid: 62f1dae512fd3f54d82792ffe9352bda,
     type: 3}
+  numSpawn: {fileID: 0}
   OnDamaged:
     m_PersistentCalls:
       m_Calls:
@@ -18610,6 +18626,7 @@ MonoBehaviour:
     type: 3}
   goldPopupPrefab: {fileID: 7597277163400944611, guid: 62f1dae512fd3f54d82792ffe9352bda,
     type: 3}
+  numSpawn: {fileID: 0}
   OnDamaged:
     m_PersistentCalls:
       m_Calls:
@@ -18955,6 +18972,8 @@ MonoBehaviour:
   numPrefab: {fileID: 1085668549026750019, guid: 939b40207f59ede4e9b42813f2b83b45,
     type: 3}
   poolNum: 10
+  leaveOnDeath: 0
+  menuNav: {fileID: 0}
   OnHealthChange:
     m_PersistentCalls:
       m_Calls: []
@@ -19754,6 +19773,7 @@ MonoBehaviour:
     type: 3}
   goldPopupPrefab: {fileID: 7597277163400944611, guid: 62f1dae512fd3f54d82792ffe9352bda,
     type: 3}
+  numSpawn: {fileID: 0}
   OnDamaged:
     m_PersistentCalls:
       m_Calls:
@@ -20203,6 +20223,7 @@ MonoBehaviour:
     type: 3}
   goldPopupPrefab: {fileID: 7597277163400944611, guid: 62f1dae512fd3f54d82792ffe9352bda,
     type: 3}
+  numSpawn: {fileID: 0}
   OnDamaged:
     m_PersistentCalls:
       m_Calls:
@@ -22558,6 +22579,7 @@ MonoBehaviour:
     type: 3}
   goldPopupPrefab: {fileID: 7597277163400944611, guid: 62f1dae512fd3f54d82792ffe9352bda,
     type: 3}
+  numSpawn: {fileID: 0}
   OnDamaged:
     m_PersistentCalls:
       m_Calls:
@@ -27981,6 +28003,7 @@ MonoBehaviour:
     type: 3}
   goldPopupPrefab: {fileID: 7597277163400944611, guid: 62f1dae512fd3f54d82792ffe9352bda,
     type: 3}
+  numSpawn: {fileID: 0}
   OnDamaged:
     m_PersistentCalls:
       m_Calls:
@@ -28226,6 +28249,7 @@ MonoBehaviour:
     type: 3}
   goldPopupPrefab: {fileID: 7597277163400944611, guid: 62f1dae512fd3f54d82792ffe9352bda,
     type: 3}
+  numSpawn: {fileID: 0}
   OnDamaged:
     m_PersistentCalls:
       m_Calls:
@@ -28702,6 +28726,7 @@ MonoBehaviour:
     type: 3}
   goldPopupPrefab: {fileID: 7597277163400944611, guid: 62f1dae512fd3f54d82792ffe9352bda,
     type: 3}
+  numSpawn: {fileID: 0}
   OnDamaged:
     m_PersistentCalls:
       m_Calls:
@@ -33682,6 +33707,7 @@ MonoBehaviour:
     type: 3}
   goldPopupPrefab: {fileID: 7597277163400944611, guid: 62f1dae512fd3f54d82792ffe9352bda,
     type: 3}
+  numSpawn: {fileID: 0}
   OnDamaged:
     m_PersistentCalls:
       m_Calls:
@@ -52530,6 +52556,7 @@ MonoBehaviour:
     type: 3}
   goldPopupPrefab: {fileID: 7597277163400944611, guid: 62f1dae512fd3f54d82792ffe9352bda,
     type: 3}
+  numSpawn: {fileID: 0}
   OnDamaged:
     m_PersistentCalls:
       m_Calls:
@@ -60904,6 +60931,7 @@ MonoBehaviour:
     type: 3}
   goldPopupPrefab: {fileID: 7597277163400944611, guid: 62f1dae512fd3f54d82792ffe9352bda,
     type: 3}
+  numSpawn: {fileID: 0}
   OnDamaged:
     m_PersistentCalls:
       m_Calls:
@@ -67289,6 +67317,7 @@ MonoBehaviour:
     type: 3}
   goldPopupPrefab: {fileID: 7597277163400944611, guid: 62f1dae512fd3f54d82792ffe9352bda,
     type: 3}
+  numSpawn: {fileID: 0}
   OnDamaged:
     m_PersistentCalls:
       m_Calls:
@@ -74423,6 +74452,7 @@ MonoBehaviour:
     type: 3}
   goldPopupPrefab: {fileID: 7597277163400944611, guid: 62f1dae512fd3f54d82792ffe9352bda,
     type: 3}
+  numSpawn: {fileID: 0}
   OnDamaged:
     m_PersistentCalls:
       m_Calls:
@@ -75364,6 +75394,7 @@ MonoBehaviour:
     type: 3}
   goldPopupPrefab: {fileID: 7597277163400944611, guid: 62f1dae512fd3f54d82792ffe9352bda,
     type: 3}
+  numSpawn: {fileID: 0}
   OnDamaged:
     m_PersistentCalls:
       m_Calls:
@@ -76223,6 +76254,7 @@ MonoBehaviour:
     type: 3}
   goldPopupPrefab: {fileID: 7597277163400944611, guid: 62f1dae512fd3f54d82792ffe9352bda,
     type: 3}
+  numSpawn: {fileID: 0}
   OnDamaged:
     m_PersistentCalls:
       m_Calls:
@@ -80425,6 +80457,7 @@ MonoBehaviour:
     type: 3}
   goldPopupPrefab: {fileID: 7597277163400944611, guid: 62f1dae512fd3f54d82792ffe9352bda,
     type: 3}
+  numSpawn: {fileID: 0}
   OnDamaged:
     m_PersistentCalls:
       m_Calls:
@@ -87050,6 +87083,7 @@ MonoBehaviour:
     type: 3}
   goldPopupPrefab: {fileID: 7597277163400944611, guid: 62f1dae512fd3f54d82792ffe9352bda,
     type: 3}
+  numSpawn: {fileID: 0}
   OnDamaged:
     m_PersistentCalls:
       m_Calls:
@@ -90136,6 +90170,7 @@ MonoBehaviour:
     type: 3}
   goldPopupPrefab: {fileID: 7597277163400944611, guid: 62f1dae512fd3f54d82792ffe9352bda,
     type: 3}
+  numSpawn: {fileID: 0}
   OnDamaged:
     m_PersistentCalls:
       m_Calls:
@@ -94847,6 +94882,7 @@ MonoBehaviour:
     type: 3}
   goldPopupPrefab: {fileID: 7597277163400944611, guid: 62f1dae512fd3f54d82792ffe9352bda,
     type: 3}
+  numSpawn: {fileID: 0}
   OnDamaged:
     m_PersistentCalls:
       m_Calls:
@@ -97274,6 +97310,7 @@ MonoBehaviour:
     type: 3}
   goldPopupPrefab: {fileID: 7597277163400944611, guid: 62f1dae512fd3f54d82792ffe9352bda,
     type: 3}
+  numSpawn: {fileID: 0}
   OnDamaged:
     m_PersistentCalls:
       m_Calls:
@@ -97705,6 +97742,7 @@ MonoBehaviour:
     type: 3}
   goldPopupPrefab: {fileID: 7597277163400944611, guid: 62f1dae512fd3f54d82792ffe9352bda,
     type: 3}
+  numSpawn: {fileID: 0}
   OnDamaged:
     m_PersistentCalls:
       m_Calls:
@@ -97955,7 +97993,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61280632117d9ce47baa560949eb608f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelToUnlock: 0700000008000000
+  levelToUnlock: 07000000
   lvlCompleteScreen: {fileID: 1122685302}
   goldEarnedTxt: {fileID: 594518961}
   totalGoldTxt: {fileID: 1113070895}
@@ -102111,6 +102149,7 @@ MonoBehaviour:
     type: 3}
   goldPopupPrefab: {fileID: 7597277163400944611, guid: 62f1dae512fd3f54d82792ffe9352bda,
     type: 3}
+  numSpawn: {fileID: 0}
   OnDamaged:
     m_PersistentCalls:
       m_Calls:
@@ -103515,6 +103554,7 @@ MonoBehaviour:
     type: 3}
   goldPopupPrefab: {fileID: 7597277163400944611, guid: 62f1dae512fd3f54d82792ffe9352bda,
     type: 3}
+  numSpawn: {fileID: 0}
   OnDamaged:
     m_PersistentCalls:
       m_Calls:
@@ -104205,6 +104245,7 @@ MonoBehaviour:
     type: 3}
   goldPopupPrefab: {fileID: 7597277163400944611, guid: 62f1dae512fd3f54d82792ffe9352bda,
     type: 3}
+  numSpawn: {fileID: 0}
   OnDamaged:
     m_PersistentCalls:
       m_Calls:

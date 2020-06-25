@@ -13185,14 +13185,13 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f05903c7b6248fa4487d4858a634b99f, type: 2}
   - {fileID: 11400000, guid: 442fae63a700acd43a618fc675abb4b6, type: 2}
   auraBought:
-  - Oh? Are you sure you're as sharp as these blades?
+  - Oh? You have good taste.
   - If you're going to get up close and personal, may I recommend a health boost
     as well?
   - Such an uncivilized aura. Well, go on.
-  - Hmph. I never could make use of this aura's full potential, I pray you have better
-    luck with it.
+  - I do hope you can make use of this aura's full potential.
   auraFail: If you've made it this far, I would've expected you to have more money.
-    No matter, I'll be here.
+    No matter, I'll be here...
   health: {fileID: 2102097327}
   healthPriceDisplay: {fileID: 482747645}
   playerHearts: {fileID: 1456894322}
@@ -13256,10 +13255,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chatDisplay: {fileID: 1950933964}
   defaultChat:
-  - Think you can go further without stronger auras? Be my guest. I'll be here if
-    you make it back.
+  - I think it's only fair that people like you get a fighting chance...With that
+    said, would you care to buy any auras or health boosts?
   - The lower you go, the stronger the enemies. I do hope you consider some of these
-    auras that I have...
+    auras that I have...After all, it would be no fun if you went on with such weak
+    auras.
 --- !u!1 &1457434199
 GameObject:
   m_ObjectHideFlags: 0

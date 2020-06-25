@@ -16,12 +16,14 @@ public class SaveData : MonoBehaviour
     int gold;
     int health;
 
+    bool visitedBoss2;
+
     public bool[] AuraUnlocked { get { return auraUnlocked; } }
     public bool[] LvlUnlocked { get { return lvlUnlocked; } }
     public int[] EquippedAuras { get { return equippedAuras; } }
     public int Gold { get { return gold; } }
     public int Health { get { return health; } }
-
+    public bool VisitedBoss2 { get { return visitedBoss2; } }
 
     void Awake()
     {
@@ -34,6 +36,8 @@ public class SaveData : MonoBehaviour
         lvlUnlocked = SaveLoadManager.LoadLvls();
 
         equippedAuras = SaveLoadManager.LoadEquipped();
+
+        visitedBoss2 = SaveLoadManager.LoadVisitedBoss2();
     }
 
     // Resets data to new data
@@ -47,6 +51,8 @@ public class SaveData : MonoBehaviour
         lvlUnlocked = SaveLoadManager.LoadLvlsNew();
 
         equippedAuras = SaveLoadManager.LoadEquippedNew();
+
+        visitedBoss2 = SaveLoadManager.LoadVisitedBoss2New();
 
         return this;
     }
@@ -83,6 +89,13 @@ public class SaveData : MonoBehaviour
     public void UpdateHealth(int health)
     {
         this.health = health;
+        SaveLoadManager.SaveGame(this);
+    }
+
+    // Update if has visited boss 2
+    public void UpdateVisitedBoss2(bool visitedBoss2)
+    {
+        this.visitedBoss2 = visitedBoss2;
         SaveLoadManager.SaveGame(this);
     }
 

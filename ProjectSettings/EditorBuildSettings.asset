@@ -33,8 +33,14 @@ EditorBuildSettings:
     path: Assets/Scenes/Zone4.unity
     guid: 371f6d8e693355f4cbb3240b9b25db83
   - enabled: 1
+    path: Assets/Scenes/Boss1.unity
+    guid: 25d241e1f8535e540893876aafbc8b76
+  - enabled: 1
     path: Assets/Scenes/Shop2.unity
     guid: f39420d4cb04c484490270ef641a83bc
+  - enabled: 1
+    path: Assets/Scenes/Shop2 (Alternate).unity
+    guid: d349ba4f5f725544c98dc220ccf1e0ea
   - enabled: 1
     path: Assets/Scenes/Zone5.unity
     guid: 5971708c29cebf54db1a0d6093965611
@@ -47,6 +53,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Zone8.unity
     guid: acfa791bc0a91d24b8616389cc9f474e
+  - enabled: 1
+    path: Assets/Scenes/Boss2.unity
+    guid: efe2a7178bb9fa946affc587d70d0f58
   - enabled: 1
     path: Assets/Scenes/Shop3.unity
     guid: 88748e6e8aa0e784e853fea9913e6cc8
