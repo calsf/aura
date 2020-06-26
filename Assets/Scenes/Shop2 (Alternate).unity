@@ -13186,11 +13186,11 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 442fae63a700acd43a618fc675abb4b6, type: 2}
   auraBought:
   - Here you go! Be careful, the blades are pretty sharp!
-  - Ugh...Heavy aura!
+  - Ugh...Heavy!
   - Ahhh! Hot!
   - Uhh...Not sure what this one really does, but here you go!
-  auraFail: Sorry, I know these goods aren't mine originally but I just really need
-    the money.
+  auraFail: Sorry, I know these goods aren't mine originally, but I'm really in need
+    of some money.
   health: {fileID: 2102097327}
   healthPriceDisplay: {fileID: 482747645}
   playerHearts: {fileID: 1456894322}
@@ -13198,8 +13198,8 @@ MonoBehaviour:
     what will happen if I keep giving you more.
   healthBought: Here's your health boost! Looks like there are stronger ones if you
     still want.
-  healthFail: Sorry, I know these goods aren't mine originally but I just really
-    need the money.
+  healthFail: Sorry, I know these goods aren't mine originally, but I'm really in
+    need of some money.
   shopNav: {fileID: 1836561423}
 --- !u!114 &1456894320
 MonoBehaviour:
@@ -13257,9 +13257,9 @@ MonoBehaviour:
   chatDisplay: {fileID: 1950933964}
   defaultChat:
   - Look at all these goods I found laying around! Do you want to buy any from me?
-    I could really use some money!
+    I could really use the money...
   - Look at all these goods I found laying around! Do you want to buy any from me?
-    I could really use some money!
+    I could really use the money...
 --- !u!1 &1457434199
 GameObject:
   m_ObjectHideFlags: 0
