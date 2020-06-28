@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cff6f9eacf5116c449dc19a550815882, type: 3}
+  m_Name: ClawShootPlayer (BelowRestricted)
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 3882813347022259799, guid: 4ba2f0ab326d7464d811809a42873fe1,
+    type: 3}
+  minShootDelay: 0.3
+  maxShootDelay: 0.6
+  shootDelay: 0.6
+  turnSpeed: 15
+  restrictAbove: 0
+  restrictBelow: 1
