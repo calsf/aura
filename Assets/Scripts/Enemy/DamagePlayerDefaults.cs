@@ -24,6 +24,12 @@ public class DamagePlayerDefaults : MonoBehaviour
         speed = dmgPlayer.baseSpeed;
     }
 
+    void OnDisable()
+    {
+        // Reset speed to default upon disable so it has correct speed on next activation
+        speed = dmgPlayer.baseSpeed;
+    }
+
     void FixedUpdate()
     {
         // Gradually restore speed for a decaying slow effect from slows

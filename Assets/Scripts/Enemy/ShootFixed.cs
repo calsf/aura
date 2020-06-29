@@ -111,7 +111,12 @@ public class ShootFixed : ShootBehaviour
             proj.transform.position = spawnPos.transform.position;
             proj.SetActive(true);
 
+            // Get and set projectile properties if exists
             Projectile projProperties = proj.GetComponent<Projectile>();
+            if (projProperties == null)
+            {
+                return;
+            }
 
             // Shoot in direction enemy is facing or shoot according to directions of each projectile
             if (shootBehaviour.shootFacingDirection && shootBehaviour.xDirection[i] != 0)

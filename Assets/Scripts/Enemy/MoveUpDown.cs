@@ -19,11 +19,13 @@ public class MoveUpDown : MonoBehaviour
 
     // Object velocity
     Vector2 velocity;
-    bool isFalling;
 
-    float startY;
+    // Total falling speed to add to initial velocity
+    float descendingSpeed;
+
+    // Should be negative, adds falling velocity
     [SerializeField]
-    float upDist;
+    float fallRate;
 
     void Awake()
     {
@@ -36,11 +38,6 @@ public class MoveUpDown : MonoBehaviour
         dmgDefaults = GetComponent<DamagePlayerDefaults>();
     }
 
-    void OnEnable()
-    {
-        startY = transform.position.y;
-    }
-
     void OnDisable()
     {
         velocity = Vector2.zero;
@@ -49,31 +46,29 @@ public class MoveUpDown : MonoBehaviour
             disabledEffect.transform.position = transform.position;
             disabledEffect.SetActive(true);
         }
-        isFalling = false;
+
+        descendingSpeed = 0;
     }
 
     void Update()
     {
-        if (!isFalling)
-        {
-            velocity.y = initialY;
-            isFalling = true;
-        }
+        // Adjust velocity y based on dmg player object's current speed
+        velocity.y = (initialY + descendingSpeed) * dmgDefaults.Speed;
 
-        // Once travelled more than upDist, lower speed
-        if (Mathf.Abs(startY - transform.position.y) > upDist && velocity.y > (initialY / 3))
+        // Gradually fall down unless speed has been affected
+        if (dmgDefaults.Speed >= dmgDefaults.DmgPlayer.baseSpeed)
         {
-            velocity.y = (initialY / 3);
+            descendingSpeed += (fallRate) * Time.deltaTime;
         }
-
-        // Fall down, cap fall speed
-        velocity.y += (-7f * (dmgDefaults.Speed / dmgDefaults.DmgPlayer.baseSpeed)) * Time.deltaTime;
+        
+        // Cap fall speed
         if (velocity.y < -20)
         {
             velocity.y = -20;
         }
 
-        velocity.x = x;
+        // Adjust velocity x by a multiplier based on dmg player object's current speed
+        velocity.x = x * (dmgDefaults.Speed / dmgDefaults.DmgPlayer.baseSpeed);
 
         transform.Translate(velocity * Time.deltaTime);
     }

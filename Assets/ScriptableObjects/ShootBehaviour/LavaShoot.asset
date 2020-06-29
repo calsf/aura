@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 90fa4d80050abf74895e176047d66331, type: 3}
-  m_Name: VolcanoShoot
+  m_Name: LavaShoot
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 8854212462012982164, guid: aef79e963d36ec648a7ecc3b3863ea7d,
+  projectilePrefab: {fileID: 5756279309796850852, guid: 60541241336fcdd46841f6db178c5286,
     type: 3}
   minShootDelay: 0
   maxShootDelay: 0
@@ -24,4 +24,4 @@ MonoBehaviour:
   xDirection:
   - 0
   yDirection:
-  - 1
+  - 0
