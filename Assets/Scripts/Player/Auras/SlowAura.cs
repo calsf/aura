@@ -43,7 +43,9 @@ public class SlowAura : MonoBehaviour
             if (enemy != null)
             {
                 enemy.RestoreMoveSpeedTime = Time.time + restoreEnemySpeedDelay;
-                enemy.MoveSpeed = enemy.Enemy.baseMoveSpeed * enemySlowMultiplier;
+
+                // Apply slow while also taking into consideration the move speed multiplier of enemy
+                enemy.MoveSpeed = (enemy.Enemy.baseMoveSpeed * ((enemy.MoveSpeedMultiplier - 1) + enemySlowMultiplier)) ;
             }
         }
     }

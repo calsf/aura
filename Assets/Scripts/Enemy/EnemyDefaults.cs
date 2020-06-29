@@ -54,6 +54,7 @@ public class EnemyDefaults : MonoBehaviour {
     float onStayTimeExtra;
 
     float moveSpeed;
+    float moveSpeedMultiplier = 1;
     float restoreMoveSpeedTime = 0; // The time at which move speed should be restored
     float restoreRate;
 
@@ -70,6 +71,7 @@ public class EnemyDefaults : MonoBehaviour {
     public float RestoreHPTime { get { return restoreHPTime; } set { restoreHPTime = value; } }
     public int RestoreHPAmount { get { return restoreHPAmount; } set { restoreHPAmount = value; } }
     public SpriteRenderer SpriteRender { get { return spriteRender; } }
+    public float MoveSpeedMultiplier { get { return moveSpeedMultiplier; } set { moveSpeedMultiplier = value; } }
 
     // Use this for initialization
     void Awake () {
@@ -182,14 +184,18 @@ public class EnemyDefaults : MonoBehaviour {
 
     void FixedUpdate()
     {
-        // Gradually restore speed for a decaying slow effect from slows
-        if (moveSpeed < enemy.baseMoveSpeed && Time.time > restoreMoveSpeedTime)
+        // Gradually restore speed for a decaying slow effect from slows, otherwise, set move speed equal to base speed multiplied by multiplier
+        if (moveSpeed < enemy.baseMoveSpeed * moveSpeedMultiplier && Time.time > restoreMoveSpeedTime)
         {
             moveSpeed += restoreRate;
-            if (moveSpeed > enemy.baseMoveSpeed)
+            if (moveSpeed > enemy.baseMoveSpeed * moveSpeedMultiplier)
             {
-                moveSpeed = enemy.baseMoveSpeed;
+                moveSpeed = enemy.baseMoveSpeed * moveSpeedMultiplier;
             }
+        }
+        else if (Time.time > restoreMoveSpeedTime)
+        {
+            moveSpeed = enemy.baseMoveSpeed * moveSpeedMultiplier;
         }
     }
 
