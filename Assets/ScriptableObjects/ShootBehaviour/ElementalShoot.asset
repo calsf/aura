@@ -10,18 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 90fa4d80050abf74895e176047d66331, type: 3}
-  m_Name: VolcanoShoot
+  m_Name: ElementalShoot
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 8586816067681644624, guid: f961e130126d2d944aa81a8c12fa61b4,
+  projectilePrefab: {fileID: 3882813347022259799, guid: 4ba2f0ab326d7464d811809a42873fe1,
     type: 3}
-  minShootDelay: 0
-  maxShootDelay: 0
-  shootDelay: 0
+  minShootDelay: 0.3
+  maxShootDelay: 0.8
+  shootDelay: 0.8
   stopToShoot: 0
   shootFacingDirection: 0
   shootIsChild: 0
-  numProj: 1
+  numProj: 4
   xDirection:
-  - 0
+  - 1
+  - -1
+  - 1
+  - -1
   yDirection:
   - 1
+  - 1
+  - -1
+  - -1

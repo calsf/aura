@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 5756279308987922996}
   - component: {fileID: 5756279308987922997}
   m_Layer: 9
-  m_Name: FireballProjectile
+  m_Name: FireballProjectile (UP)
   m_TagString: DamagePlayer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31,11 +31,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5756279308987922953}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
-  m_Father: {fileID: 5756279310271996423}
+  m_Father: {fileID: 5756279309796850853}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5756279308987922963
@@ -200,37 +200,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aliveTime: 2.5
---- !u!1 &5756279309699950491
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5756279309699950488}
-  m_Layer: 9
-  m_Name: Fireball (Up)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5756279309699950488
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5756279309699950491}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 5756279309955322141}
-  m_Father: {fileID: 5756279309796850853}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5756279309783584678
 GameObject:
   m_ObjectHideFlags: 0
@@ -249,7 +218,7 @@ GameObject:
   - component: {fileID: 5756279309783584674}
   - component: {fileID: 5756279309783584675}
   m_Layer: 9
-  m_Name: FireballProjectile
+  m_Name: FireballProjectile (RIGHT)
   m_TagString: DamagePlayer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -262,12 +231,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5756279309783584678}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
-  m_Father: {fileID: 5756279310819944525}
-  m_RootOrder: 0
+  m_Father: {fileID: 5756279309796850853}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5756279309783584681
 SpriteRenderer:
@@ -440,6 +409,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5756279309796850853}
+  - component: {fileID: 2544565465950803054}
+  - component: {fileID: 3457449934826851671}
   m_Layer: 0
   m_Name: FireballGroup (UpDown)
   m_TagString: Untagged
@@ -458,12 +429,37 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 5756279310271996423}
-  - {fileID: 5756279310819944525}
-  - {fileID: 5756279309699950488}
+  - {fileID: 5756279308987922958}
+  - {fileID: 5756279309783584679}
+  - {fileID: 5756279309955322141}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2544565465950803054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5756279309796850852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf890b4d0a8126a4a95c2b75e020677f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aliveTime: 3
+--- !u!114 &3457449934826851671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5756279309796850852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cf27dbcf3a0f274c87af7c9514ccf09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5756279309955322140
 GameObject:
   m_ObjectHideFlags: 0
@@ -482,7 +478,7 @@ GameObject:
   - component: {fileID: 5756279309955322136}
   - component: {fileID: 5756279309955322137}
   m_Layer: 9
-  m_Name: FireballProjectile
+  m_Name: FireballProjectile (LEFT)
   m_TagString: DamagePlayer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -495,12 +491,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5756279309955322140}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
-  m_Father: {fileID: 5756279309699950488}
-  m_RootOrder: 0
+  m_Father: {fileID: 5756279309796850853}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5756279309955322087
 SpriteRenderer:
@@ -664,65 +660,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aliveTime: 2.5
---- !u!1 &5756279310271996422
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5756279310271996423}
-  m_Layer: 9
-  m_Name: Fireball (Left)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5756279310271996423
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5756279310271996422}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 5756279308987922958}
-  m_Father: {fileID: 5756279309796850853}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &5756279310819944524
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5756279310819944525}
-  m_Layer: 9
-  m_Name: Fireball (Right) (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5756279310819944525
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5756279310819944524}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 5756279309783584679}
-  m_Father: {fileID: 5756279309796850853}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
