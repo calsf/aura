@@ -19,4 +19,4 @@ MonoBehaviour:
   shootDelay: 1
   turnSpeed: 5
   restrictAbove: 0
-  restrictBelow: 0
+  restrictBelow: 1

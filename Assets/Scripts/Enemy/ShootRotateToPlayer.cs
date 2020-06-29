@@ -100,7 +100,8 @@ public class ShootRotateToPlayer : ShootBehaviour
         }
 
         // If below is restricted, means cannot turn and shoot player if player is below
-        if (shootBehaviour.restrictBelow && player.transform.position.y < transform.position.y)
+        // Added offset of 2 so player doesn't have to be directly above
+        if (shootBehaviour.restrictBelow && player.transform.position.y < (transform.position.y - 2))
         {
             wasBelow = true;
             return;
