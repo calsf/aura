@@ -1,0 +1,1033 @@
+fileFormatVersion: 2
+guid: 8f14b3074f6162545ac4ad647e238aa4
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2695397407002535339
+    second: Platform_0
+  - first:
+      213: -5862022666285825741
+    second: Platform_1
+  - first:
+      213: -6244361495144544390
+    second: Platform_2
+  - first:
+      213: 4064592478174706425
+    second: Platform_3
+  - first:
+      213: 1734901415406069468
+    second: Platform_0
+  - first:
+      213: -8740559533215842017
+    second: Platform_1
+  - first:
+      213: -8600233869644645222
+    second: Level9Tile_0
+  - first:
+      213: -397369445658052543
+    second: Level9Tile_1
+  - first:
+      213: 809131671682459914
+    second: Level9Tile_2
+  - first:
+      213: -7153685476584848781
+    second: Level9Tile_3
+  - first:
+      213: 7572573746051331353
+    second: Level9Tile_4
+  - first:
+      213: -6589503308307780343
+    second: Level9Tile_5
+  - first:
+      213: 2860044571399102641
+    second: Level9Tile_6
+  - first:
+      213: 2178163266610767756
+    second: Level9Tile_7
+  - first:
+      213: -4354065573202655171
+    second: Level9Tile_8
+  - first:
+      213: 4336913013081187000
+    second: Level9Tile_9
+  - first:
+      213: -699492234245666820
+    second: Level9Tile_10
+  - first:
+      213: -8024018472654490574
+    second: Level9Tile_11
+  - first:
+      213: 3495942923728677265
+    second: Level9Tile_12
+  - first:
+      213: -3933332136726199722
+    second: Level9Tile_13
+  - first:
+      213: -841419470902049348
+    second: Level9Tile_14
+  - first:
+      213: -6879243843442886772
+    second: Level9Tile_15
+  - first:
+      213: -3423246669421322388
+    second: Level9Tile_16
+  - first:
+      213: 2237915025613791315
+    second: Level9Tile_17
+  - first:
+      213: -8973105917334597957
+    second: Level9Tile_18
+  - first:
+      213: 2418922001990624731
+    second: Level9Tile_19
+  - first:
+      213: -2366047586512322003
+    second: Level9Tile_20
+  - first:
+      213: -4001289781405130560
+    second: Level9Tile_21
+  - first:
+      213: -5235972903583842226
+    second: Level9Tile_22
+  - first:
+      213: 2643415349005382412
+    second: Level9Tile_23
+  - first:
+      213: 3281701103295699236
+    second: Level9Tile_24
+  - first:
+      213: -4112791432141126107
+    second: Level9Tile_25
+  - first:
+      213: -9221657953006744567
+    second: Level9Tile_26
+  - first:
+      213: -6808435667622031978
+    second: Level9Tile_27
+  - first:
+      213: -5316256803984876199
+    second: Level9Tile_28
+  - first:
+      213: 3586387342952644554
+    second: Level9Tile_29
+  - first:
+      213: 3251126323675834166
+    second: Level9Tile_30
+  - first:
+      213: 3326198967631795715
+    second: Level9Tile_31
+  - first:
+      213: -8805575839688911863
+    second: Level9Tile_32
+  - first:
+      213: -3843711365442230146
+    second: Level9Tile_33
+  - first:
+      213: 379624979475988921
+    second: Level9Tile_34
+  - first:
+      213: 8069642040388511572
+    second: Level9Tile_35
+  - first:
+      213: -7695069083578151027
+    second: Level9Tile_36
+  - first:
+      213: -3892261189563486370
+    second: Level9Tile_37
+  - first:
+      213: 6487491135793081955
+    second: Level9Tile_38
+  - first:
+      213: 6852971543466027079
+    second: Level9Tile_39
+  - first:
+      213: -6856833593846720492
+    second: Level9Tile_40
+  - first:
+      213: 5953894167588578832
+    second: Level9Tile_41
+  - first:
+      213: -5174599520823104552
+    second: Level9Tile_42
+  - first:
+      213: 7232196403269218615
+    second: Level9Tile_43
+  - first:
+      213: -8938867163687552962
+    second: Level9Tile_44
+  - first:
+      213: -1071233714701615242
+    second: Level9Tile_45
+  - first:
+      213: 1160144578903326574
+    second: Level9Tile_46
+  - first:
+      213: 7839512657889350768
+    second: Level9Tile_47
+  - first:
+      213: -3554974573210688544
+    second: Level9Tile_48
+  - first:
+      213: 4295805728899216027
+    second: Level9Tile_49
+  - first:
+      213: 9071090943112077634
+    second: Level9Tile_50
+  - first:
+      213: 525941601337793765
+    second: Level9Tile_51
+  - first:
+      213: 3368222825358014116
+    second: Level9Tile_52
+  - first:
+      213: 973425478469565011
+    second: Level9Tile_53
+  - first:
+      213: 2859502269384487586
+    second: Level9Tile_54
+  - first:
+      213: 6370353822252124864
+    second: Level9Tile_55
+  - first:
+      213: 27824146287471886
+    second: Level9Tile_56
+  - first:
+      213: 1750933335548214675
+    second: Level9Tile_57
+  - first:
+      213: -2244547303043553311
+    second: Level9Tile_58
+  - first:
+      213: 5461550125847452146
+    second: Level9Tile_59
+  - first:
+      213: -7191278310137432262
+    second: Level9Tile_60
+  - first:
+      213: -3237803013258866044
+    second: Level9Tile_61
+  - first:
+      213: 2467786554990853786
+    second: Level9Tile_62
+  - first:
+      213: -7194887607283393410
+    second: Level9Tile_63
+  - first:
+      213: 7879152842579535999
+    second: Level9Tile_64
+  - first:
+      213: -7217530569652029953
+    second: Level9Tile_65
+  - first:
+      213: -1366610751744005351
+    second: Level9Tile_66
+  - first:
+      213: 8530104922990824236
+    second: Level9Tile_67
+  - first:
+      213: 4781777051058378015
+    second: Level9Tile_68
+  - first:
+      213: 6962758761296827123
+    second: Level9Tile_69
+  - first:
+      213: -551980637871983033
+    second: Level9Tile_70
+  - first:
+      213: -3905494977580223510
+    second: Level9Tile_71
+  - first:
+      213: -1128432404049765582
+    second: Level9Tile_72
+  - first:
+      213: -8668987824991728752
+    second: Level9Tile_73
+  - first:
+      213: -6019485716584621944
+    second: Level9Tile_74
+  - first:
+      213: 1876758058678996059
+    second: Level9Tile_75
+  - first:
+      213: 1962795265253817463
+    second: Level9Tile_76
+  - first:
+      213: 1206408655313557863
+    second: Level9Tile_77
+  - first:
+      213: 6869524981594871971
+    second: Level9Tile_78
+  - first:
+      213: -485471006508581499
+    second: Level9Tile_79
+  - first:
+      213: -4711786342266152331
+    second: Level9Tile_80
+  - first:
+      213: 5842849135990383162
+    second: Level9Tile_81
+  - first:
+      213: 5382383677939130920
+    second: Level9Tile_82
+  - first:
+      213: -3719048349068441967
+    second: Level9Tile_83
+  - first:
+      213: 7986450647249180706
+    second: Level9Tile_0
+  - first:
+      213: -6549538437095256973
+    second: Level9Tile_1
+  - first:
+      213: 8773973002679209157
+    second: Level9Tile_2
+  - first:
+      213: -8799975357892777276
+    second: Level9Tile_3
+  - first:
+      213: 5443356505486076939
+    second: Level9Tile_4
+  - first:
+      213: -6526578920541905962
+    second: Level9Tile_5
+  - first:
+      213: 4529518460534941998
+    second: Level9Tile_6
+  - first:
+      213: 2118214347578037151
+    second: Level9Tile_7
+  - first:
+      213: 1899889885523132345
+    second: Level9Tile_8
+  - first:
+      213: -4425045424907833125
+    second: Level9Tile_9
+  - first:
+      213: 527253891721336983
+    second: Level9Tile_10
+  - first:
+      213: 3097249207113191621
+    second: Level9Tile_11
+  - first:
+      213: -2369151370237297621
+    second: Level9Tile_12
+  - first:
+      213: -3369171827680421087
+    second: Level9Tile_13
+  - first:
+      213: -4894242667464284038
+    second: Level9Tile_14
+  - first:
+      213: -1102411222911022818
+    second: Level9Tile_15
+  - first:
+      213: -3261858157914787416
+    second: Level9Tile_16
+  - first:
+      213: 4393975776631691851
+    second: Level9Tile_17
+  - first:
+      213: -245645015809355523
+    second: Level9Tile_18
+  - first:
+      213: -1180907650045058921
+    second: Level9Tile_19
+  - first:
+      213: 7295599579240317201
+    second: Level9Tile_20
+  - first:
+      213: 2197832712442515144
+    second: Level9Tile_21
+  - first:
+      213: -6947094361723394510
+    second: Level9Tile_22
+  - first:
+      213: -7372504393264805952
+    second: Level9Tile_23
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Level9Tile_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 160
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 228d975bc8295de60800000000000000
+      internalID: 7986450647249180706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level9Tile_1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 160
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37c8b2e0e7d5b15a0800000000000000
+      internalID: -6549538437095256973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level9Tile_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 160
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cccf8d95f963c970800000000000000
+      internalID: 8773973002679209157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level9Tile_3
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 160
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ca2c98490530e580800000000000000
+      internalID: -8799975357892777276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level9Tile_4
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 160
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0c2f4fc6efaa8b40800000000000000
+      internalID: 5443356505486076939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level9Tile_5
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 160
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6db1c821d0fec65a0800000000000000
+      internalID: -6526578920541905962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level9Tile_6
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 160
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2962cb9a051cde30800000000000000
+      internalID: 4529518460534941998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level9Tile_7
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 160
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f935681f9b8656d10800000000000000
+      internalID: 2118214347578037151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level9Tile_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bfb6fae8c3cd5a10800000000000000
+      internalID: 1899889885523132345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level9Tile_9
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd0b66581a41792c0800000000000000
+      internalID: -4425045424907833125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level9Tile_10
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7981e7afe9e215700800000000000000
+      internalID: 527253891721336983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level9Tile_11
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c097d27eb3abfa20800000000000000
+      internalID: 3097249207113191621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level9Tile_12
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2c30ed81651f1fd0800000000000000
+      internalID: -2369151370237297621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level9Tile_13
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12bdad7c21c4e31d0800000000000000
+      internalID: -3369171827680421087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level9Tile_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a782b398938241cb0800000000000000
+      internalID: -4894242667464284038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level9Tile_15
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e190cf565d273b0f0800000000000000
+      internalID: -1102411222911022818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level9Tile_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a177c5994d8bb2d0800000000000000
+      internalID: -3261858157914787416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level9Tile_17
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4a9dc540b98afc30800000000000000
+      internalID: 4393975776631691851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level9Tile_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df096dbd82b479cf0800000000000000
+      internalID: -245645015809355523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level9Tile_19
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 790e58ebfb29c9fe0800000000000000
+      internalID: -1180907650045058921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level9Tile_20
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 111cb10e92d2f3560800000000000000
+      internalID: 7295599579240317201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level9Tile_21
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ce8ed41535408e10800000000000000
+      internalID: 2197832712442515144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level9Tile_22
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 236ab5c3c76f69f90800000000000000
+      internalID: -6947094361723394510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level9Tile_23
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c7c176c05a9fa990800000000000000
+      internalID: -7372504393264805952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level9Tile_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42992f824c1fa8d20800000000000000
+      internalID: 3281701103295699236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level9Tile_25
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52645f3abfd6ce6c0800000000000000
+      internalID: -4112791432141126107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level9Tile_26
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90c80ee33f6160080800000000000000
+      internalID: -9221657953006744567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Level9Tile_27
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69d0a4b35d39381a0800000000000000
+      internalID: -6808435667622031978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
