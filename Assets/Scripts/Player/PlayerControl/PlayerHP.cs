@@ -35,8 +35,6 @@ public class PlayerHP : MonoBehaviour
     [SerializeField]
     int poolNum;
 
-    CameraControl cam;
-
     // Determine if should leave on death, if leave on death is on, will need menuNav to disable menu as it loads zone select
     [SerializeField]
     bool leaveOnDeath;
@@ -58,7 +56,6 @@ public class PlayerHP : MonoBehaviour
         move = GetComponent<PlayerMoveInput>();
         controller = GetComponent<PlayerController>();
         auraControl = GetComponent<PlayerAuraControl>();
-        cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraControl>();
     }
 
     // Start is called before the first frame update
@@ -206,7 +203,6 @@ public class PlayerHP : MonoBehaviour
             auraControl.CanAura = true;
             currentHP = maxHP;
             dead = false;
-            cam.ResetCam(transform.position);   // Move camera position directly to position
             OnHealthChange.Invoke(); // OnHealthChanged event
         }
     }

@@ -7,8 +7,7 @@ public class Parallax : MonoBehaviour
     float length;
     float startPos;
 
-    [SerializeField]
-    GameObject cam;
+    CameraControl cam;
     [SerializeField] [Range(0, 1)]
     float moveValue;
 
@@ -18,8 +17,16 @@ public class Parallax : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraControl>();
         startPos = transform.position.x;
         length = GetComponentInChildren<SpriteRenderer>().bounds.size.x;
+
+        cam.OnFarTeleport.AddListener(ResetBG);
+    }
+
+    void OnDisable()
+    {
+        cam.OnFarTeleport.RemoveAllListeners();
     }
 
     // Update is called once per frame
@@ -39,6 +46,17 @@ public class Parallax : MonoBehaviour
         else if (traveled < startPos -length)
         {
             startPos -= length;
+        }
+    }
+
+    public void ResetBG()
+    {
+        // Reset background as needed for OnFarTeleports, this will avoid sliding background if player/camera ends up too far
+        float traveled = cam.transform.position.x * (1 - moveValue);
+        if (traveled > startPos + length || traveled < startPos - length)
+        {
+            startPos = cam.transform.position.x;
+            transform.position = new Vector3(startPos, transform.position.y, transform.position.z);
         }
     }
 }

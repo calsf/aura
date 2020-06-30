@@ -23,10 +23,13 @@ public class LevelManager : MonoBehaviour
 
     int gold = 0;
 
+    CameraControl cam;
+
     public int Gold { get { return gold; } set { gold = value; } }
 
     void Awake()
     {
+        cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraControl>();
         playerHP = player.GetComponent<PlayerHP>();
         player.transform.position = spawnPoint.position;
 
@@ -79,5 +82,7 @@ public class LevelManager : MonoBehaviour
     {
         yield return new WaitForSeconds(playerHP.RespawnDelay);
         player.transform.position = spawnPoint.position;
+        cam.MoveCamInstant();       // Move camera instantly
+        cam.OnFarTeleport.Invoke(); // Invoke OnFarTeleport to move background instantly if necessary
     }
 }

@@ -1,9 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class CameraControl : MonoBehaviour
 {
+    public UnityEvent OnFarTeleport;
+
     [SerializeField]
     GameObject player;
     [SerializeField]
@@ -140,7 +143,7 @@ public class CameraControl : MonoBehaviour
         Gizmos.DrawCube(focusArea.center, focusAreaSize);
     }
 
-    // Moves camera position directly to pos, calculating any min/max bounds before setting new position
+    // Moves camera position to pos, calculating any min/max bounds before setting new position
     public void ResetCam(Vector3 pos)
     {
         // Max y and x camera bounds
@@ -162,5 +165,31 @@ public class CameraControl : MonoBehaviour
         }
 
         transform.position = pos;
+    }
+
+    // Updates focus area and cam position without any smoothing, making cam movement instant
+    // Used for instant teleports such as resetting player on death or astral aura teleport
+    public void MoveCamInstant()
+    {
+        // Update focus area with target collider
+        focusArea.UpdateFocus(targetCollider.bounds);
+
+        // Apply center offsets
+        Vector2 focusPos = focusArea.center + (Vector2.up * yOffset) + (Vector2.right * xOffset);
+
+        // Set cam position
+        transform.position = new Vector3(focusPos.x, focusPos.y, -10);
+
+        ResetCam(transform.position);
+
+        // UPDATE AGAIN
+        // Update focus area with target collider
+        focusArea.UpdateFocus(targetCollider.bounds);
+
+        // Apply center offsets
+        focusPos = focusArea.center + (Vector2.up * yOffset) + (Vector2.right * xOffset);
+
+        // Set cam position
+        transform.position = new Vector3(focusPos.x, focusPos.y, -10);
     }
 }

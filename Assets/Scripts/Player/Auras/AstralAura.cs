@@ -51,7 +51,8 @@ public class AstralAura : MonoBehaviour
             playerHP.OnHealthChange.Invoke();
 
             playerHP.transform.position = savedPos;
-            cam.ResetCam(transform.position); // Move camera position directly to position
+            cam.MoveCamInstant();       // Move camera position directly to position
+            cam.OnFarTeleport.Invoke(); // Invoke OnFarTeleport to move background instantly if necessary
         }
 
         // Always deactivate aura/player clones
