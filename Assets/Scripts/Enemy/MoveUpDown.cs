@@ -31,7 +31,7 @@ public class MoveUpDown : MonoBehaviour
     {
         if (disabledEffectPrefab != null)
         {
-            disabledEffect = Instantiate(disabledEffectPrefab, transform.position, Quaternion.identity);
+            disabledEffect = Instantiate(disabledEffectPrefab, Vector3.down * 50, Quaternion.identity);
             disabledEffect.SetActive(false);
         }
 

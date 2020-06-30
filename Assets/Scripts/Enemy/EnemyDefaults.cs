@@ -104,7 +104,7 @@ public class EnemyDefaults : MonoBehaviour {
         goldPopupText = goldPopup.GetComponent<TextMeshPro>();
 
         // Each enemy has a death fx
-        deathFX = Instantiate(enemy.deathFX, Vector3.zero, Quaternion.identity);
+        deathFX = Instantiate(enemy.deathFX, Vector3.down * 50, Quaternion.identity);
         deathFX.SetActive(false);
 
         // Initialize damage numbers pool

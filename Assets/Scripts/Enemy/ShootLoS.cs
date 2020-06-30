@@ -34,7 +34,7 @@ public class ShootLoS : MonoBehaviour
         projectilePool = new List<GameObject>();
         for (int i = 0; i < poolNum; i++)
         {
-            projectilePool.Add(Instantiate(shootBehaviour.projectilePrefab, Vector3.zero, Quaternion.identity));
+            projectilePool.Add(Instantiate(shootBehaviour.projectilePrefab, Vector3.down * 50, Quaternion.identity));
             projectilePool[i].SetActive(false);
         }
     }
