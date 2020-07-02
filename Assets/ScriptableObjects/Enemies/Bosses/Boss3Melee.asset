@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Boss3Melee
   m_EditorClassIdentifier: 
   enemyName: Melee Twin
-  maxHP: 3000
+  maxHP: 1200
   dmg: 1
   gold: 15000
   baseMoveSpeed: 15

@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class EnragedMoveSpeed : MonoBehaviour
 {
-    // Higher the rate is, the higher the move speed multiplier per missing health
+    // Lower the rate is, the higher the move speed multiplier per missing health
     [SerializeField]
     float rate;
 

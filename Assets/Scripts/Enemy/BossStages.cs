@@ -12,6 +12,8 @@ public class BossStages : MonoBehaviour
     [SerializeField]
     int[] healthStages;
 
+    public int[] HealthStages { get { return healthStages; } }
+
     // Start is called before the first frame update
     void Start()
     {
