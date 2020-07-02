@@ -107,6 +107,45 @@ TextureImporter:
   - first:
       213: -4573171000063485362
     second: RangedBoss_20
+  - first:
+      213: -6855855872261800609
+    second: RangedBoss_7
+  - first:
+      213: 2495177562587000729
+    second: RangedBoss_8
+  - first:
+      213: -3971543585345402715
+    second: RangedBoss_16
+  - first:
+      213: 3485180376527892676
+    second: RangedBoss_17
+  - first:
+      213: 8936671096312844454
+    second: RangedBoss_18
+  - first:
+      213: 2247022106158116781
+    second: RangedBoss_19
+  - first:
+      213: 4603501258423469946
+    second: RangedBoss_20
+  - first:
+      213: -2003611279938489674
+    second: RangedBoss_21
+  - first:
+      213: -5631960500000813455
+    second: RangedBoss_21
+  - first:
+      213: -4884066563834344705
+    second: RangedBoss_22
+  - first:
+      213: -4351030536420930455
+    second: RangedBoss_23
+  - first:
+      213: -406005281836330198
+    second: RangedBoss_24
+  - first:
+      213: 4460487943911808952
+    second: RangedBoss_25
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -191,220 +230,10 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: RangedBoss_7
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 128
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3024b86dbfaf4e370800000000000000
-      internalID: 8351075568594928131
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RangedBoss_8
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 128
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c28e328a21ed62180800000000000000
-      internalID: -9140374221990139860
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RangedBoss_16
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 0
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: edbb6e60c6ec10310800000000000000
-      internalID: 1369602725064915934
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RangedBoss_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 256
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e21d7142d8c0790a0800000000000000
-      internalID: -6875012505822310098
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RangedBoss_1
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 256
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4b76cdc06abd86600800000000000000
-      internalID: 461860468032300980
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RangedBoss_2
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 256
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 942ea288259dec050800000000000000
-      internalID: 5822830316731687497
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RangedBoss_3
-      rect:
-        serializedVersion: 2
-        x: 384
-        y: 256
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bb4d2c7bf742bce20800000000000000
-      internalID: 3371828876979393723
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RangedBoss_4
-      rect:
-        serializedVersion: 2
-        x: 512
-        y: 256
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 648a224292577d190800000000000000
-      internalID: -7937746998656849850
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RangedBoss_5
-      rect:
-        serializedVersion: 2
-        x: 640
-        y: 256
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5cead5680c8febbe0800000000000000
-      internalID: -1459455723449766203
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RangedBoss_6
-      rect:
-        serializedVersion: 2
-        x: 768
-        y: 256
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: af2a5384e43af4db0800000000000000
-      internalID: -4805442720766778630
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: RangedBoss_9
       rect:
         serializedVersion: 2
-        x: 256
+        x: 1152
         y: 128
         width: 128
         height: 128
@@ -425,7 +254,7 @@ TextureImporter:
       name: RangedBoss_10
       rect:
         serializedVersion: 2
-        x: 384
+        x: 1280
         y: 128
         width: 128
         height: 128
@@ -446,7 +275,7 @@ TextureImporter:
       name: RangedBoss_11
       rect:
         serializedVersion: 2
-        x: 512
+        x: 1408
         y: 128
         width: 128
         height: 128
@@ -467,7 +296,7 @@ TextureImporter:
       name: RangedBoss_12
       rect:
         serializedVersion: 2
-        x: 640
+        x: 1536
         y: 128
         width: 128
         height: 128
@@ -488,8 +317,8 @@ TextureImporter:
       name: RangedBoss_13
       rect:
         serializedVersion: 2
-        x: 768
-        y: 128
+        x: 0
+        y: 0
         width: 128
         height: 128
       alignment: 0
@@ -509,7 +338,7 @@ TextureImporter:
       name: RangedBoss_14
       rect:
         serializedVersion: 2
-        x: 0
+        x: 128
         y: 0
         width: 128
         height: 128
@@ -530,7 +359,7 @@ TextureImporter:
       name: RangedBoss_15
       rect:
         serializedVersion: 2
-        x: 128
+        x: 256
         y: 0
         width: 128
         height: 128
@@ -548,7 +377,49 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RangedBoss_17
+      name: RangedBoss_7
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5d3f86786b1bd0a0800000000000000
+      internalID: -6855855872261800609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RangedBoss_8
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99fe58de5c6a0a220800000000000000
+      internalID: 2495177562587000729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RangedBoss_16
       rect:
         serializedVersion: 2
         x: 384
@@ -562,14 +433,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: df3c4307b24871bb0800000000000000
-      internalID: -4965354742051716099
+      spriteID: 5a88189b62e32e8c0800000000000000
+      internalID: -3971543585345402715
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RangedBoss_18
+      name: RangedBoss_17
       rect:
         serializedVersion: 2
         x: 512
@@ -583,14 +454,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c851f557859f06e80800000000000000
-      internalID: -8187269964237957748
+      spriteID: 4c07b115619dd5030800000000000000
+      internalID: 3485180376527892676
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RangedBoss_19
+      name: RangedBoss_18
       rect:
         serializedVersion: 2
         x: 640
@@ -604,14 +475,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b83e05395c5808570800000000000000
-      internalID: 8466914383083135883
+      spriteID: 6a05a3a730f650c70800000000000000
+      internalID: 8936671096312844454
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RangedBoss_20
+      name: RangedBoss_19
       rect:
         serializedVersion: 2
         x: 768
@@ -625,8 +496,281 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e4a19148435d880c0800000000000000
-      internalID: -4573171000063485362
+      spriteID: daf210843b60f2f10800000000000000
+      internalID: 2247022106158116781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RangedBoss_20
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a77056f010ce2ef30800000000000000
+      internalID: 4603501258423469946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RangedBoss_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e21d7142d8c0790a0800000000000000
+      internalID: -6875012505822310098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RangedBoss_1
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b76cdc06abd86600800000000000000
+      internalID: 461860468032300980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RangedBoss_2
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 942ea288259dec050800000000000000
+      internalID: 5822830316731687497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RangedBoss_3
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb4d2c7bf742bce20800000000000000
+      internalID: 3371828876979393723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RangedBoss_4
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 648a224292577d190800000000000000
+      internalID: -7937746998656849850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RangedBoss_5
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cead5680c8febbe0800000000000000
+      internalID: -1459455723449766203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RangedBoss_6
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af2a5384e43af4db0800000000000000
+      internalID: -4805442720766778630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RangedBoss_21
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17e8b60c3c147d1b0800000000000000
+      internalID: -5631960500000813455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RangedBoss_22
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffa8a4b465f483cb0800000000000000
+      internalID: -4884066563834344705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RangedBoss_23
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96cc0c5a7c80e93c0800000000000000
+      internalID: -4351030536420930455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RangedBoss_24
+      rect:
+        serializedVersion: 2
+        x: 1408
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a239637e8549d5af0800000000000000
+      internalID: -406005281836330198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RangedBoss_25
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bf96cdf626d6ed30800000000000000
+      internalID: 4460487943911808952
       vertices: []
       indices: 
       edges: []
