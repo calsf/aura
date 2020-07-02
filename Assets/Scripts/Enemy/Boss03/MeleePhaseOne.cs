@@ -8,8 +8,10 @@ public class MeleePhaseOne : StateMachineBehaviour
     float delay;
     float nextAttack;
 
-    float minY = -2f;
-    float maxY = 12;
+    [SerializeField]
+    float minY;
+    [SerializeField]
+    float maxY;
 
     Transform boss;
     EnemyDefaults enemyDefaults;

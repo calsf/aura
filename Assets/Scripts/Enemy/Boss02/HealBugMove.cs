@@ -28,11 +28,6 @@ public class HealBugMove : MonoBehaviour
     {
         move = false;
 
-        // Heal bugs are child of boss, make sure local scale is positive so bugs are not flipped wrong way
-        target.transform.localScale = target.transform.localScale.x < 0 ?
-            new Vector3(-target.transform.localScale.x, target.transform.localScale.y) :
-            target.transform.localScale;
-
         // Face bug in direction of assigned target
         if ((transform.localScale.x > 0 && transform.localPosition.x < target.gameObject.transform.position.x)
                 || (transform.localScale.x < 0 && transform.localPosition.x > target.gameObject.transform.position.x))

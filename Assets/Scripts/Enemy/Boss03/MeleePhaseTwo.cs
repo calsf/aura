@@ -22,6 +22,7 @@ public class MeleePhaseTwo : MonoBehaviour
     float nextMove;
 
     Transform player;
+    bool hasSetNewX;
 
     public float MoveDelay { get { return moveDelay; } set { moveDelay = value; } }
 
@@ -42,6 +43,15 @@ public class MeleePhaseTwo : MonoBehaviour
         {
             return;
         }
+        else if (!hasSetNewX && nextPos == pos.Length - 1)
+        {
+            hasSetNewX = true;
+
+            // Set top left and bottom left x position equal to player's current position
+            float x = player.transform.position.x;
+            pos[pos.Length - 1].position = new Vector2(x, pos[pos.Length - 1].position.y);
+            pos[0].position = new Vector2(x, pos[0].position.y);
+        }
 
         transform.position = Vector3.MoveTowards(transform.position, pos[nextPos].position, enemyDefaults.MoveSpeed * Time.deltaTime);
 
@@ -50,13 +60,12 @@ public class MeleePhaseTwo : MonoBehaviour
             // Position to move to is of index current position + 1, if nextPos is outside array, wrap back to beginning
             nextPos++;
 
+            // Set trigger to set new x position for top left and bottom left on next move
             if (nextPos == pos.Length - 1)
             {
-                // Set top left and bottom left x position equal to player's current position
-                float x = player.transform.position.x;
-                pos[pos.Length - 1].position = new Vector2(x, pos[pos.Length - 1].position.y);
-                pos[0].position = new Vector2(x, pos[0].position.y);
+                hasSetNewX = false;
             }
+
             if (nextPos > pos.Length - 1)
             {
                 nextPos = 0;

@@ -22,10 +22,10 @@ MonoBehaviour:
   shootIsChild: 0
   numProj: 3
   xDirection:
-  - -0.75
-  - -0.75
-  - -0.75
+  - -1
+  - -1
+  - -1
   yDirection:
-  - 0.7
+  - 0.3
   - 0
-  - -0.7
+  - -0.3

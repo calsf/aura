@@ -9,6 +9,13 @@ public class RangedPhaseTwo : MonoBehaviour
     Animator[] orbAnim;
     Vector2[] orbPos;
 
+    // Object pool
+    List<GameObject> deathFXPool;
+    [SerializeField]
+    GameObject deathFXPrefab;
+    [SerializeField]
+    int poolNum;
+
 
     // Possible x and y coordinates to move to
     int[] possibleY = { -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12 };
@@ -39,11 +46,29 @@ public class RangedPhaseTwo : MonoBehaviour
         {
             orbAnim[i] = orbs[i].gameObject.GetComponent<Animator>();
         }
+
+        deathFXPool = new List<GameObject>();
+        for (int i = 0; i < poolNum; i++)
+        {
+            deathFXPool.Add(Instantiate(deathFXPrefab, Vector3.down * 50, Quaternion.identity));
+            deathFXPool[i].SetActive(false);
+        }
     }
 
     void OnEnable()
     {
         nextAttack = Time.time + (delay / 2);
+    }
+
+    void OnDisable()
+    {
+        foreach(DamagePlayerDefaults orb in orbs)
+        {
+            GameObject deathFX = GetFromPool(deathFXPool);
+            deathFX.transform.position = orb.gameObject.transform.position;
+            orb.gameObject.SetActive(false);
+            deathFX.SetActive(true);
+        }
     }
 
     void Update()
@@ -118,5 +143,19 @@ public class RangedPhaseTwo : MonoBehaviour
         }
 
         isAttacking = true;
+    }
+
+    //Get inactive object from pool
+    GameObject GetFromPool(List<GameObject> pool)
+    {
+        for (int i = 0; i < pool.Count; i++)
+        {
+            if (!pool[i].activeInHierarchy)
+            {
+                return pool[i];
+            }
+        }
+
+        return null;
     }
 }

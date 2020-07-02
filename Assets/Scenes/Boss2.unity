@@ -169,7 +169,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5da58db3fbd55744a9baf629449bedaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 519420028}
   moveValue: 0.27
   noRepeat: 0
 --- !u!1 &4470264
@@ -3592,7 +3591,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5da58db3fbd55744a9baf629449bedaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 519420028}
   moveValue: 0.5
   noRepeat: 0
 --- !u!1 &72474922
@@ -11193,7 +11191,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5da58db3fbd55744a9baf629449bedaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 519420028}
   moveValue: 0.7
   noRepeat: 0
 --- !u!1 &260635971
@@ -12049,7 +12046,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5da58db3fbd55744a9baf629449bedaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 519420028}
   moveValue: 0.6
   noRepeat: 0
 --- !u!1 &272219853
@@ -25159,6 +25155,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a6d7c9688ded094aa8051d3bfdf37bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnFarTeleport:
+    m_PersistentCalls:
+      m_Calls: []
   player: {fileID: 463194445}
   maxX: 0
   minX: 0
@@ -37298,8 +37297,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1818903620}
   m_HandleRect: {fileID: 1818903618}
   m_Direction: 2
-  m_Value: 0.9999999
-  m_Size: 0.25745606
+  m_Value: 1
+  m_Size: 0.2574561
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -41183,7 +41182,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5da58db3fbd55744a9baf629449bedaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 519420028}
   moveValue: 0.4
   noRepeat: 0
 --- !u!1 &906374976
@@ -45811,7 +45809,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   portal: {fileID: 1931825200}
   delay: 2
-  enemyDefaults: {fileID: 1477494180}
+  enemyDefaults:
+  - {fileID: 1477494180}
 --- !u!1 &989765969
 GameObject:
   m_ObjectHideFlags: 0
@@ -53649,7 +53648,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5da58db3fbd55744a9baf629449bedaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 519420028}
   moveValue: 0.4
   noRepeat: 0
 --- !u!1 &1146244199
@@ -62128,7 +62126,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5da58db3fbd55744a9baf629449bedaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 519420028}
   moveValue: 0.85
   noRepeat: 0
 --- !u!1 &1344438262
@@ -70199,7 +70196,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5da58db3fbd55744a9baf629449bedaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 519420028}
   moveValue: 0.5
   noRepeat: 0
 --- !u!1 &1514025919
@@ -80069,7 +80065,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5da58db3fbd55744a9baf629449bedaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 519420028}
   moveValue: 0.7
   noRepeat: 0
 --- !u!1 &1743215425
@@ -101505,7 +101500,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5da58db3fbd55744a9baf629449bedaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 519420028}
   moveValue: 0.6
   noRepeat: 0
 --- !u!1 &1834785418
@@ -102232,7 +102226,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5da58db3fbd55744a9baf629449bedaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 519420028}
   moveValue: 0.6
   noRepeat: 0
 --- !u!1 &1852984799
@@ -107941,7 +107934,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5da58db3fbd55744a9baf629449bedaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 519420028}
   moveValue: 0.6
   noRepeat: 0
 --- !u!1 &2004557698
@@ -108954,7 +108946,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5da58db3fbd55744a9baf629449bedaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 519420028}
   moveValue: 0.27
   noRepeat: 0
 --- !u!1 &2020149217
@@ -112763,7 +112754,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2124375909}
   m_HandleRect: {fileID: 2124375907}
   m_Direction: 2
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:

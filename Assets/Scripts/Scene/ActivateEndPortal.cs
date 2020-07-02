@@ -15,16 +15,24 @@ public class ActivateEndPortal : MonoBehaviour
     float activateTime;
 
     [SerializeField]
-    EnemyDefaults enemyDefaults;
+    EnemyDefaults[] enemyDefaults;
 
     bool hasActivated = false;
 
     // Update is called once per frame
     void Update()
     {
-        // Once enemy defeated, set time to activate end portal
-        if (enemyDefaults.HP <= 0 && !hasActivated)
+        // Once all enemy defeated, set time to activate end portal
+        if (!hasActivated)
         {
+            foreach (EnemyDefaults enemy in enemyDefaults)
+            {
+                if (enemy.HP > 0)
+                {
+                    return;
+                }
+            }
+
             hasActivated = true;
             activateTime = Time.time + delay;
         }

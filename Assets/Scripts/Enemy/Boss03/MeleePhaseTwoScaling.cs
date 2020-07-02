@@ -27,6 +27,9 @@ public class MeleePhaseTwoScaling : MonoBehaviour
     MeleePhaseTwo phaseTwo;
     float originalMoveDelay;
 
+    float barTargetY = 3.5f;
+    Vector2 barOrigPos;
+
     void Awake()
     {
         bossStage = GetComponent<BossStages>();
@@ -36,6 +39,20 @@ public class MeleePhaseTwoScaling : MonoBehaviour
         barObject = transform.GetChild(0).gameObject;   // barObject MUST BE FIRST CHILD OF OBJECT THIS SCRIPT IS ATTACHED TO
 
         originalMoveDelay = phaseTwo.MoveDelay;
+        barOrigPos = barObject.transform.localPosition;
+    }
+
+    // Reset values when enabled
+    void OnEnable()
+    {
+        // Move bar object to new position
+        barObject.transform.localPosition = new Vector2(barObject.transform.localPosition.x, barTargetY);
+    }
+
+    void OnDisable()
+    {
+        // Reset bar object position to initial position
+        barObject.transform.localPosition = barOrigPos;
     }
 
     void Update()
