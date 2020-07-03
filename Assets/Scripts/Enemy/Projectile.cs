@@ -26,7 +26,11 @@ public class Projectile : MonoBehaviour
     Vector2 origScale;
     bool pause;
 
+    bool ignoreCameraBounds = false;    // Only for projectiles that will be gauranteed disabled some other way, such as final boss returning projectile
+
     public Vector2 Dir { get { return dir; } set { dir = value; } }
+    public GameObject DisabledEffect { get { return disabledEffect; } }
+    public bool IgnoreCameraBounds { set { ignoreCameraBounds = value; } }
 
     void Awake()
     {
@@ -95,7 +99,10 @@ public class Projectile : MonoBehaviour
         // Once projectile goes out of camera bounds, deactivate object, add offset to camera bounds for it to actually be off camera
         if (transform.position.x > (cam.MaxX + 25) || transform.position.x < (cam.MinX - 25) || transform.position.y > (cam.MaxY + 15) || transform.position.y < (cam.MinY - 15))
         {
-            gameObject.SetActive(false);
+            if (!ignoreCameraBounds)
+            {
+                gameObject.SetActive(false);
+            }
         }
 
         // If rotate of dmgPlayer object is true, rotate projectile in direction it is moving
