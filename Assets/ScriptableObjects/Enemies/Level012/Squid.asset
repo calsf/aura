@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Squid
   m_EditorClassIdentifier: 
   enemyName: Squid
-  maxHP: 120
+  maxHP: 240
   dmg: 1
   gold: 1000
   baseMoveSpeed: 3

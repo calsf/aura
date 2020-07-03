@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: KingHermit
   m_EditorClassIdentifier: 
   enemyName: King Hermit
-  maxHP: 150
+  maxHP: 250
   dmg: 1
   gold: 1500
   baseMoveSpeed: 5

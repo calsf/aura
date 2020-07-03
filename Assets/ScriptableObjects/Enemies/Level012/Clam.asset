@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Clam
   m_EditorClassIdentifier: 
   enemyName: Clam
-  maxHP: 100
+  maxHP: 200
   dmg: 1
   gold: 1000
   baseMoveSpeed: 0

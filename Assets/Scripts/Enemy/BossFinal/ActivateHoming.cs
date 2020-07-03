@@ -9,7 +9,7 @@ public class ActivateHoming : MonoBehaviour
 
     public GameObject HomingProjectile { get { return homingProjectile; } }
 
-    public void Activate()
+    public void ActivateHomingProjectile()
     {
         homingProjectile.transform.position = transform.position;
         homingProjectile.SetActive(true);

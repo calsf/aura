@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Hermit
   m_EditorClassIdentifier: 
   enemyName: Hermit
-  maxHP: 70
+  maxHP: 140
   dmg: 1
   gold: 500
   baseMoveSpeed: 3
