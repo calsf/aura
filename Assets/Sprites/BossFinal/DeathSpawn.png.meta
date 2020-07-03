@@ -1,0 +1,1255 @@
+fileFormatVersion: 2
+guid: 445234ce5e24fe84c8404f2c8308908f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7204831752264508080
+    second: DeathSpawn_0
+  - first:
+      213: -1317911674890888290
+    second: DeathSpawn_1
+  - first:
+      213: 663531333532586885
+    second: DeathSpawn_2
+  - first:
+      213: 5614848809801609392
+    second: DeathSpawn_3
+  - first:
+      213: -5166581337305802844
+    second: DeathSpawn_4
+  - first:
+      213: -7713910683152722232
+    second: DeathSpawn_5
+  - first:
+      213: -4654390899882752014
+    second: DeathSpawn_6
+  - first:
+      213: -1512504547280168288
+    second: DeathSpawn_7
+  - first:
+      213: -7260394381037237408
+    second: DeathSpawn_8
+  - first:
+      213: 8354376065853730378
+    second: DeathSpawn_9
+  - first:
+      213: 5603876502689675614
+    second: DeathSpawn_10
+  - first:
+      213: 1717549462956942102
+    second: DeathSpawn_11
+  - first:
+      213: -3357961225105316079
+    second: DeathSpawn_12
+  - first:
+      213: -580419057591762350
+    second: DeathSpawn_13
+  - first:
+      213: 557022138897358258
+    second: DeathSpawn_14
+  - first:
+      213: -5142147388147866322
+    second: DeathSpawn_15
+  - first:
+      213: 6114671219701046367
+    second: DeathSpawn_16
+  - first:
+      213: 1591803259233184427
+    second: DeathSpawn_17
+  - first:
+      213: 2911223991139033271
+    second: DeathSpawn_18
+  - first:
+      213: -2578035364514144597
+    second: DeathSpawn_19
+  - first:
+      213: -457120563644337793
+    second: DeathSpawn_20
+  - first:
+      213: -2230016887365965977
+    second: DeathSpawn_21
+  - first:
+      213: -6609263371772719671
+    second: DeathSpawn_22
+  - first:
+      213: 1445374449476492682
+    second: DeathSpawn_23
+  - first:
+      213: 6324890628468357380
+    second: DeathSpawn_24
+  - first:
+      213: 3452357575137368824
+    second: DeathSpawn_25
+  - first:
+      213: 5372148374238361803
+    second: DeathSpawn_26
+  - first:
+      213: -7700269569806271123
+    second: DeathSpawn_27
+  - first:
+      213: 501639399157259030
+    second: DeathSpawn_28
+  - first:
+      213: -6604845647016068018
+    second: DeathSpawn_29
+  - first:
+      213: -3749715479019707927
+    second: DeathSpawn_30
+  - first:
+      213: 7515113516374731284
+    second: DeathSpawn_31
+  - first:
+      213: -851248301816028580
+    second: DeathSpawn_32
+  - first:
+      213: 1218520381807274347
+    second: DeathSpawn_33
+  - first:
+      213: -7671295244582355339
+    second: DeathSpawn_34
+  - first:
+      213: 16370771225235453
+    second: DeathSpawn_35
+  - first:
+      213: 8066847026522704331
+    second: DeathSpawn_36
+  - first:
+      213: -3615699576469014825
+    second: DeathSpawn_37
+  - first:
+      213: 1841406249388845393
+    second: DeathSpawn_38
+  - first:
+      213: -2599566660447935516
+    second: DeathSpawn_39
+  - first:
+      213: 7256530866920840636
+    second: DeathSpawn_40
+  - first:
+      213: -3862056107318546326
+    second: DeathSpawn_41
+  - first:
+      213: 4508347478380811547
+    second: DeathSpawn_42
+  - first:
+      213: -1530042718038369549
+    second: DeathSpawn_43
+  - first:
+      213: -6771801390798045429
+    second: DeathSpawn_44
+  - first:
+      213: 1079189578986348489
+    second: DeathSpawn_45
+  - first:
+      213: 7376035813233138469
+    second: DeathSpawn_46
+  - first:
+      213: -8329905293009689108
+    second: DeathSpawn_47
+  - first:
+      213: 5071987626148653172
+    second: DeathSpawn_48
+  - first:
+      213: 1213956268509495859
+    second: DeathSpawn_49
+  - first:
+      213: 6257200477446502306
+    second: DeathSpawn_50
+  - first:
+      213: 2558579446801360158
+    second: DeathSpawn_51
+  - first:
+      213: -6681918699269496556
+    second: DeathSpawn_52
+  - first:
+      213: 3626965721558088759
+    second: DeathSpawn_53
+  - first:
+      213: -3799230185377930213
+    second: DeathSpawn_54
+  - first:
+      213: -8113951396783577998
+    second: DeathSpawn_55
+  - first:
+      213: -2022423558492359797
+    second: DeathSpawn_56
+  - first:
+      213: -8864621137331020871
+    second: DeathSpawn_57
+  - first:
+      213: -1593298703047946543
+    second: DeathSpawn_58
+  - first:
+      213: -4286403265925689510
+    second: DeathSpawn_59
+  - first:
+      213: 991214738111757170
+    second: DeathSpawn_60
+  - first:
+      213: -877141393905060886
+    second: DeathSpawn_61
+  - first:
+      213: 9041806614969804395
+    second: DeathSpawn_62
+  - first:
+      213: 794954531431840757
+    second: DeathSpawn_63
+  - first:
+      213: 3474819958685530297
+    second: DeathSpawn_64
+  - first:
+      213: -8629753951103534637
+    second: DeathSpawn_65
+  - first:
+      213: 7244759275616532830
+    second: DeathSpawn_66
+  - first:
+      213: 2436582800190205455
+    second: DeathSpawn_67
+  - first:
+      213: 3047700811646645848
+    second: DeathSpawn_68
+  - first:
+      213: 3991983834299477183
+    second: DeathSpawn_69
+  - first:
+      213: 5510614086226172497
+    second: DeathSpawn_70
+  - first:
+      213: -1802448331877551900
+    second: DeathSpawn_71
+  - first:
+      213: 2029676831913833270
+    second: DeathSpawn_72
+  - first:
+      213: -4634543220352686180
+    second: DeathSpawn_73
+  - first:
+      213: 2591536883121941185
+    second: DeathSpawn_74
+  - first:
+      213: 3062746419306436589
+    second: DeathSpawn_75
+  - first:
+      213: 7920635534578164469
+    second: DeathSpawn_76
+  - first:
+      213: 5495973986425915091
+    second: DeathSpawn_77
+  - first:
+      213: 681279080936027726
+    second: DeathSpawn_78
+  - first:
+      213: -345723876335727434
+    second: DeathSpawn_79
+  - first:
+      213: -5982264881150752286
+    second: DeathSpawn_80
+  - first:
+      213: -1015542945083444389
+    second: DeathSpawn_81
+  - first:
+      213: 8641488369555690720
+    second: DeathSpawn_82
+  - first:
+      213: 8746198607025202640
+    second: DeathSpawn_83
+  - first:
+      213: -7410109272127967341
+    second: DeathSpawn_84
+  - first:
+      213: 1708830023481349743
+    second: DeathSpawn_85
+  - first:
+      213: 603320062711026870
+    second: DeathSpawn_86
+  - first:
+      213: -4865346699561886879
+    second: DeathSpawn_87
+  - first:
+      213: 8306015973587690846
+    second: DeathSpawn_88
+  - first:
+      213: 4084723142924985099
+    second: DeathSpawn_89
+  - first:
+      213: -703521274470912908
+    second: DeathSpawn_90
+  - first:
+      213: -2769599219811001579
+    second: DeathSpawn_91
+  - first:
+      213: -2217296608558698736
+    second: DeathSpawn_92
+  - first:
+      213: 5619745679593106154
+    second: DeathSpawn_93
+  - first:
+      213: 5982366471638418914
+    second: DeathSpawn_94
+  - first:
+      213: 4053811950317932013
+    second: DeathSpawn_95
+  - first:
+      213: -8790234107595731157
+    second: DeathSpawn_96
+  - first:
+      213: 8752154059717425501
+    second: DeathSpawn_97
+  - first:
+      213: 7699208985613848723
+    second: DeathSpawn_98
+  - first:
+      213: 8482329014649347199
+    second: DeathSpawn_99
+  - first:
+      213: 4449828040133112379
+    second: DeathSpawn_100
+  - first:
+      213: 3649451798189995469
+    second: DeathSpawn_101
+  - first:
+      213: 4043732901326188495
+    second: DeathSpawn_102
+  - first:
+      213: -5088343332270716357
+    second: DeathSpawn_103
+  - first:
+      213: -4843560510065146594
+    second: DeathSpawn_104
+  - first:
+      213: 2212459523234251762
+    second: DeathSpawn_105
+  - first:
+      213: -2786702756286417456
+    second: DeathSpawn_106
+  - first:
+      213: 2255717892009696005
+    second: DeathSpawn_107
+  - first:
+      213: -6934169628559564824
+    second: DeathSpawn_108
+  - first:
+      213: 1119112830749492255
+    second: DeathSpawn_109
+  - first:
+      213: 5052816619524030398
+    second: DeathSpawn_110
+  - first:
+      213: 8659172662952252730
+    second: DeathSpawn_111
+  - first:
+      213: 4742603634022406372
+    second: DeathSpawn_112
+  - first:
+      213: 2578812275581638112
+    second: DeathSpawn_113
+  - first:
+      213: -4887747743728259554
+    second: DeathSpawn_114
+  - first:
+      213: -2117112098067146674
+    second: DeathSpawn_115
+  - first:
+      213: 4969014138181259971
+    second: DeathSpawn_116
+  - first:
+      213: -3934763923357837169
+    second: DeathSpawn_117
+  - first:
+      213: 600941465293980667
+    second: DeathSpawn_118
+  - first:
+      213: 8559324886430620465
+    second: DeathSpawn_119
+  - first:
+      213: 5988964028193355189
+    second: DeathSpawn_120
+  - first:
+      213: 6986016700750482112
+    second: DeathSpawn_121
+  - first:
+      213: -1739458790611886288
+    second: DeathSpawn_122
+  - first:
+      213: 4201734722250977556
+    second: DeathSpawn_123
+  - first:
+      213: -7548578275282250956
+    second: DeathSpawn_124
+  - first:
+      213: -8934884177381299541
+    second: DeathSpawn_125
+  - first:
+      213: -1602428310394643503
+    second: DeathSpawn_126
+  - first:
+      213: 6352365800594642336
+    second: DeathSpawn_127
+  - first:
+      213: 3901907544201107719
+    second: DeathSpawn_128
+  - first:
+      213: -221898457169506236
+    second: DeathSpawn_129
+  - first:
+      213: -4211407277326739681
+    second: DeathSpawn_130
+  - first:
+      213: -988619495430037305
+    second: DeathSpawn_131
+  - first:
+      213: -2788747453325691684
+    second: DeathSpawn_132
+  - first:
+      213: 3951555007040617646
+    second: DeathSpawn_133
+  - first:
+      213: 6414021465456356939
+    second: DeathSpawn_134
+  - first:
+      213: -7280478628281487963
+    second: DeathSpawn_135
+  - first:
+      213: -8936913887926977189
+    second: DeathSpawn_136
+  - first:
+      213: 1216632996582506971
+    second: DeathSpawn_137
+  - first:
+      213: -7192968693372094884
+    second: DeathSpawn_138
+  - first:
+      213: 7551872385055812084
+    second: DeathSpawn_139
+  - first:
+      213: 8526419079925948664
+    second: DeathSpawn_140
+  - first:
+      213: 5916518438552415499
+    second: DeathSpawn_141
+  - first:
+      213: 9183931441386432241
+    second: DeathSpawn_142
+  - first:
+      213: 6732208344509048559
+    second: DeathSpawn_143
+  - first:
+      213: -41227325420506582
+    second: DeathSpawn_144
+  - first:
+      213: -3455538080599634809
+    second: DeathSpawn_145
+  - first:
+      213: 3235884025053100869
+    second: DeathSpawn_146
+  - first:
+      213: -7220347831311568086
+    second: DeathSpawn_147
+  - first:
+      213: 8860305765569834998
+    second: DeathSpawn_148
+  - first:
+      213: 4672854004165073459
+    second: DeathSpawn_149
+  - first:
+      213: -7696276192022172999
+    second: DeathSpawn_150
+  - first:
+      213: -7676046771479692935
+    second: DeathSpawn_151
+  - first:
+      213: -1245855023835469326
+    second: DeathSpawn_152
+  - first:
+      213: 4892294312422916612
+    second: DeathSpawn_153
+  - first:
+      213: -6608246640155164265
+    second: DeathSpawn_154
+  - first:
+      213: 7679700592509244450
+    second: DeathSpawn_155
+  - first:
+      213: 1193531036007085014
+    second: DeathSpawn_156
+  - first:
+      213: -5728186864740188129
+    second: DeathSpawn_157
+  - first:
+      213: -4565348087451725481
+    second: DeathSpawn_158
+  - first:
+      213: -8557500387795611986
+    second: DeathSpawn_159
+  - first:
+      213: 7836151688893906979
+    second: DeathSpawn_160
+  - first:
+      213: 7748062307477570323
+    second: DeathSpawn_161
+  - first:
+      213: -2011979258161897332
+    second: DeathSpawn_162
+  - first:
+      213: 6175628892429333988
+    second: DeathSpawn_163
+  - first:
+      213: -264122357516577555
+    second: DeathSpawn_164
+  - first:
+      213: -3727863690116348030
+    second: DeathSpawn_165
+  - first:
+      213: -8701813461981061853
+    second: DeathSpawn_166
+  - first:
+      213: -3762132559146863502
+    second: DeathSpawn_167
+  - first:
+      213: 8420355758846883981
+    second: DeathSpawn_168
+  - first:
+      213: -7334122503533399050
+    second: DeathSpawn_169
+  - first:
+      213: 5484753370879765275
+    second: DeathSpawn_170
+  - first:
+      213: -4786597254432166164
+    second: DeathSpawn_171
+  - first:
+      213: -1531513251047383223
+    second: DeathSpawn_172
+  - first:
+      213: 4942467414575093240
+    second: DeathSpawn_173
+  - first:
+      213: 5968497169190709183
+    second: DeathSpawn_174
+  - first:
+      213: 8649348262915839694
+    second: DeathSpawn_175
+  - first:
+      213: 5766556510131928944
+    second: DeathSpawn_176
+  - first:
+      213: 204396796035349924
+    second: DeathSpawn_177
+  - first:
+      213: 5477393490147774878
+    second: DeathSpawn_178
+  - first:
+      213: 4323739278397428408
+    second: DeathSpawn_179
+  - first:
+      213: 8044326456641905638
+    second: DeathSpawn_180
+  - first:
+      213: 8055365646349159930
+    second: DeathSpawn_181
+  - first:
+      213: 8398472040691108232
+    second: DeathSpawn_182
+  - first:
+      213: 410274499705310301
+    second: DeathSpawn_183
+  - first:
+      213: 4353489259284535658
+    second: DeathSpawn_184
+  - first:
+      213: -2965315490577188860
+    second: DeathSpawn_185
+  - first:
+      213: 2574207903340877981
+    second: DeathSpawn_186
+  - first:
+      213: -3170505007939429629
+    second: DeathSpawn_187
+  - first:
+      213: -933121711015262537
+    second: DeathSpawn_188
+  - first:
+      213: 5582497435883921322
+    second: DeathSpawn_189
+  - first:
+      213: -3923835932282089205
+    second: DeathSpawn_190
+  - first:
+      213: -2079269027719701168
+    second: DeathSpawn_191
+  - first:
+      213: 1730764597798979349
+    second: DeathSpawn_192
+  - first:
+      213: -4258519915077101942
+    second: DeathSpawn_193
+  - first:
+      213: 5480464013389511913
+    second: DeathSpawn_194
+  - first:
+      213: 6548726182536335985
+    second: DeathSpawn_195
+  - first:
+      213: 8703679515867597143
+    second: DeathSpawn_196
+  - first:
+      213: 5080142609517374356
+    second: DeathSpawn_197
+  - first:
+      213: -3026780449320486956
+    second: DeathSpawn_198
+  - first:
+      213: 7952799855098661504
+    second: DeathSpawn_199
+  - first:
+      213: 3946951682390121941
+    second: DeathSpawn_0
+  - first:
+      213: 3575166465639621281
+    second: DeathSpawn_1
+  - first:
+      213: -7418883255176135705
+    second: DeathSpawn_2
+  - first:
+      213: -3882602712287375390
+    second: DeathSpawn_3
+  - first:
+      213: 9014632382043050166
+    second: DeathSpawn_4
+  - first:
+      213: -6682101099475284998
+    second: DeathSpawn_5
+  - first:
+      213: -1667790588897846495
+    second: DeathSpawn_6
+  - first:
+      213: 2428738308941043680
+    second: DeathSpawn_7
+  - first:
+      213: 4230530208057159244
+    second: DeathSpawn_8
+  - first:
+      213: 4936719812503001227
+    second: DeathSpawn_9
+  - first:
+      213: -2698072520269577778
+    second: DeathSpawn_10
+  - first:
+      213: 1838044645388273156
+    second: DeathSpawn_11
+  - first:
+      213: -8908623262786855882
+    second: DeathSpawn_12
+  - first:
+      213: 8534184793728222069
+    second: DeathSpawn_13
+  - first:
+      213: -7777863573199286422
+    second: DeathSpawn_14
+  - first:
+      213: -3925471196788548055
+    second: DeathSpawn_15
+  - first:
+      213: -7681309871250343991
+    second: DeathSpawn_16
+  - first:
+      213: 2721486009883339031
+    second: DeathSpawn_17
+  - first:
+      213: 2328125159313574717
+    second: DeathSpawn_18
+  - first:
+      213: -1044750008254599882
+    second: DeathSpawn_19
+  - first:
+      213: -5122758680190680167
+    second: DeathSpawn_20
+  - first:
+      213: 4907590507606119818
+    second: DeathSpawn_21
+  - first:
+      213: 104518232089102599
+    second: DeathSpawn_22
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: DeathSpawn_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5dd5e7ea4a366c630800000000000000
+      internalID: 3946951682390121941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeathSpawn_1
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 96
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a2a65d55fa8d9130800000000000000
+      internalID: 3575166465639621281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeathSpawn_2
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 96
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ebf1218cf4da0990800000000000000
+      internalID: -7418883255176135705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeathSpawn_3
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 96
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ef842277693e1ac0800000000000000
+      internalID: -3882602712287375390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeathSpawn_4
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 96
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b0d860d3686a1d70800000000000000
+      internalID: 9014632382043050166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeathSpawn_5
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 96
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afb478c04786443a0800000000000000
+      internalID: -6682101099475284998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeathSpawn_6
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 96
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12b1105bb41dad8e0800000000000000
+      internalID: -1667790588897846495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeathSpawn_7
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 96
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e750dcbf9c94b120800000000000000
+      internalID: 2428738308941043680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeathSpawn_8
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 96
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4e6ec65fccd5ba30800000000000000
+      internalID: 4230530208057159244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeathSpawn_9
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 96
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b88dfdb7380c28440800000000000000
+      internalID: 4936719812503001227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeathSpawn_10
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 96
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec1c61b76558e8ad0800000000000000
+      internalID: -2698072520269577778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeathSpawn_11
+      rect:
+        serializedVersion: 2
+        x: 1056
+        y: 96
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4064da9dddb028910800000000000000
+      internalID: 1838044645388273156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeathSpawn_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63cdec7a7563e5480800000000000000
+      internalID: -8908623262786855882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeathSpawn_13
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57306b59ad38f6670800000000000000
+      internalID: 8534184793728222069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeathSpawn_14
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6f81000a4a7f0490800000000000000
+      internalID: -7777863573199286422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeathSpawn_15
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 0
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92e146b9ebce589c0800000000000000
+      internalID: -3925471196788548055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeathSpawn_16
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c7fb629e51866590800000000000000
+      internalID: -7681309871250343991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeathSpawn_17
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 719aa406b19a4c520800000000000000
+      internalID: 2721486009883339031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeathSpawn_18
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3b09895f792f4020800000000000000
+      internalID: 2328125159313574717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeathSpawn_19
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 0
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63de5ee176d4081f0800000000000000
+      internalID: -1044750008254599882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeathSpawn_20
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9938f253f1e48e8b0800000000000000
+      internalID: -5122758680190680167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeathSpawn_21
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 0
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8511fca0934b1440800000000000000
+      internalID: 4907590507606119818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeathSpawn_22
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 0
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 709093047c2537100800000000000000
+      internalID: 104518232089102599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
