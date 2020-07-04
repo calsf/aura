@@ -10,4 +10,5 @@ public class DamagePlayer : ScriptableObject
     public bool ignoreGround;
     public bool ignoreFirstGround;
     public bool rotate;
+    public bool disableOnPlayer;
 }

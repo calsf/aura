@@ -112,6 +112,12 @@ public class PlayerHP : MonoBehaviour
                 return;
             }
 
+            // Disable other object if DamagePlayer property is true
+            if (dmgPlayer != null && dmgPlayer.DmgPlayer.disableOnPlayer)
+            {
+                other.gameObject.SetActive(false);
+            }
+
             DisplayDmgNum(dmg); //Show damage number
             currentHP -= dmg; //Calculate HP
             if (currentHP < 0) //Do not go below 0 hp
@@ -143,7 +149,8 @@ public class PlayerHP : MonoBehaviour
             {
                 if (!numPool[i].activeInHierarchy)
                 {
-                    numPool[i].GetComponent<TextMeshPro>().text = "-" + dmg.ToString();
+                    string txt = dmg > 9000 ? "DEATH" : "-" + dmg.ToString();
+                    numPool[i].GetComponent<TextMeshPro>().text = txt;
                     numPool[i].transform.position = transform.position;
                     numPool[i].SetActive(true);
                     return;

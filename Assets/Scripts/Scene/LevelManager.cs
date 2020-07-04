@@ -59,6 +59,12 @@ public class LevelManager : MonoBehaviour
     // Lose half gold OnDeath
     void GoldCut()
     {
+        // Return if no gold to lose
+        if (gold / 2 == 0)
+        {
+            return;
+        }
+
         // Show gold popup for gold lost with y offset above player
         goldPopup.transform.position = player.transform.position + (Vector3.up * .1f);
         goldPopupText.text = "-" + gold/2 + " Gold";

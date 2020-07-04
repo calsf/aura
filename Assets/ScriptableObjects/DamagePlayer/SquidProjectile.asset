@@ -17,3 +17,4 @@ MonoBehaviour:
   ignoreGround: 0
   ignoreFirstGround: 0
   rotate: 1
+  disableOnPlayer: 1

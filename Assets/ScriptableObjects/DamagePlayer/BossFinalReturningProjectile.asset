@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1936b36b0ef42a548ab32726ea276c1e, type: 3}
   m_Name: BossFinalReturningProjectile
   m_EditorClassIdentifier: 
-  dmg: 99
+  dmg: 9999
   baseSpeed: 20
   ignoreGround: 1
   ignoreFirstGround: 0

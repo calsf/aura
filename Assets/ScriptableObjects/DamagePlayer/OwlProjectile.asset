@@ -14,3 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dmg: 1
   baseSpeed: 10
+  ignoreGround: 0
+  ignoreFirstGround: 0
+  rotate: 0
+  disableOnPlayer: 1

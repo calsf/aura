@@ -19,6 +19,11 @@ public class UpdateCollider : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (sr.sprite == null)
+        {
+            return;
+        }
+
         // Reset the polygon collider
         Vector2[] empty = { Vector2.zero };
         for (int i = 0; i < coll.pathCount; i++)

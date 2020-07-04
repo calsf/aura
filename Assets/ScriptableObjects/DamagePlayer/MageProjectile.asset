@@ -16,3 +16,5 @@ MonoBehaviour:
   baseSpeed: 20
   ignoreGround: 0
   ignoreFirstGround: 0
+  rotate: 0
+  disableOnPlayer: 1

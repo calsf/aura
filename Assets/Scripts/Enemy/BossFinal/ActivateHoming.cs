@@ -6,12 +6,14 @@ public class ActivateHoming : MonoBehaviour
 {
     [SerializeField]
     GameObject homingProjectile;
+    [SerializeField]
+    Transform spawnPos;
 
     public GameObject HomingProjectile { get { return homingProjectile; } }
 
     public void ActivateHomingProjectile()
     {
-        homingProjectile.transform.position = transform.position;
+        homingProjectile.transform.position = spawnPos.transform.position;
         homingProjectile.SetActive(true);
     }
 }
