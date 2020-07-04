@@ -135,7 +135,7 @@ public class PlayerHP : MonoBehaviour
     }
 
     //Show damage number
-    void DisplayDmgNum(int dmg)
+    public void DisplayDmgNum(int dmg)
     {
         if (PlayerPrefs.GetInt("Damage") == 0)
         {

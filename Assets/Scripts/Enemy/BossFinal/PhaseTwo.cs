@@ -2,19 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ChooseAttack : StateMachineBehaviour
+public class PhaseTwo : StateMachineBehaviour
 {
     [SerializeField]
     float delay;
     float nextAttack;
 
-    ActivateHoming homing;
+    EnemyDefaults enemyDefaults;
+    GameObject player;
 
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        homing = animator.gameObject.GetComponent<ActivateHoming>();
+        player = GameObject.FindGameObjectWithTag("Player");
+        enemyDefaults = animator.gameObject.GetComponent<EnemyDefaults>();
         nextAttack = Time.time + delay;
     }
 
@@ -24,15 +26,12 @@ public class ChooseAttack : StateMachineBehaviour
         // If can attack, go to one of the anim clips which will trigger an attack behaviour
         if (Time.time > nextAttack)
         {
-            // Shoot homing projectile unless it is active, if active, use teleport attack
-            if (homing.HomingProjectile.activeInHierarchy)
-            {
-                animator.Play("TeleportAttack");
-            }
-            else
-            {
-                animator.Play("HomingAttack");
-            }
+            animator.Play("SlashAttack");
+        }
+        else
+        {
+            animator.gameObject.transform.position = Vector3.MoveTowards(
+                animator.gameObject.transform.position, player.transform.position, enemyDefaults.MoveSpeed * Time.deltaTime);
         }
     }
 }

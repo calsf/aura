@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: FinalBoss
   m_EditorClassIdentifier: 
   enemyName: Death
-  maxHP: 6000
+  maxHP: 1500
   dmg: 1
   gold: 0
-  baseMoveSpeed: 10
+  baseMoveSpeed: 5
   deathSound: {fileID: 8300000, guid: af29e16ed3c6e8b4384f4c33d2c364cf, type: 3}
   deathVolume: 0.5
   deathFX: {fileID: 4598560185897053914, guid: c5212d2f01e1fdc4b841f9c9f2628e72, type: 3}
