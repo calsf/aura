@@ -28,6 +28,12 @@ public class CompleteLevel : MonoBehaviour
     bool hasEntered = false;
     CameraControl cam;
 
+    // For unlocking death aura only
+    [SerializeField]
+    bool unlockDeathAura;
+    [SerializeField]
+    GameObject unlockMsg;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -63,6 +69,15 @@ public class CompleteLevel : MonoBehaviour
             foreach (int i in levelToUnlock)
             {
                 saveData.UnlockLevel(i);
+            }
+
+            // Unlock death aura if level completion awards it and has not been unlocked yet
+            if (unlockDeathAura && !saveData.AuraUnlocked[13])
+            {
+                // Index of aura of death is 13
+                saveData.UnlockAura(13);
+
+                unlockMsg.SetActive(true);
             }
 
             StartCoroutine(Leave());

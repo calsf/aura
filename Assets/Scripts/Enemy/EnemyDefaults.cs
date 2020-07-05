@@ -342,7 +342,8 @@ public class EnemyDefaults : MonoBehaviour {
         {
             if (!numPool[i].activeInHierarchy)
             {
-                numPool[i].GetComponent<TextMeshPro>().text = "-" + dmg.ToString();
+                string txt = dmg > 9000 ? "DEATH" : "-" + dmg.ToString();
+                numPool[i].GetComponent<TextMeshPro>().text = txt;
                 numPool[i].transform.position = numSpawn == null ? transform.position : numSpawn.position;
                 numPool[i].SetActive(true);
                 return;

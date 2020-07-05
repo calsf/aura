@@ -92758,7 +92758,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61280632117d9ce47baa560949eb608f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelToUnlock: 04000000
+  levelToUnlock: 12000000
   lvlCompleteScreen: {fileID: 975011205}
   goldEarnedTxt: {fileID: 1180252021}
   totalGoldTxt: {fileID: 51033365}
