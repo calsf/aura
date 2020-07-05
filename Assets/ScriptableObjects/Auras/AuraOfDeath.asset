@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1c282029072a9048b9e8b3ff82d3437, type: 3}
+  m_Name: AuraOfDeath
+  m_EditorClassIdentifier: 
+  auraName: Aura of Death
+  baseDmg: 9999
+  icon: {fileID: 8023344437602462116, guid: 2fe2c8fd8d5d4564e9188ef10ac55701, type: 3}
+  price: 0
+  auraNumber: 13
+  desc: A rare and dangerous aura that allows the user to bring death to any life
+    form.

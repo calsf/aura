@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1c282029072a9048b9e8b3ff82d3437, type: 3}
   m_Name: BaseAura
   m_EditorClassIdentifier: 
-  auraName: Aura
+  auraName: Aura of Life
   baseDmg: 5
   icon: {fileID: -3282403549648914453, guid: 196bb7eb58a628742a635cbfa70e2a4b, type: 3}
+  price: 0
+  auraNumber: 0
   desc: A rare and extraordinary aura that passively grants the owner another chance
     at life. Although it can also be used for combat, it is not very effective.

@@ -80,8 +80,12 @@ public class CompleteLevel : MonoBehaviour
         yield return new WaitForSeconds(1f);
 
         int targetTotal = totalGold + goldEarned;   // New total gold
+        int startGold = goldEarned;                 // Set gold earned to start gold, only play sound if has gold at all
         // Start coin counting sound effect
-        SoundManager.SoundInstance.PlayStoppableSound("CoinCount");
+        if (startGold > 0)
+        {
+            SoundManager.SoundInstance.PlayStoppableSound("CoinCount");
+        }
         // Decrease gold earned and add to total gold, updating text display each time
         while (goldEarned > 0)
         {
@@ -108,8 +112,11 @@ public class CompleteLevel : MonoBehaviour
         totalGoldTxt.text = targetTotal.ToString();
 
         // Stop coin counting sound effect and play end sound
-        SoundManager.SoundInstance.StopSound("CoinCount");
-        SoundManager.SoundInstance.PlaySound("CoinCountEnd");
+        if (startGold > 0)
+        {
+            SoundManager.SoundInstance.StopSound("CoinCount");
+            SoundManager.SoundInstance.PlaySound("CoinCountEnd");
+        }
 
 
         // Once done, wait a bit and load back to level select
