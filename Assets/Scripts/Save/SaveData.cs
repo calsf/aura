@@ -9,6 +9,7 @@ using UnityEngine.UI;
 [Serializable]
 public class SaveData : MonoBehaviour
 {
+    int[] extraDmg;
     bool[] auraUnlocked;
     bool[] lvlUnlocked;
     int[] equippedAuras;
@@ -18,6 +19,7 @@ public class SaveData : MonoBehaviour
 
     bool visitedBoss2;
 
+    public int[] ExtraDmg { get { return extraDmg; } }
     public bool[] AuraUnlocked { get { return auraUnlocked; } }
     public bool[] LvlUnlocked { get { return lvlUnlocked; } }
     public int[] EquippedAuras { get { return equippedAuras; } }
@@ -30,6 +32,8 @@ public class SaveData : MonoBehaviour
         // Initialize values from saved file, if no saved file, Load calls will init to default values
         health = SaveLoadManager.LoadHealth();
         gold = SaveLoadManager.LoadGold();
+
+        extraDmg = SaveLoadManager.LoadExtraDmg();
 
         auraUnlocked = SaveLoadManager.LoadAuras();
 
@@ -45,6 +49,8 @@ public class SaveData : MonoBehaviour
     {
         health = SaveLoadManager.LoadHealthNew();
         gold = SaveLoadManager.LoadGoldNew();
+
+        extraDmg = SaveLoadManager.LoadExtraDmgNew();
 
         auraUnlocked = SaveLoadManager.LoadAurasNew();
 
@@ -96,6 +102,13 @@ public class SaveData : MonoBehaviour
     public void UpdateVisitedBoss2(bool visitedBoss2)
     {
         this.visitedBoss2 = visitedBoss2;
+        SaveLoadManager.SaveGame(this);
+    }
+
+    // Update extra dmg
+    public void UpdateExtraDmg(int index)
+    {
+        extraDmg[index] += 1;
         SaveLoadManager.SaveGame(this);
     }
 

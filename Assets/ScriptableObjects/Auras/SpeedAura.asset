@@ -17,4 +17,6 @@ MonoBehaviour:
   icon: {fileID: 309932051931931028, guid: 4d626f5a5ecd07f429c8e777e2fcf4a8, type: 3}
   price: 100
   auraNumber: 2
+  maxExtraDmg: 15
+  enhancePrice: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   desc: An aura that surrounds the user in lightning, increasing their movement speed.

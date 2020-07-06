@@ -10,6 +10,8 @@ public class Aura : ScriptableObject
     public Sprite icon;
     public int price;
     public int auraNumber;
+    public int maxExtraDmg;
+    public int[] enhancePrice;
 
     [TextArea(3, 10)]
     public string desc;

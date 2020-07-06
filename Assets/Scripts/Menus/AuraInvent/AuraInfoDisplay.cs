@@ -21,21 +21,35 @@ public class AuraInfoDisplay : MonoBehaviour
     [SerializeField]
     Image auraIcon;
 
+    [SerializeField]
+    bool showBaseDmgOnly;
+    SaveData saveData;
+
 
     void Awake()
     {
+        saveData = GameObject.FindGameObjectWithTag("SaveData").GetComponent<SaveData>();
+
         auraName.text = aura.auraName;
-        auraDesc.text = aura.desc;
         auraIcon.sprite = aura.icon;
+
+        if (auraDesc != null)
+        {
+            auraDesc.text = aura.desc;
+        }
 
         if (auraPrice != null)
         {
             auraPrice.text = aura.price.ToString();
-        }
+        } 
+    }
 
+    void Start()
+    {
         if (auraDmg != null)
         {
-            auraDmg.text = aura.baseDmg.ToString();
+            string txt = showBaseDmgOnly ? aura.baseDmg.ToString() : (aura.baseDmg + saveData.ExtraDmg[aura.auraNumber]).ToString();
+            auraDmg.text = txt;
         }
     }
 

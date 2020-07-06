@@ -1240,6 +1240,7 @@ MonoBehaviour:
   auraDmg: {fileID: 1043363785}
   auraPrice: {fileID: 602371976}
   auraIcon: {fileID: 31502471}
+  showBaseDmgOnly: 1
 --- !u!1 &229231310
 GameObject:
   m_ObjectHideFlags: 0
@@ -3267,6 +3268,7 @@ MonoBehaviour:
   auraDmg: {fileID: 481701452}
   auraPrice: {fileID: 1418076271}
   auraIcon: {fileID: 864789489}
+  showBaseDmgOnly: 1
 --- !u!1 &418394158
 GameObject:
   m_ObjectHideFlags: 0
@@ -5220,6 +5222,7 @@ MonoBehaviour:
   auraDmg: {fileID: 274301814}
   auraPrice: {fileID: 1811770782}
   auraIcon: {fileID: 1605997746}
+  showBaseDmgOnly: 1
 --- !u!1 &528017576
 GameObject:
   m_ObjectHideFlags: 0
@@ -16573,6 +16576,7 @@ MonoBehaviour:
   auraDmg: {fileID: 931553102}
   auraPrice: {fileID: 810293042}
   auraIcon: {fileID: 2046561477}
+  showBaseDmgOnly: 1
 --- !u!1 &1890059796
 GameObject:
   m_ObjectHideFlags: 0

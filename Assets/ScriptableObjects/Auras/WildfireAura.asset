@@ -17,5 +17,7 @@ MonoBehaviour:
   icon: {fileID: -8109899509940172705, guid: b8ec07a4e47256e4babd2182fc99e45d, type: 3}
   price: 0
   auraNumber: 7
+  maxExtraDmg: 8
+  enhancePrice: 0000000000000000000000000000000000000000000000000000000000000000
   desc: A ring of fire surrounds the user, sparking flames on every enemy it comes
     in contact with.

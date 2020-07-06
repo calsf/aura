@@ -12,6 +12,8 @@ public class AuraDefaults : MonoBehaviour
     int dmg;
     bool waiting;
 
+    SaveData saveData;
+
     public int Dmg { get { return dmg; } set { dmg = value; } }
     public GameObject Player { get { return player; } }
     public Aura Aura { get { return aura; } }
@@ -29,12 +31,13 @@ public class AuraDefaults : MonoBehaviour
     // Init
     void Awake()
     {
-        dmg = aura.baseDmg;
+        saveData = GameObject.FindGameObjectWithTag("SaveData").GetComponent<SaveData>();
         player = GameObject.FindGameObjectWithTag("Player");
     }
 
     void Start()
     {
+        dmg = aura.baseDmg + saveData.ExtraDmg[aura.auraNumber];
         gameObject.SetActive(false);    // Aura defaults should set their player reference to the one found here on first disable
     }
 

@@ -17,4 +17,6 @@ MonoBehaviour:
   icon: {fileID: -1965054048315742894, guid: ba5bd0c8bbe9abf4b956e5a6d1e52596, type: 3}
   price: 0
   auraNumber: 10
+  maxExtraDmg: 15
+  enhancePrice: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   desc: An aura that sacrifices the user's ability to dash for the ability to teleport.

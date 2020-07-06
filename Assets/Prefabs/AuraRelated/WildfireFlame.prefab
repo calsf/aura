@@ -134,6 +134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edcb65dcc30b40746afce26fa28c8823, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aura: {fileID: 11400000, guid: f05903c7b6248fa4487d4858a634b99f, type: 2}
 --- !u!82 &-1828612252373180647
 AudioSource:
   m_ObjectHideFlags: 0

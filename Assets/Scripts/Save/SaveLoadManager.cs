@@ -10,6 +10,7 @@ using System.IO;
 [Serializable]
 public class Save
 {
+    int[] extraDmg;         // Extra damage for each corresponding auraUnlocked item
     bool[] auraUnlocked;    // Loaded by UnlockedAuras to get unlocked auras - disables and enables buttons for selecting auras based on unlock/lock
     bool[] lvlUnlocked;     // Loaded by LevelSelectManager to get unlocked levels - disables and enables buttons for selecting levels // Saved in CompleteLevel
     int[] equippedAuras;    // Loaded by PlayerAuraControl to get equipped auras // Saved in AuraSelect when equipped auras are updated
@@ -18,6 +19,7 @@ public class Save
 
     bool visitedBoss2;      // Loaded by LevelSelectManager, updated in Boss 2, if true, will replace shopkeeper 2 with an alternate shop
 
+    public int[] ExtraDmg { get { return extraDmg; } }
     public bool[] AuraUnlocked { get { return auraUnlocked; } }
     public bool[] LvlUnlocked { get { return lvlUnlocked; } }
     public int[] EquippedAuras { get { return equippedAuras; } }
@@ -29,12 +31,18 @@ public class Save
     // Init Save with SaveData data
     public Save(SaveData data)
     {
+        extraDmg = new int[data.ExtraDmg.Length];
         auraUnlocked = new bool[data.AuraUnlocked.Length];
         lvlUnlocked = new bool[data.LvlUnlocked.Length];
         equippedAuras = new int[data.EquippedAuras.Length];
         gold = data.Gold;
         health = data.Health;
         visitedBoss2 = data.VisitedBoss2;
+
+        for (int i = 0; i < extraDmg.Length; i++)
+        {
+            extraDmg[i] = data.ExtraDmg[i];
+        }
 
         for (int i = 0; i < auraUnlocked.Length; i++)
         {
@@ -199,6 +207,27 @@ public static class SaveLoadManager
         }
     }
 
+    // Load extra damage bonus for each aura
+    public static int[] LoadExtraDmg()
+    {
+        // Load from file if it exists
+        if (File.Exists(Application.persistentDataPath + "/aura.sav"))
+        {
+            BinaryFormatter bf = new BinaryFormatter();
+            FileStream file = new FileStream(Application.persistentDataPath + "/aura.sav", FileMode.Open);
+
+            Save saveData = (Save)bf.Deserialize(file);
+            file.Close();
+
+            return saveData.ExtraDmg;
+        }
+        else
+        {
+            // If no save file exists, start fresh with no bonus dmg
+            return LoadExtraDmgNew();
+        }
+    }
+
     /******* Load NEW data ****************/
     // Load auras
     public static bool[] LoadAurasNew()
@@ -206,7 +235,7 @@ public static class SaveLoadManager
         // Start fresh with only 1 aura unlocked
         bool[] defaultAuras = new bool[]
         {
-            true, true, true, true, true, true, true, true, true, true, true, true, true, true
+            true, false, false, false, true, true, true, true, true, true, true, true, true, true
         };
 
         return defaultAuras;
@@ -255,6 +284,18 @@ public static class SaveLoadManager
     public static bool LoadVisitedBoss2New()
     {
         return false;
+    }
+    
+    // Load extra dmg
+    public static int[] LoadExtraDmgNew()
+    {
+        // Load new extra dmg
+        int[] defaultExtra = new int[]
+        {
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        };
+
+        return defaultExtra;
     }
 
 

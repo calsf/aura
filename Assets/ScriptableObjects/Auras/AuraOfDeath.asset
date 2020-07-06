@@ -17,5 +17,7 @@ MonoBehaviour:
   icon: {fileID: 8023344437602462116, guid: 2fe2c8fd8d5d4564e9188ef10ac55701, type: 3}
   price: 0
   auraNumber: 13
+  maxExtraDmg: -1
+  enhancePrice: 
   desc: A rare and dangerous aura that allows the user to bring death to any life
     form.

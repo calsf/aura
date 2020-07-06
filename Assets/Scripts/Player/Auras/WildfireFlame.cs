@@ -7,17 +7,27 @@ using UnityEngine;
 
 public class WildfireFlame : MonoBehaviour
 {
-    int dmg = 2;
+
+    [SerializeField]
+    Aura aura;
+    int dmg;
     float deactivateTime;
     float aliveTime = 10f;
     bool hasDeactivated;
     Animator anim;
+    SaveData saveData;
 
     public int Dmg { get { return dmg; } }
 
     void Awake()
     {
+        saveData = GameObject.FindGameObjectWithTag("SaveData").GetComponent<SaveData>();
         anim = GetComponent<Animator>();
+    }
+
+    private void Start()
+    {
+        dmg = aura.baseDmg + saveData.ExtraDmg[aura.auraNumber];
     }
 
     void OnEnable()

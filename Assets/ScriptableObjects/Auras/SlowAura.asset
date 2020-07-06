@@ -17,5 +17,7 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 07797feaa31e419479cf2c278e395174, type: 3}
   price: 10
   auraNumber: 1
+  maxExtraDmg: 15
+  enhancePrice: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   desc: A chilling aura that slows down the user's movement speed as well as any
     enemies inside.

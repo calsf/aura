@@ -17,5 +17,7 @@ MonoBehaviour:
   icon: {fileID: -3282403549648914453, guid: 196bb7eb58a628742a635cbfa70e2a4b, type: 3}
   price: 0
   auraNumber: 0
+  maxExtraDmg: 15
+  enhancePrice: 000000006400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   desc: A rare and extraordinary aura that passively grants the owner another chance
     at life. Although it can also be used for combat, it is not very effective.
