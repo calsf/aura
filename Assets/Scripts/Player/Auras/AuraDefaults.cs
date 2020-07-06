@@ -37,7 +37,7 @@ public class AuraDefaults : MonoBehaviour
 
     void Start()
     {
-        dmg = aura.baseDmg + saveData.ExtraDmg[aura.auraNumber];
+        SetDmg();
         gameObject.SetActive(false);    // Aura defaults should set their player reference to the one found here on first disable
     }
 
@@ -64,5 +64,10 @@ public class AuraDefaults : MonoBehaviour
         yield return new WaitForSecondsRealtime(dur);
         Time.timeScale = 1.0f;
         waiting = false;
+    }
+
+    public void SetDmg()
+    {
+        dmg = aura.baseDmg + saveData.ExtraDmg[aura.auraNumber];
     }
 }

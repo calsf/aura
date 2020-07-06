@@ -2357,6 +2357,7 @@ MonoBehaviour:
   auraDmg: {fileID: 44304852}
   auraPrice: {fileID: 0}
   auraIcon: {fileID: 203618586}
+  showBaseDmgOnly: 0
 --- !u!1 &80698482
 GameObject:
   m_ObjectHideFlags: 0
@@ -3188,6 +3189,7 @@ MonoBehaviour:
   auraDmg: {fileID: 239744379}
   auraPrice: {fileID: 0}
   auraIcon: {fileID: 1725355334}
+  showBaseDmgOnly: 0
 --- !u!1 &110620071
 GameObject:
   m_ObjectHideFlags: 0
@@ -5029,6 +5031,7 @@ MonoBehaviour:
   auraDmg: {fileID: 2013724573}
   auraPrice: {fileID: 0}
   auraIcon: {fileID: 1617128545}
+  showBaseDmgOnly: 0
 --- !u!1 &142414960
 GameObject:
   m_ObjectHideFlags: 0
@@ -10266,6 +10269,7 @@ MonoBehaviour:
   auraDmg: {fileID: 0}
   auraPrice: {fileID: 0}
   auraIcon: {fileID: 898285600}
+  showBaseDmgOnly: 0
 --- !u!114 &271363947
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16721,6 +16725,7 @@ MonoBehaviour:
   auraDmg: {fileID: 0}
   auraPrice: {fileID: 0}
   auraIcon: {fileID: 1372127337}
+  showBaseDmgOnly: 0
 --- !u!1 &478164239
 GameObject:
   m_ObjectHideFlags: 0
@@ -22355,6 +22360,7 @@ MonoBehaviour:
   auraDmg: {fileID: 1750815662}
   auraPrice: {fileID: 0}
   auraIcon: {fileID: 1888397123}
+  showBaseDmgOnly: 0
 --- !u!1 &614563237
 GameObject:
   m_ObjectHideFlags: 0
@@ -63760,6 +63766,7 @@ MonoBehaviour:
   auraDmg: {fileID: 1172309202}
   auraPrice: {fileID: 0}
   auraIcon: {fileID: 1738492762}
+  showBaseDmgOnly: 0
 --- !u!1 &1142867777
 GameObject:
   m_ObjectHideFlags: 0
@@ -65849,6 +65856,7 @@ MonoBehaviour:
   auraDmg: {fileID: 440076444}
   auraPrice: {fileID: 0}
   auraIcon: {fileID: 977188666}
+  showBaseDmgOnly: 0
 --- !u!1 &1192722230
 GameObject:
   m_ObjectHideFlags: 0
@@ -71988,6 +71996,7 @@ MonoBehaviour:
   auraDmg: {fileID: 1190058073}
   auraPrice: {fileID: 0}
   auraIcon: {fileID: 2007504703}
+  showBaseDmgOnly: 0
 --- !u!1 &1336631526
 GameObject:
   m_ObjectHideFlags: 0
@@ -80868,6 +80877,7 @@ MonoBehaviour:
   auraDmg: {fileID: 1322476140}
   auraPrice: {fileID: 0}
   auraIcon: {fileID: 1580027675}
+  showBaseDmgOnly: 0
 --- !u!1 &1589499359
 GameObject:
   m_ObjectHideFlags: 0
@@ -81752,6 +81762,7 @@ MonoBehaviour:
   auraDmg: {fileID: 1225015604}
   auraPrice: {fileID: 0}
   auraIcon: {fileID: 47869234}
+  showBaseDmgOnly: 0
 --- !u!1 &1614712659
 GameObject:
   m_ObjectHideFlags: 0
@@ -85339,6 +85350,7 @@ MonoBehaviour:
   auraDmg: {fileID: 2120239751}
   auraPrice: {fileID: 0}
   auraIcon: {fileID: 1194246603}
+  showBaseDmgOnly: 0
 --- !u!1 &1715465221
 GameObject:
   m_ObjectHideFlags: 0
@@ -86354,6 +86366,7 @@ MonoBehaviour:
   auraDmg: {fileID: 77265975}
   auraPrice: {fileID: 0}
   auraIcon: {fileID: 660246635}
+  showBaseDmgOnly: 0
 --- !u!1 &1741128349
 GameObject:
   m_ObjectHideFlags: 0
@@ -90022,6 +90035,7 @@ MonoBehaviour:
   auraDmg: {fileID: 441959585}
   auraPrice: {fileID: 0}
   auraIcon: {fileID: 581074929}
+  showBaseDmgOnly: 0
 --- !u!1 &1835537971
 GameObject:
   m_ObjectHideFlags: 0
@@ -92758,10 +92772,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61280632117d9ce47baa560949eb608f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelToUnlock: 12000000
+  levelToUnlock: 13000000
   lvlCompleteScreen: {fileID: 975011205}
   goldEarnedTxt: {fileID: 1180252021}
   totalGoldTxt: {fileID: 51033365}
+  unlockDeathAura: 0
+  unlockMsg: {fileID: 0}
 --- !u!95 &1931825205
 Animator:
   serializedVersion: 3

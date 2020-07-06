@@ -46,7 +46,7 @@ public class LoadLevel : MonoBehaviour
     // Load alternate
     public void LoadAlternateShop()
     {
-        nextScene = 11;
+        nextScene = 12;
         anim.Play("FadeOutToLoading");
     }
 

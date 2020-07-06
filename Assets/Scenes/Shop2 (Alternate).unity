@@ -13186,7 +13186,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b9101a2c85ca19b4a9ee4529a2eb0fd7, type: 2}
   - {fileID: 11400000, guid: 442fae63a700acd43a618fc675abb4b6, type: 2}
   - {fileID: 11400000, guid: f05903c7b6248fa4487d4858a634b99f, type: 2}
-  - {fileID: 11400000, guid: 442fae63a700acd43a618fc675abb4b6, type: 2}
+  - {fileID: 11400000, guid: 46ac166751ce7b0429021d50549a7ec5, type: 2}
   auraBought:
   - Here you go! Be careful, the blades are pretty sharp!
   - Ugh...Heavy!

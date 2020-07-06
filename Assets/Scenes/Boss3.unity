@@ -8047,6 +8047,7 @@ MonoBehaviour:
   auraDmg: {fileID: 1974136917}
   auraPrice: {fileID: 0}
   auraIcon: {fileID: 332174639}
+  showBaseDmgOnly: 0
 --- !u!114 &121469474
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8252,6 +8253,7 @@ MonoBehaviour:
   auraDmg: {fileID: 427471969}
   auraPrice: {fileID: 0}
   auraIcon: {fileID: 272810668}
+  showBaseDmgOnly: 0
 --- !u!114 &135285606
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17513,6 +17515,7 @@ MonoBehaviour:
   auraDmg: {fileID: 0}
   auraPrice: {fileID: 0}
   auraIcon: {fileID: 1916442623}
+  showBaseDmgOnly: 0
 --- !u!114 &501521174
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21320,6 +21323,7 @@ MonoBehaviour:
   auraDmg: {fileID: 438344000}
   auraPrice: {fileID: 0}
   auraIcon: {fileID: 1924210434}
+  showBaseDmgOnly: 0
 --- !u!114 &686036249
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26946,6 +26950,7 @@ MonoBehaviour:
   auraDmg: {fileID: 776770940}
   auraPrice: {fileID: 0}
   auraIcon: {fileID: 1216212622}
+  showBaseDmgOnly: 0
 --- !u!114 &926862965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27412,6 +27417,7 @@ MonoBehaviour:
   auraDmg: {fileID: 899658546}
   auraPrice: {fileID: 0}
   auraIcon: {fileID: 2070796773}
+  showBaseDmgOnly: 0
 --- !u!114 &936547913
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28077,6 +28083,7 @@ MonoBehaviour:
   auraDmg: {fileID: 34256140}
   auraPrice: {fileID: 0}
   auraIcon: {fileID: 1101758488}
+  showBaseDmgOnly: 0
 --- !u!114 &967543230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28289,6 +28296,7 @@ MonoBehaviour:
   auraDmg: {fileID: 138824872}
   auraPrice: {fileID: 0}
   auraIcon: {fileID: 752170670}
+  showBaseDmgOnly: 0
 --- !u!114 &976257433
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28634,6 +28642,7 @@ MonoBehaviour:
   auraDmg: {fileID: 515754373}
   auraPrice: {fileID: 0}
   auraIcon: {fileID: 984856800}
+  showBaseDmgOnly: 0
 --- !u!114 &978300286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32632,6 +32641,7 @@ MonoBehaviour:
   auraDmg: {fileID: 942284142}
   auraPrice: {fileID: 0}
   auraIcon: {fileID: 497258725}
+  showBaseDmgOnly: 0
 --- !u!114 &1116556931
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33078,6 +33088,7 @@ MonoBehaviour:
   auraDmg: {fileID: 846475279}
   auraPrice: {fileID: 0}
   auraIcon: {fileID: 189832173}
+  showBaseDmgOnly: 0
 --- !u!114 &1138923945
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34230,6 +34241,7 @@ MonoBehaviour:
   auraDmg: {fileID: 0}
   auraPrice: {fileID: 0}
   auraIcon: {fileID: 2133447106}
+  showBaseDmgOnly: 0
 --- !u!114 &1167080852
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40507,6 +40519,7 @@ MonoBehaviour:
   auraDmg: {fileID: 255319265}
   auraPrice: {fileID: 0}
   auraIcon: {fileID: 1506918913}
+  showBaseDmgOnly: 0
 --- !u!114 &1444699438
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45198,6 +45211,7 @@ MonoBehaviour:
   auraDmg: {fileID: 1675541827}
   auraPrice: {fileID: 0}
   auraIcon: {fileID: 1136712185}
+  showBaseDmgOnly: 0
 --- !u!114 &1625042489
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52790,10 +52804,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61280632117d9ce47baa560949eb608f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelToUnlock: 14000000
+  levelToUnlock: 15000000
   lvlCompleteScreen: {fileID: 1122685302}
   goldEarnedTxt: {fileID: 594518961}
   totalGoldTxt: {fileID: 1113070895}
+  unlockDeathAura: 0
+  unlockMsg: {fileID: 0}
 --- !u!95 &1931825205
 Animator:
   serializedVersion: 3

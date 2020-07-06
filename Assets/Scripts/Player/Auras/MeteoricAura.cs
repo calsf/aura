@@ -29,8 +29,20 @@ public class MeteoricAura : MonoBehaviour
         meteorPool = new List<GameObject>();
         for (int i = 0; i < poolNum; i++)
         {
-            meteorPool.Add(Instantiate(meteorPrefab, Vector3.zero, Quaternion.identity));
-            meteorPool[i].SetActive(false);
+            meteorPool.Add(Instantiate(meteorPrefab, Vector3.down * 80, Quaternion.identity));
+            
+        }
+    }
+
+    void Start()
+    {
+        // Disable aura behaviour but make sure dmg is set
+        foreach (GameObject meteor in meteorPool)
+        {
+            AuraDefaults aura = meteor.GetComponent<AuraDefaults>();
+            aura.SetDmg();
+            aura.enabled = false;
+            meteor.SetActive(false);
         }
     }
 
