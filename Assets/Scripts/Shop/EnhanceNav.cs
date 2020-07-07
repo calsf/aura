@@ -79,30 +79,36 @@ public class EnhanceNav : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-            if (Input.GetKeyDown(ControlsManager.ControlInstance.Keybinds["DownButton"]) || Input.GetAxisRaw("Vertical") == -1)
-            {
-                if (!axisDown)
-                {
-                    axisDown = true;
-                    NavAuras(selectedBtn, selectedBtn + 1);
+        // Do not allow input while leaving scene
+        if (enhanceManager.IsLeaving)
+        {
+            return;
+        }
 
-                    SoundManager.SoundInstance.PlaySound("ButtonNav");
-                }
-            }
-            else if (Input.GetKeyDown(ControlsManager.ControlInstance.Keybinds["UpButton"]) || Input.GetAxisRaw("Vertical") == 1)
+        if (Input.GetKeyDown(ControlsManager.ControlInstance.Keybinds["DownButton"]) || Input.GetAxisRaw("Vertical") == -1)
+        {
+            if (!axisDown)
             {
-                if (!axisDown)
-                {
-                    axisDown = true;
-                    NavAuras(selectedBtn, selectedBtn - 1);
+                axisDown = true;
+                NavAuras(selectedBtn, selectedBtn + 1);
 
-                    SoundManager.SoundInstance.PlaySound("ButtonNav");
-                }
+                SoundManager.SoundInstance.PlaySound("ButtonNav");
             }
-            else
+        }
+        else if (Input.GetKeyDown(ControlsManager.ControlInstance.Keybinds["UpButton"]) || Input.GetAxisRaw("Vertical") == 1)
+        {
+            if (!axisDown)
             {
-                axisDown = false; // Reset axisDown
+                axisDown = true;
+                NavAuras(selectedBtn, selectedBtn - 1);
+
+                SoundManager.SoundInstance.PlaySound("ButtonNav");
             }
+        }
+        else
+        {
+            axisDown = false; // Reset axisDown
+        }
 
         // Pressing jump will attempt to enhance the aura of selectedAuraNumber
         if (Input.GetKeyDown(ControlsManager.ControlInstance.Keybinds["JumpButton"]) || Input.GetKeyDown(ControlsManager.ControlInstance.Padbinds["JumpPad"]))

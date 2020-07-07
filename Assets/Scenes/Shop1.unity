@@ -16245,6 +16245,7 @@ MonoBehaviour:
   selectedSpriteInfo: {fileID: 21300000, guid: b7839d4919a649c4c9228879f55dba2a, type: 3}
   unselectedSpriteInfo: {fileID: 21300000, guid: 8461e2435faa0394ebd76c61bf06dc73,
     type: 3}
+  shopManager: {fileID: 1456894319}
 --- !u!4 &1836561424
 Transform:
   m_ObjectHideFlags: 0

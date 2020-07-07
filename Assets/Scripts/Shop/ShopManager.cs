@@ -54,6 +54,10 @@ public class ShopManager : MonoBehaviour
     [SerializeField]
     ShopNav shopNav;
 
+    bool isLeaving = false;
+
+    public bool IsLeaving { get { return isLeaving; } }
+
     void Awake()
     {
         // Init aura prices and aura index number
@@ -83,9 +87,16 @@ public class ShopManager : MonoBehaviour
 
     void Update()
     {
+        // Do not allow input while leaving scene
+        if (isLeaving)
+        {
+            return;
+        }
+
         // On menu button, return back to level select scene
         if (Input.GetKeyDown(ControlsManager.ControlInstance.Keybinds["MenuButton"]) || Input.GetKeyDown(ControlsManager.ControlInstance.Padbinds["MenuPad"]))
         {
+            isLeaving = true;
             LoadLevel.LoadInstance.LoadScene(1);
         }
     }

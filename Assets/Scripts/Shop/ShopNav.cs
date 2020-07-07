@@ -26,6 +26,9 @@ public class ShopNav : MonoBehaviour
     [SerializeField]
     Sprite unselectedSpriteInfo;
 
+    [SerializeField]
+    ShopManager shopManager;
+
     public Sprite UnselectedSprite { get { return unselectedSprite; } }
     public Sprite UnselectedSpriteInfo { get { return unselectedSpriteInfo; } }
     public int Selected { get { return selected; } }
@@ -43,6 +46,12 @@ public class ShopNav : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Do not allow input while leaving scene
+        if (shopManager.IsLeaving)
+        {
+            return;
+        }
+
         // Navigate to left and right items in shop
         if (Input.GetKeyDown(ControlsManager.ControlInstance.Keybinds["LeftButton"]) || Input.GetAxisRaw("Horizontal") == -1)
         {

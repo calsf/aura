@@ -27,6 +27,9 @@ public class EnhanceManager : MonoBehaviour
     SavedGold savedGold;
     ShopChat shopChat;
 
+    bool isLeaving = false;
+    public bool IsLeaving { get { return isLeaving; } }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -38,9 +41,16 @@ public class EnhanceManager : MonoBehaviour
 
     void Update()
     {
+        // Do not allow input while leaving scene
+        if (isLeaving)
+        {
+            return;
+        }
+
         // On menu button, return back to level select scene
         if (Input.GetKeyDown(ControlsManager.ControlInstance.Keybinds["MenuButton"]) || Input.GetKeyDown(ControlsManager.ControlInstance.Padbinds["MenuPad"]))
         {
+            isLeaving = true;
             LoadLevel.LoadInstance.LoadScene(1);
         }
     }
