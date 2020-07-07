@@ -23,6 +23,8 @@ public class MovePlatformOnTrigger : MonoBehaviour
         if (other.tag == "Player")
         {
             anim.SetBool("Triggered", true);
+
+            SoundManager.SoundInstance.PlaySound("StepOnButton");
             
             // Reset progress if this is new position to move to and platform is currently stopped
             if (platform.Progress >= 1 && platform.NextPos != posToMove)

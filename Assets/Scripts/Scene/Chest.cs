@@ -41,6 +41,8 @@ public class Chest : MonoBehaviour
             hasOpened = true;
             anim.Play("ChestOpen");
 
+            SoundManager.SoundInstance.PlaySound("OpenChest");
+
             goldPopupText.text = "+" + goldValue + " Gold";
             goldPopup.transform.position = transform.position + (Vector3.up * .1f);
             goldPopup.SetActive(true);

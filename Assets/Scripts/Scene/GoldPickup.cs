@@ -34,6 +34,8 @@ public class GoldPickup : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            SoundManager.SoundInstance.PlaySound("JewelPickup");
+
             goldPopupText.text = "+" + goldValue + " Gold";
             goldPopup.transform.position = transform.position + (Vector3.up * .1f);
             goldPopup.SetActive(true);
