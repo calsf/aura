@@ -15,9 +15,10 @@ MonoBehaviour:
   auraName: Demi Aura
   baseDmg: 0
   icon: {fileID: -3541225868621755815, guid: f031e4212af4012479bfd9dce201f83a, type: 3}
-  price: 0
+  price: 50000
   auraNumber: 12
   maxExtraDmg: -1
   enhancePrice: 
-  desc: The great equalizer, this aura temporarily lowers the enemy's health to half
-    of their maximum health.
+  desc: The great equalizer, this aura lowers the enemy's health to half of their
+    maximum health for 10 seconds. Any additional hits from this aura will reset
+    the duration.

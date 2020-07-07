@@ -19,8 +19,6 @@ public class EnhanceAuraDisplay : MonoBehaviour
 
     [SerializeField]
     Text auraEnhancedDmg;
-    [SerializeField]
-    Image auraEnhancedIcon;
 
     SaveData saveData;
 
@@ -31,7 +29,6 @@ public class EnhanceAuraDisplay : MonoBehaviour
 
         auraName.text = "Enhance " + aura.auraName;
         auraIcon.sprite = aura.icon;
-        auraEnhancedIcon.sprite = aura.icon;
     }
 
     void Start()

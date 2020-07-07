@@ -19,5 +19,5 @@ MonoBehaviour:
   auraNumber: 13
   maxExtraDmg: -1
   enhancePrice: 
-  desc: A rare and dangerous aura that allows the user to bring death to any life
-    form.
+  desc: A rare and dangerous aura that is capable of bringing death to any living
+    creature.

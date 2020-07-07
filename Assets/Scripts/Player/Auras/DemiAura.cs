@@ -8,7 +8,7 @@ public class DemiAura : MonoBehaviour
 {
     [SerializeField]
     Material demiEffect;
-    float restoreHPDelay = 5f;
+    float restoreHPDelay = 10f;
     float resetRestoreRate = .2f; // Rate at which restoreHPTime should be reset
 
     void OnTriggerEnter2D(Collider2D other)

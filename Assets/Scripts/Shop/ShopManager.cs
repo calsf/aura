@@ -31,7 +31,7 @@ public class ShopManager : MonoBehaviour
     [SerializeField]
     GameObject healthPriceDisplay; // Container for price display for health price, includes an image and text component in children
 
-    int baseHealthPrice = 10;
+    int baseHealthPrice = 1500;
     int healthPrice;
 
     [SerializeField]

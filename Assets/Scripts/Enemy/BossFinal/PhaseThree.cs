@@ -33,11 +33,11 @@ public class PhaseThree : MonoBehaviour
 
             if (Vector3.Distance(transform.position, pos[nextPos].position) <= 0.1f)
             {
-                int lastPos = nextPos;
-                do
+                nextPos++;
+                if (nextPos > pos.Length - 1)
                 {
-                    nextPos = Random.Range(0, pos.Length);
-                } while (lastPos == nextPos);
+                    nextPos = 0;
+                }
             }
         }
     }

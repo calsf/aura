@@ -15,7 +15,7 @@ MonoBehaviour:
   enemyName: Golem
   maxHP: 50
   dmg: 1
-  gold: 2000
+  gold: 300
   baseMoveSpeed: 3
   deathSound: {fileID: 8300000, guid: af29e16ed3c6e8b4384f4c33d2c364cf, type: 3}
   deathVolume: 0.5

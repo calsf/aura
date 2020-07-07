@@ -15,7 +15,7 @@ MonoBehaviour:
   enemyName: Skeleton
   maxHP: 2000
   dmg: 1
-  gold: 10000
+  gold: 15000
   baseMoveSpeed: 35
   deathSound: {fileID: 8300000, guid: af29e16ed3c6e8b4384f4c33d2c364cf, type: 3}
   deathVolume: 0.5

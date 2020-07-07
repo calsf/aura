@@ -15,10 +15,10 @@ MonoBehaviour:
   auraName: Astral Aura
   baseDmg: 10
   icon: {fileID: 6619065866523524951, guid: d1ac3a26554483147b07a0ba967900d3, type: 3}
-  price: 0
+  price: 40000
   auraNumber: 9
   maxExtraDmg: 15
-  enhancePrice: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-  desc: An aura that separates the user from reality. When deactivated, the user's
-    position and health is restored to the state it was in when the aura was first
-    activated.
+  enhancePrice: 4c1d00004c1d00004c1d00004c1d00004c1d000010270000102700001027000010270000102700001027000010270000102700001027000010270000
+  desc: An aura that separates the user from reality upon activation. When deactivated,
+    the user's position and health is restored to the state it was in when the aura
+    was first activated.

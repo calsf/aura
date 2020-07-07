@@ -15,7 +15,7 @@ MonoBehaviour:
   enemyName: Thing
   maxHP: 80
   dmg: 1
-  gold: 500
+  gold: 300
   baseMoveSpeed: 6
   deathSound: {fileID: 8300000, guid: af29e16ed3c6e8b4384f4c33d2c364cf, type: 3}
   deathVolume: 0.5
