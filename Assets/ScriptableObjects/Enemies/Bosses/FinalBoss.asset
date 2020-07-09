@@ -17,9 +17,9 @@ MonoBehaviour:
   dmg: 9999
   gold: 50000
   baseMoveSpeed: 5
-  deathSound: {fileID: 8300000, guid: af29e16ed3c6e8b4384f4c33d2c364cf, type: 3}
-  deathVolume: 0.5
-  deathFX: {fileID: 4598560185897053914, guid: c5212d2f01e1fdc4b841f9c9f2628e72, type: 3}
+  deathSound: {fileID: 8300000, guid: 9e019eb41a966354dbd7e35999f5192e, type: 3}
+  deathVolume: 1
+  deathFX: {fileID: 4719173629265352206, guid: e9e872f1cef6b3c4887b4157a77a79e7, type: 3}
   hitSounds:
   - {fileID: 8300000, guid: 13bb53549a66d2b4eacec1804e82b499, type: 3}
   - {fileID: 8300000, guid: 5a588938af607e34aa0eae640fb3015f, type: 3}

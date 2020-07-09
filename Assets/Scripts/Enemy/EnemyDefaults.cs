@@ -59,6 +59,8 @@ public class EnemyDefaults : MonoBehaviour {
     float restoreRate;
 
     AudioSource[] audioSources;
+    [SerializeField]
+    bool spatialOff;    // Do not use spatial blend for this enemy sound
 
     public UnityEvent OnDamaged; //OnDamaged event occurs after enemy HP is adjusted
 
@@ -134,7 +136,7 @@ public class EnemyDefaults : MonoBehaviour {
         {
             audioSources[i] = gameObject.AddComponent<AudioSource>();
             audioSources[i].clip = enemy.hitSounds[i];
-            audioSources[i].spatialBlend = 1;
+            audioSources[i].spatialBlend = spatialOff ? 0 : 1;
             audioSources[i].pitch = 1f;
             audioSources[i].playOnAwake = false;
 
@@ -146,7 +148,7 @@ public class EnemyDefaults : MonoBehaviour {
         // Death sound is added to the deathFX object so that the sound can be played after enemy is dead and disabled
         audioSources[audioSources.Length-1] = deathFX.AddComponent<AudioSource>();
         audioSources[audioSources.Length-1].clip = enemy.deathSound;
-        audioSources[audioSources.Length-1].spatialBlend = 1;
+        audioSources[audioSources.Length-1].spatialBlend = spatialOff ? 0 : 1;
         audioSources[audioSources.Length-1].rolloffMode = AudioRolloffMode.Custom;
         audioSources[audioSources.Length-1].maxDistance = 30;
 

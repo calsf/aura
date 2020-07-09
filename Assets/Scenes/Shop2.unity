@@ -13292,9 +13292,9 @@ MonoBehaviour:
   health: {fileID: 2102097327}
   healthPriceDisplay: {fileID: 482747645}
   playerHearts: {fileID: 1456894322}
-  healthMaxed: One last health boost for you. Unless you'd like to overdose.
-  healthBought: That should do it for your health boost. I'll need to prepare a stronger
-    one for you next time.
+  healthMaxed: One last health boost for you. Any more and it might kill you instead.
+  healthBought: That should do it for your health boost. I'll need to give you a
+    stronger one next time.
   healthFail: If you don't have the money, then I don't have the health boost.
   shopNav: {fileID: 1836561423}
 --- !u!114 &1456894320
@@ -13352,11 +13352,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chatDisplay: {fileID: 1950933964}
   defaultChat:
-  - I think it's only fair that people like you get a fighting chance...With that
-    said, would you care to buy any auras or health boosts?
-  - The lower you go, the stronger the enemies. I do hope you consider some of these
-    auras that I have...After all, it would be no fun if you went on with such weak
-    auras.
+  - Why don't you buy some of these auras or health boosts? After all, the lower
+    you go, the stronger the enemies will become. You'll see...
+  - It would be no fun if you can't even put up a fight...Why don't you consider
+    buying some auras or health boosts?
 --- !u!1 &1457434199
 GameObject:
   m_ObjectHideFlags: 0

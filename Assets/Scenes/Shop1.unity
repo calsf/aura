@@ -12578,7 +12578,7 @@ MonoBehaviour:
   - Careful with this one, the last one who bought this off me tripped at full speed
     and died...An early end for such a young soul, I tell ya...
   - It isn't quite the same as flying but it's as close as you're going to get.
-  - One jump and to the skies you'll go. Watch your head.
+  - One jump and to the skies you'll go! Watch your head.
   auraFail: Auras don't come cheap, and for good reason! Come back when you have
     more gold.
   health: {fileID: 2102097327}
