@@ -34,6 +34,7 @@ public class MeleePhaseOne : StateMachineBehaviour
         if (Time.time > nextAttack)
         {
             animator.Play("MeleePhaseOneDashStartUp");
+            animator.SetBool("Dashing", true);
         }
         else
         {
@@ -44,7 +45,7 @@ public class MeleePhaseOne : StateMachineBehaviour
                 Vector3.MoveTowards(boss.transform.position, 
                 new Vector2(boss.transform.position.x, y), enemyDefaults.MoveSpeed * Time.deltaTime);
 
-            
+            animator.SetBool("Dashing", false);
         }
     }
 }

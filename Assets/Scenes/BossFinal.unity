@@ -11685,6 +11685,7 @@ GameObject:
   - component: {fileID: 518509268}
   - component: {fileID: 518509270}
   - component: {fileID: 518509271}
+  - component: {fileID: 518509272}
   m_Layer: 0
   m_Name: StartPortal
   m_TagString: Untagged
@@ -11872,6 +11873,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &518509272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 518509267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: deb1d881815ef2f4cb3f81682b94ae78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &519081924
 GameObject:
   m_ObjectHideFlags: 0
@@ -29104,6 +29117,7 @@ MonoBehaviour:
   audioSources:
   - {fileID: 518509271}
   - {fileID: 1931825206}
+  - {fileID: 940256329}
 --- !u!4 &1146244201
 Transform:
   m_ObjectHideFlags: 0

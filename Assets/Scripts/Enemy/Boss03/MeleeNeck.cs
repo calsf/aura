@@ -5,6 +5,8 @@ using UnityEngine;
 public class MeleeNeck : MonoBehaviour
 {
     [SerializeField]
+    Animator anim;
+    [SerializeField]
     EnemyDefaults meleeBoss;
     [SerializeField]
     BossStages stages;
@@ -19,8 +21,8 @@ public class MeleeNeck : MonoBehaviour
         // Move y position to same position as melee boss target
         transform.position = new Vector2(transform.position.x, meleeBoss.transform.position.y);
 
-        // Disable after first stage
-        if (meleeBoss.HP <= stages.HealthStages[0])
+        // Disable after first stage, make sure is not dashing
+        if (meleeBoss.HP <= stages.HealthStages[0] && !anim.GetBool("Dashing"))
         {
             gameObject.SetActive(false);
         }

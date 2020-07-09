@@ -15,6 +15,7 @@ public class MeleePhaseTwoTransition : StateMachineBehaviour
     {
         boss = animator.gameObject.transform;
         enemyDefaults = boss.GetComponent<EnemyDefaults>();
+        animator.SetBool("Dashing", false);
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
