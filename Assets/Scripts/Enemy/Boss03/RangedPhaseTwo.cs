@@ -106,6 +106,8 @@ public class RangedPhaseTwo : MonoBehaviour
                     orb.Play("LaserOrbActivate");
                 }
 
+                SoundManager.SoundInstance.PlaySound("RangedLaser");
+
                 // Reset attack
                 isAttacking = false;
                 nextAttack = Time.time + delay;
@@ -118,6 +120,8 @@ public class RangedPhaseTwo : MonoBehaviour
     // Launch orbs via animation
     public void LaunchOrbs()
     {
+        SoundManager.SoundInstance.PlaySound("RangedShootOrbs");
+
         List<Vector2> currPositions = new List<Vector2>();
         Transform lastSpawn = spawnPos1;
 
