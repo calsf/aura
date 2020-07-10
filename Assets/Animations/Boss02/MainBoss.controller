@@ -141,7 +141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ef17435af0d3984a90ed7f9a87313fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  x: 17
+  x: 17.2
   dashMultiplier: 10
 --- !u!1102 &-7260408152521043988
 AnimatorState:
@@ -631,8 +631,8 @@ MonoBehaviour:
   nextAnim: DashStartUp
   multiplier: 3.5
   targetY: -1.8
-  rightX: 17
-  leftX: -17
+  rightX: 17.2
+  leftX: -17.2
 --- !u!1102 &3489505510286250852
 AnimatorState:
   serializedVersion: 5
@@ -910,8 +910,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveMultiplier: 1
-  rightX: 17
-  leftX: -17
+  rightX: 17.2
+  leftX: -17.2
 --- !u!1102 &9001812151465783216
 AnimatorState:
   serializedVersion: 5

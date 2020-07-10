@@ -63,6 +63,8 @@ public class SpawnSwords : MonoBehaviour
         
         Projectile projProperties = proj.GetComponent<Projectile>();
         projProperties.Dir = proj.transform.right.normalized;
+
+        SoundManager.SoundInstance.PlaySound("KeeperShootSword");
     }
 
     //Get inactive object from pool

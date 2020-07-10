@@ -50,6 +50,7 @@ public class JumpFalling : StateMachineBehaviour
         // Once reach ground floor, play landing animation
         if (Mathf.Abs(groundY - boss.transform.position.y) <= 0.1f)
         {
+            SoundManager.SoundInstance.PlaySound("SkeleGroundSlam");
             animator.Play("Landing");
         }
     }
