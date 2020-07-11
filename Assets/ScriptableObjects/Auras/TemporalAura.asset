@@ -19,5 +19,5 @@ MonoBehaviour:
   auraNumber: 11
   maxExtraDmg: 15
   enhancePrice: 4c1d0000401f000034210000282300001c2500001027000010270000102700001027000010270000f82a0000e02e0000c8320000b0360000983a0000
-  desc: 'An aura that affects time itself. Although it''s time altering abilities
-    are less effective on living beings, it is capable of slowing a variety of threats. '
+  desc: 'An aura that can affect time. Although it''s time altering abilities are
+    less effective on living beings, it is capable of slowing a variety of threats. '
