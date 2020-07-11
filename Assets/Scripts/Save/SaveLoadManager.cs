@@ -235,8 +235,7 @@ public static class SaveLoadManager
         // Start fresh with only 1 aura unlocked
         bool[] defaultAuras = new bool[]
         {
-            //true, false, false, false, false, false, false, false, false, false, false, false, false, false
-            true, true, true, true, true, true, true, true, true, true, true, true, true, true
+            true, false, false, false, false, false, false, false, false, false, false, false, false, false
         };
 
         return defaultAuras;
@@ -248,8 +247,7 @@ public static class SaveLoadManager
         // Load new levels (levels do not include start screen or level select, minus 2 from the scene index)
         bool[] defaultLvls = new bool[]
         {
-            //true, true, true, true, true, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false
-            true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true
+            true, true, true, true, true, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false
         };
 
         return defaultLvls; 

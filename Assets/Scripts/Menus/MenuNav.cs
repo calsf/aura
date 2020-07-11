@@ -139,6 +139,7 @@ public class MenuNav : MonoBehaviour
             {
                 isEquipping = false;    // Reset isEquipping if player exits from menu during equip
                 SelectSlot(selectedSlot, 0);
+                slotButtons[selectedSlot].GetComponent<Image>().sprite = unselectedSlotSprite;
             }
             return;
         }

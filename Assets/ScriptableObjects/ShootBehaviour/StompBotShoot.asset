@@ -16,7 +16,7 @@ MonoBehaviour:
     type: 3}
   minShootDelay: 0.8
   maxShootDelay: 1
-  shootDelay: 1
+  shootDelay: 1.1
   stopToShoot: 0
   shootFacingDirection: 0
   shootIsChild: 0

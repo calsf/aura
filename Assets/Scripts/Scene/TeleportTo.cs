@@ -34,6 +34,10 @@ public class TeleportTo : MonoBehaviour
             }
 
             // Teleport to destination
+            if (other.tag == "Player")
+            {
+                SoundManager.SoundInstance.PlaySound("EnterPortal");
+            }
             teleTo.Entered[other.gameObject] = true;
             other.transform.position = teleTo.transform.position;
         }

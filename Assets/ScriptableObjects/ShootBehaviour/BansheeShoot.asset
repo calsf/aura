@@ -20,22 +20,14 @@ MonoBehaviour:
   stopToShoot: 1
   shootFacingDirection: 0
   shootIsChild: 0
-  numProj: 8
+  numProj: 4
   xDirection:
   - 1
   - -1
   - 0
   - 0
-  - 1
-  - 1
-  - -1
-  - -1
   yDirection:
   - 0
   - 0
-  - 1
-  - -1
-  - 1
-  - -1
   - 1
   - -1

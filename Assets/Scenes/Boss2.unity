@@ -13937,7 +13937,7 @@ MonoBehaviour:
     loop: 0
   - clipName: KeeperShootSword
     clip: {fileID: 8300000, guid: ad435ebb47a5b334cba6955a39c175b6, type: 3}
-    volume: 0.4
+    volume: 0.35
     pitch: 1
     loop: 0
 --- !u!4 &308390066
@@ -61804,7 +61804,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: e8346b5496277fa40b610070922da6ca, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.85
   m_Pitch: 0.5
   Loop: 0
   Mute: 0
@@ -85406,7 +85406,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: f97df0ba5d74da345b43af040e2dd054, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.05
+  m_Volume: 0.04
   m_Pitch: 1
   Loop: 1
   Mute: 0
