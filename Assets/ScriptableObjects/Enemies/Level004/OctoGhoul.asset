@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: OctoGhoul
   m_EditorClassIdentifier: 
   enemyName: OctoGhoul
-  maxHP: 40
+  maxHP: 35
   dmg: 1
   gold: 400
   baseMoveSpeed: 4

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Banshee
   m_EditorClassIdentifier: 
   enemyName: Banshee
-  maxHP: 80
+  maxHP: 60
   dmg: 1
   gold: 800
   baseMoveSpeed: 5

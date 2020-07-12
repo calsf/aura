@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Beehive
   m_EditorClassIdentifier: 
   enemyName: Beehive
-  maxHP: 70
+  maxHP: 65
   dmg: 1
   gold: 500
   baseMoveSpeed: 4
