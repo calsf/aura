@@ -37126,7 +37126,7 @@ MonoBehaviour:
   - {fileID: 1281549383}
   speed: 10
   ease: 0.4
-  moveDelay: 0.2
+  moveDelay: 0.7
   isTriggerPlatform: 0
 --- !u!251 &902639372
 PlatformEffector2D:
@@ -79210,7 +79210,7 @@ MonoBehaviour:
   - {fileID: 319369466}
   speed: 10
   ease: 0.4
-  moveDelay: 0.2
+  moveDelay: 0.7
   isTriggerPlatform: 0
 --- !u!251 &1300512096
 PlatformEffector2D:
