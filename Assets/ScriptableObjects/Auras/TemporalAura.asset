@@ -15,7 +15,7 @@ MonoBehaviour:
   auraName: Temporal Aura
   baseDmg: 10
   icon: {fileID: 21300000, guid: 55fc72057f7497e4e864b8e2098eed3f, type: 3}
-  price: 50000
+  price: 35000
   auraNumber: 11
   maxExtraDmg: 15
   enhancePrice: 4c1d0000401f000034210000282300001c2500001027000010270000102700001027000010270000f82a0000e02e0000c8320000b0360000983a0000
