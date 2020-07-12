@@ -15,7 +15,7 @@ MonoBehaviour:
   enemyName: Gargoyle
   maxHP: 100
   dmg: 1
-  gold: 800
+  gold: 850
   baseMoveSpeed: 0
   deathSound: {fileID: 8300000, guid: af29e16ed3c6e8b4384f4c33d2c364cf, type: 3}
   deathVolume: 0.5
