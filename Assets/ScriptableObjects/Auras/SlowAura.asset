@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: SlowAura
   m_EditorClassIdentifier: 
   auraName: Slow Aura
-  baseDmg: 5
+  baseDmg: 10
   icon: {fileID: 21300000, guid: 07797feaa31e419479cf2c278e395174, type: 3}
   price: 5000
   auraNumber: 1
   maxExtraDmg: 15
-  enhancePrice: dc050000dc050000dc050000d0070000d0070000d0070000c4090000c4090000c4090000c4090000c4090000c4090000c4090000c4090000c4090000
-  desc: A chilling aura that slows down the user's movement speed as well as any
-    enemies inside.
+  enhancePrice: d0070000d0070000d0070000d0070000c4090000c4090000c4090000c4090000c4090000c4090000b80b0000b80b0000b80b0000b80b0000b80b0000
+  desc: A chilling aura that slows down the user's movement speed but also slows
+    down the movement speed of any enemies by a significant amount.

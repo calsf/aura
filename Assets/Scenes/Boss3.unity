@@ -18552,7 +18552,7 @@ MonoBehaviour:
   player: {fileID: 463194445}
   maxX: 0
   minX: 0
-  maxY: 23
+  maxY: 4
   minY: 4
 --- !u!20 &519420031
 Camera:

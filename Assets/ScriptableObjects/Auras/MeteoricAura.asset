@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: MeteoricAura
   m_EditorClassIdentifier: 
   auraName: Meteoric Aura
-  baseDmg: 15
+  baseDmg: 20
   icon: {fileID: -2886004633257107465, guid: a5d3843854f5acc4581140adc4e8e71a, type: 3}
   price: 20000
   auraNumber: 8
   maxExtraDmg: 15
   enhancePrice: 8813000070170000581b0000401f00002823000010270000102700001027000010270000102700001027000010270000102700001027000010270000
-  desc: An aura with hidden power, allowing the user to create high impact explosions
-    whenever they land.
+  desc: An aura with hidden power. High impact explosions are created whenever the
+    user lands.

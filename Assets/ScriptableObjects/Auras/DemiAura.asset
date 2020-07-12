@@ -19,6 +19,5 @@ MonoBehaviour:
   auraNumber: 12
   maxExtraDmg: -1
   enhancePrice: 
-  desc: The great equalizer, this aura lowers the enemy's health to half of their
-    maximum health for 10 seconds. Any additional hits from this aura will reset
-    the duration.
+  desc: An aura that lowers the enemy's health to half of their maximum health for
+    15 seconds. Any additional hits from this aura will reset the duration.

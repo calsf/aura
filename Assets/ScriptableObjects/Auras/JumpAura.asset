@@ -19,4 +19,4 @@ MonoBehaviour:
   auraNumber: 4
   maxExtraDmg: 15
   enhancePrice: c4090000280a00008c0a0000f00a0000540b0000b80b0000b80b0000b80b0000b80b0000b80b0000b80b0000b80b0000b80b0000b80b0000b80b0000
-  desc: Energy flows upwards from this aura, boosting the user's jumping capabilities.
+  desc: Energy flows upwards from this aura, boosting the user's jump height.

@@ -4,6 +4,7 @@ using TMPro;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class PlayerHP : MonoBehaviour
 {
@@ -195,11 +196,11 @@ public class PlayerHP : MonoBehaviour
         SoundManager.SoundInstance.PlaySound("BaseAuraOn");
         yield return new WaitForSeconds(2f);    // Time of animations before respawning
 
-        // Return to zone select on death or respawn in same level
+        // Reload scene on death or respawn in same level but without reloading scene
         if (leaveOnDeath)
         {
             menuNav.IsLeaving = true;
-            LoadLevel.LoadInstance.LoadScene(1);
+            LoadLevel.LoadInstance.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
         else
         {

@@ -8612,7 +8612,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 15
+  m_Text: ???
 --- !u!222 &931553103
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -12240,7 +12240,8 @@ MonoBehaviour:
   - Range is rather limited but to be able to teleport at all is quite a gift.
   - I prefer armour over such an aura but you look nimble enough to make good use
     of this.
-  - Just remember, this will only weaken the enemy. Nothing less, nothing more.
+  - Just remember, this will only weaken the enemy health to half. Nothing less,
+    nothing more.
   auraFail: Hmm...Looks like you're short on gold.
   health: {fileID: 2102097327}
   healthPriceDisplay: {fileID: 482747645}
@@ -12306,8 +12307,8 @@ MonoBehaviour:
   defaultChat:
   - Greetings. You're the first soul I've seen down here in a long time. Is there
     anything you need?
-  - Care to buy anything before you head out? No one has made it past this floor
-    and although it's probably for the best, I am still curious as to what lies below.
+  - Care to buy anything before you head out? No one has returned from beyond this
+    floor so be prepared for the worst.
 --- !u!1 &1459288291
 GameObject:
   m_ObjectHideFlags: 0
@@ -16980,7 +16981,7 @@ MonoBehaviour:
   aura: {fileID: 11400000, guid: 19100b53d193da54ca24c1c8d192ac20, type: 2}
   auraName: {fileID: 280281433}
   auraDesc: {fileID: 1678028738}
-  auraDmg: {fileID: 931553102}
+  auraDmg: {fileID: 0}
   auraPrice: {fileID: 810293042}
   auraIcon: {fileID: 2046561477}
   showBaseDmgOnly: 1

@@ -30,7 +30,7 @@ public class SlowAura : MonoBehaviour
             return;
         }
 
-        playerMove.Speed = playerMove.BaseSpeed / 2f;
+        playerMove.Speed = playerMove.BaseSpeed / 1.6f;
         playerMove.LastSpeed = playerMove.Speed;
     }
 

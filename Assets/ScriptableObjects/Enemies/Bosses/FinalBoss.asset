@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: FinalBoss
   m_EditorClassIdentifier: 
   enemyName: Death
-  maxHP: 5000
+  maxHP: 7000
   dmg: 9999
   gold: 50000
   baseMoveSpeed: 5

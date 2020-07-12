@@ -29,7 +29,7 @@ public class PhaseThree : MonoBehaviour
     {
         if (startMoving)
         {
-            transform.position = Vector3.MoveTowards(transform.position, pos[nextPos].position, (enemyDefaults.MoveSpeed * 2) * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, pos[nextPos].position, (enemyDefaults.MoveSpeed * 2.5f) * Time.deltaTime);
 
             if (Vector3.Distance(transform.position, pos[nextPos].position) <= 0.1f)
             {

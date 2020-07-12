@@ -19,4 +19,4 @@ MonoBehaviour:
   auraNumber: 3
   maxExtraDmg: 15
   enhancePrice: c4090000280a00008c0a0000f00a0000540b0000b80b0000b80b0000b80b0000b80b0000b80b0000b80b0000b80b0000b80b0000b80b0000b80b0000
-  desc: A lightweight aura, using wind to soften the user's fall.
+  desc: A lightweight aura that uses wind to soften the user's fall.
