@@ -15,7 +15,7 @@ MonoBehaviour:
   auraName: Wildfire Aura
   baseDmg: 2
   icon: {fileID: -8109899509940172705, guid: b8ec07a4e47256e4babd2182fc99e45d, type: 3}
-  price: 25000
+  price: 20000
   auraNumber: 7
   maxExtraDmg: 8
   enhancePrice: 10270000983a0000204e0000204e0000204e0000204e0000204e0000204e0000

@@ -15,7 +15,7 @@ MonoBehaviour:
   auraName: Demi Aura
   baseDmg: 0
   icon: {fileID: -3541225868621755815, guid: f031e4212af4012479bfd9dce201f83a, type: 3}
-  price: 35000
+  price: 30000
   auraNumber: 12
   maxExtraDmg: -1
   enhancePrice: 
