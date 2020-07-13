@@ -18,6 +18,6 @@ MonoBehaviour:
   price: 20000
   auraNumber: 7
   maxExtraDmg: 8
-  enhancePrice: 10270000983a0000204e0000204e0000204e0000204e0000204e0000204e0000
+  enhancePrice: 10270000983a0000983a0000983a0000204e0000204e0000204e0000204e0000
   desc: A ring of fire surrounds the user, creating lingering flames whenever it
     comes into contact with an enemy. Each flame lasts 10 seconds.

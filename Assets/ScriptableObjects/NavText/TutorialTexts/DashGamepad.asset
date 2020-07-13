@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fbb584a18ccc7447bf77ea1d7e34047, type: 3}
   m_Name: DashGamepad
   m_EditorClassIdentifier: 
-  text: Hold a Direction and Press DashPad to Dash
+  text: Hold Left, Right, Up, or Diagonally in Any Direction and Press DashPad to
+    Dash
   keyName: 
   padName: DashPad
